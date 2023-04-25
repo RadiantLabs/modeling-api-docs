@@ -178,6 +178,20 @@ New Water Heating System
 
 Property: ``newWaterHeatingSystem``
 
+Schema:
+
+  =====================  =============================================================================================  ========  ===================================
+  Property               Type                                                                                           Required  Description
+  =====================  =============================================================================================  ========  ===================================
+  ``systemType``         One of ``storage-water-heater``, ``instantaneous-water-heater`` or ``heat-pump-water-heater``  Yes       Type of water heating system
+  ``efficiencyClass``    One of ``standard`` or ``high``                                                                Yes
+  ``dhwLoadPercentage``  Double                                                                                         No [#]_   DHW load for the new water heating system
+  ``costs``              Array of :ref:`cost`                                                                           No [#]_   Implied costs of measure
+  =====================  =============================================================================================  ========  ===================================
+
+  .. [#] Defaults to ``1.0`` if not provided.
+  .. [#] Defaults to ``[]`` if not provided.
+
 Adjust global aspects of the building
 -------------------------------------
 

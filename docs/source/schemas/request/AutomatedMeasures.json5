@@ -37,10 +37,10 @@
     "costs": [ COST ]
   },
   "newWaterHeatingSystem": {
-    "systemType": "storage water heater", // ( “storage water heater” | “instantaneous water heater” | “heat pump water heater”)
+    "systemType": "storage-water-heater", // ( “storage-water-heater” | “instantaneous-water-heater” | “heat-pump-water-heater”)
     "efficiencyClass": "", //("standard" | "high")
     "dhwLoadPercentage": 1.0,
-    "costs": [ COST ] // refer to the Cost schema below
+    "costs": [ COST ]
   },
   "thermostat": {
     "adjust": {
