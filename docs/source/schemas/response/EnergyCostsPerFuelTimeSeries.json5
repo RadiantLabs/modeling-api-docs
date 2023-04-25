@@ -1,0 +1,11 @@
+// ENERGY_COSTS_PER_FUEL_TIME_SERIES
+{
+  "coalTotal": [0.0, ..., 0.0],
+  "electricityTotal": [0.0, ..., 0.0],
+  "fuelOilTotal": [0.0, ..., 0.0],
+  "naturalGasTotal": [0.0, ..., 0.0],
+  "propaneTotal": [0.0, ..., 0.0],
+  "woodCordTotal": [0.0, ..., 0.0],
+  "woodPelletsTotal": [0.0, ..., 0.0],
+  "total": [0.0, ..., 0.0],
+}

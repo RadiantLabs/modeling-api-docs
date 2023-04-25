@@ -1,0 +1,27 @@
+// EMISSION_TOTALS_PER_FUEL_TIME_SERIES
+{
+  "coalTotal": {
+    "co2": [0.0, ..., 0.0]
+  },
+  "electricityTotal": {
+    "co2": [0.0, ..., 0.0]
+  },
+  "fuelOilTotal": {
+    "co2": [0.0, ..., 0.0]
+  },
+  "naturalGasTotal": {
+    "co2": [0.0, ..., 0.0]
+  },
+  "propaneTotal": {
+    "co2": [0.0, ..., 0.0]
+  },
+  "woodCordTotal": {
+    "co2": [0.0, ..., 0.0]
+  },
+  "woodPelletsTotal": {
+    "co2": [0.0, ..., 0.0]
+  },
+  "total": {
+    "co2": [0.0, ..., 0.0]
+  }
+}

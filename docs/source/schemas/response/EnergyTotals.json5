@@ -1,0 +1,14 @@
+// ENERGY_TOTALS
+{
+  // given if resolution included "hourly"
+  // it is guaranteed the timeseries will contain 8760 datapoints
+  "hourly": ENERGY_TOTALS_PER_FUEL_TIME_SERIES,
+
+  // given if resolution included "monthly"
+  // it is guaranteed the timeseries will contain 12 datapoints
+  "monthly": ENERGY_TOTALS_PER_FUEL_TIME_SERIES,
+
+  // given if resolution included "annual"
+  // it is guaranteed the timeseries will only contain 1 datapoint
+  "annual": ENERGY_TOTALS_PER_FUEL_TIME_SERIES,
+}

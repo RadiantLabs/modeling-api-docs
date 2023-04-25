@@ -1,0 +1,33 @@
+// ENERGY_TOTALS_PER_FUEL_TIME_SERIES
+{
+  "coalTotal": {
+    "metricTons": [0.0, ..., 0.0],
+    "MBtu": [0.0, ..., 0.0]
+  },
+  "electricityTotal": {
+    "kWh": [0.0, ..., 0.0],
+    "MBtu": [0.0, ..., 0.0]
+  },
+  "fuelOilTotal": {
+    "gallons": [0.0, ..., 0.0],
+    "MBtu": [0.0, ..., 0.0]
+  },
+  "naturalGasTotal": {
+    "ccf": [0.0, ..., 0.0],
+    "MBtu": [0.0, ..., 0.0]
+  },
+  "propaneTotal": {
+    "gallons": [0.0, ..., 0.0],
+    "MBtu": [0.0, ..., 0.0]
+  },
+  "woodCordTotal": {
+    "MBtu": [0.0, ..., 0.0]
+  },
+  "woodPelletsTotal": {
+    "MBtu": [0.0, ..., 0.0]
+  },
+  // "total" is present if the "energyStandard" property was provided in the global controls' units object
+  "total": {
+    "MBtu": [0.0, ..., 0.0]
+  }
+}

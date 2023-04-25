@@ -1,0 +1,15 @@
+{
+  "addressFoundFull": "501 RANDALL RD, BALLSTON SPA, NY 12020", // assembled from "addressFoundComponents"
+
+  "addressFoundComponents": ADDRESS_COMPONENTS, // refer to the Address Components schema above
+
+  "baseBuilding": BASE_BUILDING, // refer to the Base Building schema above
+
+  "globalControls": GLOBAL_CONTROLS, // refer to the Global Controls schema above
+
+  "defaultModelControls": MODEL_CONTROLS, // refer to the Model Controls schema above
+
+  "timelines": [ RESPONSE_TIMELINE ], // refer to the Response Timeline schema below
+
+  "typical": TYPICAL, // if requested in global controls, refer to the Typical schema below
+}

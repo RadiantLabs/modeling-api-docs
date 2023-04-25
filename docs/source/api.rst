@@ -14,13 +14,20 @@ Authentication
 Endpoints
 ---------
 
-.. _post_timelines:
+.. _post_timelines_request:
 
 ``POST /v1/timelines``
 
 Top-level request payload
 
-.. include:: schemas/TopLevelRequestPayload.json5
+.. include:: schemas/request/TopLevelRequestPayload.json5
+   :code: json
+
+.. _post_timelines_response:
+
+Top-level response payload
+
+.. include:: schemas/response/TopLevelResponsePayload.json5
    :code: json
 
 .. _schemas:
@@ -33,7 +40,7 @@ Schemas
 Address Components
 ******************
 
-.. include:: schemas/AddressComponents.json5
+.. include:: schemas/request/AddressComponents.json5
    :code: json
 
 .. _base_building:
@@ -41,7 +48,7 @@ Address Components
 Base Building
 *************
 
-.. include:: schemas/BaseBuilding.json5
+.. include:: schemas/request/BaseBuilding.json5
    :code: json
 
 .. _enclosure:
@@ -49,7 +56,7 @@ Base Building
 Enclosure
 *********
 
-.. include:: schemas/Enclosure.json5
+.. include:: schemas/request/Enclosure.json5
    :code: json
 
 .. _hvac:
@@ -57,7 +64,7 @@ Enclosure
 HVAC
 ****
 
-.. include:: schemas/HVAC.json5
+.. include:: schemas/request/HVAC.json5
    :code: json
 
 .. _water_heating:
@@ -65,7 +72,7 @@ HVAC
 Water Heating
 *************
 
-.. include:: schemas/WaterHeating.json5
+.. include:: schemas/request/WaterHeating.json5
    :code: json
 
 .. _electrical:
@@ -73,7 +80,7 @@ Water Heating
 Electrical
 **********
 
-.. include:: schemas/Electrical.json5
+.. include:: schemas/request/Electrical.json5
    :code: json
 
 .. _photovoltaic:
@@ -81,7 +88,7 @@ Electrical
 Photovoltaic
 *************
 
-.. include:: schemas/Photovoltaic.json5
+.. include:: schemas/request/Photovoltaic.json5
    :code: json
 
 .. _appliances:
@@ -89,7 +96,7 @@ Photovoltaic
 Appliances
 **********
 
-.. include:: schemas/Appliances.json5
+.. include:: schemas/request/Appliances.json5
    :code: json
 
 .. _lifetime:
@@ -97,7 +104,7 @@ Appliances
 Lifetime
 ********
 
-.. include:: schemas/Lifetime.json5
+.. include:: schemas/request/Lifetime.json5
    :code: json
 
 .. _global_controls:
@@ -105,7 +112,7 @@ Lifetime
 Global Controls
 ***************
 
-.. include:: schemas/GlobalControls.json5
+.. include:: schemas/request/GlobalControls.json5
    :code: json
 
 .. _units:
@@ -113,7 +120,7 @@ Global Controls
 Units
 *****
 
-.. include:: schemas/Units.json5
+.. include:: schemas/request/Units.json5
    :code: json
 
 .. _escalation_rates:
@@ -121,7 +128,7 @@ Units
 Escalation Rates
 ****************
 
-.. include:: schemas/EscalationRates.json5
+.. include:: schemas/request/EscalationRates.json5
    :code: json
 
 .. _model_controls:
@@ -129,7 +136,7 @@ Escalation Rates
 Model Controls
 **************
 
-.. include:: schemas/ModelControls.json5
+.. include:: schemas/request/ModelControls.json5
    :code: json
 
 .. _energy_costs_rates:
@@ -137,7 +144,7 @@ Model Controls
 Energy Costs Rates
 ******************
 
-.. include:: schemas/EnergyCostsRates.json5
+.. include:: schemas/request/EnergyCostsRates.json5
    :code: json
 
 .. _weather:
@@ -145,7 +152,7 @@ Energy Costs Rates
 Weather
 *******
 
-.. include:: schemas/Weather.json5
+.. include:: schemas/request/Weather.json5
    :code: json
 
 .. _timeline:
@@ -153,7 +160,7 @@ Weather
 Timeline
 ********
 
-.. include:: schemas/Timeline.json5
+.. include:: schemas/request/Timeline.json5
    :code: json
 
 .. _model:
@@ -161,7 +168,7 @@ Timeline
 Model
 *****
 
-.. include:: schemas/Model.json5
+.. include:: schemas/request/Model.json5
    :code: json
 
 .. _loan:
@@ -169,7 +176,7 @@ Model
 Loan
 ****
 
-.. include:: schemas/Loan.json5
+.. include:: schemas/request/Loan.json5
    :code: json
 
 .. _incentive:
@@ -177,7 +184,7 @@ Loan
 Incentive
 *********
 
-.. include:: schemas/Incentive.json5
+.. include:: schemas/request/Incentive.json5
    :code: json
 
 .. _automated_measures:
@@ -185,7 +192,7 @@ Incentive
 Automated Measures
 ******************
 
-.. include:: schemas/AutomatedMeasures.json5
+.. include:: schemas/request/AutomatedMeasures.json5
    :code: json
 
 .. _custom_measure:
@@ -193,7 +200,7 @@ Automated Measures
 Custom Measure
 **************
 
-.. include:: schemas/CustomMeasure.json5
+.. include:: schemas/request/CustomMeasure.json5
    :code: json
 
 .. _improved_building:
@@ -201,7 +208,7 @@ Custom Measure
 Improved Building
 *****************
 
-.. include:: schemas/ImprovedBuilding.json5
+.. include:: schemas/request/ImprovedBuilding.json5
    :code: json
 
 .. _cost:
@@ -209,7 +216,7 @@ Improved Building
 Cost
 ****
 
-.. include:: schemas/Cost.json5
+.. include:: schemas/request/Cost.json5
    :code: json
 
 .. _variable_cost:
@@ -217,5 +224,85 @@ Cost
 Variable Cost
 *************
 
-.. include:: schemas/VariableCost.json5
+.. include:: schemas/request/VariableCost.json5
+   :code: json
+
+.. _weather_metadata:
+
+Weather Metadata
+****************
+
+.. include:: schemas/response/WeatherMetadata.json5
+   :code: json
+
+.. _response_timeline:
+
+Response Timeline
+*****************
+
+.. include:: schemas/response/ResponseTimeline.json5
+   :code: json
+
+.. _response_model:
+
+Response Model
+**************
+
+.. include:: schemas/response/ResponseModel.json5
+   :code: json
+
+.. _energy_totals:
+
+Energy Totals
+*************
+
+.. include:: schemas/response/EnergyTotals.json5
+   :code: json
+
+.. _energy_totals_per_fuel_time_series:
+
+Energy Totals per Fuel Time Series
+**********************************
+
+.. include:: schemas/response/EnergyTotalsPerFuelTimeSeries.json5
+   :code: json
+
+.. _energy_costs:
+
+Energy Costs
+************
+
+.. include:: schemas/response/EnergyCosts.json5
+   :code: json
+
+.. _energy_costs_per_fuel_time_series:
+
+Energy Costs per Fuel Time Series
+*********************************
+
+.. include:: schemas/response/EnergyCostsPerFuelTimeSeries.json5
+   :code: json
+
+.. _emission_totals:
+
+Emission Totals
+***************
+
+.. include:: schemas/response/EmissionTotals.json5
+   :code: json
+
+.. _emission_totals_per_fuel_time_series:
+
+Emission Totals per Fuel Time Series
+************************************
+
+.. include:: schemas/response/EmissionTotalsPerFuelTimeSeries.json5
+   :code: json
+
+.. _typical:
+
+Typical
+*******
+
+.. include:: schemas/response/Typical.json5
    :code: json

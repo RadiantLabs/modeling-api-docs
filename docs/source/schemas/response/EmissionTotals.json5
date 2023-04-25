@@ -1,0 +1,11 @@
+// EMISSION_TOTALS
+{
+  // given if resolution included "hourly"
+  "hourly": EMISSION_TOTALS_PER_FUEL_TIME_SERIES,
+
+  // given if resolution included "monthly"
+  "monthly": EMISSION_TOTALS_PER_FUEL_TIME_SERIES,
+
+  // given if resolution included "annual"
+  "annual": EMISSION_TOTALS_PER_FUEL_TIME_SERIES,
+}
