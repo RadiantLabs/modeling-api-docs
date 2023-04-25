@@ -23,3 +23,4 @@ Endpoints
    }
 
 .. include:: schemas/AddressComponents.json
+   :code: json
