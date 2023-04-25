@@ -23,12 +23,11 @@
     "costs": [ COST ]
   },
   "newHeatPump": {
-    "systemType": "", //("heat pump" | "mini-split" | "air-to-air")
-    // "heat pump" is a generic air source heat pump that will be automatically determined based on the existing conditions in the building
-    "performanceClass": "", //("federal minimally compliant" | "ENERGY STAR compliant")
-    "heatLoadPercentage": 0.8, //defaults to 1 if undefined
-    "coolLoadPercentage": 0.8,  //defaults to 1 if undefined
-    "costs": [ COST ] // refer to the Cost schema below
+    "systemType": "heat-pump", // ("heat-pump" | "mini-split" | "air-to-air")
+    "performanceClass": "", // ("federal-minimally-compliant" | "ENERGY-STAR-compliant")
+    "heatLoadPercentage": 0.8,
+    "coolLoadPercentage": 0.8,
+    "costs": [ COST ]
   },
   "existingWaterHeatingSystem": {
     "action": "adjust", // ("keep" | "remove" | "adjust")
