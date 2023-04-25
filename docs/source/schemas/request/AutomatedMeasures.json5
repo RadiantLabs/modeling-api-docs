@@ -1,4 +1,3 @@
-
 //AUTOMATED_MEASURES
 {
   "existingHvacHeatingSystem": { //This object covers the singular predefined system providing heating in the base building, including a heat pump.

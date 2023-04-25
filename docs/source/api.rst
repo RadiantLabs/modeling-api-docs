@@ -14,9 +14,10 @@ Authentication
 Endpoints
 ---------
 
-.. _post_timelines_request:
+POST /v1/timelines
+******************
 
-``POST /v1/timelines``
+.. _post_timelines_request:
 
 Top-level request payload
 
