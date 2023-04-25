@@ -14,6 +14,8 @@ systems are harder to refer to in improved building definitions and assumptions 
 reason, these automated measures help modify the base building definition without much knowledge of said
 characteristics.
 
+.. _existing_hvac_heating_system:
+
 Existing HVAC Heating System
 ****************************
 
@@ -31,12 +33,12 @@ Schema:
   ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
   ==========  ===================================================  ========  =================================
 
-  .. [#] Keeps existing heating system as is, including load percentage. Using this flag indicates that there are no changes to heating at all.
-  .. [#] Completely removes existing heating system and new system(s) must cover 100% of load or specify ``loadGapPercentage``. This property will override anything in adjust object.
+  .. [#] Keeps existing heating system as is, including load percentage. Using this action indicates that there are no changes to heating at all.
+  .. [#] Completely removes existing heating system and new system(s) must cover 100% of load or specify ``loadGapPercentage``. This action will override anything in ``adjust`` object.
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] No costs array will translate into an empty array of costs (i.e. ``"costs": []``).
 
-``adjust`` schema:
+``adjust`` schema for existing HVAC heating system:
 
   ======================  =======  ===================  ==============================================
   Property                Type     Constraints          Description
@@ -45,20 +47,98 @@ Schema:
   ``heatLoadPercentage``  Double   In [0.0, 1.0] range  Set heat load for the existing heating system.
   ======================  =======  ===================  ==============================================
 
+.. _existing_hvac_cooling_system:
+
 Existing HVAC Cooling System
 ****************************
 
 Property: ``existingHvacCoolingSystem``
+
+Schema:
+
+  ==========  ===================================================  ========  =================================
+  Property    Type                                                 Required  Description
+  ==========  ===================================================  ========  =================================
+  ``action``  One of ``keep`` [#]_, ``remove`` [#]_ or ``adjust``  Yes       Operation on existing system
+  ``adjust``  Object                                               No [#]_   System properties to adjust
+  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
+  ==========  ===================================================  ========  =================================
+
+  .. [#] Keeps existing cooling system as is, including load percentage. Using this action indicates that there are no changes to cooling at all.
+  .. [#] Completely removes existing cooling system and new system(s) must cover 100% of load or specify ``loadGapPercentage``. This action will override anything in ``adjust`` object.
+  .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
+  .. [#] No costs array will translate into an empty array of costs (i.e. ``"costs": []``).
+
+``adjust`` schema for existing HVAC cooling system:
+
+  ======================  =======  ===================  ==============================================
+  Property                Type     Constraints          Description
+  ======================  =======  ===================  ==============================================
+  ``heatLoadPercentage``  Double   In [0.0, 1.0] range  Set cool load for the existing cooling system.
+  ======================  =======  ===================  ==============================================
+
+.. _existing_hvac_distribution_system:
 
 Existing Hvac Distribution System
 *********************************
 
 Property: ``existingHvacDistributionSystem``
 
+Schema:
+
+  ==========  ===================================================  ========  =================================
+  Property    Type                                                 Required  Description
+  ==========  ===================================================  ========  =================================
+  ``action``  One of ``keep`` [#]_, ``remove`` [#]_ or ``adjust``  Yes       Operation on existing system
+  ``adjust``  Object                                               No [#]_   System properties to adjust
+  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
+  ==========  ===================================================  ========  =================================
+
+  .. [#] Keeps existing distribution system as is. Using this action indicates that there are no changes to distribution systems at all.
+  .. [#] Completely removes existing distribution system. This action will override anything in ``adjust`` object.
+  .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
+  .. [#] No costs array will translate into an empty array of costs (i.e. ``"costs": []``).
+
+``adjust`` schema for existing HVAC distribution system:
+
+  ====================  =======  ===========  ==============================================
+  Property              Type     Constraints  Description
+  ====================  =======  ===========  ==============================================
+  ``leakageValue``      Double   >= 0.0
+  ``insulationRValue``  Double   >= 0.0
+  ====================  =======  ===========  ==============================================
+
+  Values can be defined and will only be applied if applicable. For example, if there isn't ``airDistribution``, then ``leakageValue`` won't be applied.
+
+.. _existing_water_heating_system:
+
 Existing Water Heating System
 *****************************
 
 Property: ``existingWaterHeatingSystem``
+
+Schema:
+
+  ==========  ===================================================  ========  =================================
+  Property    Type                                                 Required  Description
+  ==========  ===================================================  ========  =================================
+  ``action``  One of ``keep`` [#]_, ``remove`` [#]_ or ``adjust``  Yes       Operation on existing system
+  ``adjust``  Object                                               No [#]_   System properties to adjust
+  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
+  ==========  ===================================================  ========  =================================
+
+  .. [#] Keeps existing water heating system as is, including load percentage. Using this action indicates that there are no changes to water heating systems at all.
+  .. [#] Completely removes existing water heating system and new system(s) must cover 100% of load. This action will override anything in ``adjust`` object.
+  .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
+  .. [#] No costs array will translate into an empty array of costs (i.e. ``"costs": []``).
+
+``adjust`` schema for existing water heating system:
+
+  =====================  =======  ===================  ==============================================
+  Property               Type     Constraints          Description
+  =====================  =======  ===================  ==============================================
+  ``dhwLoadPercentage``  Double   In [0.0, 1.0] range  Set domestic hot water load for the existing water heating system.
+  =====================  =======  ===================  ==============================================
 
 Add new systems with minimal configuration
 ------------------------------------------

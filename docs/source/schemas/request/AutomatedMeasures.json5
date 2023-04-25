@@ -1,6 +1,6 @@
 {
   "existingHvacHeatingSystem": {
-    "action": "adjust",
+    "action": "adjust", // ("keep" | "remove" | "adjust")
     "adjust": {
       "heatLoadPercentage": 0.2,
       "backup": true
@@ -8,19 +8,19 @@
     "costs": [ COST ]
   },
   "existingHvacCoolingSystem": {
-    "remove": true, // completely removes existing cooling system and new system(s) must cover 100% of load or specify loadGapPercentage. Default = false. This property will override anything in adjust object.
+    "action": "adjust", // ("keep" | "remove" | "adjust")
     "adjust": {
       "coolLoadPercentage": 0.2
     },
-    "costs": [ COST ] // refer to the Cost schema below
+    "costs": [ COST ]
   },
   "existingHvacDistributionSystem": {
-    "remove": true,
-    "adjust": {  // Values can be defined and will only be applied if applicable. For example, if there isn't airDistribution, then leakageValue won't be applied.
+    "action": "adjust", // ("keep" | "remove" | "adjust")
+    "adjust": {
       "leakageValue": 0.1,
       "insulationRValue": 5
     },
-    "costs": [ COST ] // refer to the Cost schema below
+    "costs": [ COST ]
   },
   "newHeatPump": {
     "systemType": "", //("heat pump" | "mini-split" | "air-to-air")
@@ -31,11 +31,11 @@
     "costs": [ COST ] // refer to the Cost schema below
   },
   "existingWaterHeatingSystem": {
-    "keep": true,
+    "action": "adjust", // ("keep" | "remove" | "adjust")
     "adjust": {
       "dhwLoadPercentage": 0.8
     },
-    "costs": [ COST ] // refer to the Cost schema below
+    "costs": [ COST ]
   },
   "newWaterHeatingSystem": {
     "systemType": "storage water heater", // ( “storage water heater” | “instantaneous water heater” | “heat pump water heater”)
