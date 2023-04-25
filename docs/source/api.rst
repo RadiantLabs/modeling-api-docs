@@ -14,6 +14,8 @@ Authentication
 Endpoints
 ---------
 
+.. _post_timelines:
+
 ``POST /v1/timelines``
 
 Top-level request payload
@@ -28,6 +30,15 @@ Schemas
 
 .. _address_components:
 
-.. include:: schemas/AddressComponents.json
+Address Components
+******************
+
+.. include:: schemas/AddressComponents.json5
    :code: json
 
+.. _base_building:
+
+Base Building
+*************
+
+.. include:: schemas/BaseBuilding.json5

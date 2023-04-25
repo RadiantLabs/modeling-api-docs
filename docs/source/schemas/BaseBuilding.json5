@@ -1,0 +1,21 @@
+// BASE_BUILDING
+{
+  "buildingSummary": {
+    "conditionedFloorArea": 2413,
+    "averageCeilingHeight": 8,
+    "bathCount": 2,
+    "bedroomsCount": 4,
+    "residentCount": 2,
+    "storiesCount": 2,
+    "windowToWallFraction": 0.14,
+    "yearBuilt": 1999
+  },
+  "enclosure": ENCLOSURE, // refer to Enclosure schema below
+  "systems": {
+    "hvac": HVAC, // refer to HVAC schema below
+    "waterHeating": WATER_HEATING, // refer to Water Heating schema below
+    "electrical": ELECTRICAL, // refer to Electrical schema below
+    "photovoltaic": [ PHOTOVOLTAIC ], // refer to Photovoltaic schema below
+  },
+  "appliances": APPLIANCES // refer to Appliances schema below
+}
