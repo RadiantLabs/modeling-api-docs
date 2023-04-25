@@ -23,18 +23,20 @@ Property: ``existingHvacHeatingSystem``
 
 Schema:
 
-  ==========  ===================================================  =================================
-  Property    Type                                                 Description
-  ==========  ===================================================  =================================
-  ``action``  One of ``keep`` [#]_, ``remove`` [#]_ or ``adjust``  Operation on existing system
-  ``adjust``  Object                                               System properties to adjust
-  ``costs``   Array of :ref:`cost`                                 Implied costs of measure
-  ==========  ===================================================  =================================
+  ==========  ===================================================  ========  =================================
+  Property    Type                                                 Required  Description
+  ==========  ===================================================  ========  =================================
+  ``action``  One of ``keep`` [#]_, ``remove`` [#]_ or ``adjust``  Yes       Operation on existing system
+  ``adjust``  Object                                               No [#]_   System properties to adjust
+  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
+  ==========  ===================================================  ========  =================================
 
   .. [#] Keeps existing heating system as is, including load percentage. Using this flag indicates that there are no changes to heating at all.
-  .. [#] Completely removes existing heating system and new system(s) must cover 100% of load or specify ``loadGapPercentage``.
+  .. [#] Completely removes existing heating system and new system(s) must cover 100% of load or specify ``loadGapPercentage``. This property will override anything in adjust object.
+  .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
+  .. [#] No costs array will translate into an empty array of costs (i.e. ``"costs": []``).
 
-``adjust`` object properties (object required if ``action`` is set to ``adjust``)
+``adjust`` schema:
 
   ======================  =======  ===================  ==============================================
   Property                Type     Constraints          Description
