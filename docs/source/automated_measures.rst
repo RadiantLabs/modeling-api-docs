@@ -160,7 +160,7 @@ Schema:
   Property                Type                                                                 Required  Description
   ======================  ===================================================================  ========  ===================================
   ``systemType``          One of ``heat-pump`` [#]_, ``mini-split`` or ``air-to-air``          Yes       Type of heat pump
-  ``performanceClass``    One of ``federal-minimally-compliant`` or ``ENERGY-STAR-compliant``  Yes
+  ``performanceClass``    One of ``federal-minimally-compliant`` or ``energy-star-compliant``  Yes
   ``heatLoadPercentage``  Double                                                               No [#]_   Heat load for the new heat pump
   ``coolLoadPercentage``  Double                                                               No [#]_   Cool load for the new heat pump
   ``costs``               Array of :ref:`cost`                                                 No [#]_   Implied costs of measure
@@ -205,6 +205,25 @@ Air Sealing
 
 Property: ``airSealing``
 
+Schema:
+
+  ==========  ===================================================  ========  ===========================
+  Property    Type                                                 Required  Description
+  ==========  ===================================================  ========  ===========================
+  ``adjust``  Object                                               Yes       Aspect properties to adjust
+  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
+  ==========  ===================================================  ========  ===========================
+
+  .. [#] Defaults to ``[]`` if not provided.
+
+``adjust`` schema for air sealing:
+
+  ========  ======  ===========  =======================================
+  Property  Type    Constraints  Description
+  ========  ======  ===========  =======================================
+  ``rate``  Double  > 0.0        If undefined, system default is applied
+  ========  ======  ===========  =======================================
+
 .. _adjust_attic_insulation:
 
 Attic Insulation
@@ -212,9 +231,59 @@ Attic Insulation
 
 Property: ``atticInsulation``
 
+Schema:
+
+  ==========  ===================================================  ========  ===========================
+  Property    Type                                                 Required  Description
+  ==========  ===================================================  ========  ===========================
+  ``adjust``  Object                                               Yes       Aspect properties to adjust
+  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
+  ==========  ===================================================  ========  ===========================
+
+  .. [#] Defaults to ``[]`` if not provided.
+
+``adjust`` schema for attic insulation:
+
+  ================================  ======  ===========  =======================================
+  Property                          Type    Constraints  Description
+  ================================  ======  ===========  =======================================
+  ``floorAssemblyEffectiveRValue``  Double  > 0.0        If undefined, system default is applied
+  ================================  ======  ===========  =======================================
+
 .. _adjust_thermostat:
 
 Thermostat
 **********
 
 Property: ``thermostat``
+
+Schema:
+
+  ==========  ===================================================  ========  ===========================
+  Property    Type                                                 Required  Description
+  ==========  ===================================================  ========  ===========================
+  ``adjust``  Object                                               Yes       Aspect properties to adjust
+  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
+  ==========  ===================================================  ========  ===========================
+
+  .. [#] Defaults to ``[]`` if not provided.
+
+``adjust`` schema for air sealing:
+
+  =================  ======  ==============================================
+  Property           Type    Description
+  =================  ======  ==============================================
+  ``heatingSeason``  Object  Thermostat settings for heating season
+  ``coolingSeason``  Object  Thermostat settings for cooling season
+  =================  ======  ==============================================
+
+``heatingSeason`` and ``coolingSeason`` objects share the following schema:
+
+  ===========================  =======  ===========  ===========
+  Property                     Type     Constraints  Description
+  ===========================  =======  ===========  ===========
+  ``setpoint``                 Integer  > 0
+  ``setback``                  Integer  > 0
+  ``setbackStartHour``         Integer  > 0
+  ``totalWeeklySetbackHours``  Integer  > 0
+  ===========================  =======  ===========  ===========

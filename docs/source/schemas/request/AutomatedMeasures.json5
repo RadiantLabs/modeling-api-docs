@@ -24,7 +24,7 @@
   },
   "newHeatPump": {
     "systemType": "heat-pump", // ("heat-pump" | "mini-split" | "air-to-air")
-    "performanceClass": "", // ("federal-minimally-compliant" | "ENERGY-STAR-compliant")
+    "performanceClass": "", // ("federal-minimally-compliant" | "energy-star-compliant")
     "heatLoadPercentage": 0.8,
     "coolLoadPercentage": 0.8,
     "costs": [ COST ]
@@ -57,18 +57,18 @@
         "totalWeeklySetbackHours": 42,
       },
     },
-    "costs": [ COST ] // refer to the Cost schema below
+    "costs": [ COST ]
   },
   "airSealing": {
     "adjust": {
-      "rate": 1.0 //optional. If undefined, system default is applied
+      "rate": 1.0
     },
-    "costs": [ COST ] // refer to the Cost schema below
+    "costs": [ COST ]
   },
   "atticInsulation": {
     "adjust": {
-      "floorAssemblyEffectiveRValue": 50.6 //optional. If undefined, system default is applied
+      "floorAssemblyEffectiveRValue": 50.6
     },
-    "costs": [ COST ] // refer to the Cost schema below
+    "costs": [ COST ]
   }
 }
