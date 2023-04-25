@@ -1,7 +1,23 @@
 API
 ===
 
-.. autosummary::
-   :toctree: generated
+Overview
+--------
 
-   lumache
+.. _authentication:
+
+Authentication
+--------------
+
+.. _endpoints:
+
+Endpoints
+---------
+
+``POST /v1/timelines``
+
+.. code-block:: json
+
+   {
+      "test": "test"
+   }

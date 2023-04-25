@@ -1,10 +1,10 @@
-Welcome to Lumache's documentation!
-===================================
+Welcome to the Modeling API documentation!
+==========================================
 
 The Modeling API is Radiant Labs' main tool to generate energy consumption models for homes.
 
 Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+how use the :ref:`endpoints`.
 
 .. note::
 
