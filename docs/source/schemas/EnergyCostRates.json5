@@ -1,0 +1,16 @@
+// ENERGY_COST_RATES
+// Rate units will be based on monetary unit per fuel unit, as defined in UNITS schema.
+// If a rate is provided, but the unit property is not, throw an error.
+// Example: units.electricity = "kWh" and units.monetary = "USD", electricity energy cost rate is USD per kWh
+
+{
+  "electricity": {
+    "kwh": 0.0,
+  },
+  "naturalGas": {
+    "ccf": 0.0,
+  }
+  "coal": {
+    "mbtu": 0.0,
+  }
+}

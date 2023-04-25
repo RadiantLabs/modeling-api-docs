@@ -1,0 +1,10 @@
+// TIMELINE
+{
+  "id": "<UUID>", // optional, if missing an UUID is generated
+
+  "label": "MY_TIMELINE", // optional, if missing an random adjective-animal string is generated
+
+  "comparedTo": "hilarious-hyena", // optional, needs to exist in the current payload, if missing it defaults to STATUS_QUO
+
+  "models": [ MODEL ], // refer to the Model schema below
+}

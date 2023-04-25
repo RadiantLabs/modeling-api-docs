@@ -1,0 +1,27 @@
+// MODEL_CONTROLS (mirrored at the model level)
+{
+  // Allows the user to control HVAC sizing behavior if HVAC capacities are defined. If capacities are undefined, the model will autosize the system.
+  // If false, the user-specified fixed capacity will be used.
+  // If true, the maximum of the user-specified fixed capacity and the heating/cooling
+  // design load will be used to reduce potential for unmet loads.
+  // If not provided, the default value is false.
+  //
+  "allowIncreasedFixedCapacities": false,
+
+  // Describes how autosized heat pumps are handled.
+  // If "max load", heat pumps are sized based on the maximum of heating and cooling design loads.
+  // If "acca", heat pumps are sized per ACCA Manual J/S based on cooling design loads with some oversizing allowances for heating design loads.
+  // *coming soon* If "hers", autosized heat pumps have their nominal capacity sized equal to the larger of heating/cooling design loads.
+  // If not provided, the default value of "acca" is used.
+  "heatPumpSizingMethodology": "acca", // ("acca" | "max load") // "HERS" option to be added in future
+
+  // If "asset", end use energy based on number of bedrooms.
+  // If "operational", end use energy adjusted based on number of occupants.
+  // If not provided, the default value is "asset".
+  //
+  "occupancyCalculationType": "asset",
+
+  "energyCostRates": ENERGY_COST_RATES, // optional, refer to the Energy Costs Rates schema below
+
+  "weather": WEATHER, // optional, refer to Weather schema below
+}

@@ -1,0 +1,13 @@
+{
+  "label": "Main Cost", //optional
+  "loanId": "Loan1",
+  "incentiveIds": [ "Incentive1", "Incentive2" ],
+  "costType": "one time", // ("one time" | "recurring")
+  "recurrencePeriod": 30, //number of days //required if costType is recurring
+  "fixedCost": 10,
+  "variableCost": VARIABLE_COST //see VARIABLE COST schema below //only available for internal use
+  // ... other properties provided by the user
+  "userData": {
+    "sku": "123"
+  },
+}

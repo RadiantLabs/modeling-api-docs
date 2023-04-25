@@ -1,0 +1,46 @@
+//ENCLOSURE
+{
+  "airInfiltration": {
+    "rate": 15.0,
+    "rateUnit": "ACH", // if null, default is ACH
+    "housePressurePa": 50.0, // if null, default is 50 Pa
+  },
+
+  "attics": [ // required to be 1, if no attic in house, area must be set to 0
+    {
+      "id": "Attic1",
+      "area": 1225,
+      "isVented": true,
+      "floorAssemblyEffectiveRValue": 20.6
+    }
+  ],
+
+  "roofs": [ // limited to 1
+    {
+      "id": "Roof1",
+      "area": 1370,
+      "pitch": 6,
+      "assemblyEffectiveRValue": 2.3,
+      "lifetime": LIFETIME // optional, refer to Lifetime schema below
+    }
+  ],
+
+  "foundations": [ // limited to 1
+    {
+      "id": "BasementUnconditioned1",
+      "type": "basement unconditioned", // ("basement conditioned" | "basement unconditioned" | "crawl vented" | "crawl unvented" | "slab" | "pier and beam")
+      "area": 1234, // if the area is less than the footprint area, the remainder will be assigned to crawlspace
+      "wallHeight": 8,
+    }
+  ],
+
+  "walls": [ // limited to 1
+    {
+      "id": "Wall1",
+      "type": "wood stud", // ("wood stud" | "concrete masonry unit" | "structural brick" | "steel frame" | "stone" | "adobe" | "log wall" | "solid concrete")
+      "area": 1234,
+      "assemblyEffectiveRValue": 10.9,
+      "percentageAreaShared": 0.0, // percentage of wall area shared with an adjacent structure or dwelling unit (e.g. townhouses)
+    }
+  ],
+}

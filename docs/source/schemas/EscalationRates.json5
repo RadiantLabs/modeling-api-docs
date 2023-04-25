@@ -1,0 +1,6 @@
+// ESCALATION_RATES
+{
+  "electricity": [1.0, ..., 1.0],
+  "naturalGas": [1.0, ..., 1.0],
+  "equipmentUpgrades": [1.0, ..., 1.0]
+}

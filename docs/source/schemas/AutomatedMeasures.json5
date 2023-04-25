@@ -1,0 +1,78 @@
+
+//AUTOMATED_MEASURES
+{
+  "existingHvacHeatingSystem": { //This object covers the singular predefined system providing heating in the base building, including a heat pump.
+    "keep": false, // keeps existing heating system as is, including load percentage. Using this flag indicates that there are no changes to heating at all. Optional.
+    "remove": true, // completely removes existing heating system and new system(s) must cover 100% of load or specify loadGapPercentage. Default = false. This property will override anything in adjust object.
+    "adjust": {
+      "heatLoadPercentage": 0.2,
+      "backup": true // indicates the existing heating system is being kept, but switched to be a backup system. Either this OR heatLoadPercentage can be defined.
+    },
+    "costs": [ COST ] // refer to the Cost schema below
+  },
+  "existingHvacCoolingSystem": {
+    "remove": true, // completely removes existing cooling system and new system(s) must cover 100% of load or specify loadGapPercentage. Default = false. This property will override anything in adjust object.
+    "adjust": {
+      "coolLoadPercentage": 0.2
+    },
+    "costs": [ COST ] // refer to the Cost schema below
+  },
+  "existingHvacDistributionSystem": {
+    "remove": true,
+    "adjust": {  // Values can be defined and will only be applied if applicable. For example, if there isn't airDistribution, then leakageValue won't be applied.
+      "leakageValue": 0.1,
+      "insulationRValue": 5
+    },
+    "costs": [ COST ] // refer to the Cost schema below
+  },
+  "newHeatPump": {
+    "systemType": "", //("heat pump" | "mini-split" | "air-to-air")
+    // "heat pump" is a generic air source heat pump that will be automatically determined based on the existing conditions in the building
+    "performanceClass": "", //("federal minimally compliant" | "ENERGY STAR compliant")
+    "heatLoadPercentage": 0.8, //defaults to 1 if undefined
+    "coolLoadPercentage": 0.8,  //defaults to 1 if undefined
+    "costs": [ COST ] // refer to the Cost schema below
+  },
+  "existingWaterHeatingSystem": {
+    "keep": true,
+    "adjust": {
+      "dhwLoadPercentage": 0.8
+    },
+    "costs": [ COST ] // refer to the Cost schema below
+  },
+  "newWaterHeatingSystem": {
+    "systemType": "storage water heater", // ( “storage water heater” | “instantaneous water heater” | “heat pump water heater”)
+    "efficiencyClass": "", //("standard" | "high")
+    "dhwLoadPercentage": 1.0,
+    "costs": [ COST ] // refer to the Cost schema below
+  },
+  "thermostat": {
+    "adjust": {
+      "heatingSeason": {
+        "setpoint": 68,
+        "setback": 64,
+        "setbackStartHour": 23,
+        "totalWeeklySetbackHours": 49,
+      },
+      "coolingSeason": {
+        "setpoint": 78,
+        "setback": 82,
+        "setbackStartHour": 9,
+        "totalWeeklySetbackHours": 42,
+      },
+    },
+    "costs": [ COST ] // refer to the Cost schema below
+  },
+  "airSealing": {
+    "adjust": {
+      "rate": 1.0 //optional. If undefined, system default is applied
+    },
+    "costs": [ COST ] // refer to the Cost schema below
+  },
+  "atticInsulation": {
+    "adjust": {
+      "floorAssemblyEffectiveRValue": 50.6 //optional. If undefined, system default is applied
+    },
+    "costs": [ COST ] // refer to the Cost schema below
+  }
+}

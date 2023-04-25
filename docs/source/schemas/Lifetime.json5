@@ -1,0 +1,10 @@
+//LIFETIME
+{
+  "replacementCost": 1000, // required if status quo timeline requested. cost to replace system with a near-equivalent that is available today
+
+  // Two of the following three properties can be optionally defined to place an existing system on the status quo timeline.
+  // Default values are based on system type and year built.
+  "effectiveUsefulLifeDays": 5475,
+  "installedDate": "2018-01-01",
+  "endOfLifeDate": "2032-12-31"
+}

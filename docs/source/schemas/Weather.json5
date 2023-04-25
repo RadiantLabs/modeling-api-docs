@@ -1,0 +1,8 @@
+// WEATHER
+{
+  "label": "some-weather-file-label",
+  "type": "epw", // ("epw")
+  "encoding": "base64", // ("base64")
+  "data": "SGVsbG8sIFdvcmxkIQ==",
+  "checksum": "addf120b430021c36c232caaef8d926aea2acd6b" // optional, in SHA256
+}

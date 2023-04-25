@@ -1,0 +1,13 @@
+// LOAN
+{
+  "id": "Loan1",
+  "label": "USER_DEFINED_1",
+  "description": "Colorado loan loss reserve",
+  "termInMonths": 240,
+  "interestRateAnnual": 0.07,
+  "principalValue": 20000, // if null, total cost of COST schemas referencing this id
+  "downPayment": 2000,
+  "closingCost": 1000,
+  "minLoanAmount": 2000, //optional
+  "maxLoanAmount": 100000 //optional
+}

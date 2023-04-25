@@ -1,0 +1,5 @@
+// ELECTRICAL
+{
+  "id": "ElectricPanel1",
+  "lifetime": LIFETIME // optional, refer to lifetime schema below
+}

@@ -1,0 +1,42 @@
+// GLOBAL_CONTROLS
+{
+  "debug": true,  // defaults to false, provide all the debugging info for development and integration
+
+  "includeInputs": true, // defaults to true, mirror user inputs in the response
+
+  "includeDefaultAssumptions": false, // defaults to false
+
+  "includeBaseResults": true, // defaults to true
+
+  "includeTypical": false, // defaults to false
+
+  // Instruct which financial calculations will be included in the response.
+  // If not provided, the default values are "difference", "installationCosts" and "energyCosts".
+  // To return no financial analysis altogether, pass in an empty array ([]).
+  //
+  "financialAnalysisOptions": ["difference", "installedCosts", "energyCosts"], // ("ROI" | "cashflow" | "SIR" | "MIRR" | "difference" | "installedCosts" | "energyCosts")
+
+  // Energy, costs and emissions data resolution.
+  // If not provided, the default value is only "annual".
+  //
+  "resolution": ["annual", "monthly"], // ("hourly" | "monthly" | "annual") //defaults to annual
+
+  "includeStatusQuoTimeline": false, // defaults to false
+
+  // Anchor timelines and models to a start date.
+  // * Date value is in the YYYY-MM-DD format
+  // * Date value can be set in the past.
+  // * All models' "appliedOn" dates must happen after this value.
+  // * If not provided, the default value is the current date.
+  //
+  "timelineStartDate": "2022-12-15",
+
+  // Length of the timelines in years. Used to compute costs, differences and the financial analysis.
+  // If not provided, the default value is 1 year.
+  //
+  "timelineDurationInYears": 1,
+
+  "units": UNITS, // optional, refer to the Units schema below
+
+  "escalationRates": ESCALATION_RATES, // optional, refer to the Escalation Rates schema below
+}

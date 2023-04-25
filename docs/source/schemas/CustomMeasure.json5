@@ -1,0 +1,6 @@
+// CUSTOM_MEASURE
+{
+  "label": "kitchen counter replacement",
+  "description": "replace laminate counters with marble",
+  "costs": [ COST ], // refer to the Cost schema below"costs": [ COST ], // refer to the Cost schema below
+}

@@ -1,0 +1,6 @@
+//VARAIBLE_COST - this will only be available internally (e.g. for analytics). Users must define fixedCosts.
+{
+  "rate": 2.0,
+  "multiplierKey": improvedBuilding.conditionedFloorArea,
+  "multiplierValue": 2413
+}
