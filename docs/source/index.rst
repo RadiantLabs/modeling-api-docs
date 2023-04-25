@@ -16,4 +16,5 @@ Contents
 .. toctree::
 
    usage
+   automated_measures
    api
