@@ -16,11 +16,18 @@ Endpoints
 
 ``POST /v1/timelines``
 
-.. code-block:: json
+Top-level request payload
 
-   {
-      "test": "test"
-   }
+.. include:: schemas/TopLevelRequestPayload.json5
+   :code: json
+
+.. _schemas:
+
+Schemas
+-------
+
+.. _address_components:
 
 .. include:: schemas/AddressComponents.json
    :code: json
+
