@@ -21,3 +21,5 @@ Endpoints
    {
       "test": "test"
    }
+
+.. include:: schemas/AddressComponents.json

@@ -1,0 +1,8 @@
+// ADDRESS_COMPONENTS
+{
+  "addressLine1": "123 Main St",
+  "addressLine2": "Unit A",
+  "city": "Cincinnati",
+  "stateAbbreviation": "OH",
+  "zipCode": "45208"
+}
