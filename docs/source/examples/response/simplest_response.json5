@@ -1,0 +1,166 @@
+{
+  "addressFoundFull": "501 RANDALL RD, BALLSTON SPA, NY 12020",
+  "addressFound": {
+    "primaryNumber": "501",
+    "streetName": "Randall",
+    "streetSuffix": "Rd",
+    "cityName": "Ballston Spa",
+    "stateAbbreviation": "NY",
+    "zipcode": "12020",
+  },
+  "baseBuilding": {},
+  "globalControls": {},
+  "defaultModelControls": {},
+  "timelines": [
+    {
+      "id": "896fd222-003d-4c86-92ab-bed220d4bc8e",
+      "radiantId": "39cc8695-0010-4334-8efc-6f23a17c7493",
+      "label": "mighty-linx",
+      "models": [
+        {
+          "id": "c1c6bc5c-0d4d-401e-96c6-aeb881eacb73",
+          "radiantId": "d32cf3d2-209d-40e3-8595-13bdd10d88ce",
+          "label": "BASE",
+          // "requestedImprovedBuilding" is missing from the BASE model
+          // "appliedImprovedBuilding" is missing from the BASE model
+          // "appliedImprovedBuildingDifferences" is missing from the BASE model
+          // "modelCosts" is missing from the BASE model
+          "energyTotals": {
+            "monthly": {
+              "coalTotal": {
+                "MBtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              },
+              "electricityTotal": {
+                "kWh": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                "MBtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              },
+              "fuelOilTotal": {
+                "MBtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              },
+              "naturalGasTotal": {
+                "MBtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              },
+              "propaneTotal": {
+                "MBtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              },
+              "woodCordTotal": {
+                "MBtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              },
+              "woodPelletsTotal": {
+                "MBtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              },
+              "total": {
+                "MBtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              }
+            },
+            "annual": {
+              "coalTotal": {
+                "MBtu": [0.0]
+              },
+              "electricityTotal": {
+                "kWh": [0.0],
+                "MBtu": [0.0]
+              },
+              "fuelOilTotal": {
+                "MBtu": [0.0]
+              },
+              "naturalGasTotal": {
+                "MBtu": [0.0]
+              },
+              "propaneTotal": {
+                "MBtu": [0.0]
+              },
+              "woodCordTotal": {
+                "MBtu": [0.0]
+              },
+              "woodPelletsTotal": {
+                "MBtu": [0.0]
+              },
+              "total": {
+                "MBtu": [0.0]
+              }
+            },
+          },
+          "energyCosts": {
+            "monthly": {
+              "coalTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              "electricityTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              "fuelOilTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              "naturalGasTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              "propaneTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              "woodCordTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              "woodPelletsTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              "total": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+            },
+            "annual": {
+              "coalTotal": [0.0],
+              "electricityTotal": [0.0],
+              "fuelOilTotal": [0.0],
+              "naturalGasTotal": [0.0],
+              "propaneTotal": [0.0],
+              "woodCordTotal": [0.0],
+              "woodPelletsTotal": [0.0],
+              "total": [0.0],
+            },
+          },
+          "emissionTotals": {
+            "monthly": {
+              "coalTotal": {
+                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              },
+              "electricityTotal": {
+                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              },
+              "fuelOilTotal": {
+                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              },
+              "naturalGasTotal": {
+                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              },
+              "propaneTotal": {
+                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              },
+              "woodCordTotal": {
+                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              },
+              "woodPelletsTotal": {
+                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              },
+              "total": {
+                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              }
+            },
+            "annual": {
+              "coalTotal": {
+                "co2": [0.0]
+              },
+              "electricityTotal": {
+                "co2": [0.0]
+              },
+              "fuelOilTotal": {
+                "co2": [0.0]
+              },
+              "naturalGasTotal": {
+                "co2": [0.0]
+              },
+              "propaneTotal": {
+                "co2": [0.0]
+              },
+              "woodCordTotal": {
+                "co2": [0.0]
+              },
+              "woodPelletsTotal": {
+                "co2": [0.0]
+              },
+              "total": {
+                "co2": [0.0]
+              }
+            }
+          }
+        }
+      ],
+      "totalEnergyCosts": 0.0,
+      "totalCO2": 0.0,
+    }
+  ]
+}

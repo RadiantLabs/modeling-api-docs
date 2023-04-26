@@ -6,8 +6,15 @@ Usage
 Introduction
 ------------
 
-Modeling
---------
+.. include:: examples/request/simplest.json
+   :code: javascript
+
+.. include:: examples/response/simplest_response.json5
+   :code: js
+
+..
+  Modeling
+  --------
 
 Use cases
 ---------
