@@ -6,5 +6,5 @@
 
   "comparedTo": "hilarious-hyena", // optional, needs to exist in the current payload, if missing it defaults to STATUS_QUO
 
-  "models": [ MODEL ], // refer to the Model schema below
+  "models": [ MODEL ], // refer to the Model schema
 }

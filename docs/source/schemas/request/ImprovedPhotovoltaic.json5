@@ -11,5 +11,5 @@
   "yearModulesManufactured": 2022, // >1600
   "remove": false,
   "useDefaults": [],
-  "costs": [ COST ], // refer to the Cost schema below
+  "costs": [ COST ], // refer to the Cost schema
 }

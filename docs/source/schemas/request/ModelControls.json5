@@ -21,7 +21,7 @@
   //
   "occupancyCalculationType": "asset",
 
-  "energyCostRates": ENERGY_COST_RATES, // optional, refer to the Energy Costs Rates schema below
+  "energyCostRates": ENERGY_COST_RATES, // optional, refer to the Energy Costs Rates schema
 
-  "weather": WEATHER, // optional, refer to Weather schema below
+  "weather": WEATHER, // optional, refer to Weather schema
 }

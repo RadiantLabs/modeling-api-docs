@@ -14,7 +14,7 @@
       "floorAssemblyEffectiveRValue": 50.6,
       "isVented": true,
       "useDefaults": [],
-      "costs": [ COST ], // refer to the Cost schema below
+      "costs": [ COST ], // refer to the Cost schema
     }
   ],
 
@@ -22,7 +22,7 @@
     {
       "id": "Roof1",
       "assemblyEffectiveRValue": 2.3,
-      "costs": [ COST ], // refer to the Cost schema below
+      "costs": [ COST ], // refer to the Cost schema
     }
   ],
 
@@ -41,7 +41,7 @@
       "id": "Wall1",
       "assemblyEffectiveRValue": 18.9,
       "useDefaults": [],
-      "costs": [ COST ], // refer to the Cost schema below
+      "costs": [ COST ], // refer to the Cost schema
     }
   ],
 }

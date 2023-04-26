@@ -10,12 +10,12 @@
     "windowToWallFraction": 0.14,
     "yearBuilt": 1999
   },
-  "enclosure": ENCLOSURE, // refer to Enclosure schema below
+  "enclosure": ENCLOSURE, // refer to Enclosure schema
   "systems": {
-    "hvac": HVAC, // refer to HVAC schema below
-    "waterHeating": WATER_HEATING, // refer to Water Heating schema below
-    "electrical": ELECTRICAL, // refer to Electrical schema below
-    "photovoltaic": [ PHOTOVOLTAIC ], // refer to Photovoltaic schema below
+    "hvac": HVAC, // refer to HVAC schema
+    "waterHeating": WATER_HEATING, // refer to Water Heating schema
+    "electrical": ELECTRICAL, // refer to Electrical schema
+    "photovoltaic": [ PHOTOVOLTAIC ], // refer to Photovoltaic schema
   },
-  "appliances": APPLIANCES // refer to Appliances schema below
+  "appliances": APPLIANCES // refer to Appliances schema
 }

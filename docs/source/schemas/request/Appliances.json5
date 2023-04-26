@@ -7,7 +7,7 @@
       "combinedEnergyFactor": 3.73,
       "isVented": true,
       "ventedFlowRate": 150,
-      "lifetime": LIFETIME // optional, refer to Lifetime schema below
+      "lifetime": LIFETIME // optional, refer to Lifetime schema
     }
   ],
 
@@ -16,7 +16,7 @@
       "id": "CookingRange1",
       "fuel": "electricity",
       "isInduction": false,
-      "lifetime": LIFETIME // optional, refer to Lifetime schema below
+      "lifetime": LIFETIME // optional, refer to Lifetime schema
     }
   ]
 }

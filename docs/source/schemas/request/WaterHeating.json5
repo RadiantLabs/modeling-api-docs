@@ -14,7 +14,7 @@
       "energyFactor": 0.92,
       "uniformEnergyFactor": null,
       "hotWaterTemperature": 125.0,
-      "lifetime": LIFETIME // optional, refer to lifetime schema below
+      "lifetime": LIFETIME // optional, refer to lifetime schema
     }
   ]
 }

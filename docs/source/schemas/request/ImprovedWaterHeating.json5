@@ -14,7 +14,7 @@
       "hotWaterTemperature": 125.0,
       "remove": false,
       "useDefaults": [],
-      "costs": [ COST ], // refer to the Cost schema below
+      "costs": [ COST ], // refer to the Cost schema
     }
   ]
 }

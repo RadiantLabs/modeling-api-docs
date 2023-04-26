@@ -11,7 +11,7 @@
       "remove": false, //if true, system is removed and any other properties defined are ignored.
       "keep": true,
       "useDefaults": [],
-      "costs": [ COST ], // refer to the Cost schema below
+      "costs": [ COST ], // refer to the Cost schema
     }
   ],
 
@@ -22,7 +22,7 @@
       "isInduction": false,
       "remove": false, //if true, system is removed and any other properties defined are ignored.
       "useDefaults": [],
-      "costs": [ COST ], // refer to the Cost schema below
+      "costs": [ COST ], // refer to the Cost schema
     }
   ]
 }

@@ -36,7 +36,7 @@
   //
   "timelineDurationInYears": 1,
 
-  "units": UNITS, // optional, refer to the Units schema below
+  "units": UNITS, // optional, refer to the Units schema
 
-  "escalationRates": ESCALATION_RATES, // optional, refer to the Escalation Rates schema below
+  "escalationRates": ESCALATION_RATES, // optional, refer to the Escalation Rates schema
 }

@@ -21,7 +21,7 @@
       "area": 1370,
       "pitch": 6,
       "assemblyEffectiveRValue": 2.3,
-      "lifetime": LIFETIME // optional, refer to Lifetime schema below
+      "lifetime": LIFETIME // optional, refer to Lifetime schema
     }
   ],
 

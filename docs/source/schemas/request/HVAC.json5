@@ -11,7 +11,7 @@
       "coolEfficiency": 12,
       "coolEfficiencyUnits": "SEER", //("percent" | "EER" | "CEER" | "SEER" | *"SEER2") //SEER2 coming soon
       "coolLoadPercentage": 0.8, // required. Sum of coolLoadPercentage across all systems plus unmetCoolLoadPercentage must equal 1.
-      "lifetime": LIFETIME // optional, refer to Lifetime schema below
+      "lifetime": LIFETIME // optional, refer to Lifetime schema
     }
   ],
 
@@ -25,7 +25,7 @@
       "heatEfficiency": 0.8,
       "heatEfficiencyUnits": "AFUE", //("AFUE" | "percent")
       "heatLoadPercentage": 0.8, // required. Sum of heatLoadPercentage across all systems plus unmetHeatLoadPercentage must equal 1.
-      "lifetime": LIFETIME // optional, refer to Lifetime schema below
+      "lifetime": LIFETIME // optional, refer to Lifetime schema
     }
   ],
 
@@ -54,7 +54,7 @@
       "coolEfficiencyUnits": "SEER",  //("SEER" | *"SEER2") //SEER2 coming soon
       "heatLoadPercentage": 0.8, // required. Sum of heatLoadPercentage across all systems plus unmetHeatLoadPercentage must equal 1.
       "coolLoadPercentage": 0.8, // required. Sum of coolLoadPercentage across all systems plus unmetCoolLoadPercentage must equal 1.
-      "lifetime": LIFETIME // optional, refer to Lifetime schema below
+      "lifetime": LIFETIME // optional, refer to Lifetime schema
     }
   ],
 
@@ -111,7 +111,7 @@
         "setbackStartHour": null,
         "totalWeeklySetbackHours": null,
       },
-      "lifetime": LIFETIME // optional, refer to Lifetime schema below
+      "lifetime": LIFETIME // optional, refer to Lifetime schema
     }
   ],
   "coolLoadGapPercentage": 0.2, // required if the sum of all systems' coolLoadPercentage is less than 1.0.
