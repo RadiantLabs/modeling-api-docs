@@ -6,11 +6,11 @@ Usage
 Introduction
 ------------
 
-.. include:: examples/request/simplest.json
-   :code: javascript
+.. literalinclude:: examples/request/simplest.json
+   :language: javascript
 
-.. include:: examples/response/simplest_response.json5
-   :code: js
+.. literalinclude:: examples/response/simplest_response.json5
+   :language: javascript
 
 ..
    Modeling

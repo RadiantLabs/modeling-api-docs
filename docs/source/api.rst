@@ -41,16 +41,16 @@ Schemas
 Address Components
 ******************
 
-.. include:: schemas/request/AddressComponents.json5
-   :code: json
+.. literalinclude:: schemas/request/AddressComponents.json5
+   :language: javascript
 
 .. _appliances:
 
 Appliances
 **********
 
-.. include:: schemas/request/Appliances.json5
-   :code: json
+.. literalinclude:: schemas/request/Appliances.json5
+   :language: javascript
 
 .. _automated_measures:
 
@@ -65,245 +65,245 @@ Automated Measures
 Base Building
 *************
 
-.. include:: schemas/request/BaseBuilding.json5
-   :code: json
+.. literalinclude:: schemas/request/BaseBuilding.json5
+   :language: javascript
 
 .. _cost:
 
 Cost
 ****
 
-.. include:: schemas/request/Cost.json5
-   :code: json
+.. literalinclude:: schemas/request/Cost.json5
+   :language: javascript
 
 .. _custom_measure:
 
 Custom Measure
 **************
 
-.. include:: schemas/request/CustomMeasure.json5
-   :code: json
+.. literalinclude:: schemas/request/CustomMeasure.json5
+   :language: javascript
 
 .. _electrical:
 
 Electrical
 **********
 
-.. include:: schemas/request/Electrical.json5
-   :code: json
+.. literalinclude:: schemas/request/Electrical.json5
+   :language: javascript
 
 .. _emission_totals:
 
 Emission Totals
 ***************
 
-.. include:: schemas/response/EmissionTotals.json5
-   :code: json
+.. literalinclude:: schemas/response/EmissionTotals.json5
+   :language: javascript
 
 .. _emission_totals_per_fuel_time_series:
 
 Emission Totals per Fuel Time Series
 ************************************
 
-.. include:: schemas/response/EmissionTotalsPerFuelTimeSeries.json5
-   :code: json
+.. literalinclude:: schemas/response/EmissionTotalsPerFuelTimeSeries.json5
+   :language: javascript
 
 .. _enclosure:
 
 Enclosure
 *********
 
-.. include:: schemas/request/Enclosure.json5
-   :code: json
+.. literalinclude:: schemas/request/Enclosure.json5
+   :language: javascript
 
 .. _energy_costs:
 
 Energy Costs
 ************
 
-.. include:: schemas/response/EnergyCosts.json5
-   :code: json
+.. literalinclude:: schemas/response/EnergyCosts.json5
+   :language: javascript
 
 .. _energy_costs_per_fuel_time_series:
 
 Energy Costs per Fuel Time Series
 *********************************
 
-.. include:: schemas/response/EnergyCostsPerFuelTimeSeries.json5
-   :code: json
+.. literalinclude:: schemas/response/EnergyCostsPerFuelTimeSeries.json5
+   :language: javascript
 
 .. _energy_costs_rates:
 
 Energy Costs Rates
 ******************
 
-.. include:: schemas/request/EnergyCostsRates.json5
-   :code: json
+.. literalinclude:: schemas/request/EnergyCostsRates.json5
+   :language: javascript
 
 .. _energy_totals:
 
 Energy Totals
 *************
 
-.. include:: schemas/response/EnergyTotals.json5
-   :code: json
+.. literalinclude:: schemas/response/EnergyTotals.json5
+   :language: javascript
 
 .. _energy_totals_per_fuel_time_series:
 
 Energy Totals per Fuel Time Series
 **********************************
 
-.. include:: schemas/response/EnergyTotalsPerFuelTimeSeries.json5
-   :code: json
+.. literalinclude:: schemas/response/EnergyTotalsPerFuelTimeSeries.json5
+   :language: javascript
 
 .. _escalation_rates:
 
 Escalation Rates
 ****************
 
-.. include:: schemas/request/EscalationRates.json5
-   :code: json
+.. literalinclude:: schemas/request/EscalationRates.json5
+   :language: javascript
 
 .. _global_controls:
 
 Global Controls
 ***************
 
-.. include:: schemas/request/GlobalControls.json5
-   :code: json
+.. literalinclude:: schemas/request/GlobalControls.json5
+   :language: javascript
 
 .. _hvac:
 
 HVAC
 ****
 
-.. include:: schemas/request/HVAC.json5
-   :code: json
+.. literalinclude:: schemas/request/HVAC.json5
+   :language: javascript
 
 .. _improved_building:
 
 Improved Building
 *****************
 
-.. include:: schemas/request/ImprovedBuilding.json5
-   :code: json
+.. literalinclude:: schemas/request/ImprovedBuilding.json5
+   :language: javascript
 
 .. _incentive:
 
 Incentive
 *********
 
-.. include:: schemas/request/Incentive.json5
-   :code: json
+.. literalinclude:: schemas/request/Incentive.json5
+   :language: javascript
 
 .. _lifetime:
 
 Lifetime
 ********
 
-.. include:: schemas/request/Lifetime.json5
-   :code: json
+.. literalinclude:: schemas/request/Lifetime.json5
+   :language: javascript
 
 .. _loan:
 
 Loan
 ****
 
-.. include:: schemas/request/Loan.json5
-   :code: json
+.. literalinclude:: schemas/request/Loan.json5
+   :language: javascript
 
 .. _model:
 
 Model
 *****
 
-.. include:: schemas/request/Model.json5
-   :code: json
+.. literalinclude:: schemas/request/Model.json5
+   :language: javascript
 
 .. _model_controls:
 
 Model Controls
 **************
 
-.. include:: schemas/request/ModelControls.json5
-   :code: json
+.. literalinclude:: schemas/request/ModelControls.json5
+   :language: javascript
 
 .. _photovoltaic:
 
 Photovoltaic
 *************
 
-.. include:: schemas/request/Photovoltaic.json5
-   :code: json
+.. literalinclude:: schemas/request/Photovoltaic.json5
+   :language: javascript
 
 .. _response_model:
 
 Response Model
 **************
 
-.. include:: schemas/response/ResponseModel.json5
-   :code: json
+.. literalinclude:: schemas/response/ResponseModel.json5
+   :language: javascript
 
 .. _response_timeline:
 
 Response Timeline
 *****************
 
-.. include:: schemas/response/ResponseTimeline.json5
-   :code: json
+.. literalinclude:: schemas/response/ResponseTimeline.json5
+   :language: javascript
 
 .. _timeline:
 
 Timeline
 ********
 
-.. include:: schemas/request/Timeline.json5
-   :code: json
+.. literalinclude:: schemas/request/Timeline.json5
+   :language: javascript
 
 .. _typical:
 
 Typical
 *******
 
-.. include:: schemas/response/Typical.json5
-   :code: json
+.. literalinclude:: schemas/response/Typical.json5
+   :language: javascript
 
 .. _units:
 
 Units
 *****
 
-.. include:: schemas/request/Units.json5
-   :code: json
+.. literalinclude:: schemas/request/Units.json5
+   :language: javascript
 
 .. _variable_cost:
 
 Variable Cost
 *************
 
-.. include:: schemas/request/VariableCost.json5
-   :code: json
+.. literalinclude:: schemas/request/VariableCost.json5
+   :language: javascript
 
 .. _water_heating:
 
 Water Heating
 *************
 
-.. include:: schemas/request/WaterHeating.json5
-   :code: json
+.. literalinclude:: schemas/request/WaterHeating.json5
+   :language: javascript
 
 .. _weather:
 
 Weather
 *******
 
-.. include:: schemas/request/Weather.json5
-   :code: json
+.. literalinclude:: schemas/request/Weather.json5
+   :language: javascript
 
 .. _weather_metadata:
 
 Weather Metadata
 ****************
 
-.. include:: schemas/response/WeatherMetadata.json5
-   :code: json
+.. literalinclude:: schemas/response/WeatherMetadata.json5
+   :language: javascript
