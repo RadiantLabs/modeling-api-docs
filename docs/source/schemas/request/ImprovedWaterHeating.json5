@@ -1,0 +1,20 @@
+// WATER_HEATING
+{
+  "waterHeatingSystems": [
+    {
+      "id": "WaterHeater1",
+      "systemType": "heat pump water heater", //(“storage water heater” | “instantaneous water heater” | “heat pump water heater” | “space-heating boiler with storage tank” | “space-heating boiler with tankless coil”)
+      "connectedHeatingId": "",
+      "fuel": "electricity",  //("electricity" | "natural gas" | "fuel oil" | "propane" | "coal" | "wood" | "wood pellets")
+      "tankVolume": 80,
+      "dhwLoadPercentage": 1.0, // required, sum across all systems must equal 1
+      "heatCapacityBtuPerHour": null,
+      "energyFactor": 3.5,
+      "uniformEnergyFactor": null,
+      "hotWaterTemperature": 125.0,
+      "remove": false,
+      "useDefaults": [],
+      "costs": [ COST ], // refer to the Cost schema below
+    }
+  ]
+}

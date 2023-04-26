@@ -1,0 +1,6 @@
+// ELECTRICAL
+{
+  "id": "ElectricPanel1",
+  "remove": false,
+  "costs": [ COST ], // refer to the Cost schema below
+}

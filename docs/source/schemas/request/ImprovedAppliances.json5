@@ -1,0 +1,28 @@
+// APPLIANCES
+{
+  "clothesDryers": [ // limited to 1
+    {
+      "id": "ClothesDryer1",
+      "existing": true, //optional flag to identify existing system if base was undefined
+      "fuel": "electricity",
+      "combinedEnergyFactor": 3.73,
+      "isVented": true,
+      "ventedFlowRate": 150,
+      "remove": false, //if true, system is removed and any other properties defined are ignored.
+      "keep": true,
+      "useDefaults": [],
+      "costs": [ COST ], // refer to the Cost schema below
+    }
+  ],
+
+  "cookingRanges": [ // limited to 1
+    {
+      "id": "CookingRange1",
+      "fuel": "electricity",
+      "isInduction": false,
+      "remove": false, //if true, system is removed and any other properties defined are ignored.
+      "useDefaults": [],
+      "costs": [ COST ], // refer to the Cost schema below
+    }
+  ]
+}

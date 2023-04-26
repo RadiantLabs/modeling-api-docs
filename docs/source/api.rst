@@ -183,12 +183,60 @@ HVAC
 .. literalinclude:: schemas/request/HVAC.json5
    :language: javascript
 
+.. _improved_appliances:
+
+Improved Appliances
+*******************
+
+.. literalinclude:: schemas/request/ImprovedAppliances.json5
+   :language: javascript
+
 .. _improved_building:
 
 Improved Building
 *****************
 
 .. literalinclude:: schemas/request/ImprovedBuilding.json5
+   :language: javascript
+
+.. _improved_electrical:
+
+Improved Electrical
+*******************
+
+.. literalinclude:: schemas/request/ImprovedElectrical.json5
+   :language: javascript
+
+.. _improved_enclosure:
+
+Improved Enclosure
+******************
+
+.. literalinclude:: schemas/request/ImprovedEnclosure.json5
+   :language: javascript
+
+.. _improved_hvac:
+
+Improved HVAC
+*************
+
+.. literalinclude:: schemas/request/ImprovedHVAC.json5
+   :language: javascript
+
+.. _improved_photovoltaic:
+
+Improved Photovoltaic
+*********************
+
+.. literalinclude:: schemas/request/ImprovedPhotovoltaic.json5
+   :language: javascript
+
+.. _improved_water_heating:
+
+Improved Water Heating
+**********************
+
+.. literalinclude:: schemas/request/ImprovedWaterHeating.json5
    :language: javascript
 
 .. _incentive:

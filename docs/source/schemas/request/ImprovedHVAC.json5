@@ -1,0 +1,143 @@
+// HVAC
+{
+  "hvacCoolingSystems": [
+    {
+      "id": "CentralAirConditioner1", //required
+      "connectedDistributionId": "HVACDistributionFurnaceAndCentralAC1", // required
+      "systemType": "central air conditioner", // required ("central air conditioner" | "room air conditioner" | "evaporative cooler" | "packaged terminal air conditioner" | "mini-split")
+      "coolCapacityBtuPerHour": 1000.0, //optional. If missing, model will autosize. See Model Controls for autosizing settings.
+      "compressorType": "single stage",
+      "coolEfficiency": 12,
+      "coolEfficiencyUnits": "SEER",
+      "coolLoadPercentage": 0.8, // required. Sum of coolLoadPercentage across all systems plus unmetCoolLoadPercentage must equal 1.
+      "remove": true, // if true, system is removed and any other properties defined are ignored.
+      "useDefaults": [],
+      "costs": [ COST ], // refer to the Cost schema below
+    }
+  ],
+
+  "hvacHeatingSystems": [
+    {
+      "id": "Boiler1", //required
+      "connectedDistributionId": null, // required for type "furnace" and "boiler"
+      "systemType": "boiler", // required ("electric resistance" | "furnace" | "wall furnace" | "boiler" | "stove" | "portable heater" | "fixed heater" | "fireplace")
+      "fuel": "natural gas", // ("electricity" | "natural gas" | "fuel oil" | "propane" | "coal" | "wood" | "wood pellets")
+      "heatCapacityBtuPerHour": 1000.0, //optional. If missing, model will autosize. See Model Controls for autosizing settings.
+      "heatEfficiency": 0.8,
+      "heatEfficiencyUnits": "AFUE",
+      "heatLoadPercentage": 0.8, // required. Sum of heatLoadPercentage across all systems plus unmetHeatLoadPercentage must equal 1.
+      "remove": true, //if true, system is removed and any other properties defined are ignored.
+      "useDefaults": [],
+      "costs": [ COST ], // refer to the Cost schema below
+
+    }
+  ],
+
+  "hvacHeatPumps": [
+    {
+      "id": "ASHP1", //required
+      "connectedDistributionId": "HVACDistributionASHP1", //required for air-to-air and ground-to-air
+      "systemType": "air-to-air", //required //("mini-split" | "air-to-air" | "ground-to-air")
+      "compressorType": "variable speed",
+      "backupSystem": {
+        "systemType": "integrated", // ("integrated" | "separate")
+        "heatingSwitchoverTemp": 10,
+        //required properties if systemType = "integrated"
+        "fuel": "natural gas", // ("electricity" | "natural gas" | "fuel oil" | "propane" | "coal" | "wood" | "wood pellets")
+        "heatEfficiency": 0.8,
+        "heatEfficiencyUnits": "AFUE", //("AFUE" | "percent")
+        "heatCapacityBtuPerHour": 2000,
+        //required properties if systemType = "separate"
+        "backupHvacId": "Boiler1"
+      },
+      "heatCapacityBtuPerHour": 1000.0,
+      "coolCapacityBtuPerHour": 1000.0,
+      "heatEfficiency": 10,
+      "heatEfficiencyUnits": "HSPF",
+      "coolEfficiency": 19,
+      "coolEfficiencyUnits": "SEER",
+      "heatLoadPercentage": 0.8, //required  // If both heatLoadPercentage and coolLoadPercentage are 0, the system is being removed.
+      "coolLoadPercentage": 0.8, //required  // If both heatLoadPercentage and coolLoadPercentage are 0, the system is being removed.
+      "remove": false, // if true, system is removed and any other properties defined are ignored.
+      "useDefaults": [],
+      "costs": [ COST ], // refer to the Cost schema below
+
+    }
+  ],
+
+  "hvacDistributionSystems": {
+
+    "airDistributionSystems": [
+      {
+        "id": "HVACDistributionFurnaceAndCentralAC1",
+        "systemType": "regular velocity", // ("regular velocity" | "gravity"),
+        "numberOfReturnRegisters": 2,
+        "conditionedFloorAreaServed": 3456,
+        "remove": false, //if true, system is removed and any other properties defined are ignored.
+        "useDefaults": [],
+        "costs": [ COST ], // refer to the Cost schema below
+        "ducts": [
+          {
+            "id": "HVACDistributionFurnaceAndCentral1Supply",
+            "systemType": "supply",
+            "insulationRValue": 0.0,
+            "leakageValue": 0.2,
+            "leakageUnits": "percent" // ("CFM25" | "CFM50" | "percent")
+            "location": "attic vented", // (“living space” | “basement conditioned” | “basement unconditioned” | “crawlspace unvented” | “crawlspace vented” | “attic unvented” | “attic vented” | “garage” | “outside” | “exterior wall” | “under slab” | “roof deck” | “other heated space” | “other non-freezing space”)
+            "remove": false, //if true, system is removed and any other properties defined are ignored.
+            "useDefaults": [],
+            "costs": [ COST ], // refer to the Cost schema below
+          },
+          {
+            "id": "HVACDistributionFurnaceAndCentral1Return",
+            "systemType": "return",
+            "insulationRValue": 0.0,
+            "leakageValue": 0.2,
+            "leakageUnits": "percent" // ("CFM25" | "CFM50" | "percent")
+            "location": "attic vented", // (“living space” | “basement conditioned” | “basement unconditioned” | “crawlspace unvented” | “crawlspace vented” | “attic unvented” | “attic vented” | “garage” | “outside” | “exterior wall” | “under slab” | “roof deck” | “other heated space” | “other non-freezing space”)
+            "remove": false, //if true, system is removed and any other properties defined are ignored.
+            "useDefaults": [],
+            "costs": [ COST ], // refer to the Cost schema below
+          },
+        ]
+      }
+    ],
+
+    "hydronicDistributionSystems": [
+      {
+        "id": "HVACDistributionBoiler1",
+        "systemType": "baseboard", // ("baseboard" | "radiator" | "radiant floor" | "radiant ceiling" | "water loop"),
+        "conditionedFloorAreaServed": 3456,
+        "remove": false, //if true, system is removed and any other properties defined are ignored.
+        "useDefaults": [],
+        "costs": [ COST ], // refer to the Cost schema below
+      }
+    ]
+  },
+
+  "hvacControlSystems": [ // limited to 1
+    {
+      "id": "HVACControl1",
+      "heatingSeason": {
+        "setpoint": 68,
+        "setback": 64,
+        "setbackStartHour": 23,
+        "totalWeeklySetbackHours": 49,
+      },
+      "coolingSeason": {
+        "setpoint": 78,
+        "setback": 82,
+        "setbackStartHour": 9,
+        "totalWeeklySetbackHours": 42,
+      },
+      "unmetCoolLoadPercentage": 0.2, // required if the sum of all systems' coolLoadPercentage is less than 1.0.
+      "unmetHeatLoadPercentage": 0.2, // required if the sum of all systems' heatLoadPercentage is less than 1.0
+      "remove": false, //if true, system is removed and any other properties defined are ignored.
+      "useDefaults": [],
+      "costs": [ COST ], // refer to the Cost schema below
+
+    }
+  ],
+  "coolLoadGapPercentage": 0.2, // required if the sum of all systems' coolLoadPercentage is less than 1.0.
+  "heatLoadGapPercentage": 0.0, // required if the sum of all systems' heatLoadPercentage is less than 1.0.
+}
