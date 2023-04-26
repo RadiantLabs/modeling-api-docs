@@ -26,7 +26,8 @@ High-level operations applied to the base building, without requiring a full imp
 
 See :ref:`automated_measures` for further details.
 
-Request hourly results
-**********************
+..
+   Request hourly results
+   **********************
 
-TBD
+   TBD

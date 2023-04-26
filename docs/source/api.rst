@@ -1,13 +1,16 @@
 API
 ===
 
-Overview
---------
+..
+   .. _overview:
 
-.. _authentication:
+   Overview
+   --------
 
-Authentication
---------------
+   .. _authentication:
+
+   Authentication
+   --------------
 
 .. _endpoints:
 
