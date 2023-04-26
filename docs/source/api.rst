@@ -21,15 +21,15 @@ POST /v1/timelines
 
 Top-level request payload
 
-.. include:: schemas/request/TopLevelRequestPayload.json5
-   :code: javascript
+.. literalinclude:: schemas/request/TopLevelRequestPayload.json5
+   :language: javascript
 
 .. _post_timelines_response:
 
 Top-level response payload
 
-.. include:: schemas/response/TopLevelResponsePayload.json5
-   :code: js
+.. literalinclude:: schemas/response/TopLevelResponsePayload.json5
+   :language: javascript
 
 .. _schemas:
 
@@ -56,10 +56,6 @@ Appliances
 
 Automated Measures
 ******************
-
-..
-   include schemas/request/AutomatedMeasures.json5
-   code: js
 
 .. literalinclude:: schemas/request/AutomatedMeasures.json5
    :language: javascript
