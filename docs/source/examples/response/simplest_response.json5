@@ -1,21 +1,16 @@
 {
   "addressFoundFull": "501 RANDALL RD, BALLSTON SPA, NY 12020",
-  "addressFound": {
-    "primaryNumber": "501",
-    "streetName": "Randall",
-    "streetSuffix": "Rd",
-    "cityName": "Ballston Spa",
+  "addressFoundComponents": {
+    "addressLine1": "501 Randall Rd",
+    "city": "Ballston Spa",
     "stateAbbreviation": "NY",
-    "zipcode": "12020",
+    "zipCode": "12020"
   },
-  "baseBuilding": {},
-  "globalControls": {},
-  "defaultModelControls": {},
   "timelines": [
     {
       "id": "896fd222-003d-4c86-92ab-bed220d4bc8e",
       "radiantId": "39cc8695-0010-4334-8efc-6f23a17c7493",
-      "label": "mighty-linx",
+      "label": "MIGHTY_LINX",
       "models": [
         {
           "id": "c1c6bc5c-0d4d-401e-96c6-aeb881eacb73",
@@ -23,7 +18,6 @@
           "label": "BASE",
           // "requestedImprovedBuilding" is missing from the BASE model
           // "appliedImprovedBuilding" is missing from the BASE model
-          // "appliedImprovedBuildingDifferences" is missing from the BASE model
           // "modelCosts" is missing from the BASE model
           "energyTotals": {
             "monthly": {

@@ -4,10 +4,10 @@
   "coal": "metric ton",     // ("MBtu" | "short ton" | "metric ton")
   "electricity": "kWh",     // ("MBtu" | "kWh")
   "fuelOil": "gallon",      // ("MBtu" | "gallon")
-  "naturalGas": "ccf"       // ("MBtu" | "therm" | "ccf")
+  "naturalGas": "ccf",      // ("MBtu" | "therm" | "ccf")
   "propane": "gallon",      // ("MBtu" | "gallon")
   "woodCord": "MBtu",       // ("MBtu")
   "woodPellets": "MBtu",    // ("MBtu")
-  "monetary": "USD"         // ("USD")
+  "monetary": "USD",        // ("USD")
   "emissions": "CO2"        // ("CO2")
 }
