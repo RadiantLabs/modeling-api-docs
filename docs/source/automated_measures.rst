@@ -51,6 +51,7 @@ Schema:
 
 Existing HVAC Cooling System
 ****************************
+This object covers the singular predefined system providing cooling in the base building, including a heat pump.
 
 Property: ``existingHvacCoolingSystem``
 
@@ -79,7 +80,7 @@ Schema:
 
 .. _existing_hvac_distribution_system:
 
-Existing Hvac Distribution System
+Existing HVAC Distribution System
 *********************************
 
 Property: ``existingHvacDistributionSystem``
@@ -104,11 +105,14 @@ Schema:
   ====================  =======  ===========  ==============================================
   Property              Type     Constraints  Description
   ====================  =======  ===========  ==============================================
-  ``leakageValue``      Double   >= 0.0
+  ``leakageUnits``      String   See [#]_     Duct leakage units
+  ``leakageValue``      Double   >= 0.0       Duct leakage value
   ``insulationRValue``  Double   >= 0.0
   ====================  =======  ===========  ==============================================
 
   Values can be defined and will only be applied if applicable. For example, if there isn't ``airDistribution``, then ``leakageValue`` won't be applied.
+  
+  .. [#] Units choices are CFM25, CFM50, or Percent.
 
 .. _existing_water_heating_system:
 
@@ -166,7 +170,7 @@ Schema:
   ``costs``               Array of :ref:`cost`                                                 No [#]_   Implied costs of measure
   ======================  ===================================================================  ========  ===================================
 
-  .. [#] ``heat-pump`` is a generic air source heat pump that will be automatically determined based on the existing conditions in the building.
+  .. [#] ``heat-pump`` is a generic air source heat pump that will be automatically determined based on the existing conditions in the building. If the existing building contains ducts, a central ducted ASHP will be defined. If no ducts exist, a ductless mini-split will be defined.
   .. [#] Defaults to ``1.0`` if not provided.
   .. [#] Defaults to ``1.0`` if not provided.
   .. [#] Defaults to ``[]`` if not provided.
@@ -184,7 +188,7 @@ Schema:
   Property               Type                                                                                           Required  Description
   =====================  =============================================================================================  ========  ===================================
   ``systemType``         One of ``storage-water-heater``, ``instantaneous-water-heater`` or ``heat-pump-water-heater``  Yes       Type of water heating system
-  ``efficiencyClass``    One of ``standard`` or ``high``                                                                Yes
+  ``efficiencyClass``    One of ``federal-minimally-compliant`` or ``energy-star-compliant``                            Yes
   ``dhwLoadPercentage``  Double                                                                                         No [#]_   DHW load for the new water heating system
   ``costs``              Array of :ref:`cost`                                                                           No [#]_   Implied costs of measure
   =====================  =============================================================================================  ========  ===================================
@@ -218,11 +222,15 @@ Schema:
 
 ``adjust`` schema for air sealing:
 
-  ========  ======  ===========  =======================================
-  Property  Type    Constraints  Description
-  ========  ======  ===========  =======================================
-  ``rate``  Double  > 0.0        If undefined, system default is applied
-  ========  ======  ===========  =======================================
+  ===================  ======  ===========  =======================================
+  Property             Type    Constraints  Description
+  ===================  ======  ===========  =======================================
+  ``rateUnit``         String  See [#]_     Units of air leakage rate. If undefined, system default "ACH" is applied
+  ``rate``             Double  > 0.0        Value of air leakage rate. If undefined, system default value is applied
+  ``housePressurePa``  Double  > 0.0        House pressure in Pa with respect to outside. If undefined, system default 50 Pa is applied.
+  ===================  ======  ===========  =======================================
+  
+  .. [#] rateUnit choices are ACH or CFM.
 
 .. _adjust_attic_insulation:
 
@@ -247,7 +255,7 @@ Schema:
   ================================  ======  ===========  =======================================
   Property                          Type    Constraints  Description
   ================================  ======  ===========  =======================================
-  ``floorAssemblyEffectiveRValue``  Double  > 0.0        If undefined, system default is applied
+  ``floorAssemblyEffectiveRValue``  Double  > 0.0        Effective R-value of attic floor assembly. If undefined, system default is applied
   ================================  ======  ===========  =======================================
 
 .. _adjust_thermostat:
@@ -282,8 +290,8 @@ Schema:
   ===========================  =======  ===========  ===========
   Property                     Type     Constraints  Description
   ===========================  =======  ===========  ===========
-  ``setpoint``                 Integer  > 0
-  ``setback``                  Integer  > 0
-  ``setbackStartHour``         Integer  > 0
-  ``totalWeeklySetbackHours``  Integer  > 0
+  ``setpoint``                 Integer  > 0          Season setpoint temperature
+  ``setback``                  Integer  > 0          Season setback temperature (sometimes called setup temperature)
+  ``setbackStartHour``         Integer  0 - 23       Start hour for daily setback period. 
+  ``totalWeeklySetbackHours``  Integer  > 0          Hours per week of temperature setback
   ===========================  =======  ===========  ===========
