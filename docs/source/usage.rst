@@ -7,12 +7,12 @@ Introduction
 ------------
 
 Request Example
-
+***************
 .. literalinclude:: examples/request/simplest.json
    :language: javascript
 
 Response Example
-
+****************
 .. literalinclude:: examples/response/simplest_response.json5
    :language: javascript
 
