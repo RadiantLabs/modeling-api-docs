@@ -60,6 +60,8 @@ Appliances
 Automated Measures
 ******************
 
+See :ref:`automated_measures` for further details.
+
 .. literalinclude:: schemas/request/AutomatedMeasures.json5
    :language: javascript
 
