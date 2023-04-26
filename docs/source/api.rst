@@ -22,14 +22,14 @@ POST /v1/timelines
 Top-level request payload
 
 .. include:: schemas/request/TopLevelRequestPayload.json5
-   :code: json
+   :code: javascript
 
 .. _post_timelines_response:
 
 Top-level response payload
 
 .. include:: schemas/response/TopLevelResponsePayload.json5
-   :code: json
+   :code: js
 
 .. _schemas:
 
