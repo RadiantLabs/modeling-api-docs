@@ -4,10 +4,10 @@
   "radiantId": "<UUID>", // generated
   "label": "TYPICAL", // constant
 
-  "typicalBuilding": BASE_BUILDING, // describes the typical building, refer to the Base Building schema above
+  "typicalBuilding": BASE_BUILDING, // describes the typical building, refer to the Base Building schema
   "typicalBuildingDifferences": {/* ... */}, // TBD
 
-  "energyTotals": ENERGY_TOTALS, // refer to the Energy Totals schema above
-  "energyCosts": ENERGY_COSTS, // refer to the Energy Costs schema above
-  "emissionTotals": EMISSION_TOTALS, // refer to the Emission Totals schema above
+  "energyTotals": ENERGY_TOTALS, // refer to the Energy Totals schema
+  "energyCosts": ENERGY_COSTS, // refer to the Energy Costs schema
+  "emissionTotals": EMISSION_TOTALS, // refer to the Emission Totals schema
 }

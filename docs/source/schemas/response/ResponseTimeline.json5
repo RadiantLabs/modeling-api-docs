@@ -8,7 +8,7 @@
 
   "comparedTo": "OTHER_TIMELINE", // if missing it defaults to STATUS_QUO
 
-  "models": [ RESPONSE_MODEL ], // refer to the Response Model schema below
+  "models": [ RESPONSE_MODEL ], // refer to the Response Model schema
 
   // Timeline results
   // Timeline costs and differences are provided if incoming models define "appliedOn" and "includeCostAnalysis" is true

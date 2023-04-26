@@ -10,17 +10,17 @@
 
   "modelControls": MODEL_CONTROLS, // if provided in the request
 
-  "loans": [ LOAN ], // optional, refer to the Loan schema below
+  "loans": [ LOAN ], // optional, refer to the Loan schema
 
-  "incentives": [ INCENTIVE ], //optional, refer to the Incentive schema below
+  "incentives": [ INCENTIVE ], //optional, refer to the Incentive schema
 
-  "automatedMeasures": AUTOMATED_MEASURES, //optional, refer to the Automated Measures schema below
+  "automatedMeasures": AUTOMATED_MEASURES, //optional, refer to the Automated Measures schema
 
-  "customMeasures": [ CUSTOM_MEASURE ], // optional, refer to the Custom Measure schema below
+  "customMeasures": [ CUSTOM_MEASURE ], // optional, refer to the Custom Measure schema
 
   "requestedImprovedBuilding": IMPROVED_BUILDING, // this is an exact mirror of what was requested as the "improvedBuilding" for this model
 
-  "appliedImprovedBuilding": IMPROVED_BUILDING, // refer to the Improved Building schema above
+  "appliedImprovedBuilding": IMPROVED_BUILDING, // refer to the Improved Building schema
 
   "userData": { // optional, user-defined labels (only strings) to associate with the model, mirrored in the response
     "myKey": "aValue",
