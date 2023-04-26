@@ -17,14 +17,14 @@
   // "totalInstallationCosts": 0.0,
   "totalEmissions": {
     "co2": 0.0, // CO2 emissions over "timelineDurationInYears".
-  }
+  },
 
   // Timeline results compared to Status Quo or any other timeline specified in "comparedTo"
 
   "totalEnergyCostsDifference": 0.0, // utility cost compared to different timeline over "timelineDurationInYears"
   "totalEmissionsDifference": {
     "co2": 0.0 // CO2 emissions compared to different timeline over "timelineDurationInYears"
-  }
+  },
 
   // TBD: Include financial analysis properties here.
   //

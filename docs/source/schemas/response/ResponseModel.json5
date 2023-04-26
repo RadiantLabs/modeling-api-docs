@@ -8,29 +8,35 @@
 
   "appliedOn": "<DATE>", // date in the YYYY-MM-DD format, only if property was passed in in the request
 
-  "userDefinedData": USER_DEFINED_DATA, // if provided in the request
-
-  "customMeasures": [ CUSTOM_MEASURE ], // if provided in the request
-
   "modelControls": MODEL_CONTROLS, // if provided in the request
+
+  "loans": [ LOAN ], // optional, refer to the Loan schema below
+
+  "incentives": [ INCENTIVE ], //optional, refer to the Incentive schema below
+
+  "automatedMeasures": AUTOMATED_MEASURES, //optional, refer to the Automated Measures schema below
+
+  "customMeasures": [ CUSTOM_MEASURE ], // optional, refer to the Custom Measure schema below
 
   "requestedImprovedBuilding": IMPROVED_BUILDING, // this is an exact mirror of what was requested as the "improvedBuilding" for this model
 
   "appliedImprovedBuilding": IMPROVED_BUILDING, // refer to the Improved Building schema above
 
-  "appliedImprovedBuildingDifferences": IMPROVED_BUILDING_DIFFERENCES // refer to the Improved Building Differences schema below
+  "userData": { // optional, user-defined labels (only strings) to associate with the model, mirrored in the response
+    "myKey": "aValue",
+  },
 
   // Model results
-
-  "energyTotals": ENERGY_TOTALS,
-  "energyCosts": ENERGY_COSTS,
-  "emissionTotals": EMISSION_TOTALS,
 
   "modelCosts": {
     "totalInstalledCost": 1650.0, // sum of (fixedCost + (variableCostRate * variableCostMultiplier)) for all one time costs
     "totalIncentives": 0.0, // sum of all incentives
     "netModelCost": 0.0, // net cost = totalImplementationCost - totalIncentives
   },
+
+  "energyTotals": ENERGY_TOTALS,
+  "energyCosts": ENERGY_COSTS,
+  "emissionTotals": EMISSION_TOTALS,
 
   // Model results compared against the existing building (either BASE or the previous model in the timeline)
 

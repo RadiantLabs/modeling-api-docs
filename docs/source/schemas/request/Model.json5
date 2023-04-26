@@ -12,7 +12,7 @@
 
   "incentives": [ INCENTIVE ], //optional, refer to the Incentive schema below
 
-  "automatedMeasures": { AUTOMATED_MEASURES	},
+  "automatedMeasures": AUTOMATED_MEASURES, //optional, refer to the Automated Measures schema below
 
   "customMeasures": [ CUSTOM_MEASURE ], // optional, refer to the Custom Measure schema below
 
