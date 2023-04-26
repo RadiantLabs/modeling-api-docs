@@ -57,8 +57,12 @@ Appliances
 Automated Measures
 ******************
 
-.. include:: schemas/request/AutomatedMeasures.json5
-   :code: json
+..
+   include schemas/request/AutomatedMeasures.json5
+   code: js
+
+.. literalinclude:: schemas/request/AutomatedMeasures.json5
+   :language: javascript
 
 .. _base_building:
 
