@@ -16,9 +16,6 @@
           "id": "c1c6bc5c-0d4d-401e-96c6-aeb881eacb73",
           "radiantId": "d32cf3d2-209d-40e3-8595-13bdd10d88ce",
           "label": "BASE",
-          // "requestedImprovedBuilding" is missing from the BASE model
-          // "appliedImprovedBuilding" is missing from the BASE model
-          // "modelCosts" is missing from the BASE model
           "energyTotals": {
             "annual": {
               "coalTotal": {
@@ -46,7 +43,7 @@
               "total": {
                 "mbtu": [0.0]
               }
-            },
+            }
           },
           "energyCosts": {
             "annual": {
@@ -57,8 +54,8 @@
               "propaneTotal": [0.0],
               "woodCordTotal": [0.0],
               "woodPelletsTotal": [0.0],
-              "total": [0.0],
-            },
+              "total": [0.0]
+            }
           },
           "emissionTotals": {
             "annual": {
@@ -91,7 +88,7 @@
         }
       ],
       "totalEnergyCosts": 0.0,
-      "totalCO2": 0.0,
+      "totalCo2": 0.0
     }
   ]
 }
