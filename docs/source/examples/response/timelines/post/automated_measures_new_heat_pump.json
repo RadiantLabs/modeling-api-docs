@@ -8,13 +8,13 @@
   },
   "timelines": [
     {
-      "id": "",
-      "radiantId": "",
-      "label": "",
+      "id": "ca4379e4-f513-42a0-bf4f-b7100af8bcda",
+      "radiantId": "869e628b-8be9-44ca-b764-b7530350ba47",
+      "label": "OLYMPIC_GIRAFFE",
       "models": [
         {
-          "id": "",
-          "radiantId": "",
+          "id": "776364ab-59bf-4937-b1b1-fbf6b5492e0f",
+          "radiantId": "40404d64-408a-4b17-bd70-d368f6486d5a",
           "label": "BASE",
           "energyTotals": {
             "annual": {
@@ -87,9 +87,9 @@
           }
         },
         {
-          "id": "",
-          "radiantId": "",
-          "label": "",
+          "id": "c4574bb1-162d-49ee-b5dc-06c8883b3cc0",
+          "radiantId": "3715acd5-2193-40b0-a238-a7c6cc798bfe",
+          "label": "SWIFT_WEASEL",
           "requestedImprovedBuilding": {},
           "appliedImprovedBuilding": {
             "buildingSummary": {
@@ -104,7 +104,7 @@
             },
             "enclosure": {
               "airInfiltration": {
-                "airInfiltrationRate": 15.0,
+                "rate": 15.0,
                 "rateUnit": "ACH",
                 "housePressurePa": 50.0
               },
@@ -137,24 +137,6 @@
                   "type": "basement conditioned",
                   "area": 1225,
                   "wallHeight": 8
-                }
-              ]
-            },
-            "appliances": {
-              "clothesDryers": [
-                {
-                  "id": "ClothesDryer1",
-                  "fuel": "electricity",
-                  "combinedEnergyFactor": 3.73,
-                  "isVented": true,
-                  "ventedFlowRate": 150
-                }
-              ],
-              "cookingRanges": [
-                {
-                  "id": "CookingRange1",
-                  "fuel": "electricity",
-                  "isInduction": false
                 }
               ]
             },
@@ -201,14 +183,14 @@
                   {
                     "id": "HVACControl1",
                     "heatingSeason": {
-                      "setpointTemp": 68,
-                      "setbackTemp": null,
+                      "setpoint": 68,
+                      "setback": null,
                       "setbackStartHour": null,
                       "totalWeeklySetbackHours": null
                     },
                     "coolingSeason": {
-                      "setpointTemp": 78,
-                      "setbackTemp": null,
+                      "setpoint": 78,
+                      "setback": null,
                       "setbackStartHour": null,
                       "totalWeeklySetbackHours": null
                     }
@@ -232,6 +214,24 @@
                   }
                 ]
               }
+            },
+            "appliances": {
+              "clothesDryers": [
+                {
+                  "id": "ClothesDryer1",
+                  "fuel": "electricity",
+                  "combinedEnergyFactor": 3.73,
+                  "isVented": true,
+                  "ventedFlowRate": 150
+                }
+              ],
+              "cookingRanges": [
+                {
+                  "id": "CookingRange1",
+                  "fuel": "electricity",
+                  "isInduction": false
+                }
+              ]
             }
           },
           "energyTotals": {
