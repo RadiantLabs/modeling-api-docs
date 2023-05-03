@@ -160,20 +160,17 @@ Property: ``newHeatPump``
 
 Schema:
 
-  ======================  ===================================================================  ========  ===================================
-  Property                Type                                                                 Required  Description
-  ======================  ===================================================================  ========  ===================================
-  ``systemType``          One of ``heat-pump`` [#]_, ``mini-split`` or ``air-to-air``          Yes       Type of heat pump
+  ======================  ===================================================================  ========  =======  ===================================
+  Property                Type                                                                 Required  Default  Description
+  ======================  ===================================================================  ========  =======  ===================================
+  ``systemType``          One of ``heat-pump`` [#]_, ``mini-split`` or ``air-to-air``          Yes                Type of heat pump
   ``performanceClass``    One of ``federal-minimally-compliant`` or ``energy-star-compliant``  Yes
-  ``heatLoadPercentage``  Double                                                               No [#]_   Heat load for the new heat pump
-  ``coolLoadPercentage``  Double                                                               No [#]_   Cool load for the new heat pump
-  ``costs``               Array of :ref:`cost`                                                 No [#]_   Implied costs of measure
-  ======================  ===================================================================  ========  ===================================
+  ``heatLoadPercentage``  Double                                                               No        1.0      Heat load for the new heat pump
+  ``coolLoadPercentage``  Double                                                               No        1.0      Cool load for the new heat pump
+  ``costs``               Array of :ref:`cost`                                                 No        ``[]``   Implied costs of measure
+  ======================  ===================================================================  ========  =======  ===================================
 
   .. [#] ``heat-pump`` is a generic air source heat pump that will be automatically determined based on the existing conditions in the building. If the existing building contains ducts, a central ducted ASHP will be defined. If no ducts exist, a ductless mini-split will be defined.
-  .. [#] Defaults to ``1.0`` if not provided.
-  .. [#] Defaults to ``1.0`` if not provided.
-  .. [#] Defaults to ``[]`` if not provided.
 
 .. _new_water_heating_system:
 
@@ -184,17 +181,35 @@ Property: ``newWaterHeatingSystem``
 
 Schema:
 
-  =====================  =============================================================================================  ========  ===================================
-  Property               Type                                                                                           Required  Description
-  =====================  =============================================================================================  ========  ===================================
-  ``systemType``         One of ``storage-water-heater``, ``instantaneous-water-heater`` or ``heat-pump-water-heater``  Yes       Type of water heating system
-  ``efficiencyClass``    One of ``federal-minimally-compliant`` or ``energy-star-compliant``                            Yes
-  ``dhwLoadPercentage``  Double                                                                                         No [#]_   DHW load for the new water heating system
-  ``costs``              Array of :ref:`cost`                                                                           No [#]_   Implied costs of measure
-  =====================  =============================================================================================  ========  ===================================
+  =====================  ====================  ===========  ========  =======  ===================================
+  Property               Type                  Constraints  Required  Default  Description
+  =====================  ====================  ===========  ========  =======  ===================================
+  ``systemType``         String                See [#]_     Yes                Type of water heating system. fuelType assumed as base heating fuel for "storage water heater" and "instantaneous water heater". 
+  ``efficiencyClass``    String                See [#]_     Yes
+  ``dhwLoadPercentage``  Double                0 - 1 [#]_   No        1.0      DHW load for the new water heating system
+  ``costs``              Array of :ref:`cost`               No        ``[]``   Implied costs of measure
+  =====================  ====================  ===========  ========  =======  ===================================
+  
+  .. [#] systemType choices are "storage water heater", "instantaneous water heater", and "heat pump water heater"
+  .. [#] efficiencyClass choices are "standard" or "premium"
 
-  .. [#] Defaults to ``1.0`` if not provided.
-  .. [#] Defaults to ``[]`` if not provided.
+
+Assumptions for ``efficiencyClass``:
+  ==========================  ===========  ========  =======
+  Type                        Fuel         Standard  Premium
+  ==========================  ===========  ========  =======
+  heat pump water heater      electricity  N/A       3.5
+  storage water heater        electricity  0.92      0.95
+  storage water heater        natural gas  0.59      0.67
+  storage water heater        fuel oil     0.62      0.68
+  storage water heater        propane      0.59      0.67
+  storage water heater        other        0.59      N/A
+  instantaneous water heater  electricity  0.99      N/A
+  instantaneous water heater  natural gas  0.82      N/A
+  instantaneous water heater  fuel oil     N/A       N/A
+  instantaneous water heater  propane      0.82      N/A
+  instantaneous water heater  other        N/A       N/A
+  ==========================  ===========  ========  =======
 
 Adjust global aspects of the building
 -------------------------------------
@@ -222,13 +237,13 @@ Schema:
 
 ``adjust`` schema for air sealing:
 
-  ===================  ======  ===========  =======================================
-  Property             Type    Constraints  Description
-  ===================  ======  ===========  =======================================
-  ``rateUnit``         String  See [#]_     Units of air leakage rate. If undefined, system default "ACH" is applied
-  ``rate``             Double  > 0.0        Value of air leakage rate. If undefined, system default value is applied
-  ``housePressurePa``  Double  > 0.0        House pressure in Pa with respect to outside. If undefined, system default 50 Pa is applied.
-  ===================  ======  ===========  =======================================
+  ===================  ======  ===========  =======  =======================================
+  Property             Type    Constraints  Default  Description
+  ===================  ======  ===========  =======  =======================================
+  ``rateUnit``         String  See [#]_     ACH      Units of air leakage rate.
+  ``rate``             Double  > 0.0        7.0      Value of air leakage rate.
+  ``housePressurePa``  Double  > 0.0        50.0     House pressure in Pa with respect to outside.
+  ===================  ======  ===========  =======  =======================================
   
   .. [#] rateUnit choices are ACH or CFM.
 
@@ -252,11 +267,11 @@ Schema:
 
 ``adjust`` schema for attic insulation:
 
-  ================================  ======  ===========  =======================================
-  Property                          Type    Constraints  Description
-  ================================  ======  ===========  =======================================
-  ``floorAssemblyEffectiveRValue``  Double  > 0.0        Effective R-value of attic floor assembly. If undefined, system default is applied
-  ================================  ======  ===========  =======================================
+  ================================  ======  ============  ===========  =======  =======================================
+  Property                          Type    Units         Constraints  Default  Description
+  ================================  ======  ============  ===========  =======  =======================================
+  ``floorAssemblyEffectiveRValue``  Double  F-ft2-hr/Btu  > 0.0        50.6     Effective R-value of attic floor assembly. If undefined, system default is applied
+  ================================  ======  ============  ===========  =======  =======================================
 
 .. _adjust_thermostat:
 
@@ -276,7 +291,7 @@ Schema:
 
   .. [#] Defaults to ``[]`` if not provided.
 
-``adjust`` schema for air sealing:
+``adjust`` schema for thermostat:
 
   =================  ======  ==============================================
   Property           Type    Description
@@ -287,11 +302,11 @@ Schema:
 
 ``heatingSeason`` and ``coolingSeason`` objects share the following schema:
 
-  ===========================  =======  ===========  ===========
-  Property                     Type     Constraints  Description
-  ===========================  =======  ===========  ===========
-  ``setpoint``                 Integer  > 0          Season setpoint temperature
-  ``setback``                  Integer  > 0          Season setback temperature (sometimes called setup temperature)
-  ``setbackStartHour``         Integer  0 - 23       Start hour for daily setback period. 
-  ``totalWeeklySetbackHours``  Integer  > 0          Hours per week of temperature setback
-  ===========================  =======  ===========  ===========
+  ===========================  =======  ===========  ========================  ===========
+  Property                     Type     Constraints  Default                   Description
+  ===========================  =======  ===========  ========================  ===========
+  ``setpoint``                 Integer  > 0          Heating: 67, Cooling: 78  Season setpoint temperature
+  ``setback``                  Integer  > 0          Heating: 64, Cooling: 72  Season setback temperature (sometimes called setup temperature)
+  ``setbackStartHour``         Integer  0 - 23       Heating: 23, Cooling: 9   Start hour for daily setback period. 
+  ``totalWeeklySetbackHours``  Integer  > 0          Heating: 49, Cooling: 42  Hours per week of temperature setback
+  ===========================  =======  ===========  ========================  ===========
