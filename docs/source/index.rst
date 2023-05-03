@@ -16,5 +16,7 @@ Contents
 .. toctree::
 
    usage
+   modeling_results_resolution
    automated_measures
+   extended_inputs_and_outputs
    api
