@@ -35,17 +35,24 @@ Different modeling results resolution
 Energy consumption datapoints and derived calculations from any model can be requested in different resolutions: annual,
 monthly and hourly.
 
-See :ref:`modeling_results_resolution` for further details.
+.. See :ref:`modeling_results_resolution` for further details.
+
+See :doc:`modeling_results_resolution` for further details.
 
 Use automated measures
 **********************
 
 High-level operations applied to the base building, without requiring a full improved building definition.
 
-See :ref:`automated_measures` for further details.
+.. See :ref:`automated_measures` for further details.
+
+See :doc:`automated_measures` for further details.
 
 Extended inputs and outputs
 ***************************
 
-Lastly, see :ref:`extended_inputs_and_outputs` for extensive request and response examples that showcase many properties
+.. Lastly, see :ref:`extended_inputs_and_outputs` for extensive request and response examples that showcase many properties
+available in the API.
+
+Lastly, see :doc:`extended_inputs_and_outputs` for extensive request and response examples that showcase many properties
 available in the API.
