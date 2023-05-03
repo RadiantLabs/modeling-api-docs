@@ -51,8 +51,9 @@ See :doc:`automated_measures` for further details.
 Extended inputs and outputs
 ***************************
 
-.. Lastly, see :ref:`extended_inputs_and_outputs` for extensive request and response examples that showcase many properties
-available in the API.
+..
+   Lastly, see :ref:`extended_inputs_and_outputs` for extensive request and response examples that showcase many
+   properties available in the API.
 
 Lastly, see :doc:`extended_inputs_and_outputs` for extensive request and response examples that showcase many properties
 available in the API.
