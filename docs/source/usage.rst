@@ -29,6 +29,14 @@ And the response will have the following structure.
 Use cases
 ---------
 
+Different modeling results resolution
+*************************************
+
+Energy consumption datapoints and derived calculations from any model can be requested in different resolutions: annual,
+monthly and hourly.
+
+See :ref:`modeling_results_resolution` for further details.
+
 Use automated measures
 **********************
 
@@ -36,8 +44,8 @@ High-level operations applied to the base building, without requiring a full imp
 
 See :ref:`automated_measures` for further details.
 
-..
-   Request hourly results
-   **********************
+Extended inputs and outputs
+***************************
 
-   TBD
+Lastly, see :ref:`extended_inputs_and_outputs` for extensive request and response examples that showcase many properties
+available in the API.
