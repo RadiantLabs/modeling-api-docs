@@ -44,12 +44,12 @@ High-level operations applied to the base building, without requiring a full imp
 
 See :doc:`automated_measures` for further details.
 
-Extended inputs and outputs
-***************************
+Extensive inputs and outputs
+****************************
 
 ..
-   Lastly, see :ref:`extended_inputs_and_outputs` for extensive request and response examples that showcase many
+   Lastly, see :ref:`extensive_inputs_and_outputs` for extensive request and response examples that showcase many
    properties available in the API.
 
-Lastly, see :doc:`extended_inputs_and_outputs` for extensive request and response examples that showcase many properties
+Lastly, see :doc:`extensive_inputs_and_outputs` for extensive request and response examples that showcase many properties
 available in the API.

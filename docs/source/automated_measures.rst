@@ -1,4 +1,4 @@
-.. automated_measures:
+.. _automated_measures:
 
 Automated Measures
 ==================
