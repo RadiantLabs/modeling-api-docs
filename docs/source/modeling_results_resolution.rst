@@ -63,7 +63,7 @@ download the compressed version, uncompress it locally and use an editor with JS
 The only difference, as with the monthly resolution, is that objects including datapoints will have an extra property
 `hourly` with arrays of size 8760. There are 8760 hours in a standard year.
 
-Download the response example with hourly datapoints here: link.
+Download the response example with hourly datapoints here: :download:`simple_with_monthly_and_hourly.json.gz <examples/response/timelines/post/simple_with_monthly_and_hourly.json.gz>`.
 
 .. note::
 
