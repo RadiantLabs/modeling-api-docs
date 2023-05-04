@@ -295,3 +295,23 @@ Schema:
   ``setbackStartHour``         Integer  0 - 23       Start hour for daily setback period. 
   ``totalWeeklySetbackHours``  Integer  > 0          Hours per week of temperature setback
   ===========================  =======  ===========  ===========
+
+
+Automated measures example adding a new heat pump
+-------------------------------------------------
+
+Request
+*******
+
+Send a POST request to `/v1/timelines` with the following payload.
+
+.. literalinclude:: examples/request/timelines/post/automated_measures_new_heat_pump.json
+   :language: json
+
+Response
+********
+
+And the response will have the following structure.
+
+.. literalinclude:: examples/response/timelines/post/automated_measures_new_heat_pump.json
+   :language: json

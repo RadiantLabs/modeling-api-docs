@@ -4,7 +4,7 @@ Extensive Inputs and Outputs
 ============================
 
 Extensive example conforming to the specification
-*************************************************
+-------------------------------------------------
 
 Request
 *******
