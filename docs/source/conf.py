@@ -17,7 +17,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
-    'sphinx_copybutton', # 2023-05-03 - Joshua: Added for easy code blocks copying
+    'sphinx_copybutton',  # 2023-05-03 - Joshua: Added for easy code blocks copying
 ]
 
 intersphinx_mapping = {
