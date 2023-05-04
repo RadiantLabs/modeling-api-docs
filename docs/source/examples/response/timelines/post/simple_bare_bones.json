@@ -16,6 +16,135 @@
           "id": "c1c6bc5c-0d4d-401e-96c6-aeb881eacb73",
           "radiantId": "d32cf3d2-209d-40e3-8595-13bdd10d88ce",
           "label": "BASE",
+          "requestedBaseBuilding": {},
+          "appliedBaseBuilding": {
+            "buildingSummary": {
+              "conditionedFloorArea": 2413,
+              "averageCeilingHeight": 8,
+              "bathCount": 2,
+              "bedroomsCount": 4,
+              "residentCount": 5,
+              "storiesCount": 1,
+              "windowToWallFraction": 0.14,
+              "yearBuilt": 1945
+            },
+            "enclosure": {
+              "airInfiltration": {
+                "rate": 15.0,
+                "rateUnit": "ACH",
+                "housePressurePa": 50.0
+              },
+              "attics": [
+                {
+                  "id": "Attic1",
+                  "area": 1225,
+                  "floorAssemblyEffectiveRValue": 20.6
+                }
+              ],
+              "roofs": [
+                {
+                  "id": "Roof1",
+                  "area": 1370,
+                  "pitch": 6,
+                  "assemblyEffectiveRValue": 2.3,
+                  "lifetime": {
+                    "replacementCost": 7000,
+                    "endOfLifeDate": "2030-01-01"
+                  }
+                }
+              ],
+              "walls": [
+                {
+                  "id": "Wall1",
+                  "type": "wood stud",
+                  "assemblyEffectiveRValue": 4.0,
+                  "percentageAreaShared": 0.0
+                }
+              ],
+              "foundations": [
+                {
+                  "id": "BasementConditioned1",
+                  "type": "basement conditioned",
+                  "area": 1188,
+                  "wallHeight": 8
+                }
+              ]
+            },
+            "systems": {
+              "hvac": {
+                "hvacCoolingSystems": [
+                  {
+                    "id": "RoomAirConditioner1",
+                    "systemType": "room air conditioner",
+                    "coolEfficiency": 10.7,
+                    "coolEfficiencyUnits": "EER",
+                    "coolLoadPercentage": 0.33,
+                    "lifetime": {
+                      "replacementCost": 200,
+                      "endOfLifeDate": "2024-07-01"
+                    }
+                  }
+                ],
+                "hvacHeatingSystems": [
+                  {
+                    "id": "ElectricResistance1",
+                    "systemType": "electric resistance",
+                    "fuel": "electricity",
+                    "heatEfficiency": 1.0,
+                    "heatEfficiencyUnits": "Percent",
+                    "heatLoadPercentage": 1.0
+                  }
+                ],
+                "hvacControlSystems": [
+                  {
+                    "id": "HVACControl1",
+                    "heatingSeason": {
+                      "setpointTemp": 68
+                    },
+                    "coolingSeason": {
+                      "setpointTemp": 78
+                    }
+                  }
+                ]
+              },
+              "waterHeating": {
+                "waterHeatingSystems": [
+                  {
+                    "id": "WaterHeater1",
+                    "systemType": "storage water heater",
+                    "fuel": "electricity",
+                    "location": "living space",
+                    "tankVolume": 40,
+                    "dhwLoadPercentage": 1.0,
+                    "energyFactor": 0.92,
+                    "hotWaterTemperature": 125.0,
+                    "lifetime": {
+                      "replacementCost": 1000,
+                      "installedDate": "2015-11-12"
+                    }
+                  }
+                ]
+              }
+            },
+            "appliances": {
+              "clothesDryers": [
+                {
+                  "id": "ClothesDryer1",
+                  "fuel": "electricity",
+                  "combinedEnergyFactor": 3.73,
+                  "isVented": true,
+                  "ventedFlowRate": 150
+                }
+              ],
+              "cookingRanges": [
+                {
+                  "id": "CookingRange1",
+                  "fuel": "electricity",
+                  "isInduction": false
+                }
+              ]
+            }
+          },
           "energyTotals": {
             "annual": {
               "coalTotal": {
