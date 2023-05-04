@@ -23,8 +23,8 @@ And the response will have the following structure.
    :language: json
 
 
-Simple with monthly datapoints
-------------------------------
+Simple example with monthly datapoints
+--------------------------------------
 
 Request
 *******
@@ -32,7 +32,7 @@ Request
 Send a POST request to `/v1/timelines` with the following payload.
 
 .. literalinclude:: examples/request/timelines/post/simple_with_monthly.json
-   :language: javascript
+   :language: json
 
 Response
 ********
@@ -40,11 +40,11 @@ Response
 And the response will have the following structure.
 
 .. literalinclude:: examples/response/timelines/post/simple_with_monthly.json
-   :language: javascript
+   :language: json
 
 
-Simple with monthly and hourly
-------------------------------
+Simple example with monthly and hourly datapoints
+-------------------------------------------------
 
 Request
 *******
@@ -52,7 +52,7 @@ Request
 Send a POST request to `/v1/timelines` with the following payload.
 
 .. literalinclude:: examples/request/timelines/post/simple_with_monthly_and_hourly.json
-   :language: javascript
+   :language: json
 
 Response
 ********
