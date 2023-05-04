@@ -12,7 +12,7 @@ Request Example
 Send a POST request to `/v1/timelines` with the following payload.
 
 .. literalinclude:: examples/request/timelines/post/simple_bare_bones.json
-   :language: javascript
+   :language: json
 
 Response Example
 ****************
@@ -20,11 +20,7 @@ Response Example
 And the response will have the following structure.
 
 .. literalinclude:: examples/response/timelines/post/simple_bare_bones.json
-   :language: javascript
-
-..
-   Modeling
-   --------
+   :language: json
 
 Use cases
 ---------
