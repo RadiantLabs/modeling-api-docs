@@ -25,27 +25,36 @@ Property: ``existingHvacHeatingSystem``
 
 Schema:
 
-  ==========  ===================================================  ========  ============================
-  Property    Type                                                 Required  Description
-  ==========  ===================================================  ========  ============================
-  ``action``  One of ``keep`` [#]_, ``remove`` [#]_ or ``adjust``  Yes       Operation on existing system
-  ``adjust``  Object                                               No [#]_   System properties to adjust
-  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
-  ==========  ===================================================  ========  ============================
+   ==========  ====================  ===========  ========  ============================
+  Property    Type                  Constraints  Required  Description
+  ==========  ====================  ===========  ========  ============================
+  ``action``  String                See [#]_     Yes       Operation on existing heating system
+  ``adjust``  Object                             No [#]_   System properties to adjust
+  ``costs``   Array of :ref:`cost`               No [#]_   Implied costs of measure
+  ==========  ====================  ===========  ========  ============================
 
-  .. [#] Keeps existing heating system as is, including load percentage. Using this action indicates that there are no changes to heating at all.
-  .. [#] Completely removes existing heating system and new system(s) must cover 100% of load or specify ``loadGapPercentage``. This action will override anything in ``adjust`` object.
+  .. [#] |``action`` choices are "keep", "remove", or "adjust".
+         | - "keep" maintains existing heating system as is, including load percentage. Using this action indicates that there are no changes to heating at all. This action will override anything in ``adjust`` object.
+         | - "remove" indicates the existing heating system is completely removed. New system(s) must cover 100% of load or specify ``heatLoadGapPercentage``. This action will override anything in ``adjust`` object.
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
+.. Note on Indirect Water Heaters::
+
+  If ``action`` = "remove" and the existing water heating system is dependent on the removed heating system (i.e. indirect water heater), then a new standalone heat pump water heating system will automatically be added to the ``improvedBuilding``. 
+  
+  .. Note on Existing Heat Pumps::
+
+  If ``action`` = "remove" and the existing heating system is a heat pump, then the existing cooling system will also be removed. This is based on the assumption that the ``newHeatPump`` will serve both loads. 
+
 ``adjust`` schema for existing HVAC heating system:
 
-  ======================  =======  ===================  ==============================================
-  Property                Type     Constraints          Description
-  ======================  =======  ===================  ==============================================
-  ``backup``              Boolean                       Indicates the existing heating system is being kept, but switched to be a backup system. Either this OR ``heatLoadPercentage`` can be defined.
-  ``heatLoadPercentage``  Double   In [0.0, 1.0] range  Heat load for the existing heating system.
-  ======================  =======  ===================  ==============================================
+  ======================  =======  ===========  ==============================================
+  Property                Type     Constraints  Description
+  ======================  =======  ===========  ==============================================
+  ``backup``              Boolean               Indicates the existing heating system is being kept, but switched to be a backup system. Either this OR ``heatLoadPercentage`` can be defined.
+  ``heatLoadPercentage``  Double   0 - 1        Heat load for the existing heating system.
+  ======================  =======  ===========  ==============================================
 
 .. _existing_hvac_cooling_system:
 
@@ -57,18 +66,23 @@ Property: ``existingHvacCoolingSystem``
 
 Schema:
 
-  ==========  ===================================================  ========  ============================
-  Property    Type                                                 Required  Description
-  ==========  ===================================================  ========  ============================
-  ``action``  One of ``keep`` [#]_, ``remove`` [#]_ or ``adjust``  Yes       Operation on existing system
-  ``adjust``  Object                                               No [#]_   System properties to adjust
-  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
-  ==========  ===================================================  ========  ============================
+   ==========  ====================  ===========  ========  ============================
+  Property    Type                  Constraints  Required  Description
+  ==========  ====================  ===========  ========  ============================
+  ``action``  String                See [#]_     Yes       Operation on existing cooling system
+  ``adjust``  Object                             No [#]_   System properties to adjust
+  ``costs``   Array of :ref:`cost`               No [#]_   Implied costs of measure
+  ==========  ====================  ===========  ========  ============================
 
-  .. [#] Keeps existing cooling system as is, including load percentage. Using this action indicates that there are no changes to cooling at all.
-  .. [#] Completely removes existing cooling system and new system(s) must cover 100% of load or specify ``loadGapPercentage``. This action will override anything in ``adjust`` object.
+  .. [#] |``action`` choices are "keep", "remove", or "adjust".
+         | - "keep" maintains existing cooling system as is, including load percentage. Using this action indicates that there are no changes to cooling at all. This action will override anything in ``adjust`` object.
+         | - "remove" indicates the existing cooling system is completely removed. New system(s) must cover 100% of load or specify ``coolLoadGapPercentage``. This action will override anything in ``adjust`` object.
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
+
+  .. Note on Existing Heat Pumps::
+
+  If ``action`` = "remove" and the existing cooling system is a heat pump, then the existing heating system will also be removed. This is based on the assumption that the ``newHeatPump`` will serve both loads. 
 
 ``adjust`` schema for existing HVAC cooling system:
 
@@ -87,16 +101,17 @@ Property: ``existingHvacDistributionSystem``
 
 Schema:
 
-  ==========  ===================================================  ========  ============================
-  Property    Type                                                 Required  Description
-  ==========  ===================================================  ========  ============================
-  ``action``  One of ``keep`` [#]_, ``remove`` [#]_ or ``adjust``  Yes       Operation on existing system
-  ``adjust``  Object                                               No [#]_   System properties to adjust
-  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
-  ==========  ===================================================  ========  ============================
+  ==========  ====================  ===========  ========  ============================
+  Property    Type                  Constraints  Required  Description
+  ==========  ====================  ===========  ========  ============================
+  ``action``  String                See [#]_     Yes       Operation on existing distribution system
+  ``adjust``  Object                             No [#]_   System properties to adjust
+  ``costs``   Array of :ref:`cost`               No [#]_   Implied costs of measure
+  ==========  ====================  ===========  ========  ============================
 
-  .. [#] Keeps existing distribution system as is. Using this action indicates that there are no changes to distribution systems at all.
-  .. [#] Completely removes existing distribution system. This action will override anything in ``adjust`` object.
+  .. [#] |``action`` choices are "keep", "remove", or "adjust".
+         | - "keep" maintains existing distribution system as is. Using this action indicates that there are no changes to the distribution system at all. This action will override anything in ``adjust`` object.
+         | - "remove" indicates the existing distribution system is completely removed. This action will override anything in ``adjust`` object.
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
@@ -123,26 +138,27 @@ Property: ``existingWaterHeatingSystem``
 
 Schema:
 
-  ==========  ===================================================  ========  ============================
-  Property    Type                                                 Required  Description
-  ==========  ===================================================  ========  ============================
-  ``action``  One of ``keep`` [#]_, ``remove`` [#]_ or ``adjust``  Yes       Operation on existing system
-  ``adjust``  Object                                               No [#]_   System properties to adjust
-  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
-  ==========  ===================================================  ========  ============================
+  ==========  ====================  ===========  ========  ============================
+  Property    Type                  Constraints  Required  Description
+  ==========  ====================  ===========  ========  ============================
+  ``action``  String                See [#]_     Yes       Operation on existing water heating system
+  ``adjust``  Object                             No [#]_   System properties to adjust
+  ``costs``   Array of :ref:`cost`               No [#]_   Implied costs of measure
+  ==========  ====================  ===========  ========  ============================
 
-  .. [#] Keeps existing water heating system as is, including load percentage. Using this action indicates that there are no changes to water heating systems at all.
-  .. [#] Completely removes existing water heating system and new system(s) must cover 100% of load. This action will override anything in ``adjust`` object.
+  .. [#] |``action`` choices are "keep", "remove", or "adjust".
+         | - "keep" maintains existing water heating system as is, including load percentage. Using this action indicates that there are no changes to the water heating system at all. This action will override anything in ``adjust`` object.
+         | - "remove" indicates the existing water heating system is completely removed. New system(s) must cover 100% of load or specify ``loadGapPercentage``. This action will override anything in ``adjust`` object.
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
 ``adjust`` schema for existing water heating system:
 
-  =====================  =======  ===================  ==============================================
-  Property               Type     Constraints          Description
-  =====================  =======  ===================  ==============================================
-  ``dhwLoadPercentage``  Double   In [0.0, 1.0] range  Domestic hot water load for the existing water heating system
-  =====================  =======  ===================  ==============================================
+  =====================  =======  ===========  ==============================================
+  Property               Type     Constraints  Description
+  =====================  =======  ===========  ==============================================
+  ``dhwLoadPercentage``  Double   0 - 1        Domestic hot water load for the existing water heating system
+  =====================  =======  ===========  ==============================================
 
 Add new systems with minimal configuration
 ------------------------------------------
@@ -160,15 +176,17 @@ Property: ``newHeatPump``
 
 Schema:
 
-  ======================  ===================================================================  ========  =======  ===================================
-  Property                Type                                                                 Required  Default  Description
-  ======================  ===================================================================  ========  =======  ===================================
-  ``systemType``          One of ``heat-pump`` [#]_, ``mini-split`` or ``air-to-air``          Yes                Type of heat pump
-  ``performanceClass``    One of ``federal-minimally-compliant`` or ``energy-star-compliant``  Yes
-  ``heatLoadPercentage``  Double                                                               No        1.0      Heat load for the new heat pump
-  ``coolLoadPercentage``  Double                                                               No        1.0      Cool load for the new heat pump
-  ``costs``               Array of :ref:`cost`                                                 No        ``[]``   Implied costs of measure
-  ======================  ===================================================================  ========  =======  ===================================
+  =========================  ===================================================================  ========  =======  ===================================
+  Property                   Type                                                                 Required  Default  Description
+  =========================  ===================================================================  ========  =======  ===================================
+  ``systemType``             One of ``heat-pump`` [#]_, ``mini-split`` or ``air-to-air``          Yes                Type of heat pump
+  ``performanceClass``       One of ``federal-minimally-compliant`` or ``energy-star-compliant``  Yes
+  ``heatLoadPercentage``     Double                                                               No        1.0      Heat load for the new heat pump
+  ``heatLoadGapPercentage``  Double                                                               No        1.0      Heat load for the new heat pump
+  ``coolLoadPercentage``     Double                                                               No        1.0      Cool load for the new heat pump
+  ``coolLoadGapPercentage``  Double                                                               No        1.0      Cool load for the new heat pump
+  ``costs``                  Array of :ref:`cost`                                                 No        ``[]``   Implied costs of measure
+  =========================  ===================================================================  ========  =======  ===================================
 
   .. [#] ``heat-pump`` is a generic air source heat pump that will be automatically determined based on the existing conditions in the building. If the existing building contains ducts, a central ducted ASHP will be defined. If no ducts exist, a ductless mini-split will be defined.
 
