@@ -1,3 +1,8 @@
 .wy-nav-content {
     max-width: 1200px;
 }
+
+html.writer-html5 .rst-content div.citation>ul.simple {
+    grid-column-start:4;
+    grid-column-end:5
+}
