@@ -39,11 +39,11 @@ Schema:
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
-.. Note on Indirect Water Heaters::
+.. note::
 
   If ``action`` = "remove" and the existing water heating system is dependent on the removed heating system (i.e. indirect water heater), then a new standalone heat pump water heating system will automatically be added to the ``improvedBuilding``. 
   
-  .. Note on Existing Heat Pumps::
+.. note::
 
   If ``action`` = "remove" and the existing heating system is a heat pump, then the existing cooling system will also be removed. This is based on the assumption that the ``newHeatPump`` will serve both loads. 
 
