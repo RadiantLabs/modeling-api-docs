@@ -72,9 +72,11 @@ Operations on the existing cooling systems are entered in ``automatedMeasures.ex
   ``costs``   Array of :ref:`cost`               No [#]_   Implied costs of measure
   ==========  ====================  ===========  ========  ============================
 
-  .. [#] | ``action`` choices are "keep", "remove", or "adjust".
-         | - **"keep"** maintains existing cooling system as is, including load percentage. Using this action indicates that there are no changes to cooling at all. This action will override anything in ``adjust`` object.
-         | - **"remove"** indicates the existing cooling system is completely removed. New system(s) must cover 100% of load or specify ``coolLoadGapPercentage``. This action will override anything in ``adjust`` object.
+  .. [#] ``action`` choices are "keep", "remove", or "adjust".
+
+     - **"keep"** maintains existing cooling system as is, including load percentage. Using this action indicates that there are no changes to cooling at all. This action will override anything in ``adjust`` object.
+     - **"remove"** indicates the existing cooling system is completely removed. New system(s) must cover 100% of load or specify ``coolLoadGapPercentage``. This action will override anything in ``adjust`` object.
+
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
