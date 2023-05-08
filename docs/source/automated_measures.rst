@@ -33,7 +33,7 @@ Schema:
   ``costs``   Array of :ref:`cost`               No [#]_   Implied costs of measure
   ==========  ====================  ===========  ========  ============================
 
-  .. [#] |``action`` choices are "keep", "remove", or "adjust".
+  .. [#] | ``action`` choices are "keep", "remove", or "adjust".
          | - "keep" maintains existing heating system as is, including load percentage. Using this action indicates that there are no changes to heating at all. This action will override anything in ``adjust`` object.
          | - "remove" indicates the existing heating system is completely removed. New system(s) must cover 100% of load or specify ``heatLoadGapPercentage``. This action will override anything in ``adjust`` object.
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
