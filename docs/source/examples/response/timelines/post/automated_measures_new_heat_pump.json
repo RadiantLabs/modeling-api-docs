@@ -17,7 +17,7 @@
           "radiantId": "40404d64-408a-4b17-bd70-d368f6486d5a",
           "label": "BASE",
           "requestedBaseBuilding": {},
-          "appliedIBaseBuilding": {
+          "appliedBaseBuilding": {
             "buildingSummary": {
               "conditionedFloorArea": 2413,
               "averageCeilingHeight": 8,
