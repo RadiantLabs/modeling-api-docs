@@ -3,7 +3,7 @@
 Automated Measures
 ==================
 
-High-level operations applied to the base building, without requiring a full improved building definition.
+Automated measures allow users to apply improvements to the base building without fully defining either the base or improved building definition.
 
 Operate on existing systems
 ---------------------------
@@ -19,11 +19,7 @@ characteristics.
 Existing HVAC Heating System
 ****************************
 
-This object covers the singular predefined system providing heating in the base building, including a heat pump.
-
-Property: ``existingHvacHeatingSystem``
-
-Schema:
+Operations to the existing HVAC heating system are entered in ``automatedMeasures.existingHvacHeatingSystem``. This object covers the singular predefined system providing heating in the base building, including a heat pump.
 
   ==========  ====================  ===========  ========  ============================
   Property    Type                  Constraints  Required  Description
@@ -34,18 +30,20 @@ Schema:
   ==========  ====================  ===========  ========  ============================
 
   .. [#] | ``action`` choices are "keep", "remove", or "adjust".
-         | - "keep" maintains existing heating system as is, including load percentage. Using this action indicates that there are no changes to heating at all. This action will override anything in ``adjust`` object.
-         | - "remove" indicates the existing heating system is completely removed. New system(s) must cover 100% of load or specify ``heatLoadGapPercentage``. This action will override anything in ``adjust`` object.
+         | - **"keep"** maintains existing heating system as is, including load percentage. Using this action indicates that there are no changes to heating at all. This action will override anything in ``adjust`` object.
+         | - **"remove"** indicates the existing heating system is completely removed. New system(s) must cover 100% of load or specify ``heatLoadGapPercentage``. This action will override anything in ``adjust`` object.
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
 .. note::
 
-  If ``action`` = "remove" and the existing water heating system is dependent on the removed heating system (i.e. indirect water heater), then a new standalone heat pump water heating system will automatically be added to the ``improvedBuilding``. 
+  If ``action`` = "remove" and the existing water heating system is dependent on the removed heating system (i.e. indirect water heater), 
+  then a new standalone heat pump water heating system will automatically be added to the ``improvedBuilding``. 
   
 .. note::
 
-  If ``action`` = "remove" and the existing heating system is a heat pump, then the existing cooling system will also be removed. This is based on the assumption that the ``newHeatPump`` will serve both loads. 
+  If ``action`` = "remove" and the existing heating system is a heat pump, then the existing cooling system will also be removed. 
+  This is based on the assumption that the ``newHeatPump`` will serve both loads. 
 
 ``adjust`` schema for existing HVAC heating system:
 
@@ -60,11 +58,8 @@ Schema:
 
 Existing HVAC Cooling System
 ****************************
-This object covers the singular predefined system providing cooling in the base building, including a heat pump.
 
-Property: ``existingHvacCoolingSystem``
-
-Schema:
+Operations on the existing cooling systems are entered in ``automatedMeasures.existingHvacCoolingSystem``. This object covers the singular predefined system providing cooling in the base building, including a heat pump.
 
   ==========  ====================  ===========  ========  ============================
   Property    Type                  Constraints  Required  Description
@@ -74,13 +69,13 @@ Schema:
   ``costs``   Array of :ref:`cost`               No [#]_   Implied costs of measure
   ==========  ====================  ===========  ========  ============================
 
-  .. [#] |``action`` choices are "keep", "remove", or "adjust".
-         | - "keep" maintains existing cooling system as is, including load percentage. Using this action indicates that there are no changes to cooling at all. This action will override anything in ``adjust`` object.
-         | - "remove" indicates the existing cooling system is completely removed. New system(s) must cover 100% of load or specify ``coolLoadGapPercentage``. This action will override anything in ``adjust`` object.
+  .. [#] | ``action`` choices are "keep", "remove", or "adjust".
+         | - **"keep"** maintains existing cooling system as is, including load percentage. Using this action indicates that there are no changes to cooling at all. This action will override anything in ``adjust`` object.
+         | - **"remove"** indicates the existing cooling system is completely removed. New system(s) must cover 100% of load or specify ``coolLoadGapPercentage``. This action will override anything in ``adjust`` object.
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
-  .. Note on Existing Heat Pumps::
+  .. note::
 
   If ``action`` = "remove" and the existing cooling system is a heat pump, then the existing heating system will also be removed. This is based on the assumption that the ``newHeatPump`` will serve both loads. 
 
@@ -97,9 +92,8 @@ Schema:
 Existing HVAC Distribution System
 *********************************
 
-Property: ``existingHvacDistributionSystem``
-
-Schema:
+Operations on the existing cooling systems are entered in ``automatedMeasures.existingHvacDistributionSystem``. This object covers the predefined distribution system(s), either air and/or hydronic,
+connected to the base building's heating and cooling systems.
 
   ==========  ====================  ===========  ========  ============================
   Property    Type                  Constraints  Required  Description
@@ -109,7 +103,7 @@ Schema:
   ``costs``   Array of :ref:`cost`               No [#]_   Implied costs of measure
   ==========  ====================  ===========  ========  ============================
 
-  .. [#] |``action`` choices are "keep", "remove", or "adjust".
+  .. [#] | ``action`` choices are "keep", "remove", or "adjust".
          | - "keep" maintains existing distribution system as is. Using this action indicates that there are no changes to the distribution system at all. This action will override anything in ``adjust`` object.
          | - "remove" indicates the existing distribution system is completely removed. This action will override anything in ``adjust`` object.
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
