@@ -25,7 +25,7 @@ Property: ``existingHvacHeatingSystem``
 
 Schema:
 
-   ==========  ====================  ===========  ========  ============================
+  ==========  ====================  ===========  ========  ============================
   Property    Type                  Constraints  Required  Description
   ==========  ====================  ===========  ========  ============================
   ``action``  String                See [#]_     Yes       Operation on existing heating system
@@ -66,7 +66,7 @@ Property: ``existingHvacCoolingSystem``
 
 Schema:
 
-   ==========  ====================  ===========  ========  ============================
+  ==========  ====================  ===========  ========  ============================
   Property    Type                  Constraints  Required  Description
   ==========  ====================  ===========  ========  ============================
   ``action``  String                See [#]_     Yes       Operation on existing cooling system
