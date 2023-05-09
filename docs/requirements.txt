@@ -1,0 +1,3 @@
+# Extra packages
+
+sphinx-copybutton # 2023-05-03 - Joshua: Added for easy code blocks copying
