@@ -73,20 +73,20 @@ Base Building
 .. literalinclude:: schemas/request/BaseBuilding.json5
    :language: javascript
 
-   ========================  =======  ========  ===========  ========  ==================  ============================================== 
-   Property                  Type     Units     Constraints  Required  Default             Notes                                                                                           
-   ========================  =======  ========  ===========  ========  ==================  ============================================== 
-   ``conditionedFloorArea``  integer  ft2       >0           no        PSC                 If missing from PSC, model will fail           
-   ``averageCeilingHeight``  integer  ft        >0           no        8                                                        
-   ``bathCount``             integer  count     >0           no        see [#]_
-   ``bedroomsCount``         integer  count     >0           no        PSC, BSA
-   ``residentCount``         integer  count     >=0          no        BSA                                                       	
-   ``storiesCount``          integer  count     >0           no        PSC, BSA
-   ``windowToWallFraction``  float    fraction  >0           no        0.14
-   ``yearBuilt``             integer  year      >1600        no        PSC                 If missing from PSC, model will fail           
-   ========================  =======  ========  ===========  ========  ==================  ============================================== 
+========================  =======  ========  ===========  ========  ==================  ============================================== 
+Property                  Type     Units     Constraints  Required  Default             Notes                                                                                           
+========================  =======  ========  ===========  ========  ==================  ============================================== 
+``conditionedFloorArea``  integer  ft2       >0           no        PSC                 If missing from PSC, model will fail           
+``averageCeilingHeight``  integer  ft        >0           no        8                                                        
+``bathCount``             integer  count     >0           no        see [#]_
+``bedroomsCount``         integer  count     >0           no        PSC, BSA
+``residentCount``         integer  count     >=0          no        BSA                                                       	
+``storiesCount``          integer  count     >0           no        PSC, BSA
+``windowToWallFraction``  float    fraction  >0           no        0.14
+``yearBuilt``             integer  year      >1600        no        PSC                 If missing from PSC, model will fail           
+========================  =======  ========  ===========  ========  ==================  ============================================== 
 
-   .. [#] ``bedroomsCount``/2 + 0.5
+.. [#] ``bedroomsCount``/2 + 0.5
 
 .. _cost:
 
