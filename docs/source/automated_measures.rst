@@ -80,6 +80,18 @@ Operations on the existing cooling systems are entered in ``automatedMeasures.ex
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
+  ==========  ====================  ===========  ========  ============================
+  Property    Type                  Constraints  Required  Description
+  ==========  ====================  ===========  ========  ============================
+  ``action``  String                See [#]_     Yes       Operation on existing system
+  ...
+  ==========  ====================  ===========  ========  ============================
+
+  .. [#] ``action`` choices are "keep", "remove", or "adjust".
+
+     - **"keep"** maintains existing system...
+     - **"remove"** indicates the existing system is completely removed...
+
   .. note::
 
   If ``action`` = "remove" and the existing cooling system is a heat pump, then the existing heating system will also be removed. This is based on the assumption that the ``newHeatPump`` will serve both loads. 
