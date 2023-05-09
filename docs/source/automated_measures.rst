@@ -197,6 +197,14 @@ Characteristics of a new heat pump system can be entered in ``automatedMeasures.
      in the building. If the existing building contains ducts, a central ducted ASHP will be defined. If no ducts exist, a ductless mini-split will be defined.
   
   .. [#] ``performanceClass`` choices are "federal minimally compliant" or "energy star compliant"
+  
+Assumptions for ``efficiencyClass``:
+  ===========================  ===========================  =====================
+  Type                         Federal Minimally Compliant  ENERGY STAR Compliant
+  ===========================  ===========================  =====================
+  mini-split (ductless)        SEER: 14, HSPF: 8.8          SEER: 17.8, HSPF: 10
+  air-to-air (ducted/central)  SEER: 14, HSPF: 8.8          SEER: 15.7, HSPF: 9.2
+  ===========================  ===========================  =====================
 
 .. _new_water_heating_system:
 
