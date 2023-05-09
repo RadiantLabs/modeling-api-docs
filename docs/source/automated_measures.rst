@@ -89,8 +89,8 @@ Operations on the existing cooling systems are entered in ``automatedMeasures.ex
 
   .. [#] ``action`` choices are "keep", "remove", or "adjust".
 
-     - **"keep"** maintains existing system...
-     - **"remove"** indicates the existing system is completely removed...
+     - **"keep"** maintains existing cooling system as is, including load percentage. Using this action indicates that there are no changes to cooling at all. This action will override anything in ``adjust`` object.
+     - **"remove"** indicates the existing cooling system is completely removed. New system(s) must cover 100% of load or specify ``coolLoadGapPercentage``. This action will override anything in ``adjust`` object.
 
   .. note::
 
