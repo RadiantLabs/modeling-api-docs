@@ -308,6 +308,174 @@ HVAC
 
 .. literalinclude:: schemas/request/HVAC.json5
    :language: javascript
+   
+HVAC Cooling Systems
+~~~~~~~~~~~~~~~~~~~~
+
+Each space cooling system (other than a heat pump) can be entered in ``...building.systems.hvac.hvacCoolingSystems``.
+
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units                       Constraints     Required  Default             Notes
+=================================  =======  ==========================  ==============  ========  ==================  ==============================================       
+``id``                             id                                   Must be unique  yes       PSC  
+``connectedDistributionId``        idref                                                yes [#]_  PSC  
+``systemType``                     string                               see [#]_        yes       PSC, BSA
+``coolCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
+``compressorType``                 string                               see [#]_        no        single stage        only applicable if systemType = "central air conditioner"
+``coolEfficiency``                 float    see ``coolEfficiencyUnit``  >0              no        PSC 
+``coolEfficiencyUnits``            string                               see [#]_        no        PSC 
+``coolLoadPercentage``             float    fraction                    <=1             yes       1
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+
+.. [#] If ``systemType`` is "central air conditioner"
+.. [#] ``systemType`` choices are "central air conditioner", "room air conditioner", "evaporative cooler", "packaged terminal air conditioner", and "mini-split".
+.. [#] ``compressorType`` choices are "single stage", "two stage", and "variable speed".
+.. [#] ``coolEfficiencyUnits`` choices are "percent", "EER", "CEER", and "SEER". The option to use "SEER2" is planned for a future release.
+
+HVAC Heating Systems
+~~~~~~~~~~~~~~~~~~~~
+
+Each space heating system (other than a heat pump) can be entered in ``...building.systems.hvac.hvacHeatingSystems``.
+
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units                       Constraints     Required  Default             Notes
+=================================  =======  ==========================  ==============  ========  ==================  ==============================================       
+``id``                             id                                   Must be unique  yes       PSC
+``connectedDistributionId``        idref                                                see [#]_  PSC
+``systemType``                     string                                               yes       PSC, BSA
+``fuel``                           string                               see [#]_        no        PSC
+``heatCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
+``heatEfficiency``                 float    see ``heatEfficiencyUnit``  0-1             no        PSC 
+``heatEfficiencyUnits``            string                               see [#]_        no        PSC 
+``heatLoadPercentage``             float    fraction                    0-1             yes       1   
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+
+.. [#] Required when ``systemType`` is "furnace" or "boiler".
+.. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
+.. [#] ``heatEfficiencyUnits`` choices are "AFUE" and "percent".
+
+HVAC Heat Pumps
+~~~~~~~~~~~~~~~
+
+Each space conditioning heat pump can be entered in ``...building.systems.hvac.hvacHeatPumps``. 
+
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units                       Constraints     Required  Default             Notes
+=================================  =======  ==========================  ==============  ========  ==================  ==============================================       
+``id``                             id                                   Must be unique  yes       PSC 
+``connectedDistributionId``        idref                                see [#]_        see [#]_  PSC
+``systemType``                     string                               see [#]_        yes       PSC
+``compressorType``                 string                               see [#]_        no        single stage    
+``heatCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
+``coolCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
+``heatEfficiency``                 float    Btu/Wh                      >0              no        PSC
+``heatEfficiencyUnits``            string                               HSPF [#]_       no        HSPF
+``coolEfficiency``                 float    Btu/Wh                      >0              no        PSC
+``coolEfficiencyUnits``            string                               SEER [#]_       no        SEER
+``heatLoadPercentage``             float    fraction                    0-1             yes       1
+``coolLoadPercentage``             float    fraction                    0-1             yes       1
+``backupSystem``                   object                                               yes
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+
+.. [#] Must reference a defined ``hvacDistributionSystem.id``.
+.. [#] Required when ``systemType`` is "air-to-air" or "ground-to-air".
+.. [#] ``systemType`` choices are "mini-split", "air-to-air", and "ground-to-air".
+.. [#] ``compressorType`` choices are "single stage", "two stage", and "variable speed".
+.. [#] The option to use "HSPF2" is planned for a future release.
+.. [#] The option to use "SEER2" is planned for a future release.
+
+``backupSystem`` schema for HVAC Heat Pumps:
+
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units                       Constraints     Required  Default             Notes
+=================================  =======  ==========================  ==============  ========  ==================  ==============================================       
+``systemType``                     string                               see [#]_        no        integrated  
+``heatingSwitchoverTemp``          float    F                                           no                            determined by modeling engine if undefined
+``fuel``                           string                               see [#]_        no        electricity         only applicable if backupSystem.systemType = "integrated"
+``heatEfficiency``                 float    see ``heatEfficiencyUnit``  0-1             no        1                   only applicable if backupSystem.systemType = "integrated"
+``heatEfficiencyUnits``            string                               see [#]_        no        Percent             only applicable if backupSystem.systemType = "integrated"
+``heatCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined, only applicable if backupSystem.systemType = "integrated"
+``backupHvacId``                   idref                                see [#]_        see [#]_  PSC
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+
+.. [#] ``systemType`` choices are "integrated" and "separate".
+.. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
+.. [#] ``heatEfficiencyUnits`` choices are "AFUE" and "percent".
+.. [#] Must reference an defined ``hvacHeatingSystem.id``
+.. [#] Required when ``backupSystem.systemType`` is "separate".
+
+HVAC Air Distribution Systems
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Each separate air distribution system can be entered in ``...building.systems.hvac.hvacDistributionSystems.airDistributionSystems``.
+
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units                       Constraints     Required  Default             Notes
+=================================  =======  ==========================  ==============  ========  ==================  ==============================================       
+``id``                             id                                   Must be unique  yes       PSC    
+``systemType``                     string                               see [#]_        yes       PSC  
+``numberOfReturnRegisters``        integer  count                       >=0             no        PSC
+``conditionedFloorAreaServed``     float    ft2                         >0              no        PSC
+``ducts``                          object                                               yes
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+
+.. [#] ``systemType`` choices are "regular velocity" and "gravity".
+
+``ducts`` object uses the following schema:
+
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units                       Constraints     Required  Default             Notes
+=================================  =======  ==========================  ==============  ========  ==================  ==============================================       
+``id``                             id                                   Must be unique  yes       PSC
+``systemType``                     string                               see [#]_        yes   both supply and return must be defined  both supply and return must be defined
+``insulationRValue``               float    F-ft2-hr/Btu                >=0             no        0   
+``leakageValue``                   float    see ``leakageUnits``        >=0             no        BSA    
+``leakageUnits``                   string                               see [#]_        no        Percent 
+``location``                       string                               see [#]_        no        see notes   
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+
+.. [#] ``leakageUnits`` choices are"CFM25", "CFM50", and "percent".
+.. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", and "other non-freezing space".
+.. [#] If ``location`` not provided, defaults to the first present space type: "basement - conditioned", "basement - unconditioned", "crawlspace - conditioned", "crawlspace - vented", "crawlspace - unvented", "attic - vented", "attic - unvented", "garage", or "living space".
+
+HVAC Hydronic Distribution Systems
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Each separate hydronic distribution system can be entered in ``...building.systems.hvac.hvacDistributionSystems.hydronicDistributionSystems``.
+
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units                       Constraints     Required  Default             Notes
+=================================  =======  ==========================  ==============  ========  ==================  ==============================================       
+``id``                             id                                   Must be unique  yes       PSC    
+``systemType``                     string                                               yes       
+``conditionedFloorAreaServed``     float    ft2                         >0              no        PSC
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+
+
+HVAC Control Systems
+~~~~~~~~~~~~~~~~~~~~
+
+If any HVAC systems are specified, a single control system can be entered in ``...building.systems.hvac.hvacControlSystems``.
+
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units                       Constraints     Required  Default             Notes
+=================================  =======  ==========================  ==============  ========  ==================  ==============================================       
+``id``                             id                                   Must be unique  yes       HVACControl1
+``heatingSeason``                  object                                                                             Thermostat settings for heating season
+``coolingSeason``                  object                                                                             Thermostat settings for cooling season
+=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+
+``heatingSeason`` and ``coolingSeason`` objects share the following schema:
+
+=================================  =======  ==========================  ==============  ========  ========================  ============================================== 
+Property                           Type     Units                       Constraints     Required  Default                   Notes
+=================================  =======  ==========================  ==============  ========  ========================  ==============================================       
+``setpointTemp``                   float    F                                           no        Heating: 67, Cooling: 78  
+``setbackTemp``                    float    F                                           no        null                      Also referred to as setup temperature for the cooling season.
+``setbackStartHour``               integer  time                        0-23            no        null    
+``totalWeeklySetbackHours``        integer  hrs/week                    0-168           no        null    
+=================================  =======  ==========================  ==============  ========  ========================  ============================================== 
+
 
 .. _improved_appliances:
 
@@ -501,6 +669,34 @@ Water Heating
 
 .. literalinclude:: schemas/request/WaterHeating.json5
    :language: javascript
+
+Each water heater is entered in ``...building.systems.waterHeatingSystems``.
+
+===========================================  =======  ==========================  ==============  ========  ====================  ============================================== 
+Property                                     Type     Units                       Constraints     Required  Default               Notes
+===========================================  =======  ==========================  ==============  ========  ====================  ==============================================       
+``id``                                       id                                   Must be unique  yes       WaterHeater1    
+``systemType``                               string                               see [#]_        yes       storage water heater    
+``connectedHeatingId``                       idref                                see [#]_        see [#]_  null
+``fuel``                                     string                               see [#]_        no      
+``location``                                 string                               see [#]_        no        see [#]_
+``tankVolume``                               float    gal                                         no
+``dhwLoadPercentage``                        float    fraction                    0-1             yes                             sum of dhwLoadPercentage must equal 1
+``heatCapacityBtuPerHour``                   float    Btu/hr                      >0              no                              autosized by modeling engine if undefined
+``energyFactor`` or ``uniformEnergyFactor``  float    fraction                    <1              no        BSA
+``hotWaterTemperature``                      float    F                           >0              no        125 
+===========================================  =======  ==========================  ==============  ========  ====================  ============================================== 
+
+.. [#] ``systemType`` choices are "storage water heater", "instantaneous water heater", "heat pump water heater", "space-heating boiler with storage tank", and "space-heating boiler with tankless coil".
+.. [#] Must reference a defined ``hvacHeatingSystem.id``. 
+.. [#] Only required when ``systemType`` is "space-heating boiler with ..."
+.. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
+.. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", and "other non-freezing space".
+.. [#] If ``location`` not provided, defaults to the first present space type:
+  
+  IECC zones 1-3, excluding 3A: "garage", "living space"
+
+  IECC zones 3A, 4-8, unknown: "basement - conditioned", "basement - unconditioned", "living space"
 
 .. _weather:
 
