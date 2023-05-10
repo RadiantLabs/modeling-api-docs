@@ -73,6 +73,9 @@ Base Building
 .. literalinclude:: schemas/request/BaseBuilding.json5
    :language: javascript
 
+Building Summary
+~~~~~~~~~~~~~~~~
+
 ========================  =======  ========  ===========  ========  ==================  ============================================== 
 Property                  Type     Units     Constraints  Required  Default             Notes                                                                                           
 ========================  =======  ========  ===========  ========  ==================  ============================================== 
@@ -135,6 +138,82 @@ Enclosure
 
 .. literalinclude:: schemas/request/Enclosure.json5
    :language: javascript
+   
+Air Infiltration
+~~~~~~~~~~~~~~~~
+
+
+
+========================  =======  ================  ===========  ========  ==================  ============================================== 
+Property                  Type     Units             Constraints  Required  Default             Notes                                                                                           
+========================  =======  ================  ===========  ========  ==================  ==============================================       
+``rate``                  float    see ``rateUnit``  >0           no        BSA
+``rateUnit``              string                     see [#]_     no        ACH
+``housePressurePa``       float    Pascals           >0           no        50
+========================  =======  ================  ===========  ========  ==================  ============================================== 
+
+.. [#] ``rateUnit`` options are "ACH" or "CFM"
+
+Attics
+~~~~~~
+
+The attic is entered in ``...building.enclosure.attics``. Currently, this array must contain exactly 1 attic object. If there is no attic present in house, set ``area`` to 0.
+
+=================================  =======  ================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units             Constraints     Required  Default             Notes
+=================================  =======  ================  ==============  ========  ==================  ==============================================       
+``id``                             id                         Must be unique  yes       Attic1  
+``area``                           float   ft2                >0              no        PSC    
+``isVented``                       boolean                                    no        yes    
+``floorAssemblyEffectiveRValue``   float   F-ft2-hr/Btu       >0              no        BSA   
+=================================  =======  ================  ==============  ========  ==================  ============================================== 
+
+Roofs
+~~~~~
+
+Each roof surface is entered in ``...building.enclosure.roofs``. Currently, this array is limited to a maximum size of 1.
+
+=================================  =======  ================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units             Constraints     Required  Default             Notes
+=================================  =======  ================  ==============  ========  ==================  ==============================================       
+``id``                             id                         Must be unique  yes       Roof1   
+``area``                           float    ft2               >0              no        PSC   
+``pitch``                          float    ?:12              >=0             no        6   
+``assemblyEffectiveRValue``        float    F-ft2-hr/Btu      >0              no        2.3 
+=================================  =======  ================  ==============  ========  ==================  ============================================== 
+
+Foundations
+~~~~~~~~~~~
+
+Each foundation is entered in ``...building.enclosure.foundations``. Currently, this array is limited to a maximum size of 1.
+
+=================================  =======  ================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units             Constraints     Required  Default             Notes
+=================================  =======  ================  ==============  ========  ==================  ==============================================       
+``id``                             id                         must be unique  yes       PSC     
+``type``                           string                     see [#]_        no        BSA
+``area``                           float    ft2               >0              no        PSC   
+``wallHeight``                     float    ft                >0              no        PSC  
+=================================  =======  ================  ==============  ========  ==================  ============================================== 
+
+.. [#] ``type`` choices are "basement conditioned", "basement unconditioned", "crawl vented", "crawl unvented", "slab", and "pier and beam".
+
+Walls
+~~~~~
+
+Each wall that has no contact with the ground and bounds a space is entered in ``...building.enclosure.walls``. Currently, this array is limited to a maximum size of 1.
+
+=================================  =======  ================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units             Constraints     Required  Default             Notes
+=================================  =======  ================  ==============  ========  ==================  ==============================================       
+``id``                             id                         Must be unique  yes       Wall1                                                                               
+``type``                           string                     see [#]_        no        BSA
+``assemblyEffectiveRValue``        float    F-ft2-hr/Btu      >0              no        BSA
+``percentageAreaShared``           float    fraction          0-1             no        PSC                                                                                
+``area``                           float    ft2               >0              no        PSC
+=================================  =======  ================  ==============  ========  ==================  ============================================== 
+
+.. [#] ``type`` choices are "wood stud". "concrete masonry unit". "structural brick", "steel frame", "stone", "adobe", "log wall", and "solid concrete".
 
 .. _energy_costs:
 
