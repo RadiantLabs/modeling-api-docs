@@ -54,6 +54,38 @@ Appliances
 
 .. literalinclude:: schemas/request/Appliances.json5
    :language: javascript
+   
+Clothes Dryers
+~~~~~~~~~~~~~~
+
+Clothes dryers can be entered in ``...building.appliances.clothesDryers``. Currently, this array is limited to a maximum size of 1.
+
+=================================  =======  ================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units             Constraints     Required  Default             Notes
+=================================  =======  ================  ==============  ========  ==================  ==============================================       
+``id``                             id                         Must be unique  yes       ClothesDryer1   
+``fuel``                           string                     see [#]_        no        BSA  
+``combinedEnergyFactor``           float    lb/kWh            >0              no        3.73    
+``isVented``                       boolean                                    no        true    
+``ventedFlowRate``                 float    ft3/min                           no        150 
+=================================  =======  ================  ==============  ========  ==================  ============================================== 
+
+.. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
+
+Cooking Ranges
+~~~~~~~~~~~~~~
+
+Cooking ranges can be entered in ``...building.appliances.cookingRanges``. Currently, this array is limited to a maximum size of 1.
+
+=================================  =======  ================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units             Constraints     Required  Default             Notes
+=================================  =======  ================  ==============  ========  ==================  ==============================================       
+``id``                             id                         Must be unique  yes       CookingRange1
+``fuel``                           string                     see [#]_        no        PSC, BSA   
+``isInduction``                    boolean                                    no        false   
+=================================  =======  ================  ==============  ========  ==================  ============================================== 
+
+.. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
 
 .. _automated_measures:
 
@@ -142,8 +174,6 @@ Enclosure
 Air Infiltration
 ~~~~~~~~~~~~~~~~
 
-
-
 ========================  =======  ================  ===========  ========  ==================  ============================================== 
 Property                  Type     Units             Constraints  Required  Default             Notes                                                                                           
 ========================  =======  ================  ===========  ========  ==================  ==============================================       
@@ -213,7 +243,7 @@ Property                           Type     Units             Constraints     Re
 ``area``                           float    ft2               >0              no        PSC
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
-.. [#] ``type`` choices are "wood stud". "concrete masonry unit". "structural brick", "steel frame", "stone", "adobe", "log wall", and "solid concrete".
+.. [#] ``type`` choices are "wood stud", "concrete masonry unit", "structural brick", "steel frame", "stone", "adobe", "log wall", and "solid concrete".
 
 .. _energy_costs:
 
@@ -351,6 +381,18 @@ Lifetime
 .. literalinclude:: schemas/request/Lifetime.json5
    :language: javascript
 
+=================================  =======  ==================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units               Constraints     Required  Default             Notes
+=================================  =======  ==================  ==============  ========  ==================  ==============================================       
+``replacementCost``                float    ``units.monetary``  >=0             see [#]_                      Default values not supported currently
+``endOfLifeDate``                  date                         in the future   see [*]_      
+``effectiveUsefulLifeDays``        integer  days                >0              see [*]_   BSA    
+``installedDate``                  date                         in the past     see [*]_   PSC, BSA
+=================================  =======  ==================  ==============  ========  ==================  ============================================== 
+
+.. [#] Required to run status quo timeline.
+.. [*] Two of these three properties (``endOfLifeDate``, ``effectiveUsefulLifeDays``, ``installedDate``) are required to be included in the status quo timeline.
+
 .. _loan:
 
 Loan
@@ -382,6 +424,27 @@ Photovoltaic
 
 .. literalinclude:: schemas/request/Photovoltaic.json5
    :language: javascript
+
+Each solar electric photovoltaic (PV) system is entered in ``...building.systems.photovoltaic``. If not entered, the simulation will not include photovoltaics.
+
+=================================  =======  ==================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units               Constraints     Required  Default             Notes
+=================================  =======  ==================  ==============  ========  ==================  ==============================================       
+``id``                             id                           Must be unique  yes       not defined 
+``location``                       string                       see [#]_        no        "roof"  
+``moduleType``                     string                       see [#]_        no        "standard"  
+``tracking``                       string                       see [#]_        no        "fixed" 
+``arrayOrientation``               string   direction           see [#]_        yes     
+``arrayTilt``                      float    degrees             0-90            yes                           Tilt relative to horizontal
+``maxPowerOutput``                 float    W                   >0              yes     
+``inverterEfficiency``             float    fraction            0-1             no        0.96    
+``yearModulesManufactured``        integer  year                >1600           no                            Informs systemLossesFraction, which defaults to 0.14
+=================================  =======  ==================  ==============  ========  ==================  ============================================== 
+
+.. [#] ``location`` choices are "ground" and "roof".
+.. [#] ``moduleType`` choices are "standard", "premium", and "thin film".
+.. [#] ``tracking`` choices are "fixed", "1-axis", "1-axis backtracked", and "2-axis".
+.. [#] ``arrayOrientation`` choices are "northeast", "east", "southeast", "south", "southwest", "west", "northwest", and "north".
 
 .. _response_model:
 
