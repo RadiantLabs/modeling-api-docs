@@ -1,0 +1,443 @@
+{
+  "addressFoundFull": "501 RANDALL RD, BALLSTON SPA, NY 12020",
+  "addressFoundComponents": {
+    "addressLine1": "501 Randall Rd",
+    "city": "Ballston Spa",
+    "stateAbbreviation": "NY",
+    "zipCode": "12020"
+  },
+  "timelines": [
+    {
+      "id": "ca4379e4-f513-42a0-bf4f-b7100af8bcda",
+      "radiantId": "869e628b-8be9-44ca-b764-b7530350ba47",
+      "label": "OLYMPIC_GIRAFFE",
+      "models": [
+        {
+          "id": "776364ab-59bf-4937-b1b1-fbf6b5492e0f",
+          "radiantId": "40404d64-408a-4b17-bd70-d368f6486d5a",
+          "label": "BASE",
+          "providedBaseBuilding": {},
+          "appliedBaseBuilding": {
+            "buildingSummary": {
+              "conditionedFloorArea": 2413,
+              "averageCeilingHeight": 8,
+              "bathCount": 2,
+              "bedroomsCount": 4,
+              "residentCount": 5,
+              "storiesCount": 1,
+              "windowToWallFraction": 0.14,
+              "yearBuilt": 1945
+            },
+            "enclosure": {
+              "airInfiltration": {
+                "rate": 15.0,
+                "rateUnit": "ACH",
+                "housePressurePa": 50.0
+              },
+              "attics": [
+                {
+                  "id": "Attic1",
+                  "area": 1225,
+                  "floorAssemblyEffectiveRValue": 20.6
+                }
+              ],
+              "roofs": [
+                {
+                  "id": "Roof1",
+                  "area": 1370,
+                  "pitch": 6,
+                  "assemblyEffectiveRValue": 2.3,
+                  "lifetime": {
+                    "replacementCost": 7000,
+                    "endOfLifeDate": "2030-01-01"
+                  }
+                }
+              ],
+              "walls": [
+                {
+                  "id": "Wall1",
+                  "type": "wood stud",
+                  "assemblyEffectiveRValue": 4.0,
+                  "percentageAreaShared": 0.0
+                }
+              ],
+              "foundations": [
+                {
+                  "id": "BasementConditioned1",
+                  "type": "basement conditioned",
+                  "area": 1188,
+                  "wallHeight": 8
+                }
+              ]
+            },
+            "systems": {
+              "hvac": {
+                "hvacCoolingSystems": [
+                  {
+                    "id": "RoomAirConditioner1",
+                    "systemType": "room air conditioner",
+                    "coolEfficiency": 10.7,
+                    "coolEfficiencyUnits": "EER",
+                    "coolLoadPercentage": 0.33,
+                    "lifetime": {
+                      "replacementCost": 200,
+                      "endOfLifeDate": "2024-07-01"
+                    }
+                  }
+                ],
+                "hvacHeatingSystems": [
+                  {
+                    "id": "ElectricResistance1",
+                    "systemType": "electric resistance",
+                    "fuel": "electricity",
+                    "heatEfficiency": 1.0,
+                    "heatEfficiencyUnits": "percent",
+                    "heatLoadPercentage": 1.0
+                  }
+                ],
+                "hvacControlSystems": [
+                  {
+                    "id": "HVACControl1",
+                    "heatingSeason": {
+                      "setpoint": 68
+                    },
+                    "coolingSeason": {
+                      "setpoint": 78
+                    }
+                  }
+                ]
+              },
+              "waterHeating": {
+                "waterHeatingSystems": [
+                  {
+                    "id": "WaterHeater1",
+                    "systemType": "storage water heater",
+                    "fuel": "electricity",
+                    "location": "living space",
+                    "tankVolume": 40,
+                    "dhwLoadPercentage": 1.0,
+                    "energyFactor": 0.92,
+                    "hotWaterTemperature": 125.0,
+                    "lifetime": {
+                      "replacementCost": 1000,
+                      "installedDate": "2015-11-12"
+                    }
+                  }
+                ]
+              }
+            },
+            "appliances": {
+              "clothesDryers": [
+                {
+                  "id": "ClothesDryer1",
+                  "fuel": "electricity",
+                  "combinedEnergyFactor": 3.73,
+                  "isVented": true,
+                  "ventedFlowRate": 150
+                }
+              ],
+              "cookingRanges": [
+                {
+                  "id": "CookingRange1",
+                  "fuel": "electricity",
+                  "isInduction": false
+                }
+              ]
+            }
+          },
+          "energyTotals": {
+            "annual": {
+              "coalTotal": {
+                "mbtu": [0.0]
+              },
+              "electricityTotal": {
+                "kwh": [0.0],
+                "mbtu": [0.0]
+              },
+              "fuelOilTotal": {
+                "mbtu": [0.0]
+              },
+              "naturalGasTotal": {
+                "mbtu": [0.0]
+              },
+              "propaneTotal": {
+                "mbtu": [0.0]
+              },
+              "woodCordTotal": {
+                "mbtu": [0.0]
+              },
+              "woodPelletsTotal": {
+                "mbtu": [0.0]
+              },
+              "total": {
+                "mbtu": [0.0]
+              }
+            }
+          },
+          "energyCosts": {
+            "annual": {
+              "coalTotal": [0.0],
+              "electricityTotal": [0.0],
+              "fuelOilTotal": [0.0],
+              "naturalGasTotal": [0.0],
+              "propaneTotal": [0.0],
+              "woodCordTotal": [0.0],
+              "woodPelletsTotal": [0.0],
+              "total": [0.0]
+            }
+          },
+          "emissionTotals": {
+            "annual": {
+              "coalTotal": {
+                "co2": [0.0]
+              },
+              "electricityTotal": {
+                "co2": [0.0]
+              },
+              "fuelOilTotal": {
+                "co2": [0.0]
+              },
+              "naturalGasTotal": {
+                "co2": [0.0]
+              },
+              "propaneTotal": {
+                "co2": [0.0]
+              },
+              "woodCordTotal": {
+                "co2": [0.0]
+              },
+              "woodPelletsTotal": {
+                "co2": [0.0]
+              },
+              "total": {
+                "co2": [0.0]
+              }
+            }
+          }
+        },
+        {
+          "id": "c4574bb1-162d-49ee-b5dc-06c8883b3cc0",
+          "radiantId": "3715acd5-2193-40b0-a238-a7c6cc798bfe",
+          "label": "SWIFT_WEASEL",
+          "automatedMeasures": {
+            "newHeatPump": {
+              "systemType": "heat-pump",
+              "performanceClass": "federal minimally compliant"
+            }
+          },
+          "requestedImprovedBuilding": {},
+          "appliedImprovedBuilding": {
+            "buildingSummary": {
+              "conditionedFloorArea": 2413,
+              "averageCeilingHeight": 8,
+              "bathCount": 2,
+              "bedroomsCount": 4,
+              "residentCount": 5,
+              "storiesCount": 1,
+              "windowToWallFraction": 0.14,
+              "yearBuilt": 1945
+            },
+            "enclosure": {
+              "airInfiltration": {
+                "rate": 15.0,
+                "rateUnit": "ACH",
+                "housePressurePa": 50.0
+              },
+              "attics": [
+                {
+                  "id": "Attic1",
+                  "area": 1225,
+                  "floorAssemblyEffectiveRValue": 20.6
+                }
+              ],
+              "roofs": [
+                {
+                  "id": "Roof1",
+                  "area": 1370,
+                  "pitch": 6,
+                  "assemblyEffectiveRValue": 2.3
+                }
+              ],
+              "walls": [
+                {
+                  "id": "Wall1",
+                  "type": "wood stud",
+                  "assemblyEffectiveRValue": 4.0,
+                  "percentageAreaShared": 0.0
+                }
+              ],
+              "foundations": [
+                {
+                  "id": "BasementConditioned1",
+                  "type": "basement conditioned",
+                  "area": 1225,
+                  "wallHeight": 8
+                }
+              ]
+            },
+            "systems": {
+              "hvac": {
+                "hvacCoolingSystems": [],
+                "hvacHeatingSystems": [
+                  {
+                    "id": "Boiler1",
+                    "connectedDistributionId": "HVACDistributionBoiler1",
+                    "systemType": "boiler",
+                    "fuel": "natural gas",
+                    "heatEfficiency": 0.8,
+                    "heatEfficiencyUnits": "AFUE"
+                  }
+                ],
+                "hvacDistributionSystems": {
+                  "hydronicDistributionSystems": [
+                    {
+                      "id": "HVACDistributionBoiler1",
+                      "systemType": "baseboard",
+                      "conditionedFloorAreaServed": 2413
+                    }
+                  ]
+                },
+                "hvacHeatPumps": [
+                  {
+                    "id": "MiniSplit1",
+                    "systemType": "mini-split",
+                    "compressorType": "variable speed",
+                    "backupSystem": {
+                      "systemType": "separate",
+                      "backupHvacId": "Boiler1"
+                    },
+                    "heatEfficiency": 8.5,
+                    "heatEfficiencyUnits": "HSPF",
+                    "coolEfficiency": 14,
+                    "coolEfficiencyUnits": "SEER",
+                    "heatLoadPercentage": 1.0,
+                    "coolLoadPercentage": 1.0
+                  }
+                ],
+                "hvacControlSystems": [
+                  {
+                    "id": "HVACControl1",
+                    "heatingSeason": {
+                      "setpoint": 68
+                    },
+                    "coolingSeason": {
+                      "setpoint": 78
+                    }
+                  }
+                ]
+              },
+              "waterHeating": {
+                "waterHeatingSystems": [
+                  {
+                    "id": "WaterHeater1",
+                    "systemType": "storage water heater",
+                    "connectedHeatingId": "Boiler1",
+                    "fuel": "natural gas",
+                    "location": "living space",
+                    "tankVolume": 40,
+                    "dhwLoadPercentage": 1.0,
+                    "heatCapacityBtuPerHour": null,
+                    "energyFactor": 0.92,
+                    "uniformEnergyFactor": null,
+                    "hotWaterTemperature": 125.0
+                  }
+                ]
+              }
+            },
+            "appliances": {
+              "clothesDryers": [
+                {
+                  "id": "ClothesDryer1",
+                  "fuel": "electricity",
+                  "combinedEnergyFactor": 3.73,
+                  "isVented": true,
+                  "ventedFlowRate": 150
+                }
+              ],
+              "cookingRanges": [
+                {
+                  "id": "CookingRange1",
+                  "fuel": "electricity",
+                  "isInduction": false
+                }
+              ]
+            }
+          },
+          "energyTotals": {
+            "annual": {
+              "coalTotal": {
+                "mbtu": [0.0]
+              },
+              "electricityTotal": {
+                "kwh": [0.0],
+                "mbtu": [0.0]
+              },
+              "fuelOilTotal": {
+                "mbtu": [0.0]
+              },
+              "naturalGasTotal": {
+                "mbtu": [0.0]
+              },
+              "propaneTotal": {
+                "mbtu": [0.0]
+              },
+              "woodCordTotal": {
+                "mbtu": [0.0]
+              },
+              "woodPelletsTotal": {
+                "mbtu": [0.0]
+              },
+              "total": {
+                "mbtu": [0.0]
+              }
+            }
+          },
+          "energyCosts": {
+            "annual": {
+              "coalTotal": [0.0],
+              "electricityTotal": [0.0],
+              "fuelOilTotal": [0.0],
+              "naturalGasTotal": [0.0],
+              "propaneTotal": [0.0],
+              "woodCordTotal": [0.0],
+              "woodPelletsTotal": [0.0],
+              "total": [0.0]
+            }
+          },
+          "emissionTotals": {
+            "annual": {
+              "coalTotal": {
+                "co2": [0.0]
+              },
+              "electricityTotal": {
+                "co2": [0.0]
+              },
+              "fuelOilTotal": {
+                "co2": [0.0]
+              },
+              "naturalGasTotal": {
+                "co2": [0.0]
+              },
+              "propaneTotal": {
+                "co2": [0.0]
+              },
+              "woodCordTotal": {
+                "co2": [0.0]
+              },
+              "woodPelletsTotal": {
+                "co2": [0.0]
+              },
+              "total": {
+                "co2": [0.0]
+              }
+            }
+          }
+        }
+      ],
+      "totalEnergyCosts": 0.0,
+      "totalEmissions": {
+        "co2": 0.0
+      }
+    }
+  ]
+}
