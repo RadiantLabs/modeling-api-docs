@@ -87,7 +87,7 @@ Property                           Type     Units             Constraints     Re
 
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
 
-.. _automated_measures:
+.. _schema_automated_measures:
 
 Automated Measures
 ******************
@@ -193,9 +193,9 @@ The attic is entered in ``...building.enclosure.attics``. Currently, this array 
 Property                           Type     Units             Constraints     Required  Default             Notes
 =================================  =======  ================  ==============  ========  ==================  ==============================================       
 ``id``                             id                         Must be unique  yes       Attic1  
-``area``                           float   ft2                >0              no        PSC    
-``isVented``                       boolean                                    no        yes    
-``floorAssemblyEffectiveRValue``   float   F-ft2-hr/Btu       >0              no        BSA   
+``area``                           float    ft2               >0              no        PSC
+``isVented``                       boolean                                    no        yes
+``floorAssemblyEffectiveRValue``   float    F-ft2-hr/Btu      >0              no        BSA
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
 Roofs
@@ -405,7 +405,7 @@ Property                           Type     Units                       Constrai
 .. [#] Required when ``backupSystem.systemType`` is "separate".
 
 HVAC Air Distribution Systems
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Each separate air distribution system can be entered in ``...building.systems.hvac.hvacDistributionSystems.airDistributionSystems``.
 
