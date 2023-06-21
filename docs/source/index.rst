@@ -20,4 +20,7 @@ Contents
    automated_measures
    extensive_inputs_and_outputs
    api
-   Interactive API Documentation <https://api.radiantlabs.co/v1/redoc>
+   |redoc_link|
+
+.. |redoc_link| raw:: html
+   <a class="reference external" href="https://api.radiantlabs.co/v1/redoc" target="_blank">Interactive API Documentation</a>
