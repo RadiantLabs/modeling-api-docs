@@ -23,4 +23,5 @@ Contents
    |redoc_link|
 
 .. |redoc_link| raw:: html
+
    <a class="reference external" href="https://api.radiantlabs.co/v1/redoc" target="_blank">Interactive API Documentation</a>
