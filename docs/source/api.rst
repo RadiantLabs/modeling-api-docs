@@ -314,18 +314,18 @@ HVAC Cooling Systems
 
 Each space cooling system (other than a heat pump) can be entered in ``...building.systems.hvac.hvacCoolingSystems``.
 
-=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
-Property                           Type     Units                       Constraints     Required  Default             Notes
-=================================  =======  ==========================  ==============  ========  ==================  ==============================================       
-``id``                             id                                   Must be unique  yes       PSC  
-``connectedDistributionId``        idref                                                yes [#]_  PSC  
-``systemType``                     string                               see [#]_        yes       PSC, BSA
-``coolCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
-``compressorType``                 string                               see [#]_        no        single stage        only applicable if systemType = "central air conditioner"
+=================================  =======  ===========================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units                        Constraints     Required  Default             Notes
+=================================  =======  ===========================  ==============  ========  ==================  ==============================================       
+``id``                             id                                    Must be unique  yes       PSC  
+``connectedDistributionId``        idref                                                 yes [#]_  PSC  
+``systemType``                     string                                see [#]_        yes       PSC, BSA
+``coolCapacityBtuPerHour``         float    Btu/hr                       >=0             no                            autosized by modeling engine if undefined
+``compressorType``                 string                                see [#]_        no        single stage        only applicable if systemType = "central air conditioner"
 ``coolEfficiency``                 float    see ``coolEfficiencyUnits``  >0              no        PSC 
-``coolEfficiencyUnits``            string                               see [#]_        no        PSC 
-``coolLoadPercentage``             float    fraction                    <=1             yes       1
-=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+``coolEfficiencyUnits``            string                                see [#]_        no        PSC 
+``coolLoadPercentage``             float    fraction                     <=1             yes       1
+=================================  =======  ===========================  ==============  ========  ==================  ============================================== 
 
 .. [#] If ``systemType`` is "central air conditioner"
 .. [#] ``systemType`` choices are "central air conditioner", "room air conditioner", "evaporative cooler", "packaged terminal air conditioner", and "mini-split".
@@ -337,18 +337,18 @@ HVAC Heating Systems
 
 Each space heating system (other than a heat pump) can be entered in ``...building.systems.hvac.hvacHeatingSystems``.
 
-=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
-Property                           Type     Units                       Constraints     Required  Default             Notes
-=================================  =======  ==========================  ==============  ========  ==================  ==============================================       
-``id``                             id                                   Must be unique  yes       PSC
-``connectedDistributionId``        idref                                                see [#]_  PSC
-``systemType``                     string                                               yes       PSC, BSA
-``fuel``                           string                               see [#]_        no        PSC
-``heatCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
+=================================  =======  ===========================  ==============  ========  ==================  ============================================== 
+Property                           Type     Units                        Constraints     Required  Default             Notes
+=================================  =======  ===========================  ==============  ========  ==================  ==============================================       
+``id``                             id                                    Must be unique  yes       PSC
+``connectedDistributionId``        idref                                                 see [#]_  PSC
+``systemType``                     string                                                yes       PSC, BSA
+``fuel``                           string                                see [#]_        no        PSC
+``heatCapacityBtuPerHour``         float    Btu/hr                       >=0             no                            autosized by modeling engine if undefined
 ``heatEfficiency``                 float    see ``heatEfficiencyUnits``  0-1             no        PSC 
-``heatEfficiencyUnits``            string                               see [#]_        no        PSC 
-``heatLoadPercentage``             float    fraction                    0-1             yes       1   
-=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+``heatEfficiencyUnits``            string                                see [#]_        no        PSC 
+``heatLoadPercentage``             float    fraction                     0-1             yes       1   
+=================================  =======  ===========================  ==============  ========  ==================  ============================================== 
 
 .. [#] Required when ``systemType`` is "furnace" or "boiler".
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
