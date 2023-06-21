@@ -322,7 +322,7 @@ Property                           Type     Units                       Constrai
 ``systemType``                     string                               see [#]_        yes       PSC, BSA
 ``coolCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
 ``compressorType``                 string                               see [#]_        no        single stage        only applicable if systemType = "central air conditioner"
-``coolEfficiency``                 float    see ``coolEfficiencyUnit``  >0              no        PSC 
+``coolEfficiency``                 float    see ``coolEfficiencyUnits``  >0              no        PSC 
 ``coolEfficiencyUnits``            string                               see [#]_        no        PSC 
 ``coolLoadPercentage``             float    fraction                    <=1             yes       1
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
@@ -345,7 +345,7 @@ Property                           Type     Units                       Constrai
 ``systemType``                     string                                               yes       PSC, BSA
 ``fuel``                           string                               see [#]_        no        PSC
 ``heatCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
-``heatEfficiency``                 float    see ``heatEfficiencyUnit``  0-1             no        PSC 
+``heatEfficiency``                 float    see ``heatEfficiencyUnits``  0-1             no        PSC 
 ``heatEfficiencyUnits``            string                               see [#]_        no        PSC 
 ``heatLoadPercentage``             float    fraction                    0-1             yes       1   
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
@@ -393,7 +393,7 @@ Property                           Type     Units                       Constrai
 ``heatingSwitchoverTemp``          float    F                                           no                            determined by modeling engine if undefined
 ``fuel``                           string                               see [#]_        no        electricity         only applicable if backupSystem.systemType = "integrated"
 ``heatEfficiency``                 float    see ``heatEfficiencyUnit``  0-1             no        1                   only applicable if backupSystem.systemType = "integrated"
-``heatEfficiencyUnits``            string                               see [#]_        no        Percent             only applicable if backupSystem.systemType = "integrated"
+``heatEfficiencyUnits``            string                               see [#]_        no        percent             only applicable if backupSystem.systemType = "integrated"
 ``heatCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined, only applicable if backupSystem.systemType = "integrated"
 ``backupHvacId``                   idref                                see [#]_        see [#]_  PSC
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
@@ -423,17 +423,18 @@ Property                           Type     Units                       Constrai
 
 ``ducts`` object uses the following schema:
 
-=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
-Property                           Type     Units                       Constraints     Required  Default             Notes
-=================================  =======  ==========================  ==============  ========  ==================  ==============================================       
+=================================  =======  ==========================  ==============  ========  ======================  ============================================== 
+Property                           Type     Units                       Constraints     Required  Default                 Notes
+=================================  =======  ==========================  ==============  ========  ======================  ==============================================       
 ``id``                             id                                   Must be unique  yes       PSC
-``systemType``                     string                               see [#]_        yes   both supply and return must be defined  both supply and return must be defined
+``systemType``                     string                               see [#]_        yes       "supply" and "return"   both supply and return must be defined
 ``insulationRValue``               float    F-ft2-hr/Btu                >=0             no        0   
 ``leakageValue``                   float    see ``leakageUnits``        >=0             no        BSA    
 ``leakageUnits``                   string                               see [#]_        no        Percent 
-``location``                       string                               see [#]_        no        see notes   
-=================================  =======  ==========================  ==============  ========  ==================  ============================================== 
+``location``                       string                               see [#]_        no        see notes [#]_
+=================================  =======  ==========================  ==============  ========  ======================  ============================================== 
 
+.. [#] ``systemType`` choices are "supply" and "return".
 .. [#] ``leakageUnits`` choices are"CFM25", "CFM50", and "percent".
 .. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", and "other non-freezing space".
 .. [#] If ``location`` not provided, defaults to the first present space type: "basement - conditioned", "basement - unconditioned", "crawlspace - conditioned", "crawlspace - vented", "crawlspace - unvented", "attic - vented", "attic - unvented", "garage", or "living space".
@@ -549,17 +550,17 @@ Lifetime
 .. literalinclude:: schemas/request/Lifetime.json5
    :language: javascript
 
-=================================  =======  ==================  ==============  ========  ==================  ============================================== 
-Property                           Type     Units               Constraints     Required  Default             Notes
-=================================  =======  ==================  ==============  ========  ==================  ==============================================       
-``replacementCost``                float    ``units.monetary``  >=0             see [#]_                      Default values not supported currently
-``endOfLifeDate``                  date                         in the future   see [*]_      
-``effectiveUsefulLifeDays``        integer  days                >0              see [*]_   BSA    
-``installedDate``                  date                         in the past     see [*]_   PSC, BSA
-=================================  =======  ==================  ==============  ========  ==================  ============================================== 
+=================================  =======  ==================  ==============  ==========  ==================  ============================================== 
+Property                           Type     Units               Constraints     Required    Default             Notes
+=================================  =======  ==================  ==============  ==========  ==================  ==============================================       
+``replacementCost``                float    ``units.monetary``  >=0             see [#]_                        Default values not supported currently
+``endOfLifeDate``                  date                         in the future   see [#LT]_
+``effectiveUsefulLifeDays``        integer  days                >0              see [#LT]_   BSA
+``installedDate``                  date                         in the past     see [#LT]_   PSC, BSA
+=================================  =======  ==================  ==============  ==========  ==================  ============================================== 
 
 .. [#] Required to run status quo timeline.
-.. [*] Two of these three properties (``endOfLifeDate``, ``effectiveUsefulLifeDays``, ``installedDate``) are required to be included in the status quo timeline.
+.. [#LT] Two of these three properties (``endOfLifeDate``, ``effectiveUsefulLifeDays``, ``installedDate``) are required to be included in the status quo timeline.
 
 .. _loan:
 
