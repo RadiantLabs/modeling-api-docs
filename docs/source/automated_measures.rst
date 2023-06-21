@@ -152,7 +152,7 @@ Operations on the existing water heating system can be entered in ``automatedMea
 
      **"keep"** maintains existing water heating system as is, including load percentage. Using this action indicates that there are no changes to the water heating system at all. This action will override anything in ``adjust`` object.
 
-     **"remove"** indicates the existing water heating system is completely removed. New system(s) must cover 100% of load or specify ``loadGapPercentage``. This action will override anything in ``adjust`` object.
+     **"remove"** indicates the existing water heating system is completely removed. This action will override anything in ``adjust`` object.
 
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
@@ -222,9 +222,9 @@ Characteristics of a new water heating system can be entered in ``automatedMeasu
   ``costs``              Array of :ref:`cost`               No        ``[]``   Implied costs of measure
   =====================  ====================  ===========  ========  =======  ===================================
 
-  .. [#] systemType choices are "storage water heater", "instantaneous water heater", and "heat pump water heater"
-  .. [#] efficiencyClass choices are "standard" or "premium"
-  .. [#]
+  .. [#] ``systemType`` choices are "storage water heater", "instantaneous water heater", and "heat pump water heater"
+  .. [#] ``efficiencyClass`` choices are "standard" or "premium"
+  .. [#] The sum of ``dhwLoadPercentage`` across all water heating systems must be less than 1.
 
 
 Assumptions for ``efficiencyClass``:
