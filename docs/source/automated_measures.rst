@@ -40,13 +40,13 @@ Operations to the existing HVAC heating system are entered in ``automatedMeasure
 
 .. note::
 
-  If ``action`` = "remove" and the existing water heating system is dependent on the removed heating system (i.e. indirect water heater), 
-  then a new standalone heat pump water heating system will automatically be added to the ``improvedBuilding``. 
-  
+  If ``action`` = "remove" and the existing water heating system is dependent on the removed heating system (i.e. indirect water heater),
+  then a new standalone heat pump water heating system will automatically be added to the ``improvedBuilding``.
+
 .. note::
 
-  If ``action`` = "remove" and the existing heating system is a heat pump, then the existing cooling system will also be removed. 
-  This is based on the assumption that the ``newHeatPump`` will serve both loads. 
+  If ``action`` = "remove" and the existing heating system is a heat pump, then the existing cooling system will also be removed.
+  This is based on the assumption that the ``newHeatPump`` will serve both loads.
 
 ``adjust`` schema for existing HVAC heating system:
 
@@ -84,7 +84,7 @@ Operations on the existing cooling systems are entered in ``automatedMeasures.ex
 
   .. note::
 
-  If ``action`` = "remove" and the existing cooling system is a heat pump, then the existing heating system will also be removed. This is based on the assumption that the ``newHeatPump`` will serve both loads. 
+  If ``action`` = "remove" and the existing cooling system is a heat pump, then the existing heating system will also be removed. This is based on the assumption that the ``newHeatPump`` will serve both loads.
 
 ``adjust`` schema for existing HVAC cooling system:
 
@@ -111,11 +111,11 @@ connected to the base building's heating and cooling systems.
   ==========  ====================  ===========  ========  ============================
 
   .. [#] ``action`` choices are "keep", "remove", or "adjust".
-     
+
      **"keep"** maintains existing distribution system as is. Using this action indicates that there are no changes to the distribution system at all. This action will override anything in ``adjust`` object.
-     
+
      **"remove"** indicates the existing distribution system is completely removed. This action will override anything in ``adjust`` object.
-     
+
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
@@ -149,11 +149,11 @@ Operations on the existing water heating system can be entered in ``automatedMea
   ==========  ====================  ===========  ========  ============================
 
   .. [#] ``action`` choices are "keep", "remove", or "adjust".
-         
+
      **"keep"** maintains existing water heating system as is, including load percentage. Using this action indicates that there are no changes to the water heating system at all. This action will override anything in ``adjust`` object.
-     
+
      **"remove"** indicates the existing water heating system is completely removed. New system(s) must cover 100% of load or specify ``loadGapPercentage``. This action will override anything in ``adjust`` object.
-     
+
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
@@ -192,12 +192,12 @@ Characteristics of a new heat pump system can be entered in ``automatedMeasures.
   =========================  ====================  ===========  ========  =======  ===================================
 
   .. [#] ``systemType`` choices are "heat pump", "mini-split" or "air-to-air"
-  
-     **"heat pump"** is a generic air source heat pump that will be automatically determined based on the existing conditions 
+
+     **"heat pump"** is a generic air source heat pump that will be automatically determined based on the existing conditions
      in the building. If the existing building contains ducts, a central ducted ASHP will be defined. If no ducts exist, a ductless mini-split will be defined.
-  
+
   .. [#] ``performanceClass`` choices are "federal minimally compliant" or "energy star compliant"
-  
+
 Assumptions for ``efficiencyClass``:
   ===========================  ===========================  =====================
   Type                         Federal Minimally Compliant  ENERGY STAR Compliant
@@ -216,12 +216,12 @@ Characteristics of a new water heating system can be entered in ``automatedMeasu
   =====================  ====================  ===========  ========  =======  ===================================
   Property               Type                  Constraints  Required  Default  Description
   =====================  ====================  ===========  ========  =======  ===================================
-  ``systemType``         String                See [#]_     Yes                Type of water heating system. fuelType assumed as base heating fuel for "storage water heater" and "instantaneous water heater". 
+  ``systemType``         String                See [#]_     Yes                Type of water heating system. fuelType assumed as base heating fuel for "storage water heater" and "instantaneous water heater".
   ``efficiencyClass``    String                See [#]_     Yes
   ``dhwLoadPercentage``  Double                0 - 1 [#]_   No        1.0      DHW load for the new water heating system
   ``costs``              Array of :ref:`cost`               No        ``[]``   Implied costs of measure
   =====================  ====================  ===========  ========  =======  ===================================
-  
+
   .. [#] systemType choices are "storage water heater", "instantaneous water heater", and "heat pump water heater"
   .. [#] efficiencyClass choices are "standard" or "premium"
 
@@ -336,5 +336,25 @@ Adjustments to thermostat settings can be entered in ``automatedMeasures.thermos
   ``setbackStartHour``         Integer            0 - 23       Heating: 23, Cooling: 9   Start hour for daily setback period
   ``totalWeeklySetbackHours``  Integer  hrs/week  > 0          Heating: 49, Cooling: 42  Hours per week of temperature setback
   ===========================  =======  ========  ===========  ========================  ===========
-  
+
   .. [#] Also referred to as setup temperature for the cooling season.
+
+
+Automated measures example adding a new heat pump
+-------------------------------------------------
+
+Request
+*******
+
+Send a POST request to `/v1/timelines` with the following payload.
+
+.. literalinclude:: examples/request/timelines/post/automated_measures_new_heat_pump.json
+   :language: json
+
+Response
+********
+
+And the response will have the following structure.
+
+.. literalinclude:: examples/response/timelines/post/automated_measures_new_heat_pump.json
+   :language: json
