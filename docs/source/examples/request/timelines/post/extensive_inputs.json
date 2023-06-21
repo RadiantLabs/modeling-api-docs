@@ -80,7 +80,7 @@
             "systemType": "electric resistance",
             "fuel": "electricity",
             "heatEfficiency": 1.0,
-            "heatEfficiencyUnits": "Percent",
+            "heatEfficiencyUnits": "percent",
             "heatLoadPercentage": 1.0
           }
         ],
@@ -88,10 +88,10 @@
           {
             "id": "HVACControl1",
             "heatingSeason": {
-              "setpointTemp": 68
+              "setpoint": 68
             },
             "coolingSeason": {
-              "setpointTemp": 78
+              "setpoint": 78
             }
           }
         ]
@@ -137,7 +137,7 @@
   "globalControls": {
     "includeBase": true,
     "includeTypical": true,
-    "financialAnalysisOptions": ["savings", "installedCosts", "energyCosts"],
+    "financialAnalysisOptions": ["difference", "installed costs", "energy costs"],
     "resolution": ["annual", "monthly"],
     "includeStatusQuoTimeline": true,
     "timelineStartDate": "2022-12-10",
@@ -170,7 +170,7 @@
           "improvedBuilding": {
             "enclosure": {
               "airInfiltration": {
-                "airInfiltrationRate": 7.0,
+                "rate": 7.0,
                 "costs": [
                   {
                     "fixedCost": 2928
@@ -181,9 +181,11 @@
                 {
                   "id": "Attic1",
                   "floorAssemblyEffectiveRValue": 50.6,
-                  "cost": {
-                    "fixedCost": 2450
-                  }
+                  "costs": [
+                    {
+                      "fixedCost": 2450
+                    }
+                  ]
                 }
               ]
             },
@@ -232,12 +234,16 @@
                   },
                   {
                     "id": "HVACControl2",
-                    "setbackStartHourHeating": 23,
-                    "setbackTempHeatingSeason": 64,
-                    "setupStartHourCooling": 9,
-                    "setupTempCoolingSeason": 82,
-                    "totalSetbackHoursPerWeekHeating": 49,
-                    "totalSetupHoursPerWeekCooling": 42,
+                    "heatingSeason": {
+                      "setback": 64,
+                      "setbackStartHour": 23,
+                      "totalWeeklySetbackHours": 49
+                    },
+                    "coolingSeason": {
+                      "setpoint": 82,
+                      "setbackStartHour": 9,
+                      "totalWeeklySetbackHours": 42
+                    },
                     "costs": [
                       {
                         "fixedCost": 240
