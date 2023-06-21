@@ -82,7 +82,7 @@ Operations on the existing cooling systems are entered in ``automatedMeasures.ex
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
-  .. note::
+.. note::
 
   If ``action`` = "remove" and the existing cooling system is a heat pump, then the existing heating system will also be removed. This is based on the assumption that the ``newHeatPump`` will serve both loads.
 
@@ -224,6 +224,7 @@ Characteristics of a new water heating system can be entered in ``automatedMeasu
 
   .. [#] systemType choices are "storage water heater", "instantaneous water heater", and "heat pump water heater"
   .. [#] efficiencyClass choices are "standard" or "premium"
+  .. [#]
 
 
 Assumptions for ``efficiencyClass``:
