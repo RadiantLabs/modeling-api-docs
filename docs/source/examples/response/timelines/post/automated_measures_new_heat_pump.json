@@ -16,7 +16,7 @@
           "id": "776364ab-59bf-4937-b1b1-fbf6b5492e0f",
           "radiantId": "40404d64-408a-4b17-bd70-d368f6486d5a",
           "label": "BASE",
-          "requestedBaseBuilding": {},
+          "providedBaseBuilding": {},
           "appliedBaseBuilding": {
             "buildingSummary": {
               "conditionedFloorArea": 2413,
@@ -91,7 +91,7 @@
                     "systemType": "electric resistance",
                     "fuel": "electricity",
                     "heatEfficiency": 1.0,
-                    "heatEfficiencyUnits": "Percent",
+                    "heatEfficiencyUnits": "percent",
                     "heatLoadPercentage": 1.0
                   }
                 ],
@@ -99,10 +99,10 @@
                   {
                     "id": "HVACControl1",
                     "heatingSeason": {
-                      "setpointTemp": 68
+                      "setpoint": 68
                     },
                     "coolingSeason": {
-                      "setpointTemp": 78
+                      "setpoint": 78
                     }
                   }
                 ]
@@ -219,6 +219,12 @@
           "id": "c4574bb1-162d-49ee-b5dc-06c8883b3cc0",
           "radiantId": "3715acd5-2193-40b0-a238-a7c6cc798bfe",
           "label": "SWIFT_WEASEL",
+          "automatedMeasures": {
+            "newHeatPump": {
+              "systemType": "heat-pump",
+              "performanceClass": "federal minimally compliant"
+            }
+          },
           "requestedImprovedBuilding": {},
           "appliedImprovedBuilding": {
             "buildingSummary": {
@@ -312,16 +318,10 @@
                   {
                     "id": "HVACControl1",
                     "heatingSeason": {
-                      "setpoint": 68,
-                      "setback": null,
-                      "setbackStartHour": null,
-                      "totalWeeklySetbackHours": null
+                      "setpoint": 68
                     },
                     "coolingSeason": {
-                      "setpoint": 78,
-                      "setback": null,
-                      "setbackStartHour": null,
-                      "totalWeeklySetbackHours": null
+                      "setpoint": 78
                     }
                   }
                 ]

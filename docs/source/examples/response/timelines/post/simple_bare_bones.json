@@ -16,7 +16,7 @@
           "id": "c1c6bc5c-0d4d-401e-96c6-aeb881eacb73",
           "radiantId": "d32cf3d2-209d-40e3-8595-13bdd10d88ce",
           "label": "BASE",
-          "requestedBaseBuilding": {},
+          "providedBaseBuilding": {},
           "appliedBaseBuilding": {
             "buildingSummary": {
               "conditionedFloorArea": 2413,
@@ -91,7 +91,7 @@
                     "systemType": "electric resistance",
                     "fuel": "electricity",
                     "heatEfficiency": 1.0,
-                    "heatEfficiencyUnits": "Percent",
+                    "heatEfficiencyUnits": "percent",
                     "heatLoadPercentage": 1.0
                   }
                 ],
@@ -99,10 +99,10 @@
                   {
                     "id": "HVACControl1",
                     "heatingSeason": {
-                      "setpointTemp": 68
+                      "setpoint": 68
                     },
                     "coolingSeason": {
-                      "setpointTemp": 78
+                      "setpoint": 78
                     }
                   }
                 ]
