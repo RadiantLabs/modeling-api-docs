@@ -3,7 +3,7 @@
 Automated Measures
 ==================
 
-High-level operations applied to the base building, without requiring a full improved building definition.
+Automated measures allow users to apply improvements to the base building without fully defining either the base or improved building definition.
 
 Operate on existing systems
 ---------------------------
@@ -19,56 +19,72 @@ characteristics.
 Existing HVAC Heating System
 ****************************
 
-This object covers the singular predefined system providing heating in the base building, including a heat pump.
+Operations to the existing HVAC heating system are entered in ``automatedMeasures.existingHvacHeatingSystem``. This object covers the singular predefined system providing heating in the base building, including a heat pump.
 
-Property: ``existingHvacHeatingSystem``
+  ==========  ====================  ===========  ========  ============================
+  Property    Type                  Constraints  Required  Description
+  ==========  ====================  ===========  ========  ============================
+  ``action``  String                See [#]_     Yes       Operation on existing heating system
+  ``adjust``  Object                             No [#]_   System properties to adjust
+  ``costs``   Array of :ref:`cost`               No [#]_   Implied costs of measure
+  ==========  ====================  ===========  ========  ============================
 
-Schema:
+  .. [#] ``action`` choices are "keep", "remove", or "adjust".
 
-  ==========  ===================================================  ========  ============================
-  Property    Type                                                 Required  Description
-  ==========  ===================================================  ========  ============================
-  ``action``  One of ``keep`` [#]_, ``remove`` [#]_ or ``adjust``  Yes       Operation on existing system
-  ``adjust``  Object                                               No [#]_   System properties to adjust
-  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
-  ==========  ===================================================  ========  ============================
+     **"keep"** maintains existing heating system as is, including load percentage. Using this action indicates that there are no changes to heating at all. This action will override anything in ``adjust`` object.
 
-  .. [#] Keeps existing heating system as is, including load percentage. Using this action indicates that there are no changes to heating at all.
-  .. [#] Completely removes existing heating system and new system(s) must cover 100% of load or specify ``loadGapPercentage``. This action will override anything in ``adjust`` object.
+     **"remove"** indicates the existing heating system is completely removed. New system(s) must cover 100% of load or specify ``heatLoadGapPercentage``. This action will override anything in ``adjust`` object.
+
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
+.. note::
+
+  If ``action`` = "remove" and the existing water heating system is dependent on the removed heating system (i.e. indirect water heater),
+  then a new standalone heat pump water heating system will automatically be added to the ``improvedBuilding``.
+
+.. note::
+
+  If ``action`` = "remove" and the existing heating system is a heat pump, then the existing cooling system will also be removed.
+  This is based on the assumption that the ``newHeatPump`` will serve both loads.
+
 ``adjust`` schema for existing HVAC heating system:
 
-  ======================  =======  ===================  ==============================================
-  Property                Type     Constraints          Description
-  ======================  =======  ===================  ==============================================
-  ``backup``              Boolean                       Indicates the existing heating system is being kept, but switched to be a backup system. Either this OR ``heatLoadPercentage`` can be defined.
-  ``heatLoadPercentage``  Double   In [0.0, 1.0] range  Heat load for the existing heating system.
-  ======================  =======  ===================  ==============================================
+  ======================  =======  ===========  ==============================================
+  Property                Type     Constraints  Description
+  ======================  =======  ===========  ==============================================
+  ``backup``              Boolean               Indicates the existing heating system is being kept, but switched to be a backup system. Either this OR ``heatLoadPercentage`` can be defined.
+  ``heatLoadPercentage``  Double   0 - 1        Heat load for the existing heating system.
+  ======================  =======  ===========  ==============================================
 
 .. _existing_hvac_cooling_system:
 
 Existing HVAC Cooling System
 ****************************
-This object covers the singular predefined system providing cooling in the base building, including a heat pump.
 
-Property: ``existingHvacCoolingSystem``
+Operations on the existing cooling systems are entered in ``automatedMeasures.existingHvacCoolingSystem``. This object covers the singular predefined system providing cooling in the base building, including a heat pump.
 
-Schema:
+  ==========  ====================  ===========  ========  ============================
+  Property    Type                  Constraints  Required  Description
+  ==========  ====================  ===========  ========  ============================
+  ``action``  String                See [#]_     Yes       Operation on existing cooling system
+  ``adjust``  Object                             No [#]_   System properties to adjust
+  ``costs``   Array of :ref:`cost`               No [#]_   Implied costs of measure
+  ==========  ====================  ===========  ========  ============================
 
-  ==========  ===================================================  ========  ============================
-  Property    Type                                                 Required  Description
-  ==========  ===================================================  ========  ============================
-  ``action``  One of ``keep`` [#]_, ``remove`` [#]_ or ``adjust``  Yes       Operation on existing system
-  ``adjust``  Object                                               No [#]_   System properties to adjust
-  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
-  ==========  ===================================================  ========  ============================
+   .. [#] ``action`` choices are "keep", "remove", or "adjust".
 
-  .. [#] Keeps existing cooling system as is, including load percentage. Using this action indicates that there are no changes to cooling at all.
-  .. [#] Completely removes existing cooling system and new system(s) must cover 100% of load or specify ``loadGapPercentage``. This action will override anything in ``adjust`` object.
+     **"keep"** maintains existing cooling system as is, including load percentage. Using this action indicates that there are no changes to cooling at all. This action will override anything in ``adjust`` object.
+
+     **"remove"** indicates the existing cooling system is completely removed. New system(s) must cover 100% of load or specify ``coolLoadGapPercentage``. This action will override anything in ``adjust`` object.
+
+
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
+
+  .. note::
+
+  If ``action`` = "remove" and the existing cooling system is a heat pump, then the existing heating system will also be removed. This is based on the assumption that the ``newHeatPump`` will serve both loads.
 
 ``adjust`` schema for existing HVAC cooling system:
 
@@ -83,20 +99,23 @@ Schema:
 Existing HVAC Distribution System
 *********************************
 
-Property: ``existingHvacDistributionSystem``
+Operations on the existing distribution systems are entered in ``automatedMeasures.existingHvacDistributionSystem``. This object covers the predefined distribution system(s), either air and/or hydronic,
+connected to the base building's heating and cooling systems.
 
-Schema:
+  ==========  ====================  ===========  ========  ============================
+  Property    Type                  Constraints  Required  Description
+  ==========  ====================  ===========  ========  ============================
+  ``action``  String                See [#]_     Yes       Operation on existing distribution system
+  ``adjust``  Object                             No [#]_   System properties to adjust
+  ``costs``   Array of :ref:`cost`               No [#]_   Implied costs of measure
+  ==========  ====================  ===========  ========  ============================
 
-  ==========  ===================================================  ========  ============================
-  Property    Type                                                 Required  Description
-  ==========  ===================================================  ========  ============================
-  ``action``  One of ``keep`` [#]_, ``remove`` [#]_ or ``adjust``  Yes       Operation on existing system
-  ``adjust``  Object                                               No [#]_   System properties to adjust
-  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
-  ==========  ===================================================  ========  ============================
+  .. [#] ``action`` choices are "keep", "remove", or "adjust".
 
-  .. [#] Keeps existing distribution system as is. Using this action indicates that there are no changes to distribution systems at all.
-  .. [#] Completely removes existing distribution system. This action will override anything in ``adjust`` object.
+     **"keep"** maintains existing distribution system as is. Using this action indicates that there are no changes to the distribution system at all. This action will override anything in ``adjust`` object.
+
+     **"remove"** indicates the existing distribution system is completely removed. This action will override anything in ``adjust`` object.
+
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
@@ -119,30 +138,32 @@ Schema:
 Existing Water Heating System
 *****************************
 
-Property: ``existingWaterHeatingSystem``
+Operations on the existing water heating system can be entered in ``automatedMeasures.existingWaterHeatingSystem``. This object covers the predefined water heating system in the base building.
 
-Schema:
+  ==========  ====================  ===========  ========  ============================
+  Property    Type                  Constraints  Required  Description
+  ==========  ====================  ===========  ========  ============================
+  ``action``  String                See [#]_     Yes       Operation on existing water heating system
+  ``adjust``  Object                             No [#]_   System properties to adjust
+  ``costs``   Array of :ref:`cost`               No [#]_   Implied costs of measure
+  ==========  ====================  ===========  ========  ============================
 
-  ==========  ===================================================  ========  ============================
-  Property    Type                                                 Required  Description
-  ==========  ===================================================  ========  ============================
-  ``action``  One of ``keep`` [#]_, ``remove`` [#]_ or ``adjust``  Yes       Operation on existing system
-  ``adjust``  Object                                               No [#]_   System properties to adjust
-  ``costs``   Array of :ref:`cost`                                 No [#]_   Implied costs of measure
-  ==========  ===================================================  ========  ============================
+  .. [#] ``action`` choices are "keep", "remove", or "adjust".
 
-  .. [#] Keeps existing water heating system as is, including load percentage. Using this action indicates that there are no changes to water heating systems at all.
-  .. [#] Completely removes existing water heating system and new system(s) must cover 100% of load. This action will override anything in ``adjust`` object.
+     **"keep"** maintains existing water heating system as is, including load percentage. Using this action indicates that there are no changes to the water heating system at all. This action will override anything in ``adjust`` object.
+
+     **"remove"** indicates the existing water heating system is completely removed. New system(s) must cover 100% of load or specify ``loadGapPercentage``. This action will override anything in ``adjust`` object.
+
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
 ``adjust`` schema for existing water heating system:
 
-  =====================  =======  ===================  ==============================================
-  Property               Type     Constraints          Description
-  =====================  =======  ===================  ==============================================
-  ``dhwLoadPercentage``  Double   In [0.0, 1.0] range  Domestic hot water load for the existing water heating system
-  =====================  =======  ===================  ==============================================
+  =====================  =======  ===========  ==============================================
+  Property               Type     Constraints  Description
+  =====================  =======  ===========  ==============================================
+  ``dhwLoadPercentage``  Double   0 - 1        Domestic hot water load for the existing water heating system
+  =====================  =======  ===========  ==============================================
 
 Add new systems with minimal configuration
 ------------------------------------------
@@ -156,45 +177,71 @@ compliant heat pump).
 New Heat Pump
 *************
 
-Property: ``newHeatPump``
+Characteristics of a new heat pump system can be entered in ``automatedMeasures.newHeatPump``.
 
-Schema:
+  =========================  ====================  ===========  ========  =======  ===================================
+  Property                   Type                  Constraints  Required  Default  Description
+  =========================  ====================  ===========  ========  =======  ===================================
+  ``systemType``             String                See [#]_     Yes                Type of heat pump
+  ``performanceClass``       String                See [#]_     Yes
+  ``heatLoadPercentage``     Double                0 - 1        No        1.0      Heat load for the new heat pump
+  ``heatLoadGapPercentage``  Double                0 - 1        No        0.0      Heat load for the new heat pump
+  ``coolLoadPercentage``     Double                0 - 1        No        1.0      Cool load for the new heat pump
+  ``coolLoadGapPercentage``  Double                0 - 1        No        0.0      Cool load for the new heat pump
+  ``costs``                  Array of :ref:`cost`               No        ``[]``   Implied costs of measure
+  =========================  ====================  ===========  ========  =======  ===================================
 
-  ======================  ===================================================================  ========  ===================================
-  Property                Type                                                                 Required  Description
-  ======================  ===================================================================  ========  ===================================
-  ``systemType``          One of ``heat-pump`` [#]_, ``mini-split`` or ``air-to-air``          Yes       Type of heat pump
-  ``performanceClass``    One of ``federal-minimally-compliant`` or ``energy-star-compliant``  Yes
-  ``heatLoadPercentage``  Double                                                               No [#]_   Heat load for the new heat pump
-  ``coolLoadPercentage``  Double                                                               No [#]_   Cool load for the new heat pump
-  ``costs``               Array of :ref:`cost`                                                 No [#]_   Implied costs of measure
-  ======================  ===================================================================  ========  ===================================
+  .. [#] ``systemType`` choices are "heat pump", "mini-split" or "air-to-air"
 
-  .. [#] ``heat-pump`` is a generic air source heat pump that will be automatically determined based on the existing conditions in the building. If the existing building contains ducts, a central ducted ASHP will be defined. If no ducts exist, a ductless mini-split will be defined.
-  .. [#] Defaults to ``1.0`` if not provided.
-  .. [#] Defaults to ``1.0`` if not provided.
-  .. [#] Defaults to ``[]`` if not provided.
+     **"heat pump"** is a generic air source heat pump that will be automatically determined based on the existing conditions
+     in the building. If the existing building contains ducts, a central ducted ASHP will be defined. If no ducts exist, a ductless mini-split will be defined.
+
+  .. [#] ``performanceClass`` choices are "federal minimally compliant" or "energy star compliant"
+
+Assumptions for ``efficiencyClass``:
+  ===========================  ===========================  =====================
+  Type                         Federal Minimally Compliant  ENERGY STAR Compliant
+  ===========================  ===========================  =====================
+  mini-split (ductless)        SEER: 14, HSPF: 8.8          SEER: 17.8, HSPF: 10
+  air-to-air (ducted/central)  SEER: 14, HSPF: 8.8          SEER: 15.7, HSPF: 9.2
+  ===========================  ===========================  =====================
 
 .. _new_water_heating_system:
 
 New Water Heating System
 ************************
 
-Property: ``newWaterHeatingSystem``
+Characteristics of a new water heating system can be entered in ``automatedMeasures.newWaterHeatingSystem``.
 
-Schema:
+  =====================  ====================  ===========  ========  =======  ===================================
+  Property               Type                  Constraints  Required  Default  Description
+  =====================  ====================  ===========  ========  =======  ===================================
+  ``systemType``         String                See [#]_     Yes                Type of water heating system. fuelType assumed as base heating fuel for "storage water heater" and "instantaneous water heater".
+  ``efficiencyClass``    String                See [#]_     Yes
+  ``dhwLoadPercentage``  Double                0 - 1 [#]_   No        1.0      DHW load for the new water heating system
+  ``costs``              Array of :ref:`cost`               No        ``[]``   Implied costs of measure
+  =====================  ====================  ===========  ========  =======  ===================================
 
-  =====================  =============================================================================================  ========  ===================================
-  Property               Type                                                                                           Required  Description
-  =====================  =============================================================================================  ========  ===================================
-  ``systemType``         One of ``storage-water-heater``, ``instantaneous-water-heater`` or ``heat-pump-water-heater``  Yes       Type of water heating system
-  ``efficiencyClass``    One of ``federal-minimally-compliant`` or ``energy-star-compliant``                            Yes
-  ``dhwLoadPercentage``  Double                                                                                         No [#]_   DHW load for the new water heating system
-  ``costs``              Array of :ref:`cost`                                                                           No [#]_   Implied costs of measure
-  =====================  =============================================================================================  ========  ===================================
+  .. [#] systemType choices are "storage water heater", "instantaneous water heater", and "heat pump water heater"
+  .. [#] efficiencyClass choices are "standard" or "premium"
 
-  .. [#] Defaults to ``1.0`` if not provided.
-  .. [#] Defaults to ``[]`` if not provided.
+
+Assumptions for ``efficiencyClass``:
+  ==========================  ===========  ========  =======
+  Type                        Fuel         Standard  Premium
+  ==========================  ===========  ========  =======
+  heat pump water heater      electricity  N/A       3.5
+  storage water heater        electricity  0.92      0.95
+  storage water heater        natural gas  0.59      0.67
+  storage water heater        fuel oil     0.62      0.68
+  storage water heater        propane      0.59      0.67
+  storage water heater        other        0.59      N/A
+  instantaneous water heater  electricity  0.99      N/A
+  instantaneous water heater  natural gas  0.82      N/A
+  instantaneous water heater  fuel oil     N/A       N/A
+  instantaneous water heater  propane      0.82      N/A
+  instantaneous water heater  other        N/A       N/A
+  ==========================  ===========  ========  =======
 
 Adjust global aspects of the building
 -------------------------------------
@@ -207,9 +254,7 @@ thermostat, attic insulation and air sealing.
 Air Sealing
 ***********
 
-Property: ``airSealing``
-
-Schema:
+Adjustments to the building air leakage rates can be entered in ``automatedMeasures.airSealing``.
 
   ==========  ===================================================  ========  ===========================
   Property    Type                                                 Required  Description
@@ -222,13 +267,13 @@ Schema:
 
 ``adjust`` schema for air sealing:
 
-  ===================  ======  ===========  =======================================
-  Property             Type    Constraints  Description
-  ===================  ======  ===========  =======================================
-  ``rateUnit``         String  See [#]_     Units of air leakage rate. If undefined, system default "ACH" is applied
-  ``rate``             Double  > 0.0        Value of air leakage rate. If undefined, system default value is applied
-  ``housePressurePa``  Double  > 0.0        House pressure in Pa with respect to outside. If undefined, system default 50 Pa is applied.
-  ===================  ======  ===========  =======================================
+  ===================  ======  ===========  =======  =======================================
+  Property             Type    Constraints  Default  Description
+  ===================  ======  ===========  =======  =======================================
+  ``rateUnit``         String  See [#]_     ACH      Units of air leakage rate
+  ``rate``             Double  > 0.0        7.0      Value of air leakage rate
+  ``housePressurePa``  Double  > 0.0        50.0     House pressure in Pa with respect to outside
+  ===================  ======  ===========  =======  =======================================
   
   .. [#] rateUnit choices are ACH or CFM.
 
@@ -237,9 +282,7 @@ Schema:
 Attic Insulation
 ****************
 
-Property: ``atticInsulation``
-
-Schema:
+Adjustments to existing attic insulation can be entered in ``automatedMeasures.atticInsulation``.
 
   ==========  ===================================================  ========  ===========================
   Property    Type                                                 Required  Description
@@ -252,20 +295,18 @@ Schema:
 
 ``adjust`` schema for attic insulation:
 
-  ================================  ======  ===========  =======================================
-  Property                          Type    Constraints  Description
-  ================================  ======  ===========  =======================================
-  ``floorAssemblyEffectiveRValue``  Double  > 0.0        Effective R-value of attic floor assembly. If undefined, system default is applied
-  ================================  ======  ===========  =======================================
+  ================================  ======  ============  ===========  =======  =======================================
+  Property                          Type    Units         Constraints  Default  Description
+  ================================  ======  ============  ===========  =======  =======================================
+  ``floorAssemblyEffectiveRValue``  Double  F-ft2-hr/Btu  > 0.0        50.6     Effective R-value of attic floor assembly
+  ================================  ======  ============  ===========  =======  =======================================
 
 .. _adjust_thermostat:
 
 Thermostat
 **********
 
-Property: ``thermostat``
-
-Schema:
+Adjustments to thermostat settings can be entered in ``automatedMeasures.thermostat``.
 
   ==========  ===================================================  ========  ===========================
   Property    Type                                                 Required  Description
@@ -276,7 +317,7 @@ Schema:
 
   .. [#] Defaults to ``[]`` if not provided.
 
-``adjust`` schema for air sealing:
+``adjust`` schema for thermostat:
 
   =================  ======  ==============================================
   Property           Type    Description
@@ -287,14 +328,16 @@ Schema:
 
 ``heatingSeason`` and ``coolingSeason`` objects share the following schema:
 
-  ===========================  =======  ===========  ===========
-  Property                     Type     Constraints  Description
-  ===========================  =======  ===========  ===========
-  ``setpoint``                 Integer  > 0          Season setpoint temperature
-  ``setback``                  Integer  > 0          Season setback temperature (sometimes called setup temperature)
-  ``setbackStartHour``         Integer  0 - 23       Start hour for daily setback period. 
-  ``totalWeeklySetbackHours``  Integer  > 0          Hours per week of temperature setback
-  ===========================  =======  ===========  ===========
+  ===========================  =======  ========  ===========  ========================  ===========
+  Property                     Type     Units     Constraints  Default                   Description
+  ===========================  =======  ========  ===========  ========================  ===========
+  ``setpoint``                 Integer  F         > 0          Heating: 67, Cooling: 78  Season setpoint temperature
+  ``setback``                  Integer  F         > 0          Heating: 64, Cooling: 72  Season setback temperature [#]_
+  ``setbackStartHour``         Integer            0 - 23       Heating: 23, Cooling: 9   Start hour for daily setback period
+  ``totalWeeklySetbackHours``  Integer  hrs/week  > 0          Heating: 49, Cooling: 42  Hours per week of temperature setback
+  ===========================  =======  ========  ===========  ========================  ===========
+
+  .. [#] Also referred to as setup temperature for the cooling season.
 
 
 Automated measures example adding a new heat pump
