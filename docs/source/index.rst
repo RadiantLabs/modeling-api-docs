@@ -13,6 +13,10 @@ how use the :ref:`endpoints`.
 Contents
 --------
 
+.. |redoc_link| raw:: html
+
+   <a class="reference external" href="https://api.radiantlabs.co/v1/redoc" target="_blank">Interactive API Documentation</a>
+
 .. toctree::
 
    usage
@@ -21,7 +25,3 @@ Contents
    extensive_inputs_and_outputs
    api
    |redoc_link|
-
-.. |redoc_link| raw:: html
-
-   <a class="reference external" href="https://api.radiantlabs.co/v1/redoc" target="_blank">Interactive API Documentation</a>
