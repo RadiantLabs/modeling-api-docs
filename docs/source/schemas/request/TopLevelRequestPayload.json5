@@ -1,6 +1,6 @@
 {
   // Provide full address line for searching.
-  "addressFull": "501 RANDALL RD, BALLSTON SPA, NY 12020",
+  "addressFull": "197 RANDALL RD, BALLSTON SPA, NY 12020",
 
   // Or use address components directly.
   "addressComponents": ADDRESS_COMPONENTS, // refer to the Address Components schema
