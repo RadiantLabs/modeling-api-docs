@@ -1,5 +1,5 @@
 {
-  "addressFoundFull": "501 RANDALL RD, BALLSTON SPA, NY 12020", // assembled from "addressFoundComponents"
+  "addressFoundFull": "197 RANDALL RD, BALLSTON SPA, NY 12020", // assembled from "addressFoundComponents"
 
   "addressFoundComponents": ADDRESS_COMPONENTS, // refer to the Address Components schema
 
