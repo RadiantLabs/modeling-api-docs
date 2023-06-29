@@ -19,32 +19,32 @@
           "providedBaseBuilding": {},
           "appliedBaseBuilding": {
             "buildingSummary": {
-              "conditionedFloorArea": 2413,
+              "conditionedFloorArea": 2600,
               "averageCeilingHeight": 8,
-              "bathCount": 2,
+              "bathCount": 3,
               "bedroomsCount": 4,
               "residentCount": 5,
-              "storiesCount": 1,
+              "storiesCount": 2,
               "windowToWallFraction": 0.14,
-              "yearBuilt": 1945
+              "yearBuilt": 2007
             },
             "enclosure": {
               "airInfiltration": {
-                "rate": 15.0,
+                "rate": 6.0,
                 "rateUnit": "ACH",
                 "housePressurePa": 50.0
               },
               "attics": [
                 {
                   "id": "Attic1",
-                  "area": 1225,
-                  "floorAssemblyEffectiveRValue": 20.6
+                  "area": 1300,
+                  "floorAssemblyEffectiveRValue": 31.6
                 }
               ],
               "roofs": [
                 {
                   "id": "Roof1",
-                  "area": 1370,
+                  "area": 1453,
                   "pitch": 6,
                   "assemblyEffectiveRValue": 2.3,
                   "lifetime": {
@@ -57,15 +57,15 @@
                 {
                   "id": "Wall1",
                   "type": "wood stud",
-                  "assemblyEffectiveRValue": 4.0,
+                  "assemblyEffectiveRValue": 16.0,
                   "percentageAreaShared": 0.0
                 }
               ],
               "foundations": [
                 {
-                  "id": "BasementConditioned1",
-                  "type": "basement conditioned",
-                  "area": 1188,
+                  "id": "BasementUnconditioned1",
+                  "type": "basement unconditioned",
+                  "area": 1300,
                   "wallHeight": 8
                 }
               ]
@@ -74,24 +74,24 @@
               "hvac": {
                 "hvacCoolingSystems": [
                   {
-                    "id": "RoomAirConditioner1",
-                    "systemType": "room air conditioner",
-                    "coolEfficiency": 10.7,
-                    "coolEfficiencyUnits": "EER",
-                    "coolLoadPercentage": 0.33,
+                    "id": "CentralAirConditioner1",
+                    "systemType": "central air conditioner",
+                    "coolEfficiency": 13.0,
+                    "coolEfficiencyUnits": "SEER",
+                    "coolLoadPercentage": 1.0,
                     "lifetime": {
-                      "replacementCost": 200,
+                      "replacementCost": 2000,
                       "endOfLifeDate": "2024-07-01"
                     }
                   }
                 ],
                 "hvacHeatingSystems": [
                   {
-                    "id": "ElectricResistance1",
-                    "systemType": "electric resistance",
-                    "fuel": "electricity",
-                    "heatEfficiency": 1.0,
-                    "heatEfficiencyUnits": "percent",
+                    "id": "Furnace1",
+                    "systemType": "furnace",
+                    "fuel": "natural gas",
+                    "heatEfficiency": 0.8,
+                    "heatEfficiencyUnits": "AFUE",
                     "heatLoadPercentage": 1.0
                   }
                 ],
@@ -105,18 +105,46 @@
                       "setpoint": 78
                     }
                   }
-                ]
+                ],
+                "hvacDistributionSystems": {
+                  "airDistributionSystems": [
+                    {
+                      "id": "HVACDistributionFurnaceAndCentralAC1",
+                      "systemType": "regular velocity",
+                      "numberOfReturnRegisters": 2,
+                      "conditionedFloorAreaServed": 2600,
+                      "ducts": [
+                        {
+                          "id": "HVACDistributionFurnaceAndCentral1Supply",
+                          "systemType": "supply",
+                          "insulationRValue": 0.0,
+                          "leakageValue": 0.2,
+                          "leakageUnits": "percent",
+                          "location": "attic vented"
+                        },
+                        {
+                          "id": "HVACDistributionFurnaceAndCentral1Return",
+                          "systemType": "return",
+                          "insulationRValue": 0.0,
+                          "leakageValue": 0.2,
+                          "leakageUnits": "percent",
+                          "location": "attic vented"
+                        }
+                      ]
+                    }
+                  ]
+                }
               },
               "waterHeating": {
                 "waterHeatingSystems": [
                   {
                     "id": "WaterHeater1",
                     "systemType": "storage water heater",
-                    "fuel": "electricity",
+                    "fuel": "natural gas",
                     "location": "living space",
                     "tankVolume": 40,
                     "dhwLoadPercentage": 1.0,
-                    "energyFactor": 0.92,
+                    "energyFactor": 0.59,
                     "hotWaterTemperature": 125.0,
                     "lifetime": {
                       "replacementCost": 1000,
@@ -139,7 +167,7 @@
               "cookingRanges": [
                 {
                   "id": "CookingRange1",
-                  "fuel": "electricity",
+                  "fuel": "nautral gas",
                   "isInduction": false
                 }
               ]
@@ -152,13 +180,13 @@
               },
               "electricityTotal": {
                 "kwh": [0.0],
-                "mbtu": [0.0]
+                "mbtu": [28.37]
               },
               "fuelOilTotal": {
                 "mbtu": [0.0]
               },
               "naturalGasTotal": {
-                "mbtu": [0.0]
+                "mbtu": [175.92]
               },
               "propaneTotal": {
                 "mbtu": [0.0]
@@ -170,20 +198,20 @@
                 "mbtu": [0.0]
               },
               "total": {
-                "mbtu": [0.0]
+                "mbtu": [204.29]
               }
             }
           },
           "energyCosts": {
             "annual": {
               "coalTotal": [0.0],
-              "electricityTotal": [0.0],
+              "electricityTotal": [1050.94],
               "fuelOilTotal": [0.0],
-              "naturalGasTotal": [0.0],
+              "naturalGasTotal": [2892.89],
               "propaneTotal": [0.0],
               "woodCordTotal": [0.0],
               "woodPelletsTotal": [0.0],
-              "total": [0.0]
+              "total": [3943.83]
             }
           },
           "emissionTotals": {
@@ -192,13 +220,13 @@
                 "co2": [0.0]
               },
               "electricityTotal": {
-                "co2": [0.0]
+                "co2": [1945.79]
               },
               "fuelOilTotal": {
                 "co2": [0.0]
               },
               "naturalGasTotal": {
-                "co2": [0.0]
+                "co2": [25913.69]
               },
               "propaneTotal": {
                 "co2": [0.0]
@@ -210,15 +238,15 @@
                 "co2": [0.0]
               },
               "total": {
-                "co2": [0.0]
+                "co2": [27859.48]
               }
             }
           }
         }
       ],
-      "totalEnergyCosts": 0.0,
+      "totalEnergyCosts": 3943.83,
       "totalEmissions": {
-        "co2": 0.0
+        "co2": 27859.48
       }
     }
   ]
