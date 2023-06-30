@@ -167,7 +167,7 @@
               "cookingRanges": [
                 {
                   "id": "CookingRange1",
-                  "fuel": "nautral gas",
+                  "fuel": "natural gas",
                   "isInduction": false
                 }
               ]
