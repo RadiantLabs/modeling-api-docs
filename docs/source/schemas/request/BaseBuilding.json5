@@ -17,5 +17,6 @@
     "electrical": ELECTRICAL, // refer to Electrical schema
     "photovoltaic": [ PHOTOVOLTAIC ], // refer to Photovoltaic schema
   },
-  "appliances": APPLIANCES // refer to Appliances schema
+  "appliances": APPLIANCES, // refer to Appliances schema
+  "miscLoads": MISC_LOADS // refer to Misc Loads schema
 }
