@@ -1,0 +1,16 @@
+// VEHICLE
+{
+  "id": "ICEVehicle1",
+  "vehicleType": "gasoline", //("electric" | "gasoline" | "hybrid" | "plug-in hybrid")??
+  "vehicleBody": ("coupe" | "sedan" | "crossover" | "minivan" | "SUV" | "pickup truck" | "other")??
+  "annualMiles": 4500,
+  "vehicleEfficiency": 32,
+  "vehicleEfficiencyUnits": "miles per gallon", ("miles per gallon" | "miles per kwh")
+  "chargerEfficiency": 0.9, //only applicable to electric vehicles
+  "batteryEfficiency": 0.9, //only applicable to electric vehicles
+  "chargingPattern": "", //list of premade schedules only applicable to electric vehicles
+  "chargingScheduleFractions": {
+    "weekday": [], //size 24 array for user-defined fractions of weekday hourly charging
+    "weekend": [], //size 24 array for user-defined fractions of weekend hourly charging
+    "monthly": [] // size 12 array for user-defined fractions of monthly charging
+  }
