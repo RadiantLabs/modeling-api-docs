@@ -14,3 +14,4 @@
     "weekend": [], //size 24 array for user-defined fractions of weekend hourly charging
     "monthly": [] // size 12 array for user-defined fractions of monthly charging
   }
+}
