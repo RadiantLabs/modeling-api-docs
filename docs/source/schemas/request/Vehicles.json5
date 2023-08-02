@@ -1,4 +1,4 @@
-// VEHICLE
+// VEHICLES
 {
   "id": "ICEVehicle1",
   "vehicleType": "gasoline", //("electric" | "gasoline" | "hybrid" | "plug-in hybrid")
