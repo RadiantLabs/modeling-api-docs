@@ -42,6 +42,20 @@
     "dhwLoadPercentage": 1.0,
     "costs": [ COST ]
   },
+  "existingVehicle": {
+    "action": "adjust", // ("keep" | "remove" | "adjust")
+    "adjust": {
+      "annualMiles": 1000
+    },
+  },
+  "newEV": {
+    "vehicleType": "electric", // required ("electric" | "plug-in hybrid")
+    "vehicleBody": ("coupe" | "sedan" | "crossover" | "minivan" | "SUV" | "pickup truck" | "other")
+    "annualMiles": 4500,
+    "vehicleEfficiency": 5,
+    "vehicleEfficiencyUnits": "miles per kwh", ("miles per gallon" | "miles per gallon of gasoline-equivalent" | "miles per kwh")
+    "chargingPattern": "daily commuter", // ("daily commuter" | "work from home" | "occassional errands")
+  },
   "thermostat": {
     "adjust": {
       "heatingSeason": {
