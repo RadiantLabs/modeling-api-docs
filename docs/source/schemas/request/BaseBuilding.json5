@@ -18,5 +18,5 @@
     "photovoltaic": [ PHOTOVOLTAIC ], // refer to Photovoltaic schema
   },
   "appliances": APPLIANCES, // refer to Appliances schema
-  "vehicles": [ VEHICLES ] // refer to Vehicle schema
+  "vehicles": [ VEHICLE ] // refer to Vehicle schema
 }
