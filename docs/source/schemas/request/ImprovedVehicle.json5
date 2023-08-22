@@ -1,4 +1,4 @@
-// IMPROVED_VEHICLES
+// IMPROVED_VEHICLE
 {
   "id": "EV1",
   "vehicleType": "electric", //("electric" | "gasoline" | "hybrid" | "plug-in hybrid")
