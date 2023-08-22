@@ -526,6 +526,14 @@ Improved Photovoltaic
 .. literalinclude:: schemas/request/ImprovedPhotovoltaic.json5
    :language: javascript
 
+.. _improved_vehicle:
+
+Improved Vehicle
+****************
+
+.. literalinclude:: schemas/request/ImprovedVehicle.json5
+   :language: javascript
+
 .. _improved_water_heating:
 
 Improved Water Heating
@@ -661,6 +669,14 @@ Variable Cost
 *************
 
 .. literalinclude:: schemas/request/VariableCost.json5
+   :language: javascript
+
+.. _vehicle:
+
+Vehicle
+*************
+
+.. literalinclude:: schemas/request/Vehicle.json5
    :language: javascript
 
 .. _water_heating:
