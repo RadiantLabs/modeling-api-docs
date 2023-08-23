@@ -19,32 +19,32 @@
           "providedBaseBuilding": {},
           "appliedBaseBuilding": {
             "buildingSummary": {
-              "conditionedFloorArea": 2413,
+              "conditionedFloorArea": 2600,
               "averageCeilingHeight": 8,
-              "bathCount": 2,
+              "bathCount": 3,
               "bedroomsCount": 4,
               "residentCount": 5,
-              "storiesCount": 1,
+              "storiesCount": 2,
               "windowToWallFraction": 0.14,
-              "yearBuilt": 1945
+              "yearBuilt": 2007
             },
             "enclosure": {
               "airInfiltration": {
-                "rate": 15.0,
+                "rate": 6.0,
                 "rateUnit": "ACH",
                 "housePressurePa": 50.0
               },
               "attics": [
                 {
                   "id": "Attic1",
-                  "area": 1225,
-                  "floorAssemblyEffectiveRValue": 20.6
+                  "area": 1300,
+                  "floorAssemblyEffectiveRValue": 31.6
                 }
               ],
               "roofs": [
                 {
                   "id": "Roof1",
-                  "area": 1370,
+                  "area": 1453,
                   "pitch": 6,
                   "assemblyEffectiveRValue": 2.3,
                   "lifetime": {
@@ -57,15 +57,15 @@
                 {
                   "id": "Wall1",
                   "type": "wood stud",
-                  "assemblyEffectiveRValue": 4.0,
+                  "assemblyEffectiveRValue": 16.0,
                   "percentageAreaShared": 0.0
                 }
               ],
               "foundations": [
                 {
-                  "id": "BasementConditioned1",
-                  "type": "basement conditioned",
-                  "area": 1188,
+                  "id": "BasementUnconditioned1",
+                  "type": "basement unconditioned",
+                  "area": 1300,
                   "wallHeight": 8
                 }
               ]
@@ -74,24 +74,24 @@
               "hvac": {
                 "hvacCoolingSystems": [
                   {
-                    "id": "RoomAirConditioner1",
-                    "systemType": "room air conditioner",
-                    "coolEfficiency": 10.7,
-                    "coolEfficiencyUnits": "EER",
-                    "coolLoadPercentage": 0.33,
+                    "id": "CentralAirConditioner1",
+                    "systemType": "central air conditioner",
+                    "coolEfficiency": 13.0,
+                    "coolEfficiencyUnits": "SEER",
+                    "coolLoadPercentage": 1.0,
                     "lifetime": {
-                      "replacementCost": 200,
+                      "replacementCost": 2000,
                       "endOfLifeDate": "2024-07-01"
                     }
                   }
                 ],
                 "hvacHeatingSystems": [
                   {
-                    "id": "ElectricResistance1",
-                    "systemType": "electric resistance",
-                    "fuel": "electricity",
-                    "heatEfficiency": 1.0,
-                    "heatEfficiencyUnits": "percent",
+                    "id": "Furnace1",
+                    "systemType": "furnace",
+                    "fuel": "natural gas",
+                    "heatEfficiency": 0.8,
+                    "heatEfficiencyUnits": "AFUE",
                     "heatLoadPercentage": 1.0
                   }
                 ],
@@ -105,18 +105,46 @@
                       "setpoint": 78
                     }
                   }
-                ]
+                ],
+                "hvacDistributionSystems": {
+                  "airDistributionSystems": [
+                    {
+                      "id": "HVACDistributionFurnaceAndCentralAC1",
+                      "systemType": "regular velocity",
+                      "numberOfReturnRegisters": 2,
+                      "conditionedFloorAreaServed": 2600,
+                      "ducts": [
+                        {
+                          "id": "HVACDistributionFurnaceAndCentral1Supply",
+                          "systemType": "supply",
+                          "insulationRValue": 0.0,
+                          "leakageValue": 0.2,
+                          "leakageUnits": "percent",
+                          "location": "attic vented"
+                        },
+                        {
+                          "id": "HVACDistributionFurnaceAndCentral1Return",
+                          "systemType": "return",
+                          "insulationRValue": 0.0,
+                          "leakageValue": 0.2,
+                          "leakageUnits": "percent",
+                          "location": "attic vented"
+                        }
+                      ]
+                    }
+                  ]
+                }
               },
               "waterHeating": {
                 "waterHeatingSystems": [
                   {
                     "id": "WaterHeater1",
                     "systemType": "storage water heater",
-                    "fuel": "electricity",
+                    "fuel": "natural gas",
                     "location": "living space",
                     "tankVolume": 40,
                     "dhwLoadPercentage": 1.0,
-                    "energyFactor": 0.92,
+                    "energyFactor": 0.59,
                     "hotWaterTemperature": 125.0,
                     "lifetime": {
                       "replacementCost": 1000,
@@ -139,7 +167,7 @@
               "cookingRanges": [
                 {
                   "id": "CookingRange1",
-                  "fuel": "electricity",
+                  "fuel": "natural gas",
                   "isInduction": false
                 }
               ]
@@ -152,13 +180,13 @@
               },
               "electricityTotal": {
                 "kwh": [0.0],
-                "mbtu": [0.0]
+                "mbtu": [28.37]
               },
               "fuelOilTotal": {
                 "mbtu": [0.0]
               },
               "naturalGasTotal": {
-                "mbtu": [0.0]
+                "mbtu": [175.92]
               },
               "propaneTotal": {
                 "mbtu": [0.0]
@@ -170,7 +198,7 @@
                 "mbtu": [0.0]
               },
               "total": {
-                "mbtu": [0.0]
+                "mbtu": [204.29]
               }
             },
             "monthly": {
@@ -178,14 +206,14 @@
                 "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
               },
               "electricityTotal": {
-                "kwh": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+                "mbtu": [2.93, 2.44, 2.15, 1.75, 2.21, 2.16, 3.52, 2.91, 1.94, 1.68, 1.98, 2.70],
+                "kwh": [859.41, 714.81, 629.55, 511.45, 648.17, 632.72, 1032.89, 853.19, 568.66, 493.00, 579.91, 790.64]
               },
               "fuelOilTotal": {
                 "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
               },
               "naturalGasTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+                "mbtu": [44.96, 31.67, 225.13, 9.04, 1.93, 1.25, 1.19, 1.11, 1.90, 7.52, 18.86, 34.37]
               },
               "propaneTotal": {
                 "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
@@ -197,30 +225,30 @@
                 "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
               },
               "total": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+                "mbtu": [47.89, 34.11, 24.28, 10.79, 4.14, 3.41, 4.71, 4.02, 3.84, 9.20, 20.84, 37.06]
               }
             }
           },
           "energyCosts": {
             "annual": {
               "coalTotal": [0.0],
-              "electricityTotal": [0.0],
+              "electricityTotal": [1050.94],
               "fuelOilTotal": [0.0],
-              "naturalGasTotal": [0.0],
+              "naturalGasTotal": [2892.89],
               "propaneTotal": [0.0],
               "woodCordTotal": [0.0],
               "woodPelletsTotal": [0.0],
-              "total": [0.0]
+              "total": [3943.83]
             },
             "monthly": {
               "coalTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "electricityTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              "electricityTotal": [108.63, 90.35, 79.58, 64.65, 81.93, 79.98, 130.56, 107.84, 71.88, 62.32, 73.30, 99.94],
               "fuelOilTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "naturalGasTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              "naturalGasTotal": [739.25, 520.77, 363.90, 148.68, 31.70, 20.58, 19.51, 18.31, 31.19, 123.68, 310.21, 565.12],
               "propaneTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
               "woodCordTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
               "woodPelletsTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "total": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+              "total": [847.88, 611.12, 443.48, 213.33, 113.63, 100.56, 150.07, 126.15, 103.07, 186.00, 383.51, 665.05]
             }
           },
           "emissionTotals": {
@@ -229,13 +257,13 @@
                 "co2": [0.0]
               },
               "electricityTotal": {
-                "co2": [0.0]
+                "co2": [1945.79]
               },
               "fuelOilTotal": {
                 "co2": [0.0]
               },
               "naturalGasTotal": {
-                "co2": [0.0]
+                "co2": [25913.69]
               },
               "propaneTotal": {
                 "co2": [0.0]
@@ -247,7 +275,7 @@
                 "co2": [0.0]
               },
               "total": {
-                "co2": [0.0]
+                "co2": [27859.48]
               }
             },
             "monthly": {
@@ -255,13 +283,13 @@
                 "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
               },
               "electricityTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+                "co2": [201.12, 167.28, 147.33, 119.69, 151.69, 148.07, 241.72, 199.67, 133.08, 115.37, 135.71, 185.03]
               },
               "fuelOilTotal": {
                 "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
               },
               "naturalGasTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+                "co2": [6621.96, 4664.87, 3259.73, 1331.83, 283.98, 184.39, 174.78, 163.98, 279.36, 1107.89, 2778.76, 5062.16]
               },
               "propaneTotal": {
                 "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
@@ -273,15 +301,15 @@
                 "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
               },
               "total": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+                "co2": [6823.08, 4832.15, 3407.06, 1451.52, 435.67, 332.46, 416.51, 363.65, 412.44, 1223.27, 2914.47, 5247.19]
               }
             }
           }
         }
       ],
-      "totalEnergyCosts": 0.0,
+      "totalEnergyCosts": 3943.83,
       "totalEmissions": {
-        "co2": 0.0
+        "co2": 27859.48
       }
     }
   ]

@@ -10,6 +10,10 @@
 
   "includeTypical": false, // defaults to false
 
+  "useFixture": false, // defaults to false
+
+  "fixtureName": "automated-measures-new-heat-pump", // fixture to use (required if useFixture is true)
+
   // Instruct which financial calculations will be included in the response.
   // If not provided, the default values are "difference", "installationCosts" and "energyCosts".
   // To return no financial analysis altogether, pass in an empty array ([]).
