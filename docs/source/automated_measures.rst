@@ -224,7 +224,7 @@ Characteristics of a new water heating system can be entered in ``automatedMeasu
 
   .. [#] ``systemType`` choices are "storage water heater", "instantaneous water heater", and "heat pump water heater"
   .. [#] ``efficiencyClass`` choices are "standard" or "premium"
-  .. [#] The sum of ``dhwLoadPercentage`` across all water heating systems must be less than 1.
+  .. [#] The sum of ``dhwLoadPercentage`` across all water heating systems must be <= 1.
 
 
 Assumptions for ``efficiencyClass``:
