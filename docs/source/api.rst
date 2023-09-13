@@ -39,6 +39,13 @@ Top-level response payload
 Schemas
 -------
 
+.. note::
+
+   _`Single objects and arrays` are used in various places throughout the API. A single object indicates a node that can only ever be singly defined (e.g. air infiltration
+   is a characteristic of the entire building and thus can only be defined once). A array indicates a node that could potentially have multiple definitions (e.g. HVAC
+   systems). If an array is limited to a size of 1, this is an intentional limitation of the current version of the API. Support for multiple nodes may be incorporated
+   in future versions.
+
 .. _address_components:
 
 Address Components
@@ -58,7 +65,8 @@ Appliances
 Clothes Dryers
 ~~~~~~~~~~~~~~
 
-Clothes dryers can be entered in ``...building.appliances.clothesDryers``. Currently, this array is limited to a maximum size of 1.
+Clothes dryers can be entered in ``...building.appliances.clothesDryers``. Currently, this array is limited to a maximum size of 1. See note about `single objects and arrays`_
+for more information.
 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
@@ -75,7 +83,8 @@ Property                           Type     Units             Constraints     Re
 Cooking Ranges
 ~~~~~~~~~~~~~~
 
-Cooking ranges can be entered in ``...building.appliances.cookingRanges``. Currently, this array is limited to a maximum size of 1.
+Cooking ranges can be entered in ``...building.appliances.cookingRanges``. Currently, this array is limited to a maximum size of 1. See note about `single objects and arrays`_
+for more information.
 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
@@ -188,6 +197,7 @@ Attics
 ~~~~~~
 
 The attic is entered in ``...building.enclosure.attics``. Currently, this array must contain exactly 1 attic object. If there is no attic present in house, set ``area`` to 0.
+See note about `single objects and arrays`_ for more information.
 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
@@ -201,7 +211,8 @@ Property                           Type     Units             Constraints     Re
 Roofs
 ~~~~~
 
-Each roof surface is entered in ``...building.enclosure.roofs``. Currently, this array is limited to a maximum size of 1.
+Each roof surface is entered in ``...building.enclosure.roofs``. Currently, this array is limited to a maximum size of 1. See note about `single objects and arrays`_
+for more information.
 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
@@ -215,7 +226,8 @@ Property                           Type     Units             Constraints     Re
 Foundations
 ~~~~~~~~~~~
 
-Each foundation is entered in ``...building.enclosure.foundations``. Currently, this array is limited to a maximum size of 1.
+Each foundation is entered in ``...building.enclosure.foundations``. Currently, this array is limited to a maximum size of 1. See note about `single objects and arrays`_
+for more information.
 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
@@ -232,6 +244,7 @@ Walls
 ~~~~~
 
 Each wall that has no contact with the ground and bounds a space is entered in ``...building.enclosure.walls``. Currently, this array is limited to a maximum size of 1.
+See note about `single objects and arrays`_ for more information.
 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
