@@ -3,8 +3,8 @@
 Defaulting Engine
 =================
 
-Radiant Labs understands that API useres may not always know all of the details about the building being modeled. We have built a logical, statistics-based
-system to define default building characterstics. This defaulting engine uses tax assessor data, building permits, and NREL's ResStock building stock data. 
+Radiant Labs understands that API users may not always know all of the details about the building being modeled. We have built a logical, statistics-based
+system to define default building characteristics. This defaulting engine uses tax assessor data, building permits, and NREL's ResStock building stock data.
 
 This endpoint is built with flexibility and ease of use in mind. It requires as little information as an address to build an energy model, such as the following
 payload. In this case, all characteristics of the ``baseBuilding`` would be populated using the Defaulting Engine. 
