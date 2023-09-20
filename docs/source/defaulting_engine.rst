@@ -36,9 +36,28 @@ To specify certain known building characteristics and leave other characteristic
 
     .. code-block:: json
     
+      "baseBuilding": {
+        "appliances": {
+          "clothesDryers": null,
+          "cookingRanges": [
+            {
+              "id": "CookingRange1",
+              "fuel": "natural gas",
+              "isInduction": false
+            }
+          ]
+        }
+      }
+
+To specify that certain property does not exist in the house and thus, the Defaulting Engine should :strong:`not` be used, an array should be left blank.
+
+a. For example, in this payload for ``appliances``, ``clothesDryers`` is a blank array, which indicates that no clothes dryers exist in this building.
+
+  .. code-block:: json
+  
     "baseBuilding": {
       "appliances": {
-        "clothesDryers": null,
+        "clothesDryers": [],
         "cookingRanges": [
           {
             "id": "CookingRange1",
@@ -48,22 +67,3 @@ To specify certain known building characteristics and leave other characteristic
         ]
       }
     }
-
-To specify that certain property does not exist in the house and thus, the Defaulting Engine should :strong:`not` be used, an array should be left blank.
-
-a. For example, in this payload for ``appliances``, ``clothesDryers`` is a blank array, which indicates that no clothes dryers exist in this building.
-
-  .. code-block:: json
-  
-  "baseBuilding": {
-    "appliances": {
-      "clothesDryers": [],
-      "cookingRanges": [
-        {
-          "id": "CookingRange1",
-          "fuel": "natural gas",
-          "isInduction": false
-        }
-      ]
-    }
-  }
