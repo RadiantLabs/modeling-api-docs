@@ -19,17 +19,17 @@ To specify certain known building characteristics and leave other characteristic
 
     .. code-block:: json
     
-    "baseBuilding": {
-      "appliances": {
-        "cookingRanges": [
-          {
-            "id": "CookingRange1",
-            "fuel": "natural gas",
-            "isInduction": false
-          }
-        ]
+      "baseBuilding": {
+        "appliances": {
+          "cookingRanges": [
+            {
+              "id": "CookingRange1",
+              "fuel": "natural gas",
+              "isInduction": false
+            }
+          ]
+        }
       }
-    }
 
 2. Define known properties and indicate unknown properties as ``null``.
   a. For example, in this payload for ``appliances``, ``clothesDryer`` is ``null`` and would be defined using the Defaulting Engine.
