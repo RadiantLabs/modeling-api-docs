@@ -1,3 +1,5 @@
+.. _defaulting_engine:
+
 Defaulting Engine
 =================
 
