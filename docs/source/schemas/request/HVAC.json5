@@ -1,6 +1,6 @@
 // HVAC
 {
-  "hvacCoolingSystems": [
+  "hvacCoolingSystems": [ // limited to 1
     {
       "id": "CentralAirConditioner1", // required
       "connectedDistributionId": "HVACDistributionFurnaceAndCentralAC1", // required if systemType = "central air conditioner"
@@ -15,7 +15,7 @@
     }
   ],
 
-  "hvacHeatingSystems": [
+  "hvacHeatingSystems": [ // limited to 1
     {
       "id": "Boiler1", // required
       "connectedDistributionId": null, // required for type "furnace" and "boiler"
@@ -29,7 +29,7 @@
     }
   ],
 
-  "hvacHeatPumps": [
+  "hvacHeatPumps": [ // limited to 1
     {
       "id": "ASHP1", // required
       "connectedDistributionId": "HVACDistributionASHP1", // required for "air-to-air" and "ground-to-air"
@@ -60,7 +60,7 @@
 
   "hvacDistributionSystems": {
 
-    "airDistributionSystems": [
+    "airDistributionSystems": [ // limited to 1
       {
         "id": "HVACDistributionFurnaceAndCentralAC1",
         "systemType": "regular velocity", // ("regular velocity" | "gravity")
@@ -87,7 +87,7 @@
       }
     ],
 
-    "hydronicDistributionSystems": [
+    "hydronicDistributionSystems": [ // limited to 1
       {
         "id": "HVACDistributionBoiler1",
         "systemType": "baseboard", // ("baseboard" | "radiator" | "radiant floor" | "radiant ceiling" | "water loop"),
