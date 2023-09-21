@@ -4,7 +4,6 @@
     "rate": 1.0,
     "rateUnit": "ACH",
     "housePressurePa": 50.0,
-    "useDefaults": ["rate"],
     "costs": [ COST ],
   },
 
@@ -13,7 +12,6 @@
       "id": "Attic1",
       "floorAssemblyEffectiveRValue": 50.6,
       "isVented": true,
-      "useDefaults": [],
       "costs": [ COST ], // refer to the Cost schema
     }
   ],
@@ -40,7 +38,6 @@
     {
       "id": "Wall1",
       "assemblyEffectiveRValue": 18.9,
-      "useDefaults": [],
       "costs": [ COST ], // refer to the Cost schema
     }
   ],

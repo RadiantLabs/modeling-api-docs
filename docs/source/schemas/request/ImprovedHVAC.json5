@@ -11,7 +11,6 @@
       "coolEfficiencyUnits": "SEER",
       "coolLoadPercentage": 0.8, // required. Sum of coolLoadPercentage across all systems plus unmetCoolLoadPercentage must equal 1.
       "remove": true, // if true, system is removed and any other properties defined are ignored.
-      "useDefaults": [],
       "costs": [ COST ], // refer to the Cost schema
     }
   ],
@@ -27,7 +26,6 @@
       "heatEfficiencyUnits": "AFUE",
       "heatLoadPercentage": 0.8, // required. Sum of heatLoadPercentage across all systems plus unmetHeatLoadPercentage must equal 1.
       "remove": true, //if true, system is removed and any other properties defined are ignored.
-      "useDefaults": [],
       "costs": [ COST ], // refer to the Cost schema
 
     }
@@ -59,7 +57,6 @@
       "heatLoadPercentage": 0.8, //required  // If both heatLoadPercentage and coolLoadPercentage are 0, the system is being removed.
       "coolLoadPercentage": 0.8, //required  // If both heatLoadPercentage and coolLoadPercentage are 0, the system is being removed.
       "remove": false, // if true, system is removed and any other properties defined are ignored.
-      "useDefaults": [],
       "costs": [ COST ], // refer to the Cost schema
 
     }
@@ -74,7 +71,6 @@
         "numberOfReturnRegisters": 2,
         "conditionedFloorAreaServed": 3456,
         "remove": false, //if true, system is removed and any other properties defined are ignored.
-        "useDefaults": [],
         "costs": [ COST ], // refer to the Cost schema
         "ducts": [
           {
@@ -85,7 +81,6 @@
             "leakageUnits": "percent" // ("CFM25" | "CFM50" | "percent")
             "location": "attic vented", // (“living space” | “basement conditioned” | “basement unconditioned” | “crawlspace unvented” | “crawlspace vented” | “attic unvented” | “attic vented” | “garage” | “outside” | “exterior wall” | “under slab” | “roof deck” | “other heated space” | “other non-freezing space”)
             "remove": false, //if true, system is removed and any other properties defined are ignored.
-            "useDefaults": [],
             "costs": [ COST ], // refer to the Cost schema
           },
           {
@@ -96,7 +91,6 @@
             "leakageUnits": "percent" // ("CFM25" | "CFM50" | "percent")
             "location": "attic vented", // (“living space” | “basement conditioned” | “basement unconditioned” | “crawlspace unvented” | “crawlspace vented” | “attic unvented” | “attic vented” | “garage” | “outside” | “exterior wall” | “under slab” | “roof deck” | “other heated space” | “other non-freezing space”)
             "remove": false, //if true, system is removed and any other properties defined are ignored.
-            "useDefaults": [],
             "costs": [ COST ], // refer to the Cost schema
           },
         ]
@@ -109,7 +103,6 @@
         "systemType": "baseboard", // ("baseboard" | "radiator" | "radiant floor" | "radiant ceiling" | "water loop"),
         "conditionedFloorAreaServed": 3456,
         "remove": false, //if true, system is removed and any other properties defined are ignored.
-        "useDefaults": [],
         "costs": [ COST ], // refer to the Cost schema
       }
     ]
@@ -133,7 +126,6 @@
       "unmetCoolLoadPercentage": 0.2, // required if the sum of all systems' coolLoadPercentage is less than 1.0.
       "unmetHeatLoadPercentage": 0.2, // required if the sum of all systems' heatLoadPercentage is less than 1.0
       "remove": false, //if true, system is removed and any other properties defined are ignored.
-      "useDefaults": [],
       "costs": [ COST ], // refer to the Cost schema
 
     }
