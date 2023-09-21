@@ -598,12 +598,12 @@ Model Controls
 .. literalinclude:: schemas/request/ModelControls.json5
    :language: javascript
 
-.. _photovoltaic:
+.. _photovoltaics:
 
-Photovoltaic
+Photovoltaics
 *************
 
-.. literalinclude:: schemas/request/Photovoltaic.json5
+.. literalinclude:: schemas/request/Photovoltaics.json5
    :language: javascript
 
 Each solar electric photovoltaic (PV) system is entered in ``...building.systems.photovoltaic``. If not entered, the simulation will not include photovoltaics.
