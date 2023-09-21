@@ -606,7 +606,7 @@ Photovoltaics
 .. literalinclude:: schemas/request/Photovoltaics.json5
    :language: javascript
 
-Each solar electric photovoltaic (PV) system is entered in ``...building.systems.photovoltaic``. If not entered, the simulation will not include photovoltaics.
+Each solar electric photovoltaic (PV) system is entered in ``...building.systems.photovoltaics``. If not entered, the simulation will not include photovoltaics.
 
 =================================  =======  ==================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units               Constraints     Required  Default             Notes
