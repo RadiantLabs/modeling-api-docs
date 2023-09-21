@@ -15,7 +15,7 @@
     "hvac": HVAC, // refer to HVAC schema
     "waterHeating": WATER_HEATING, // refer to Water Heating schema
     "electrical": ELECTRICAL, // refer to Electrical schema
-    "photovoltaic": [ PHOTOVOLTAIC ], // refer to Photovoltaic schema
+    "photovoltaics": [ PHOTOVOLTAICS ], // refer to Photovoltaics schema
   },
   "appliances": APPLIANCES // refer to Appliances schema
 }
