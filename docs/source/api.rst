@@ -147,12 +147,12 @@ Custom Measure
 .. literalinclude:: schemas/request/CustomMeasure.json5
    :language: javascript
 
-.. _electrical:
+.. _electrical_panels:
 
-Electrical
-**********
+Electrical Panels
+*****************
 
-.. literalinclude:: schemas/request/Electrical.json5
+.. literalinclude:: schemas/request/ElectricalPanels.json5
    :language: javascript
 
 .. _emission_totals:
@@ -506,12 +506,12 @@ Improved Building
 .. literalinclude:: schemas/request/ImprovedBuilding.json5
    :language: javascript
 
-.. _improved_electrical:
+.. _improved_electrical_panels:
 
-Improved Electrical
-*******************
+Improved Electrical Panels
+**************************
 
-.. literalinclude:: schemas/request/ImprovedElectrical.json5
+.. literalinclude:: schemas/request/ImprovedElectricalPanels.json5
    :language: javascript
 
 .. _improved_enclosure:
@@ -532,10 +532,10 @@ Improved HVAC
 
 .. _improved_photovoltaic:
 
-Improved Photovoltaic
-*********************
+Improved Photovoltaics
+**********************
 
-.. literalinclude:: schemas/request/ImprovedPhotovoltaic.json5
+.. literalinclude:: schemas/request/ImprovedPhotovoltaics.json5
    :language: javascript
 
 .. _improved_water_heating:
