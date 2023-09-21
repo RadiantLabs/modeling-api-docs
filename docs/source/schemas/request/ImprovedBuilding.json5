@@ -4,8 +4,8 @@
   "systems": {
     "hvac": IMPROVED_HVAC,
     "waterHeating": IMPROVED_WATER_HEATING,
-    "electricalPanels": [ IMPROVED_ELECTRICAL_PANELS ],
-    "photovoltaics": [ IMPROVED_PHOTOVOLTAICS ]
+    "electricalPanels": [ IMPROVED_ELECTRICAL_PANEL ],
+    "photovoltaics": [ IMPROVED_PHOTOVOLTAIC ]
   },
   "appliances": IMPROVED_APPLIANCES,
 }

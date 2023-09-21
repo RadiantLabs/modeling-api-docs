@@ -147,12 +147,12 @@ Custom Measure
 .. literalinclude:: schemas/request/CustomMeasure.json5
    :language: javascript
 
-.. _electrical_panels:
+.. _electrical_panel:
 
-Electrical Panels
-*****************
+Electrical Panel
+****************
 
-.. literalinclude:: schemas/request/ElectricalPanels.json5
+.. literalinclude:: schemas/request/ElectricalPanel.json5
    :language: javascript
 
 .. _emission_totals:
@@ -511,12 +511,12 @@ Improved Building
 .. literalinclude:: schemas/request/ImprovedBuilding.json5
    :language: javascript
 
-.. _improved_electrical_panels:
+.. _improved_electrical_panel:
 
-Improved Electrical Panels
-**************************
+Improved Electrical Panel
+*************************
 
-.. literalinclude:: schemas/request/ImprovedElectricalPanels.json5
+.. literalinclude:: schemas/request/ImprovedElectricalPanel.json5
    :language: javascript
 
 .. _improved_enclosure:
@@ -537,10 +537,10 @@ Improved HVAC
 
 .. _improved_photovoltaic:
 
-Improved Photovoltaics
-**********************
+Improved Photovoltaic
+*********************
 
-.. literalinclude:: schemas/request/ImprovedPhotovoltaics.json5
+.. literalinclude:: schemas/request/ImprovedPhotovoltaic.json5
    :language: javascript
 
 .. _improved_water_heating:
@@ -603,12 +603,12 @@ Model Controls
 .. literalinclude:: schemas/request/ModelControls.json5
    :language: javascript
 
-.. _photovoltaics:
+.. _photovoltaic:
 
-Photovoltaics
-*************
+Photovoltaic
+************
 
-.. literalinclude:: schemas/request/Photovoltaics.json5
+.. literalinclude:: schemas/request/Photovoltaic.json5
    :language: javascript
 
 Each solar electric photovoltaic (PV) system is entered in ``...building.systems.photovoltaics``. Currently, this array is limited to a maximum size of 1.

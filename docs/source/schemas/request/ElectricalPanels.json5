@@ -1,7 +1,0 @@
-// ELECTRICAL_PANELS
-[ // limited to 1
-  {
-    "id": "ElectricPanel1",
-    "lifetime": LIFETIME // optional, refer to lifetime schema
-  }
-]
