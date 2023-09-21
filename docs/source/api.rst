@@ -324,7 +324,8 @@ HVAC
 HVAC Cooling Systems
 ~~~~~~~~~~~~~~~~~~~~
 
-Each space cooling system (other than a heat pump) can be entered in ``...building.systems.hvac.hvacCoolingSystems``.
+Each space cooling system (other than a heat pump) can be entered in ``...building.systems.hvac.hvacCoolingSystems``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information.
 
 =================================  =======  ===========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                        Constraints     Required  Default             Notes
@@ -347,7 +348,8 @@ Property                           Type     Units                        Constra
 HVAC Heating Systems
 ~~~~~~~~~~~~~~~~~~~~
 
-Each space heating system (other than a heat pump) can be entered in ``...building.systems.hvac.hvacHeatingSystems``.
+Each space heating system (other than a heat pump) can be entered in ``...building.systems.hvac.hvacHeatingSystems``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information.
 
 =================================  =======  ===========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                        Constraints     Required  Default             Notes
@@ -369,7 +371,8 @@ Property                           Type     Units                        Constra
 HVAC Heat Pumps
 ~~~~~~~~~~~~~~~
 
-Each space conditioning heat pump can be entered in ``...building.systems.hvac.hvacHeatPumps``. 
+Each space conditioning heat pump can be entered in ``...building.systems.hvac.hvacHeatPumps``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information.
 
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                       Constraints     Required  Default             Notes
@@ -419,7 +422,8 @@ Property                           Type     Units                       Constrai
 HVAC Air Distribution Systems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each separate air distribution system can be entered in ``...building.systems.hvac.hvacDistributionSystems.airDistributionSystems``.
+Each separate air distribution system can be entered in ``...building.systems.hvac.hvacDistributionSystems.airDistributionSystems``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information.
 
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                       Constraints     Required  Default             Notes
@@ -454,7 +458,8 @@ Property                           Type     Units                       Constrai
 HVAC Hydronic Distribution Systems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each separate hydronic distribution system can be entered in ``...building.systems.hvac.hvacDistributionSystems.hydronicDistributionSystems``.
+Each separate hydronic distribution system can be entered in ``...building.systems.hvac.hvacDistributionSystems.hydronicDistributionSystems``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information.
 
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                       Constraints     Required  Default             Notes
@@ -606,7 +611,8 @@ Photovoltaics
 .. literalinclude:: schemas/request/Photovoltaics.json5
    :language: javascript
 
-Each solar electric photovoltaic (PV) system is entered in ``...building.systems.photovoltaics``. If not entered, the simulation will not include photovoltaics.
+Each solar electric photovoltaic (PV) system is entered in ``...building.systems.photovoltaics``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information. If not entered, the simulation will not include photovoltaics.
 
 =================================  =======  ==================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units               Constraints     Required  Default             Notes
@@ -683,7 +689,8 @@ Water Heating
 .. literalinclude:: schemas/request/WaterHeating.json5
    :language: javascript
 
-Each water heater is entered in ``...building.systems.waterHeatingSystems``.
+Each water heater is entered in ``...building.systems.waterHeatingSystems``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information.
 
 ===========================================  =======  ==========================  ==============  ========  ====================  ============================================== 
 Property                                     Type     Units                       Constraints     Required  Default               Notes
