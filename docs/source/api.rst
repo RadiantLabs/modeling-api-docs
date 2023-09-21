@@ -612,7 +612,7 @@ Photovoltaics
    :language: javascript
 
 Each solar electric photovoltaic (PV) system is entered in ``...building.systems.photovoltaics``. Currently, this array is limited to a maximum size of 1.
-See note about `objects and arrays`_ for more information. If not entered, the simulation will not include photovoltaics.
+See note about `objects and arrays`_ for more information.
 
 =================================  =======  ==================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units               Constraints     Required  Default             Notes
