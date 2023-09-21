@@ -1,5 +1,5 @@
 // PHOTOVOLTAICS
-[
+[ // limited to 1
   {
     "id": "PV1",
     "location": "roof", // ("ground" | "roof")
