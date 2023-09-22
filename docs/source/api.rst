@@ -39,6 +39,12 @@ Top-level response payload
 Schemas
 -------
 
+.. note::
+
+   _`Objects and arrays` are used as values throughout the API. The difference is:
+      - Object: This represents a single item that is not inherently a collection. An example of this is `Air Infiltration`_, which is characteristic of the entire building and thus can only be defined once.
+      - Array: This represents an item that is inherently a collection, even if we don’t yet support more than one item. Often it will be an array of objects, where each object defines an item in the collection. `HVAC`_ and `Walls`_ are examples of this.
+
 .. _address_components:
 
 Address Components
@@ -58,7 +64,8 @@ Appliances
 Clothes Dryers
 ~~~~~~~~~~~~~~
 
-Clothes dryers can be entered in ``...building.appliances.clothesDryers``. Currently, this array is limited to a maximum size of 1.
+Clothes dryers can be entered in ``...building.appliances.clothesDryers``. Currently, this array is limited to a maximum size of 1. See note about `objects and arrays`_
+for more information.
 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
@@ -75,7 +82,8 @@ Property                           Type     Units             Constraints     Re
 Cooking Ranges
 ~~~~~~~~~~~~~~
 
-Cooking ranges can be entered in ``...building.appliances.cookingRanges``. Currently, this array is limited to a maximum size of 1.
+Cooking ranges can be entered in ``...building.appliances.cookingRanges``. Currently, this array is limited to a maximum size of 1. See note about `objects and arrays`_
+for more information.
 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
@@ -139,12 +147,12 @@ Custom Measure
 .. literalinclude:: schemas/request/CustomMeasure.json5
    :language: javascript
 
-.. _electrical:
+.. _electrical_panel:
 
-Electrical
-**********
+Electrical Panel
+****************
 
-.. literalinclude:: schemas/request/Electrical.json5
+.. literalinclude:: schemas/request/ElectricalPanel.json5
    :language: javascript
 
 .. _emission_totals:
@@ -188,6 +196,7 @@ Attics
 ~~~~~~
 
 The attic is entered in ``...building.enclosure.attics``. Currently, this array must contain exactly 1 attic object. If there is no attic present in house, set ``area`` to 0.
+See note about `objects and arrays`_ for more information.
 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
@@ -201,7 +210,8 @@ Property                           Type     Units             Constraints     Re
 Roofs
 ~~~~~
 
-Each roof surface is entered in ``...building.enclosure.roofs``. Currently, this array is limited to a maximum size of 1.
+Each roof surface is entered in ``...building.enclosure.roofs``. Currently, this array is limited to a maximum size of 1. See note about `objects and arrays`_
+for more information.
 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
@@ -215,7 +225,8 @@ Property                           Type     Units             Constraints     Re
 Foundations
 ~~~~~~~~~~~
 
-Each foundation is entered in ``...building.enclosure.foundations``. Currently, this array is limited to a maximum size of 1.
+Each foundation is entered in ``...building.enclosure.foundations``. Currently, this array is limited to a maximum size of 1. See note about `objects and arrays`_
+for more information.
 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
@@ -232,6 +243,7 @@ Walls
 ~~~~~
 
 Each wall that has no contact with the ground and bounds a space is entered in ``...building.enclosure.walls``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information.
 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
@@ -312,7 +324,8 @@ HVAC
 HVAC Cooling Systems
 ~~~~~~~~~~~~~~~~~~~~
 
-Each space cooling system (other than a heat pump) can be entered in ``...building.systems.hvac.hvacCoolingSystems``.
+Each space cooling system (other than a heat pump) can be entered in ``...building.systems.hvac.hvacCoolingSystems``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information.
 
 =================================  =======  ===========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                        Constraints     Required  Default             Notes
@@ -335,7 +348,8 @@ Property                           Type     Units                        Constra
 HVAC Heating Systems
 ~~~~~~~~~~~~~~~~~~~~
 
-Each space heating system (other than a heat pump) can be entered in ``...building.systems.hvac.hvacHeatingSystems``.
+Each space heating system (other than a heat pump) can be entered in ``...building.systems.hvac.hvacHeatingSystems``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information.
 
 =================================  =======  ===========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                        Constraints     Required  Default             Notes
@@ -357,7 +371,8 @@ Property                           Type     Units                        Constra
 HVAC Heat Pumps
 ~~~~~~~~~~~~~~~
 
-Each space conditioning heat pump can be entered in ``...building.systems.hvac.hvacHeatPumps``. 
+Each space conditioning heat pump can be entered in ``...building.systems.hvac.hvacHeatPumps``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information.
 
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                       Constraints     Required  Default             Notes
@@ -407,7 +422,8 @@ Property                           Type     Units                       Constrai
 HVAC Air Distribution Systems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each separate air distribution system can be entered in ``...building.systems.hvac.hvacDistributionSystems.airDistributionSystems``.
+Each separate air distribution system can be entered in ``...building.systems.hvac.hvacDistributionSystems.airDistributionSystems``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information.
 
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                       Constraints     Required  Default             Notes
@@ -442,7 +458,8 @@ Property                           Type     Units                       Constrai
 HVAC Hydronic Distribution Systems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each separate hydronic distribution system can be entered in ``...building.systems.hvac.hvacDistributionSystems.hydronicDistributionSystems``.
+Each separate hydronic distribution system can be entered in ``...building.systems.hvac.hvacDistributionSystems.hydronicDistributionSystems``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information.
 
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                       Constraints     Required  Default             Notes
@@ -494,12 +511,12 @@ Improved Building
 .. literalinclude:: schemas/request/ImprovedBuilding.json5
    :language: javascript
 
-.. _improved_electrical:
+.. _improved_electrical_panel:
 
-Improved Electrical
-*******************
+Improved Electrical Panel
+*************************
 
-.. literalinclude:: schemas/request/ImprovedElectrical.json5
+.. literalinclude:: schemas/request/ImprovedElectricalPanel.json5
    :language: javascript
 
 .. _improved_enclosure:
@@ -597,12 +614,13 @@ Model Controls
 .. _photovoltaic:
 
 Photovoltaic
-*************
+************
 
 .. literalinclude:: schemas/request/Photovoltaic.json5
    :language: javascript
 
-Each solar electric photovoltaic (PV) system is entered in ``...building.systems.photovoltaic``. If not entered, the simulation will not include photovoltaics.
+Each solar electric photovoltaic (PV) system is entered in ``...building.systems.photovoltaics``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information.
 
 =================================  =======  ==================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units               Constraints     Required  Default             Notes
@@ -687,7 +705,8 @@ Water Heating
 .. literalinclude:: schemas/request/WaterHeating.json5
    :language: javascript
 
-Each water heater is entered in ``...building.systems.waterHeatingSystems``.
+Each water heater is entered in ``...building.systems.waterHeatingSystems``. Currently, this array is limited to a maximum size of 1.
+See note about `objects and arrays`_ for more information.
 
 ===========================================  =======  ==========================  ==============  ========  ====================  ============================================== 
 Property                                     Type     Units                       Constraints     Required  Default               Notes

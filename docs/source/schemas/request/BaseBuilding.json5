@@ -14,9 +14,15 @@
   "systems": {
     "hvac": HVAC, // refer to HVAC schema
     "waterHeating": WATER_HEATING, // refer to Water Heating schema
-    "electrical": ELECTRICAL, // refer to Electrical schema
-    "photovoltaic": [ PHOTOVOLTAIC ], // refer to Photovoltaic schema
+    "electricalPanels": [ // limited to 1
+      ELECTRICAL_PANEL // refer to Electrical Panel schema
+    ],
+    "photovoltaics": [ // limited to 1
+      PHOTOVOLTAIC // refer to Photovoltaic schema
+    ],
   },
   "appliances": APPLIANCES, // refer to Appliances schema
-  "vehicles": [ VEHICLE ] // refer to Vehicle schema
+  "vehicles": [ // limited to 1
+    VEHICLE // refer to Vehicle schema
+  ]
 }

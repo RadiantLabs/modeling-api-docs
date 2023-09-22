@@ -1,6 +1,6 @@
 // WATER_HEATING
 {
-  "waterHeatingSystems": [
+  "waterHeatingSystems": [ // limited to 1
     {
       "id": "WaterHeater1",
       "systemType": "storage water heater", // ( “storage water heater” | “instantaneous water heater” | “heat pump water heater”
