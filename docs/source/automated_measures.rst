@@ -189,7 +189,7 @@ Operations on the existing vehicle can be entered in ``automatedMeasures.existin
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
 
-``adjust`` schema for existing water heating system:
+``adjust`` schema for existing vehicle:
 
   =====================  =======  ===========  ==============================================
   Property               Type     Constraints  Description
