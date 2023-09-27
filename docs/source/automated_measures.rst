@@ -287,15 +287,17 @@ Characteristics of a new electric vehicle can be entered in ``automatedMeasures.
   Property                    Type                  Constraints  Required  Default     Description
   ==========================  ====================  ===========  ========  ==========  =====================================
   ``vehicleType``             String                See [#]_     Yes                   Type of electric vehicle
-  ``annualMiles``             String                > 0          Yes                   Number of miles the vehicle is driven annually 
-  ``vehicleEfficiency``       Double                > 0          No        See [#VE]_  Efficiency of the vehicle
-  ``vehicleEfficiencyUnits``  Double                0 - 1        No        See [#VE]_  Unit of measurement for ``vehicleEffiency``
-  ``chargingPattern``         Double                See [#]_     No        night       Typical schedule for vehicle charging
+  ``annualMiles``             Integer               > 0          Yes                   Number of miles the vehicle is driven annually 
+  ``vehicleEfficiency``       Array                 See [#]_     No        See [#VE]_  Efficiency of the vehicle
+  ``vehicleEfficiencyUnits``  Array                 See [#]_     No        See [#VE]_  Unit of measurement for ``vehicleEfficiency``
+  ``chargingPattern``         String                See [#]_     No        night       Typical schedule for vehicle charging
   ``costs``                   Array of :ref:`cost`               No        ``[]``      Implied costs of measure
   ==========================  ====================  ===========  ========  ==========  =====================================
 
   .. [#] ``vehicleType`` choices are "electric" or "plug-in hybrid"
+  .. [#] ``vehicleEfficiency`` array limited to size 2 for plug-in hybrid vehicles. All other vehiclesTypes may only have one ``vehicleEfficiency``. Data type must be float.
   .. [#VE] ``vehicleEfficiency`` assumed to be 3.0 miles per kwh for full-electric vehicles. For plug-in hybrid vehicles, the defaults are 68 miles per gallon of gasoline-equivalent for electric operation and 27 miles per gallon for gas operation. The ratio of electric to gas operation is assumed to be 0.54.
+  .. [#] ``vehicleEfficiencyUnits`` choices are "miles per gallon of gasoline-equivalent" or "miles per kwh"
   .. [#] ``chargingPattern`` choices are "day" or "night"
 
 
