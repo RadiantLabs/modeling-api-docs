@@ -51,8 +51,8 @@
   "newElectricVehicle": {
     "vehicleType": "electric", // ("electric" | "plug-in hybrid")
     "annualMiles": 4500,
-    "vehicleEfficiency": 5,
-    "vehicleEfficiencyUnits": "miles per kwh", // ("miles per gallon of gasoline-equivalent" | "miles per kwh")
+    "vehicleEfficiency": [5],
+    "vehicleEfficiencyUnits": ["miles per kwh"], // ("miles per gallon of gasoline-equivalent" | "miles per kwh")
     "chargingPattern": "night", // ("day" | "night")
   },
   "thermostat": {
