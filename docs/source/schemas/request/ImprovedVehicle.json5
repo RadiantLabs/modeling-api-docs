@@ -9,9 +9,9 @@
   "batteryEfficiency": 0.9, //only applicable to electric vehicles
   "chargingPattern": "night", // ("day" | "night")
   "chargingScheduleFractions": {
-    "weekday": [0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.125], //size 24 array for user-defined fractions of weekday hourly charging
-    "weekend": [0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.125], //size 24 array for user-defined fractions of weekend hourly charging
-    "monthly": [0.083, 0.083, 0.083, 0.083, 0.083, 0.083, 0.083, 0.083, 0.083, 0.083, 0.083, 0.083] // size 12 array for user-defined fractions of monthly charging
+    "weekday": [], //size 24 array for user-defined fractions of weekday hourly charging
+    "weekend": [], //size 24 array for user-defined fractions of weekend hourly charging
+    "monthly": [] // size 12 array for user-defined fractions of monthly charging
   },
   "remove": false,
   "useDefaults": [],
