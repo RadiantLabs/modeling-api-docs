@@ -48,13 +48,12 @@
       "annualMiles": 1000
     },
   },
-  "newEV": {
-    "vehicleType": "electric", // required ("electric" | "plug-in hybrid")
-    "vehicleBody": "SUV", // ("coupe" | "sedan" | "crossover" | "minivan" | "SUV" | "pickup truck" | "other")
+  "newElectricVehicle": {
+    "vehicleType": "electric", // ("electric" | "plug-in hybrid")
     "annualMiles": 4500,
     "vehicleEfficiency": 5,
-    "vehicleEfficiencyUnits": "miles per kwh", // ("miles per gallon" | "miles per gallon of gasoline-equivalent" | "miles per kwh")
-    "chargingPattern": "daily commuter" // ("daily commuter" | "work from home" | "occassional errands")
+    "vehicleEfficiencyUnits": "miles per kwh", // ("miles per gallon of gasoline-equivalent" | "miles per kwh")
+    "chargingPattern": "nighttime", // ("daytime" | "nighttime")
   },
   "thermostat": {
     "adjust": {
