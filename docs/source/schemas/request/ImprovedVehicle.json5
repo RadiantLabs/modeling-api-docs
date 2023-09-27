@@ -1,10 +1,10 @@
 // IMPROVED_VEHICLE
 {
-  "id": "EV1",
-  "vehicleType": "electric", // required //("electric" | "gasoline" | "hybrid" | "plug-in hybrid")
+  "id": "PHEV1",
+  "vehicleType": "plug-in hybrid", // required //("electric" | "gasoline" | "hybrid" | "plug-in hybrid")
   "annualMiles": 4500, // required 
-  "vehicleEfficiency": 5, // required 
-  "vehicleEfficiencyUnits": "miles per kwh", // required // ("miles per gallon" | "miles per gallon of gasoline-equivalent" | "miles per kwh")
+  "vehicleEfficiency": [5, 27], // required 
+  "vehicleEfficiencyUnits": ["miles per kwh", "miles per gallon"], // required // ("miles per gallon" | "miles per gallon of gasoline-equivalent" | "miles per kwh")
   "chargerEfficiency": 0.9, //only applicable to electric vehicles
   "batteryEfficiency": 0.9, //only applicable to electric vehicles
   "chargingPattern": "night", // ("day" | "night")
