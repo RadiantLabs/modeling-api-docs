@@ -53,7 +53,7 @@
     "annualMiles": 4500,
     "vehicleEfficiency": 5,
     "vehicleEfficiencyUnits": "miles per kwh", // ("miles per gallon of gasoline-equivalent" | "miles per kwh")
-    "chargingPattern": "nighttime", // ("daytime" | "nighttime")
+    "chargingPattern": "night", // ("day" | "night")
   },
   "thermostat": {
     "adjust": {
