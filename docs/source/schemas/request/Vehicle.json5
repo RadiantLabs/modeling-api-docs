@@ -3,8 +3,8 @@
   "id": "ICEVehicle1",
   "vehicleType": "gasoline", // required //("electric" | "gasoline" | "hybrid" | "plug-in hybrid")
   "annualMiles": 4500, // required
-  "vehicleEfficiency": 32, // required
-  "vehicleEfficiencyUnits": "miles per gallon", // required // ("miles per gallon" | "miles per gallon of gasoline-equivalent" | "miles per kwh")
+  "vehicleEfficiency": [32], // required
+  "vehicleEfficiencyUnits": ["miles per gallon"], // required // ("miles per gallon" | "miles per gallon of gasoline-equivalent" | "miles per kwh")
   "chargerEfficiency": 0.9, //only applicable to electric vehicles
   "batteryEfficiency": 0.9, //only applicable to electric vehicles
   "chargingPattern": "day", // ("day" | "night")
