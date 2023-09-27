@@ -716,7 +716,7 @@ Property                                     Type     Units                     
 ===========================================  =======  ==============================  ==============  ========  ====================  ============================================== 
 
 .. [#] ``vehicleType`` choices are "electric" or "gasoline" or "hybrid" or "plug-in hybrid"
-.. [#] ``vehicleEfficency`` array limited to size 2 for plug-in hybrid vehicles. All other vehiclesTypes may only have one ``vehicleEfficiency``. Data type must be float.
+.. [#] ``vehicleEfficiency`` array limited to size 2 for plug-in hybrid vehicles. All other vehiclesTypes may only have one ``vehicleEfficiency``. Data type must be float.
 .. [#] ``vehicleEfficiencyUnits`` must be "miles per gallon" for gasoline and hybrid vehicles, "miles per gallon of gasoline-equivalent" or "miles per kwh" for electric vehicles, and plug-in hybrid vehicles require two efficiencies (one for gasoline operation and one for electric operation).
 .. [#] ``chargingPattern`` choices are "day" or "night"
 
