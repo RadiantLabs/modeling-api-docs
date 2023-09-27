@@ -7,7 +7,7 @@
   "vehicleEfficiencyUnits": "miles per gallon", // required // ("miles per gallon" | "miles per gallon of gasoline-equivalent" | "miles per kwh")
   "chargerEfficiency": 0.9, //only applicable to electric vehicles
   "batteryEfficiency": 0.9, //only applicable to electric vehicles
-  "chargingPattern": "daytime", // ("daytime" | "nighttime")
+  "chargingPattern": "day", // ("day" | "night")
   "chargingScheduleFractions": {
     "weekday": [], //size 24 array for user-defined fractions of weekday hourly charging
     "weekend": [], //size 24 array for user-defined fractions of weekend hourly charging
