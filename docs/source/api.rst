@@ -704,6 +704,7 @@ Property                                     Type     Units                     
 ===========================================  =======  ==============================  ==============  ========  ====================  ==============================================       
 ``id``                                       id                                       Must be unique  yes       not defined    
 ``vehicleType``                              string                                   see [#]_        yes                             Type of vehicle  
+``annualMiles``                              integer  miles                           > 0             yes                             Number of miles the vehicle is driven annually 
 ``vehicleEfficiency``                        array    see ``vehicleEfficiencyUnits``  see [#]_        yes                             Efficiency of vehicle
 ``vehicleEfficiencyUnits``                   array                                    see [#]_        yes                             Unit of measurement for ``vehicleEffiency``      
 ``chargerEfficiency``                        float    percent                         0 - 1           no        0.9                   Only applicable to electric and plug-in hybrid
