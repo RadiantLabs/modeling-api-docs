@@ -195,17 +195,18 @@ Property                  Type     Units             Constraints  Required  Defa
 Attics
 ~~~~~~
 
-The attic is entered in ``...building.enclosure.attics``. Currently, this array must contain exactly 1 attic object. If there is no attic present in house, set ``area`` to 0.
-See note about `objects and arrays`_ for more information.
+The attic is entered in ``...building.enclosure.attics``. Currently, this array must contain exactly 1 attic object. See note about `objects and arrays`_ for more information.
 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
 =================================  =======  ================  ==============  ========  ==================  ==============================================       
-``id``                             id                         Must be unique  yes       Attic1  
-``area``                           float    ft2               >0              no        PSC
-``isVented``                       boolean                                    no        yes
-``floorAssemblyEffectiveRValue``   float    F-ft2-hr/Btu      >0              no        BSA
+``id``                             id                         Must be unique  yes       Attic1
+``type``                           string                     see [#]_        no        BSA
+``area``                           float    ft2               >0              no        PSC                 Not applicable when ``type`` is "cathedral ceiling" or "flat roof"
+``floorAssemblyEffectiveRValue``   float    F-ft2-hr/Btu      >0              no        BSA                 Not applicable when ``type`` is "cathedral ceiling" or "flat roof"
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
+
+.. [#] ``type`` options are "attic vented", "attic unvented", "cathedral ceiling", or "flat roof".
 
 Roofs
 ~~~~~
