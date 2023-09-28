@@ -28,7 +28,7 @@
   "foundations": [ // limited to 1
     {
       "id": "BasementUnconditioned1",
-      "type": "basement unconditioned", // ("basement conditioned" | "basement unconditioned" | "crawl vented" | "crawl unvented" | "slab" | "pier and beam")
+      "type": "basement unconditioned", // ("basement conditioned" | "basement unconditioned" | "crawl vented" | "crawl unvented" | "slab" | "belly and wing")
       "area": 1234, // if the area is less than the footprint area, the remainder will be assigned to crawlspace
       "wallHeight": 8,
     }
