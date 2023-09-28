@@ -9,8 +9,8 @@
   "attics": [ // required to be 1, if no attic in house, area must be set to 0
     {
       "id": "Attic1",
+      "type": "attic vented", // ("attic vented" | "attic unvented" | "cathedral ceiling" | "flat roof")
       "area": 1225,
-      "isVented": true,
       "floorAssemblyEffectiveRValue": 20.6
     }
   ],
