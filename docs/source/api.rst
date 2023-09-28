@@ -234,7 +234,7 @@ Property                           Type     Units             Constraints     Re
 ``id``                             id                         must be unique  yes       PSC     
 ``type``                           string                     see [#]_        no        BSA
 ``area``                           float    ft2               >0              no        PSC   
-``wallHeight``                     float    ft                >0              no        PSC  
+``wallHeight``                     float    ft                >=0             no        PSC  
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
 .. [#] ``type`` choices are "basement conditioned", "basement unconditioned", "crawl vented", "crawl unvented", "slab", and "pier and beam".
