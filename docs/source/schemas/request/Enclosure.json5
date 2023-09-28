@@ -6,7 +6,7 @@
     "housePressurePa": 50.0, // if null, default is 50 Pa
   },
 
-  "attics": [ // required to be 1, if no attic in house, area must be set to 0
+  "attics": [ // required to be 1
     {
       "id": "Attic1",
       "type": "attic vented", // ("attic vented" | "attic unvented" | "cathedral ceiling" | "flat roof")
