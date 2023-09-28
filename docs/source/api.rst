@@ -237,7 +237,7 @@ Property                           Type     Units             Constraints     Re
 ``wallHeight``                     float    ft                >=0             no        PSC  
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
-.. [#] ``type`` choices are "basement conditioned", "basement unconditioned", "crawl vented", "crawl unvented", "slab", and "pier and beam".
+.. [#] ``type`` choices are "basement conditioned", "basement unconditioned", "crawl vented", "crawl unvented", "slab", and "belly and wing".
 
 Walls
 ~~~~~
