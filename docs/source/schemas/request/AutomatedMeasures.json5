@@ -42,6 +42,19 @@
     "dhwLoadPercentage": 1.0,
     "costs": [ COST ]
   },
+  "existingVehicle": {
+    "action": "adjust", // ("keep" | "remove" | "adjust")
+    "adjust": {
+      "annualMiles": 1000
+    },
+  },
+  "newElectricVehicle": {
+    "vehicleType": "electric", // ("electric" | "plug-in hybrid")
+    "annualMiles": 4500,
+    "vehicleEfficiency": [5],
+    "vehicleEfficiencyUnits": ["miles per kwh"], // ("miles per gallon of gasoline-equivalent" | "miles per kwh")
+    "chargingPattern": "night", // ("day" | "night")
+  },
   "thermostat": {
     "adjust": {
       "heatingSeason": {

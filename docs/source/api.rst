@@ -543,6 +543,14 @@ Improved Photovoltaic
 .. literalinclude:: schemas/request/ImprovedPhotovoltaic.json5
    :language: javascript
 
+.. _improved_vehicle:
+
+Improved Vehicle
+****************
+
+.. literalinclude:: schemas/request/ImprovedVehicle.json5
+   :language: javascript
+
 .. _improved_water_heating:
 
 Improved Water Heating
@@ -680,6 +688,45 @@ Variable Cost
 
 .. literalinclude:: schemas/request/VariableCost.json5
    :language: javascript
+
+.. _vehicle:
+
+Vehicle
+*************
+
+.. literalinclude:: schemas/request/Vehicle.json5
+   :language: javascript
+
+Each vehicle is entered in ``...building.vehicles``. Currently, this array is limited to a maximum size of 1. See note about `objects and arrays`_ for more information.
+
+===========================================  =======  ==============================  ==============  ========  ====================  ============================================== 
+Property                                     Type     Units                           Constraints     Required  Default               Notes
+===========================================  =======  ==============================  ==============  ========  ====================  ==============================================       
+``id``                                       id                                       Must be unique  yes       not defined    
+``vehicleType``                              string                                   see [#]_        yes                             Type of vehicle  
+``annualMiles``                              integer  miles                           > 0             yes                             Number of miles the vehicle is driven annually 
+``vehicleEfficiency``                        array    see ``vehicleEfficiencyUnits``  see [#]_        yes                             Efficiency of vehicle
+``vehicleEfficiencyUnits``                   array                                    see [#]_        yes                             Unit of measurement for ``vehicleEffiency``      
+``chargerEfficiency``                        float    percent                         0 - 1           no        0.9                   Only applicable to electric and plug-in hybrid
+``batteryEfficiency``                        float    percent                         0 - 1           no        0.9                   Only applicable to electric and plug-in hybrid
+``chargingPattern``                          string                                   see [#]_        no        night                 Typical schedule for vehicle charging
+``chargingScheduleFractions.weekday``        array    percent                         size 24         no                              Weekday hourly charging schedule
+``chargingScheduleFractions.weekend``        array    percent                         size 24         no                              Weekend hourly charging schedule
+``chargingScheduleFractions.monthly``        array    percent                         size 12         no                              Monthly charging schedule
+===========================================  =======  ==============================  ==============  ========  ====================  ============================================== 
+
+.. [#] ``vehicleType`` choices are "electric" or "gasoline" or "hybrid" or "plug-in hybrid"
+.. [#] ``vehicleEfficiency`` array limited to size 2 for plug-in hybrid vehicles. All other vehiclesTypes may only have one ``vehicleEfficiency``. Data type must be float.
+.. [#] ``vehicleEfficiencyUnits`` must be "miles per gallon" for gasoline and hybrid vehicles, "miles per gallon of gasoline-equivalent" or "miles per kwh" for electric vehicles, and plug-in hybrid vehicles require two efficiencies (one for gasoline operation and one for electric operation).
+.. [#] ``chargingPattern`` choices are "day" or "night"
+
+   Default ``chargingScheduleFractions.monthly`` assumed to be evenly distributed across the year for both choices: ``[0.083, 0.083, 0.083, 0.083, 0.083, 0.083, 0.083, 0.083, 0.083, 0.083, 0.083, 0.083]``
+
+   Default ``chargingScheduleFractions.weekday`` for "night": ``[0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.125]``
+
+   Default ``chargingScheduleFractions.weekday`` for "day": ``[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.167, 0.167, 0.167, 0.167, 0.167, 0.167, 0, 0, 0, 0, 0, 0, 0, 0]``
+
+   Default ``chargingScheduleFractions.weekend`` assumed to be the same as respective weekday schedule. 
 
 .. _water_heating:
 

@@ -8,4 +8,5 @@
     "photovoltaics": [ IMPROVED_PHOTOVOLTAIC ]
   },
   "appliances": IMPROVED_APPLIANCES,
+  "vehicles": [ IMPROVED_VEHICLE ]
 }

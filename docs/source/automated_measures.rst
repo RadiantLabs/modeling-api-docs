@@ -165,6 +165,38 @@ Operations on the existing water heating system can be entered in ``automatedMea
   ``dhwLoadPercentage``  Double   0 - 1        Domestic hot water load for the existing water heating system
   =====================  =======  ===========  ==============================================
 
+.. _existing_vehicle:
+
+Existing Vehicle
+****************
+
+Operations on the existing vehicle can be entered in ``automatedMeasures.existingVehicle``. This object covers the predefined vehicle in the base building.
+
+  ==========  ====================  ===========  ========  ============================
+  Property    Type                  Constraints  Required  Description
+  ==========  ====================  ===========  ========  ============================
+  ``action``  String                See [#]_     Yes       Operation on existing vehicle
+  ``adjust``  Object                             No [#]_   System properties to adjust
+  ``costs``   Array of :ref:`cost`               No [#]_   Implied costs of measure
+  ==========  ====================  ===========  ========  ============================
+
+  .. [#] ``action`` choices are "keep", "remove", or "adjust".
+
+     **"keep"** maintains existing vehicle as is, including annual miles. Using this action indicates that there are no changes to the vehicle at all. This action will override anything in ``adjust`` object.
+
+     **"remove"** indicates the existing vehicle is completely removed. This action will override anything in ``adjust`` object.
+
+  .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
+  .. [#] Defaults to ``[]`` if not provided.
+
+``adjust`` schema for existing vehicle:
+
+  =====================  =======  ===========  ==============================================
+  Property               Type     Constraints  Description
+  =====================  =======  ===========  ==============================================
+  ``annualMiles``        Integer  > 0          Number of miles the vehicle is driven annually
+  =====================  =======  ===========  ==============================================
+
 Add new systems with minimal configuration
 ------------------------------------------
 
@@ -185,9 +217,9 @@ Characteristics of a new heat pump system can be entered in ``automatedMeasures.
   ``systemType``             String                See [#]_     Yes                Type of heat pump
   ``performanceClass``       String                See [#]_     Yes
   ``heatLoadPercentage``     Double                0 - 1        No        1.0      Heat load for the new heat pump
-  ``heatLoadGapPercentage``  Double                0 - 1        No        0.0      Heat load for the new heat pump
+  ``heatLoadGapPercentage``  Double                0 - 1        No        0.0      Heat load gap for the new heat pump
   ``coolLoadPercentage``     Double                0 - 1        No        1.0      Cool load for the new heat pump
-  ``coolLoadGapPercentage``  Double                0 - 1        No        0.0      Cool load for the new heat pump
+  ``coolLoadGapPercentage``  Double                0 - 1        No        0.0      Cool load gap for the new heat pump
   ``costs``                  Array of :ref:`cost`               No        ``[]``   Implied costs of measure
   =========================  ====================  ===========  ========  =======  ===================================
 
@@ -243,6 +275,31 @@ Assumptions for ``efficiencyClass``:
   instantaneous water heater  propane      0.82      N/A
   instantaneous water heater  other        N/A       N/A
   ==========================  ===========  ========  =======
+
+.. _new_electric_vehicle:
+
+New Electric Vehicle
+********************
+
+Characteristics of a new electric vehicle can be entered in ``automatedMeasures.newElectricVehicle``.
+
+  ==========================  ====================  ===========  ========  ==========  =====================================
+  Property                    Type                  Constraints  Required  Default     Description
+  ==========================  ====================  ===========  ========  ==========  =====================================
+  ``vehicleType``             String                See [#]_     Yes                   Type of electric vehicle
+  ``annualMiles``             Integer               > 0          Yes                   Number of miles the vehicle is driven annually 
+  ``vehicleEfficiency``       Array                 See [#]_     No        See [#VE]_  Efficiency of the vehicle
+  ``vehicleEfficiencyUnits``  Array                 See [#]_     No        See [#VE]_  Unit of measurement for ``vehicleEfficiency``
+  ``chargingPattern``         String                See [#]_     No        night       Typical schedule for vehicle charging
+  ``costs``                   Array of :ref:`cost`               No        ``[]``      Implied costs of measure
+  ==========================  ====================  ===========  ========  ==========  =====================================
+
+  .. [#] ``vehicleType`` choices are "electric" or "plug-in hybrid"
+  .. [#] ``vehicleEfficiency`` array limited to size 2 for plug-in hybrid vehicles. All other vehiclesTypes may only have one ``vehicleEfficiency``. Data type must be float.
+  .. [#VE] ``vehicleEfficiency`` assumed to be 3.0 miles per kwh for full-electric vehicles. For plug-in hybrid vehicles, the defaults are 68 miles per gallon of gasoline-equivalent for electric operation and 27 miles per gallon for gas operation. The ratio of electric to gas operation is assumed to be 0.54.
+  .. [#] ``vehicleEfficiencyUnits`` choices are "miles per gallon of gasoline-equivalent" or "miles per kwh"
+  .. [#] ``chargingPattern`` choices are "day" or "night"
+
 
 Adjust global aspects of the building
 -------------------------------------
