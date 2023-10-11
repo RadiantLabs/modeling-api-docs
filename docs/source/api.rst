@@ -16,7 +16,7 @@ All requests to the Modeling API must include authentication credentials.
 
 API access tokens are applied to your requests to protect sensitive PII and are compliant with common privacy and security standards.
 
-A valid token must be included as part of the HTTP Authorization header, using the `bearer` HTTP authorization scheme. The value of the header will be ``Bearer <token>``, where you replace <token> with a valid token. Valid tokens will be provided to established customers of the API. It is planned to add the ability to rotate tokens and set expiration dates in future releases.
+A valid token must be included as part of the HTTP ``Authorization`` header, using the `bearer` HTTP authorization scheme. The value of the header will be ``Bearer <token>``, where you replace <token> with a valid token. Valid tokens will be provided to established customers of the API. It is planned to add the ability to rotate tokens and set expiration dates in future releases.
 
 .. code-block::
 
@@ -29,7 +29,7 @@ Here is an example using cURL:
 
   curl -v 'https://api.radiantlabs.co/v1/timelines' \
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer <tokenValue>' \
+    -H 'Authorization: Bearer <token>' \
     --data-raw '{"addressFull":"501 RANDALL RD, BALLSTON SPA, NY 12020"}' \
     --compressed
 
