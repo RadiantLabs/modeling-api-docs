@@ -50,7 +50,7 @@ Operations to the existing HVAC heating system are entered in ``automatedMeasure
 
 ``adjust`` schema for existing HVAC heating system:
 
-  ======================  =======  ===========  ========= ==============================================
+  ======================  =======  ===========  =========  ==============================================
   Property                Type     Constraints  Required   Description
   ======================  =======  ===========  =========  ==============================================
   ``backup``              Boolean               See [#a]_  Indicates the existing heating system is being kept, but switched to be a backup system
