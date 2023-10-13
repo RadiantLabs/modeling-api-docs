@@ -273,7 +273,7 @@ Property                           Type     Units             Constraints     Re
 ``id``                             id                         Must be unique  yes       Wall1                                                                               
 ``type``                           string                     see [#]_        no        BSA
 ``assemblyEffectiveRValue``        float    F-ft2-hr/Btu      >0              no        BSA
-``percentageAreaShared``           float    fraction          0-1             no        PSC                                                                                
+``fractionAreaShared``             float    fraction          0-1             no        PSC                                                                                
 ``area``                           float    ft2               >0              no        PSC
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
@@ -359,7 +359,7 @@ Property                           Type     Units                        Constra
 ``compressorType``                 string                                see [#]_        no        single stage        only applicable if systemType = "central air conditioner"
 ``coolEfficiency``                 float    see ``coolEfficiencyUnits``  >0              no        PSC 
 ``coolEfficiencyUnits``            string                                see [#]_        no        PSC 
-``coolLoadPercentage``             float    fraction                     <=1             yes       1
+``coolLoadFraction``               float    fraction                     <=1             yes       1
 =================================  =======  ===========================  ==============  ========  ==================  ============================================== 
 
 .. [#] If ``systemType`` is "central air conditioner"
@@ -383,7 +383,7 @@ Property                           Type     Units                        Constra
 ``heatCapacityBtuPerHour``         float    Btu/hr                       >=0             no                            autosized by modeling engine if undefined
 ``heatEfficiency``                 float    see ``heatEfficiencyUnits``  0-1             no        PSC 
 ``heatEfficiencyUnits``            string                                see [#]_        no        PSC 
-``heatLoadPercentage``             float    fraction                     0-1             yes       1   
+``heatLoadFraction``               float    fraction                     0-1             yes       1   
 =================================  =======  ===========================  ==============  ========  ==================  ============================================== 
 
 .. [#] Required when ``systemType`` is "furnace" or "boiler".
@@ -409,8 +409,8 @@ Property                           Type     Units                       Constrai
 ``heatEfficiencyUnits``            string                               HSPF [#]_       no        HSPF
 ``coolEfficiency``                 float    Btu/Wh                      >0              no        PSC
 ``coolEfficiencyUnits``            string                               SEER [#]_       no        SEER
-``heatLoadPercentage``             float    fraction                    0-1             yes       1
-``coolLoadPercentage``             float    fraction                    0-1             yes       1
+``heatLoadFraction``               float    fraction                    0-1             yes       1
+``coolLoadFraction``               float    fraction                    0-1             yes       1
 ``backupSystem``                   object                                               yes
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 
@@ -723,7 +723,7 @@ Property                                     Type     Units                     
 ``fuel``                                     string                               see [#]_        no      
 ``location``                                 string                               see [#]_        no        see [#]_
 ``tankVolume``                               float    gal                                         no
-``dhwLoadPercentage``                        float    fraction                    0-1             yes                             sum of dhwLoadPercentage must equal 1
+``dhwLoadFraction``                          float    fraction                    0-1             yes                             sum of dhwLoadFraction must equal 1
 ``heatCapacityBtuPerHour``                   float    Btu/hr                      >0              no                              autosized by modeling engine if undefined
 ``energyFactor`` or ``uniformEnergyFactor``  float    fraction                    <1              no        BSA
 ``hotWaterTemperature``                      float    F                           >0              no        125 
