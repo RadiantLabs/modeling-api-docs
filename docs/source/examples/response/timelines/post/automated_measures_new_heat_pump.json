@@ -58,7 +58,7 @@
                   "id": "Wall1",
                   "type": "wood stud",
                   "assemblyEffectiveRValue": 4.0,
-                  "percentageAreaShared": 0.0
+                  "fractionAreaShared": 0.0
                 }
               ],
               "foundations": [
@@ -78,7 +78,7 @@
                     "systemType": "room air conditioner",
                     "coolEfficiency": 10.7,
                     "coolEfficiencyUnits": "EER",
-                    "coolLoadPercentage": 0.33,
+                    "coolLoadFraction": 0.33,
                     "lifetime": {
                       "replacementCost": 200,
                       "endOfLifeDate": "2024-07-01"
@@ -92,7 +92,7 @@
                     "fuel": "electricity",
                     "heatEfficiency": 1.0,
                     "heatEfficiencyUnits": "percent",
-                    "heatLoadPercentage": 1.0
+                    "heatLoadFraction": 1.0
                   }
                 ],
                 "hvacControlSystems": [
@@ -115,7 +115,7 @@
                     "fuel": "electricity",
                     "location": "living space",
                     "tankVolume": 40,
-                    "dhwLoadPercentage": 1.0,
+                    "dhwLoadFraction": 1.0,
                     "energyFactor": 0.92,
                     "hotWaterTemperature": 125.0,
                     "lifetime": {
@@ -263,7 +263,7 @@
                   "id": "Wall1",
                   "type": "wood stud",
                   "assemblyEffectiveRValue": 4.0,
-                  "percentageAreaShared": 0.0
+                  "fractionAreaShared": 0.0
                 }
               ],
               "foundations": [
@@ -310,8 +310,8 @@
                     "heatEfficiencyUnits": "HSPF",
                     "coolEfficiency": 14,
                     "coolEfficiencyUnits": "SEER",
-                    "heatLoadPercentage": 1.0,
-                    "coolLoadPercentage": 1.0
+                    "heatLoadFraction": 1.0,
+                    "coolLoadFraction": 1.0
                   }
                 ],
                 "hvacControlSystems": [
@@ -335,7 +335,7 @@
                     "fuel": "natural gas",
                     "location": "living space",
                     "tankVolume": 40,
-                    "dhwLoadPercentage": 1.0,
+                    "dhwLoadFraction": 1.0,
                     "heatCapacityBtuPerHour": null,
                     "energyFactor": 0.92,
                     "uniformEnergyFactor": null,
