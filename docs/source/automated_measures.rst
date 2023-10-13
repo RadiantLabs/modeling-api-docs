@@ -50,12 +50,14 @@ Operations to the existing HVAC heating system are entered in ``automatedMeasure
 
 ``adjust`` schema for existing HVAC heating system:
 
-  ======================  =======  ===========  ==============================================
-  Property                Type     Constraints  Description
-  ======================  =======  ===========  ==============================================
-  ``backup``              Boolean               Indicates the existing heating system is being kept, but switched to be a backup system. Either this OR ``heatLoadPercentage`` can be defined.
-  ``heatLoadPercentage``  Double   0 - 1        Heat load for the existing heating system.
-  ======================  =======  ===========  ==============================================
+  ======================  =======  ===========  =========  ==============================================
+  Property                Type     Constraints  Required   Description
+  ======================  =======  ===========  =========  ==============================================
+  ``backup``              Boolean               See [#a]_  Indicates the existing heating system is being kept, but switched to be a backup system
+  ``heatLoadPercentage``  Double   0 - 1        See [#a]_  Heat load for the existing heating system
+  ======================  =======  ===========  =========  ==============================================
+
+.. [#a] Either ``backup`` or ``heatLoadPercentage`` can be defined. If ``backup`` is true, then ``heatLoadPercentage`` must be 0 or undefined. If ``backup`` is false, then ``heatLoadPercentage must be > 0.
 
 .. _existing_hvac_cooling_system:
 
@@ -88,11 +90,11 @@ Operations on the existing cooling systems are entered in ``automatedMeasures.ex
 
 ``adjust`` schema for existing HVAC cooling system:
 
-  ======================  =======  ===================  =========================================
-  Property                Type     Constraints          Description
-  ======================  =======  ===================  =========================================
-  ``coolLoadPercentage``  Double   In [0.0, 1.0] range  Cool load for the existing cooling system
-  ======================  =======  ===================  =========================================
+  ======================  =======  ===================  ========  =========================================
+  Property                Type     Constraints          Required  Description
+  ======================  =======  ===================  ========  =========================================
+  ``coolLoadPercentage``  Double   0 - 1                Yes       Cool load for the existing cooling system
+  ======================  =======  ===================  ========  =========================================
 
 .. _existing_hvac_distribution_system:
 
@@ -184,9 +186,9 @@ Characteristics of a new heat pump system can be entered in ``automatedMeasures.
   =========================  ====================  ===========  ========  =======  ===================================
   ``systemType``             String                See [#]_     Yes                Type of heat pump
   ``performanceClass``       String                See [#]_     Yes
-  ``heatLoadPercentage``     Double                0 - 1        No        1.0      Heat load for the new heat pump
+  ``heatLoadPercentage``     Double                0 - 1        Yes                Heat load for the new heat pump
   ``heatLoadGapPercentage``  Double                0 - 1        No        0.0      Heat load for the new heat pump
-  ``coolLoadPercentage``     Double                0 - 1        No        1.0      Cool load for the new heat pump
+  ``coolLoadPercentage``     Double                0 - 1        Yes                Cool load for the new heat pump
   ``coolLoadGapPercentage``  Double                0 - 1        No        0.0      Cool load for the new heat pump
   ``costs``                  Array of :ref:`cost`               No        ``[]``   Implied costs of measure
   =========================  ====================  ===========  ========  =======  ===================================
