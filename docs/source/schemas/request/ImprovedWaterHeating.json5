@@ -7,7 +7,7 @@
       "connectedHeatingId": "",
       "fuel": "electricity",  //("electricity" | "natural gas" | "fuel oil" | "propane" | "coal" | "wood" | "wood pellets")
       "tankVolume": 80,
-      "dhwLoadPercentage": 1.0, // required, sum across all systems must equal 1
+      "dhwLoadFraction": 1.0, // required, sum across all systems must equal 1
       "heatCapacityBtuPerHour": null,
       "energyFactor": 3.5,
       "uniformEnergyFactor": null,
