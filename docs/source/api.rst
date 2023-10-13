@@ -7,10 +7,32 @@ API
    Overview
    --------
 
-   .. _authentication:
+.. _authentication:
 
-   Authentication
-   --------------
+Authentication
+--------------
+
+All requests to the Modeling API must include authentication credentials.
+
+API access tokens are applied to your requests to protect sensitive PII and are compliant with common privacy and security standards.
+
+A valid token must be included as part of the HTTP ``Authorization`` header, using the `bearer` HTTP authorization scheme. The value of the header will be ``Bearer <token>``, where you replace <token> with a valid token. Valid tokens will be provided to established customers of the API. It is planned to add the ability to rotate tokens and set expiration dates in future releases.
+
+.. code-block::
+
+  Authorization: Bearer <token>
+
+
+Here is an example using cURL:
+
+.. code-block:: shell
+
+  curl -v 'https://api.radiantlabs.co/v1/timelines' \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer <token>' \
+    --data-raw '{"addressFull":"501 RANDALL RD, BALLSTON SPA, NY 12020"}' \
+    --compressed
+
 
 .. _endpoints:
 
@@ -234,7 +256,7 @@ Property                           Type     Units             Constraints     Re
 ``id``                             id                         must be unique  yes       PSC     
 ``type``                           string                     see [#]_        no        BSA
 ``area``                           float    ft2               >0              no        PSC   
-``wallHeight``                     float    ft                >0              no        PSC  
+``wallHeight``                     float    ft                >=0             no        PSC  
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
 .. [#] ``type`` choices are "basement conditioned", "basement unconditioned", "crawl vented", "crawl unvented", "slab", and "pier and beam".
