@@ -2,7 +2,7 @@
   "existingHvacHeatingSystem": {
     "action": "adjust", // ("keep" | "remove" | "adjust")
     "adjust": {
-      "heatLoadPercentage": 0.2,
+      "heatLoadFraction": 0.2,
       "backup": true
     },
     "costs": [ COST ]
@@ -10,7 +10,7 @@
   "existingHvacCoolingSystem": {
     "action": "adjust", // ("keep" | "remove" | "adjust")
     "adjust": {
-      "coolLoadPercentage": 0.2
+      "coolLoadFraction": 0.2
     },
     "costs": [ COST ]
   },
@@ -25,21 +25,21 @@
   "newHeatPump": {
     "systemType": "heat-pump", // ("heat-pump" | "mini-split" | "air-to-air")
     "performanceClass": "", // ("federal-minimally-compliant" | "energy-star-compliant")
-    "heatLoadPercentage": 0.8,
-    "coolLoadPercentage": 0.8,
+    "heatLoadFraction": 0.8,
+    "coolLoadFraction": 0.8,
     "costs": [ COST ]
   },
   "existingWaterHeatingSystem": {
     "action": "adjust", // ("keep" | "remove" | "adjust")
     "adjust": {
-      "dhwLoadPercentage": 0.8
+      "dhwLoadFraction": 0.8
     },
     "costs": [ COST ]
   },
   "newWaterHeatingSystem": {
     "systemType": "storage-water-heater", // ( “storage-water-heater” | “instantaneous-water-heater” | “heat-pump-water-heater”)
     "efficiencyClass": "", //("standard" | "high")
-    "dhwLoadPercentage": 1.0,
+    "dhwLoadFraction": 1.0,
     "costs": [ COST ]
   },
   "thermostat": {

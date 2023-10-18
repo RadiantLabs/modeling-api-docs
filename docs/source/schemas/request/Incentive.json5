@@ -2,7 +2,7 @@
 {
   "id": "Incentive1",
   "fixedAmount": 100,
-  "relativePercentage": 0.04,
+  "relativeFraction": 0.04,
   "absoluteMin": 100,
   "absoluteMax": 10000,
   "availableDate": "2023-01-01" //if null, defaults to model.appliedOn

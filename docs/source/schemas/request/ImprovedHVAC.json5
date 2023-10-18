@@ -9,7 +9,7 @@
       "compressorType": "single stage",
       "coolEfficiency": 12,
       "coolEfficiencyUnits": "SEER",
-      "coolLoadPercentage": 0.8, // required. Sum of coolLoadPercentage across all systems plus unmetCoolLoadPercentage must equal 1.
+      "coolLoadFraction": 0.8, // required. Sum of coolLoadFraction across all systems plus coolLoadGapFraction must equal 1.
       "remove": true, // if true, system is removed and any other properties defined are ignored.
       "costs": [ COST ], // refer to the Cost schema
     }
@@ -24,7 +24,7 @@
       "heatCapacityBtuPerHour": 1000.0, //optional. If missing, model will autosize. See Model Controls for autosizing settings.
       "heatEfficiency": 0.8,
       "heatEfficiencyUnits": "AFUE",
-      "heatLoadPercentage": 0.8, // required. Sum of heatLoadPercentage across all systems plus unmetHeatLoadPercentage must equal 1.
+      "heatLoadFraction": 0.8, // required. Sum of heatLoadFraction across all systems plus heatLoadGapFraction must equal 1.
       "remove": true, //if true, system is removed and any other properties defined are ignored.
       "costs": [ COST ], // refer to the Cost schema
 
@@ -54,8 +54,8 @@
       "heatEfficiencyUnits": "HSPF",
       "coolEfficiency": 19,
       "coolEfficiencyUnits": "SEER",
-      "heatLoadPercentage": 0.8, //required  // If both heatLoadPercentage and coolLoadPercentage are 0, the system is being removed.
-      "coolLoadPercentage": 0.8, //required  // If both heatLoadPercentage and coolLoadPercentage are 0, the system is being removed.
+      "heatLoadFraction": 0.8, //required  // If both heatLoadFraction and coolLoadFraction are 0, the system is being removed.
+      "coolLoadFraction": 0.8, //required  // If both heatLoadFraction and coolLoadFraction are 0, the system is being removed.
       "remove": false, // if true, system is removed and any other properties defined are ignored.
       "costs": [ COST ], // refer to the Cost schema
 
@@ -123,13 +123,11 @@
         "setbackStartHour": 9,
         "totalWeeklySetbackHours": 42,
       },
-      "unmetCoolLoadPercentage": 0.2, // required if the sum of all systems' coolLoadPercentage is less than 1.0.
-      "unmetHeatLoadPercentage": 0.2, // required if the sum of all systems' heatLoadPercentage is less than 1.0
       "remove": false, //if true, system is removed and any other properties defined are ignored.
       "costs": [ COST ], // refer to the Cost schema
 
     }
   ],
-  "coolLoadGapPercentage": 0.2, // required if the sum of all systems' coolLoadPercentage is less than 1.0.
-  "heatLoadGapPercentage": 0.0, // required if the sum of all systems' heatLoadPercentage is less than 1.0.
+  "coolLoadGapFraction": 0.2, // required if the sum of all systems' coolLoadFraction is less than 1.0.
+  "heatLoadGapFraction": 0.0, // required if the sum of all systems' heatLoadFraction is less than 1.0.
 }

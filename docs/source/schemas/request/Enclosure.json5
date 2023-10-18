@@ -40,7 +40,7 @@
       "type": "wood stud", // ("wood stud" | "concrete masonry unit" | "structural brick" | "steel frame" | "stone" | "adobe" | "log wall" | "solid concrete")
       "area": 1234,
       "assemblyEffectiveRValue": 10.9,
-      "percentageAreaShared": 0.0, // percentage of wall area shared with an adjacent structure or dwelling unit (e.g. townhouses)
+      "fractionAreaShared": 0.0, // fraction of wall area shared with an adjacent structure or dwelling unit (e.g. townhouses)
     }
   ],
 }
