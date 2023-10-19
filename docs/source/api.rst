@@ -733,7 +733,7 @@ Property                                     Type     Units                     
 .. [#] Must reference a defined ``hvacHeatingSystem.id``. 
 .. [#] Only required when ``systemType`` is "space-heating boiler with ..."
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
-.. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", “other exterior”, “other heated space”, or “other non-freezing space”.
+.. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", “other exterior”, “other heated space”, and “other non-freezing space”.
 .. [#] If ``location`` not provided, defaults to the first present space type:
   
   IECC zones 1-3, excluding 3A: "garage", "living space"
