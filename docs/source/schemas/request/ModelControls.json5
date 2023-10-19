@@ -15,12 +15,6 @@
   // If not provided, the default value of "acca" is used.
   "heatPumpSizingMethodology": "acca", // ("acca" | "max load" | "hers")
 
-  // If "asset", end use energy based on number of bedrooms.
-  // If "operational", end use energy adjusted based on number of occupants.
-  // If not provided, the default value is "asset".
-  //
-  "occupancyCalculationType": "asset",
-
   "energyCostRates": ENERGY_COST_RATES, // optional, refer to the Energy Costs Rates schema
 
   "weather": WEATHER, // optional, refer to Weather schema
