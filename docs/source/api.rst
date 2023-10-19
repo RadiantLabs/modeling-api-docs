@@ -474,8 +474,8 @@ Property                           Type     Units                       Constrai
 
 .. [#] ``systemType`` choices are "supply" and "return".
 .. [#] ``leakageUnits`` choices are"CFM25", "CFM50", and "percent".
-.. [#] ``location`` choices are "conditioned space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", "other non-freezing space", and "manufactured home belly".
-.. [#] If ``location`` not provided, defaults to the first present space type: "basement conditioned", "basement unconditioned", "crawlspace conditioned", "crawlspace vented", "crawlspace unvented", "attic vented", "attic unvented", "garage", or "conditioned space".
+.. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", and "other non-freezing space".
+.. [#] If ``location`` not provided, defaults to the first present space type: "basement conditioned", "basement unconditioned", "crawlspace conditioned", "crawlspace vented", "crawlspace unvented", "attic vented", "attic unvented", "garage", or "living space".
 
 HVAC Hydronic Distribution Systems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -733,12 +733,12 @@ Property                                     Type     Units                     
 .. [#] Must reference a defined ``hvacHeatingSystem.id``. 
 .. [#] Only required when ``systemType`` is "space-heating boiler with ..."
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
-.. [#] ``location`` choices are "conditioned space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", “other exterior”, “other heated space”, or “other non-freezing space”.
+.. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", “other exterior”, “other heated space”, or “other non-freezing space”.
 .. [#] If ``location`` not provided, defaults to the first present space type:
   
-  IECC zones 1-3, excluding 3A: "garage", "conditioned space"
+  IECC zones 1-3, excluding 3A: "garage", "living space"
 
-  IECC zones 3A, 4-8, unknown: "basement conditioned", "basement unconditioned", "conditioned space"
+  IECC zones 3A, 4-8, unknown: "basement conditioned", "basement unconditioned", "living space"
 
 .. _weather:
 
