@@ -366,7 +366,7 @@ Property                           Type     Units                        Constra
 .. [#] If ``systemType`` is "central air conditioner"
 .. [#] ``systemType`` choices are "central air conditioner", "room air conditioner", "evaporative cooler", "packaged terminal air conditioner", and "mini-split".
 .. [#] ``compressorType`` choices are "single stage", "two stage", and "variable speed".
-.. [#] ``coolEfficiencyUnits`` choices are "percent", "EER", "CEER", and "SEER". The option to use "SEER2" is planned for a future release.
+.. [#] ``coolEfficiencyUnits`` choices are "percent", "EER", "CEER", "SEER", and "SEER2".
 
 HVAC Heating Systems
 ~~~~~~~~~~~~~~~~~~~~
@@ -407,9 +407,9 @@ Property                           Type     Units                       Constrai
 ``heatCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
 ``coolCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
 ``heatEfficiency``                 float    Btu/Wh                      >0              no        PSC
-``heatEfficiencyUnits``            string                               HSPF [#]_       no        HSPF
+``heatEfficiencyUnits``            string                               see [#]_        no        HSPF
 ``coolEfficiency``                 float    Btu/Wh                      >0              no        PSC
-``coolEfficiencyUnits``            string                               SEER [#]_       no        SEER
+``coolEfficiencyUnits``            string                               see [#]_        no        SEER
 ``heatLoadFraction``               float    fraction                    0-1             yes       1
 ``coolLoadFraction``               float    fraction                    0-1             yes       1
 ``backupSystem``                   object                                               yes
@@ -419,8 +419,8 @@ Property                           Type     Units                       Constrai
 .. [#] Required when ``systemType`` is "air-to-air" or "ground-to-air".
 .. [#] ``systemType`` choices are "mini-split", "air-to-air", and "ground-to-air".
 .. [#] ``compressorType`` choices are "single stage", "two stage", and "variable speed".
-.. [#] The option to use "HSPF2" is planned for a future release.
-.. [#] The option to use "SEER2" is planned for a future release.
+.. [#] ``heatEfficiencyUnits`` choices are "HSPF" and "HSPF2".
+.. [#] ``coolEfficiencyUnits`` choices are "SEER" and "SEER2".
 
 ``backupSystem`` schema for HVAC Heat Pumps:
 
@@ -475,7 +475,7 @@ Property                           Type     Units                       Constrai
 
 .. [#] ``systemType`` choices are "supply" and "return".
 .. [#] ``leakageUnits`` choices are"CFM25", "CFM50", and "percent".
-.. [#] ``location`` choices are "condirioned space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", and "other non-freezing space".
+.. [#] ``location`` choices are "condirioned space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", "other non-freezing space", and "manufactured home belly".
 .. [#] If ``location`` not provided, defaults to the first present space type: "basement conditioned", "basement unconditioned", "crawlspace conditioned", "crawlspace vented", "crawlspace unvented", "attic vented", "attic unvented", "garage", or "conditioned space".
 
 HVAC Hydronic Distribution Systems
