@@ -439,7 +439,7 @@ Property                           Type     Units                       Constrai
 .. [#] ``systemType`` choices are "integrated" and "separate".
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
 .. [#] ``heatEfficiencyUnits`` choices are "AFUE" and "percent".
-.. [#] Must reference an defined ``hvacHeatingSystem.id``
+.. [#] Must reference a defined ``hvacHeatingSystem.id``
 .. [#] Required when ``backupSystem.systemType`` is "separate".
 
 HVAC Air Distribution Systems
