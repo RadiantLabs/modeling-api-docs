@@ -79,7 +79,7 @@
             "insulationRValue": 0.0,
             "leakageValue": 0.2,
             "leakageUnits": "percent" // ("CFM25" | "CFM50" | "percent")
-            "location": "attic vented", // (“living space” | “basement conditioned” | “basement unconditioned” | “crawlspace unvented” | “crawlspace vented” | “attic unvented” | “attic vented” | “garage” | “outside” | “exterior wall” | “under slab” | “roof deck” | “other heated space” | “other non-freezing space”)
+            "location": "attic vented", // (“conditioned space” | “basement conditioned” | “basement unconditioned” | “crawlspace unvented” | “crawlspace vented” | “attic unvented” | “attic vented” | “garage” | “outside” | “exterior wall” | “under slab” | “roof deck” | “other heated space” | “other non-freezing space” | "manufactured home belly")
             "remove": false, //if true, system is removed and any other properties defined are ignored.
             "costs": [ COST ], // refer to the Cost schema
           },
@@ -89,7 +89,7 @@
             "insulationRValue": 0.0,
             "leakageValue": 0.2,
             "leakageUnits": "percent" // ("CFM25" | "CFM50" | "percent")
-            "location": "attic vented", // (“living space” | “basement conditioned” | “basement unconditioned” | “crawlspace unvented” | “crawlspace vented” | “attic unvented” | “attic vented” | “garage” | “outside” | “exterior wall” | “under slab” | “roof deck” | “other heated space” | “other non-freezing space”)
+            "location": "attic vented", // (“conditioned space” | “basement conditioned” | “basement unconditioned” | “crawlspace unvented” | “crawlspace vented” | “attic unvented” | “attic vented” | “garage” | “outside” | “exterior wall” | “under slab” | “roof deck” | “other heated space” | “other non-freezing space” | "manufactured home belly")
             "remove": false, //if true, system is removed and any other properties defined are ignored.
             "costs": [ COST ], // refer to the Cost schema
           },
