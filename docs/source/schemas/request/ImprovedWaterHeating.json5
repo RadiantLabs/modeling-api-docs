@@ -12,6 +12,7 @@
       "energyFactor": 3.5,
       "uniformEnergyFactor": null,
       "hotWaterTemperature": 125.0,
+      "performanceAdjustment": null, // only applicable to instantaneous water heaters
       "remove": false,
       "costs": [ COST ], // refer to the Cost schema
     }
