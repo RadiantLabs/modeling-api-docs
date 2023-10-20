@@ -141,7 +141,7 @@
                     "id": "WaterHeater1",
                     "systemType": "storage water heater",
                     "fuel": "natural gas",
-                    "location": "living space",
+                    "location": "conditioned space",
                     "tankVolume": 40,
                     "dhwLoadFraction": 1.0,
                     "energyFactor": 0.59,
