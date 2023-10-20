@@ -31,9 +31,9 @@ Operations to the existing HVAC heating system are entered in ``automatedMeasure
 
   .. [#] ``action`` choices are "keep", "remove", or "adjust".
 
-     **"keep"** maintains existing heating system as is, including load percentage. Using this action indicates that there are no changes to heating at all. This action will override anything in ``adjust`` object.
+     **"keep"** maintains existing heating system as is, including load fraction. Using this action indicates that there are no changes to heating at all. This action will override anything in ``adjust`` object.
 
-     **"remove"** indicates the existing heating system is completely removed. New system(s) must cover 100% of load or specify ``heatLoadGapPercentage``. This action will override anything in ``adjust`` object.
+     **"remove"** indicates the existing heating system is completely removed. New system(s) must cover 100% of load or specify ``heatLoadGapFraction``. This action will override anything in ``adjust`` object.
 
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
   .. [#] Defaults to ``[]`` if not provided.
@@ -50,12 +50,14 @@ Operations to the existing HVAC heating system are entered in ``automatedMeasure
 
 ``adjust`` schema for existing HVAC heating system:
 
-  ======================  =======  ===========  ==============================================
-  Property                Type     Constraints  Description
-  ======================  =======  ===========  ==============================================
-  ``backup``              Boolean               Indicates the existing heating system is being kept, but switched to be a backup system. Either this OR ``heatLoadPercentage`` can be defined.
-  ``heatLoadPercentage``  Double   0 - 1        Heat load for the existing heating system.
-  ======================  =======  ===========  ==============================================
+  ======================  =======  ===========  =========  ==============================================
+  Property                Type     Constraints  Required   Description
+  ======================  =======  ===========  =========  ==============================================
+  ``backup``              Boolean               See [#a]_  Indicates the existing heating system is being kept, but switched to be a backup system
+  ``heatLoadFraction``    Double   0 - 1        See [#a]_  Heat load for the existing heating system
+  ======================  =======  ===========  =========  ==============================================
+
+.. [#a] Either ``backup`` or ``heatLoadFraction`` can be defined. If ``backup`` is true, then ``heatLoadFraction`` must be 0 or undefined. If ``backup`` is false, then ``heatLoadFraction must be > 0.
 
 .. _existing_hvac_cooling_system:
 
@@ -74,9 +76,9 @@ Operations on the existing cooling systems are entered in ``automatedMeasures.ex
 
    .. [#] ``action`` choices are "keep", "remove", or "adjust".
 
-     **"keep"** maintains existing cooling system as is, including load percentage. Using this action indicates that there are no changes to cooling at all. This action will override anything in ``adjust`` object.
+     **"keep"** maintains existing cooling system as is, including load fraction. Using this action indicates that there are no changes to cooling at all. This action will override anything in ``adjust`` object.
 
-     **"remove"** indicates the existing cooling system is completely removed. New system(s) must cover 100% of load or specify ``coolLoadGapPercentage``. This action will override anything in ``adjust`` object.
+     **"remove"** indicates the existing cooling system is completely removed. New system(s) must cover 100% of load or specify ``coolLoadGapFraction``. This action will override anything in ``adjust`` object.
 
 
   .. [#] The ``adjust`` object is required if ``action`` is set to ``adjust``.
@@ -88,11 +90,11 @@ Operations on the existing cooling systems are entered in ``automatedMeasures.ex
 
 ``adjust`` schema for existing HVAC cooling system:
 
-  ======================  =======  ===================  =========================================
-  Property                Type     Constraints          Description
-  ======================  =======  ===================  =========================================
-  ``coolLoadPercentage``  Double   In [0.0, 1.0] range  Cool load for the existing cooling system
-  ======================  =======  ===================  =========================================
+  ======================  =======  ===================  ========  =========================================
+  Property                Type     Constraints          Required  Description
+  ======================  =======  ===================  ========  =========================================
+  ``coolLoadFraction``    Double   0 - 1                Yes       Cool load for the existing cooling system
+  ======================  =======  ===================  ========  =========================================
 
 .. _existing_hvac_distribution_system:
 
@@ -150,7 +152,7 @@ Operations on the existing water heating system can be entered in ``automatedMea
 
   .. [#] ``action`` choices are "keep", "remove", or "adjust".
 
-     **"keep"** maintains existing water heating system as is, including load percentage. Using this action indicates that there are no changes to the water heating system at all. This action will override anything in ``adjust`` object.
+     **"keep"** maintains existing water heating system as is, including load fraction. Using this action indicates that there are no changes to the water heating system at all. This action will override anything in ``adjust`` object.
 
      **"remove"** indicates the existing water heating system is completely removed. This action will override anything in ``adjust`` object.
 
@@ -162,7 +164,7 @@ Operations on the existing water heating system can be entered in ``automatedMea
   =====================  =======  ===========  ==============================================
   Property               Type     Constraints  Description
   =====================  =======  ===========  ==============================================
-  ``dhwLoadPercentage``  Double   0 - 1        Domestic hot water load for the existing water heating system
+  ``dhwLoadFraction``    Double   0 - 1        Domestic hot water load for the existing water heating system
   =====================  =======  ===========  ==============================================
 
 Add new systems with minimal configuration
@@ -184,10 +186,10 @@ Characteristics of a new heat pump system can be entered in ``automatedMeasures.
   =========================  ====================  ===========  ========  =======  ===================================
   ``systemType``             String                See [#]_     Yes                Type of heat pump
   ``performanceClass``       String                See [#]_     Yes
-  ``heatLoadPercentage``     Double                0 - 1        No        1.0      Heat load for the new heat pump
-  ``heatLoadGapPercentage``  Double                0 - 1        No        0.0      Heat load for the new heat pump
-  ``coolLoadPercentage``     Double                0 - 1        No        1.0      Cool load for the new heat pump
-  ``coolLoadGapPercentage``  Double                0 - 1        No        0.0      Cool load for the new heat pump
+  ``heatLoadFraction``       Double                0 - 1        Yes                Heat load for the new heat pump
+  ``heatLoadGapFraction``    Double                0 - 1        No        0.0      Heat load for the new heat pump
+  ``coolLoadFraction``       Double                0 - 1        Yes                Cool load for the new heat pump
+  ``coolLoadGapFraction``    Double                0 - 1        No        0.0      Cool load for the new heat pump
   ``costs``                  Array of :ref:`cost`               No        ``[]``   Implied costs of measure
   =========================  ====================  ===========  ========  =======  ===================================
 
@@ -218,13 +220,13 @@ Characteristics of a new water heating system can be entered in ``automatedMeasu
   =====================  ====================  ===========  ========  =======  ===================================
   ``systemType``         String                See [#]_     Yes                Type of water heating system. fuelType assumed as base heating fuel for "storage water heater" and "instantaneous water heater".
   ``efficiencyClass``    String                See [#]_     Yes
-  ``dhwLoadPercentage``  Double                0 - 1 [#]_   No        1.0      DHW load for the new water heating system
+  ``dhwLoadFraction``    Double                0 - 1 [#]_   No        1.0      DHW load for the new water heating system
   ``costs``              Array of :ref:`cost`               No        ``[]``   Implied costs of measure
   =====================  ====================  ===========  ========  =======  ===================================
 
   .. [#] ``systemType`` choices are "storage water heater", "instantaneous water heater", and "heat pump water heater"
   .. [#] ``efficiencyClass`` choices are "standard" or "premium"
-  .. [#] The sum of ``dhwLoadPercentage`` across all water heating systems must be <= 1.
+  .. [#] The sum of ``dhwLoadFraction`` across all water heating systems must be <= 1.
 
 
 Assumptions for ``efficiencyClass``:

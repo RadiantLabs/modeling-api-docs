@@ -10,7 +10,7 @@
       "compressorType": "single stage",
       "coolEfficiency": 12,
       "coolEfficiencyUnits": "SEER", //("percent" | "EER" | "CEER" | "SEER" | *"SEER2") //SEER2 coming soon
-      "coolLoadPercentage": 0.8, // required. Sum of coolLoadPercentage across all systems plus unmetCoolLoadPercentage must equal 1.
+      "coolLoadFraction": 0.8, // required. Sum of coolLoadFraction across all systems plus coolLoadGapFraction must equal 1.
       "lifetime": LIFETIME // optional, refer to Lifetime schema
     }
   ],
@@ -24,7 +24,7 @@
       "heatCapacityBtuPerHour": 1000.0, //optional. If missing, model will autosize. See Model Controls for autosizing settings.
       "heatEfficiency": 0.8,
       "heatEfficiencyUnits": "AFUE", //("AFUE" | "percent")
-      "heatLoadPercentage": 0.8, // required. Sum of heatLoadPercentage across all systems plus unmetHeatLoadPercentage must equal 1.
+      "heatLoadFraction": 0.8, // required. Sum of heatLoadFraction across all systems plus heatLoadGapFraction must equal 1.
       "lifetime": LIFETIME // optional, refer to Lifetime schema
     }
   ],
@@ -52,8 +52,8 @@
       "heatEfficiencyUnits": "HSPF", //("HSPF" | *"HSPF2") //HSPF2 coming soon
       "coolEfficiency": 19,
       "coolEfficiencyUnits": "SEER",  //("SEER" | *"SEER2") //SEER2 coming soon
-      "heatLoadPercentage": 0.8, // required. Sum of heatLoadPercentage across all systems plus unmetHeatLoadPercentage must equal 1.
-      "coolLoadPercentage": 0.8, // required. Sum of coolLoadPercentage across all systems plus unmetCoolLoadPercentage must equal 1.
+      "heatLoadFraction": 0.8, // required. Sum of heatLoadFraction across all systems plus heatLoadGapFraction must equal 1.
+      "coolLoadFraction": 0.8, // required. Sum of coolLoadFraction across all systems plus coolLoadGapFraction must equal 1.
       "lifetime": LIFETIME // optional, refer to Lifetime schema
     }
   ],
@@ -114,6 +114,6 @@
       "lifetime": LIFETIME // optional, refer to Lifetime schema
     }
   ],
-  "coolLoadGapPercentage": 0.2, // required if the sum of all systems' coolLoadPercentage is less than 1.0.
-  "heatLoadGapPercentage": 0.0, // required if the sum of all systems' heatLoadPercentage is less than 1.0.
+  "coolLoadGapFraction": 0.2, // required if the sum of all systems' coolLoadFraction is less than 1.0.
+  "heatLoadGapFraction": 0.0, // required if the sum of all systems' heatLoadFraction is less than 1.0.
 }

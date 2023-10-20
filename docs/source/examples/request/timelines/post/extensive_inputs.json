@@ -47,7 +47,7 @@
           "id": "Wall1",
           "type": "wood stud",
           "assemblyEffectiveRValue": 16.0,
-          "percentageAreaShared": 0.0
+          "fractionAreaShared": 0.0
         }
       ],
       "foundations": [
@@ -67,7 +67,7 @@
             "systemType": "central air conditioner",
             "coolEfficiency": 13.0,
             "coolEfficiencyUnits": "SEER",
-            "coolLoadPercentage": 1.0,
+            "coolLoadFraction": 1.0,
             "lifetime": {
               "replacementCost": 2000,
               "endOfLifeDate": "2024-07-01"
@@ -81,7 +81,7 @@
             "fuel": "natural gas",
             "heatEfficiency": 0.8,
             "heatEfficiencyUnits": "AFUE",
-            "heatLoadPercentage": 1.0
+            "heatLoadFraction": 1.0
           }
         ],
         "hvacControlSystems": [
@@ -132,7 +132,7 @@
             "fuel": "natural gas",
             "location": "living space",
             "tankVolume": 40,
-            "dhwLoadPercentage": 1.0,
+            "dhwLoadFraction": 1.0,
             "energyFactor": 0.59,
             "hotWaterTemperature": 125.0,
             "lifetime": {
@@ -246,8 +246,8 @@
                     "heatEfficiencyUnits": "HSPF",
                     "coolEfficiency": 19,
                     "coolEfficiencyUnits": "SEER",
-                    "heatLoadPercentage": 1.0,
-                    "coolLoadPercentage": 1.0,
+                    "heatLoadFraction": 1.0,
+                    "coolLoadFraction": 1.0,
                     "costs": [
                       {
                         "fixedCost": 20190
@@ -304,7 +304,7 @@
                     "systemType": "heat pump water heater",
                     "fuel": "electricity",
                     "tankVolume": 80,
-                    "dhwLoadPercentage": 1.0,
+                    "dhwLoadFraction": 1.0,
                     "energyFactor": 3.5,
                     "costs": [
                       {

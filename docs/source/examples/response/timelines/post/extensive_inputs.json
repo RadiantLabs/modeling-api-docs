@@ -85,7 +85,7 @@
                   "id": "Wall1",
                   "type": "wood stud",
                   "assemblyEffectiveRValue": 4.0,
-                  "percentageAreaShared": 0.0
+                  "fractionAreaShared": 0.0
                 }
               ],
               "foundations": [
@@ -105,7 +105,7 @@
                     "systemType": "room air conditioner",
                     "coolEfficiency": 10.7,
                     "coolEfficiencyUnits": "EER",
-                    "coolLoadPercentage": 0.33,
+                    "coolLoadFraction": 0.33,
                     "lifetime": {
                       "replacementCost": 200,
                       "endOfLifeDate": "2024-07-01"
@@ -119,7 +119,7 @@
                     "fuel": "electricity",
                     "heatEfficiency": 1.0,
                     "heatEfficiencyUnits": "percent",
-                    "heatLoadPercentage": 1.0
+                    "heatLoadFraction": 1.0
                   }
                 ],
                 "hvacControlSystems": [
@@ -142,7 +142,7 @@
                     "fuel": "electricity",
                     "location": "living space",
                     "tankVolume": 40,
-                    "dhwLoadPercentage": 1.0,
+                    "dhwLoadFraction": 1.0,
                     "energyFactor": 0.92,
                     "hotWaterTemperature": 125.0,
                     "lifetime": {
@@ -223,7 +223,7 @@
                   "type": "wood stud",
                   "area": 1234,
                   "assemblyEffectiveRValue": 4,
-                  "percentageAreaShared": 0
+                  "fractionAreaShared": 0
                 }
               ]
             },
@@ -236,7 +236,7 @@
                     "compressorType": "single stage",
                     "coolEfficiency": 10.7,
                     "coolEfficiencyUnits": "EER",
-                    "coolLoadPercentage": 0.33,
+                    "coolLoadFraction": 0.33,
                     "lifetime": {
                       "replacementCost": 200,
                       "endOfLifeDate": "2024-07-01"
@@ -250,7 +250,7 @@
                     "fuel": "electricity",
                     "heatEfficiency": 1,
                     "heatEfficiencyUnits": "percent",
-                    "heatLoadPercentage": 1
+                    "heatLoadFraction": 1
                   }
                 ],
                 "hvacControlSystems": [
@@ -264,8 +264,8 @@
                     }
                   }
                 ],
-                "coolLoadGapPercentage": 0.67,
-                "heatLoadGapPercentage": 0.0
+                "coolLoadGapFraction": 0.67,
+                "heatLoadGapFraction": 0.0
               },
               "waterHeating": {
                 "waterHeatingSystems": [
@@ -275,7 +275,7 @@
                     "fuel": "electricity",
                     "location": "living space",
                     "tankVolume": 40,
-                    "dhwLoadPercentage": 1,
+                    "dhwLoadFraction": 1,
                     "energyFactor": 0.92,
                     "hotWaterTemperature": 125,
                     "lifetime": {
@@ -452,7 +452,7 @@
                     "id": "Furnace1",
                     "systemType": "furnace",
                     "fuel": "natural gas",
-                    "heatLoadPercentage": 1,
+                    "heatLoadFraction": 1,
                     "costs": [
                       {
                         "fixedCost": 6000
@@ -923,7 +923,7 @@
                   "id": "Wall1",
                   "type": "wood stud",
                   "assemblyEffectiveRValue": 4.0,
-                  "percentageAreaShared": 0.0
+                  "fractionAreaShared": 0.0
                 }
               ],
               "foundations": [
@@ -943,7 +943,7 @@
                     "systemType": "room air conditioner",
                     "coolEfficiency": 10.7,
                     "coolEfficiencyUnits": "EER",
-                    "coolLoadPercentage": 0.33,
+                    "coolLoadFraction": 0.33,
                     "lifetime": {
                       "replacementCost": 200,
                       "endOfLifeDate": "2024-07-01"
@@ -957,7 +957,7 @@
                     "fuel": "electricity",
                     "heatEfficiency": 1.0,
                     "heatEfficiencyUnits": "percent",
-                    "heatLoadPercentage": 1.0
+                    "heatLoadFraction": 1.0
                   }
                 ],
                 "hvacControlSystems": [
@@ -980,7 +980,7 @@
                     "fuel": "electricity",
                     "location": "living space",
                     "tankVolume": 40,
-                    "dhwLoadPercentage": 1.0,
+                    "dhwLoadFraction": 1.0,
                     "energyFactor": 0.92,
                     "hotWaterTemperature": 125.0,
                     "lifetime": {
@@ -1061,7 +1061,7 @@
                   "type": "wood stud",
                   "area": 1234,
                   "assemblyEffectiveRValue": 4,
-                  "percentageAreaShared": 0
+                  "fractionAreaShared": 0
                 }
               ]
             },
@@ -1074,7 +1074,7 @@
                     "compressorType": "single stage",
                     "coolEfficiency": 10.7,
                     "coolEfficiencyUnits": "EER",
-                    "coolLoadPercentage": 0.33,
+                    "coolLoadFraction": 0.33,
                     "lifetime": {
                       "replacementCost": 200,
                       "endOfLifeDate": "2024-07-01"
@@ -1088,7 +1088,7 @@
                     "fuel": "electricity",
                     "heatEfficiency": 1,
                     "heatEfficiencyUnits": "percent",
-                    "heatLoadPercentage": 1
+                    "heatLoadFraction": 1
                   }
                 ],
                 "hvacControlSystems": [
@@ -1102,8 +1102,8 @@
                     }
                   }
                 ],
-                "coolLoadGapPercentage": 0.67,
-                "heatLoadGapPercentage": 0.0
+                "coolLoadGapFraction": 0.67,
+                "heatLoadGapFraction": 0.0
               },
               "waterHeating": {
                 "waterHeatingSystems": [
@@ -1113,7 +1113,7 @@
                     "fuel": "electricity",
                     "location": "living space",
                     "tankVolume": 40,
-                    "dhwLoadPercentage": 1,
+                    "dhwLoadFraction": 1,
                     "energyFactor": 0.92,
                     "hotWaterTemperature": 125,
                     "lifetime": {
@@ -1334,8 +1334,8 @@
                     "heatEfficiencyUnits": "HSPF",
                     "coolEfficiency": 20,
                     "coolEfficiencyUnits": "SEER",
-                    "heatLoadPercentage": 1,
-                    "coolLoadPercentage": 1,
+                    "heatLoadFraction": 1,
+                    "coolLoadFraction": 1,
                     "costs": [
                       {
                         "fixedCost": 20190
@@ -1379,7 +1379,7 @@
                     "systemType": "heat pump water heater",
                     "fuel": "electricity",
                     "tankVolume": 80,
-                    "dhwLoadPercentage": 1,
+                    "dhwLoadFraction": 1,
                     "energyFactor": 3.5,
                     "costs": [
                       {
@@ -1439,7 +1439,7 @@
                   "id": "Wall1",
                   "type": "wood stud",
                   "assemblyEffectiveRValue": 4,
-                  "percentageAreaShared": 0
+                  "fractionAreaShared": 0
                 }
               ],
               "foundations": [
@@ -1470,8 +1470,8 @@
                     "heatEfficiencyUnits": "HSPF",
                     "coolEfficiency": 20,
                     "coolEfficiencyUnits": "SEER",
-                    "heatLoadPercentage": 1,
-                    "coolLoadPercentage": 1,
+                    "heatLoadFraction": 1,
+                    "coolLoadFraction": 1,
                     "costs": [
                       {
                         "fixedCost": 20190
@@ -1509,7 +1509,7 @@
                     "systemType": "heat pump water heater",
                     "fuel": "electricity",
                     "tankVolume": 80,
-                    "dhwLoadPercentage": 1,
+                    "dhwLoadFraction": 1,
                     "energyFactor": 3.5,
                     "hotWaterTemperature": 125,
                     "costs": [
@@ -1999,7 +1999,7 @@
             "id": "Wall1",
             "type": "wood stud",
             "assemblyEffectiveRValue": 4,
-            "percentageAreaShared": 0
+            "fractionAreaShared": 0
           }
         ],
         "foundations": [
@@ -2019,7 +2019,7 @@
               "systemType": "room air conditioner",
               "coolEfficiency": 10.7,
               "coolEfficiencyUnits": "EER",
-              "coolLoadPercentage": 0.33,
+              "coolLoadFraction": 0.33,
               "lifetime": {
                 "replacementCost": 200,
                 "endOfLifeDate": "2024-07-01"
@@ -2033,7 +2033,7 @@
               "fuel": "electricity",
               "heatEfficiency": 1,
               "heatEfficiencyUnits": "percent",
-              "heatLoadPercentage": 1
+              "heatLoadFraction": 1
             }
           ],
           "hvacControlSystems": [
@@ -2047,7 +2047,7 @@
               }
             }
           ],
-          "coolLoadGapPercentage": 0.67
+          "coolLoadGapFraction": 0.67
         },
         "waterHeating": {
           "waterHeatingSystems": [
@@ -2057,7 +2057,7 @@
               "fuel": "electricity",
               "location": "living space",
               "tankVolume": 40,
-              "dhwLoadPercentage": 1,
+              "dhwLoadFraction": 1,
               "energyFactor": 0.92,
               "hotWaterTemperature": 125,
               "lifetime": {

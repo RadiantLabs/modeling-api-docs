@@ -7,10 +7,32 @@ API
    Overview
    --------
 
-   .. _authentication:
+.. _authentication:
 
-   Authentication
-   --------------
+Authentication
+--------------
+
+All requests to the Modeling API must include authentication credentials.
+
+API access tokens are applied to your requests to protect sensitive PII and are compliant with common privacy and security standards.
+
+A valid token must be included as part of the HTTP ``Authorization`` header, using the `bearer` HTTP authorization scheme. The value of the header will be ``Bearer <token>``, where you replace <token> with a valid token. Valid tokens will be provided to established customers of the API. It is planned to add the ability to rotate tokens and set expiration dates in future releases.
+
+.. code-block::
+
+  Authorization: Bearer <token>
+
+
+Here is an example using cURL:
+
+.. code-block:: shell
+
+  curl -v 'https://api.radiantlabs.co/v1/timelines' \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer <token>' \
+    --data-raw '{"addressFull":"501 RANDALL RD, BALLSTON SPA, NY 12020"}' \
+    --compressed
+
 
 .. _endpoints:
 
@@ -252,7 +274,7 @@ Property                           Type     Units             Constraints     Re
 ``id``                             id                         Must be unique  yes       Wall1                                                                               
 ``type``                           string                     see [#]_        no        BSA
 ``assemblyEffectiveRValue``        float    F-ft2-hr/Btu      >0              no        BSA
-``percentageAreaShared``           float    fraction          0-1             no        PSC                                                                                
+``fractionAreaShared``             float    fraction          0-1             no        PSC                                                                                
 ``area``                           float    ft2               >0              no        PSC
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
@@ -338,7 +360,7 @@ Property                           Type     Units                        Constra
 ``compressorType``                 string                                see [#]_        no        single stage        only applicable if systemType = "central air conditioner"
 ``coolEfficiency``                 float    see ``coolEfficiencyUnits``  >0              no        PSC 
 ``coolEfficiencyUnits``            string                                see [#]_        no        PSC 
-``coolLoadPercentage``             float    fraction                     <=1             yes       1
+``coolLoadFraction``               float    fraction                     <=1             yes       1
 =================================  =======  ===========================  ==============  ========  ==================  ============================================== 
 
 .. [#] If ``systemType`` is "central air conditioner"
@@ -362,7 +384,7 @@ Property                           Type     Units                        Constra
 ``heatCapacityBtuPerHour``         float    Btu/hr                       >=0             no                            autosized by modeling engine if undefined
 ``heatEfficiency``                 float    see ``heatEfficiencyUnits``  0-1             no        PSC 
 ``heatEfficiencyUnits``            string                                see [#]_        no        PSC 
-``heatLoadPercentage``             float    fraction                     0-1             yes       1   
+``heatLoadFraction``               float    fraction                     0-1             yes       1   
 =================================  =======  ===========================  ==============  ========  ==================  ============================================== 
 
 .. [#] Required when ``systemType`` is "furnace" or "boiler".
@@ -388,8 +410,8 @@ Property                           Type     Units                       Constrai
 ``heatEfficiencyUnits``            string                               HSPF [#]_       no        HSPF
 ``coolEfficiency``                 float    Btu/Wh                      >0              no        PSC
 ``coolEfficiencyUnits``            string                               SEER [#]_       no        SEER
-``heatLoadPercentage``             float    fraction                    0-1             yes       1
-``coolLoadPercentage``             float    fraction                    0-1             yes       1
+``heatLoadFraction``               float    fraction                    0-1             yes       1
+``coolLoadFraction``               float    fraction                    0-1             yes       1
 ``backupSystem``                   object                                               yes
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 
@@ -454,7 +476,7 @@ Property                           Type     Units                       Constrai
 .. [#] ``systemType`` choices are "supply" and "return".
 .. [#] ``leakageUnits`` choices are"CFM25", "CFM50", and "percent".
 .. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", and "other non-freezing space".
-.. [#] If ``location`` not provided, defaults to the first present space type: "basement - conditioned", "basement - unconditioned", "crawlspace - conditioned", "crawlspace - vented", "crawlspace - unvented", "attic - vented", "attic - unvented", "garage", or "living space".
+.. [#] If ``location`` not provided, defaults to the first present space type: "basement conditioned", "basement unconditioned", "crawlspace conditioned", "crawlspace vented", "crawlspace unvented", "attic vented", "attic unvented", "garage", or "living space".
 
 HVAC Hydronic Distribution Systems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -702,7 +724,7 @@ Property                                     Type     Units                     
 ``fuel``                                     string                               see [#]_        no      
 ``location``                                 string                               see [#]_        no        see [#]_
 ``tankVolume``                               float    gal                                         no
-``dhwLoadPercentage``                        float    fraction                    0-1             yes                             sum of dhwLoadPercentage must equal 1
+``dhwLoadFraction``                          float    fraction                    0-1             yes                             sum of dhwLoadFraction must equal 1
 ``heatCapacityBtuPerHour``                   float    Btu/hr                      >0              no                              autosized by modeling engine if undefined
 ``energyFactor`` or ``uniformEnergyFactor``  float    fraction                    <1              no        BSA
 ``hotWaterTemperature``                      float    F                           >0              no        125 
@@ -712,12 +734,12 @@ Property                                     Type     Units                     
 .. [#] Must reference a defined ``hvacHeatingSystem.id``. 
 .. [#] Only required when ``systemType`` is "space-heating boiler with ..."
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
-.. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", and "other non-freezing space".
+.. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", “other exterior”, “other heated space”, and “other non-freezing space”.
 .. [#] If ``location`` not provided, defaults to the first present space type:
   
   IECC zones 1-3, excluding 3A: "garage", "living space"
 
-  IECC zones 3A, 4-8, unknown: "basement - conditioned", "basement - unconditioned", "living space"
+  IECC zones 3A, 4-8, unknown: "basement conditioned", "basement unconditioned", "living space"
 
 .. _weather:
 
