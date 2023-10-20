@@ -9,7 +9,7 @@
       "coolCapacityBtuPerHour": 1000.0, //optional. If missing, model will autosize. See Model Controls for autosizing settings.
       "compressorType": "single stage",
       "coolEfficiency": 12,
-      "coolEfficiencyUnits": "SEER", //("percent" | "EER" | "CEER" | "SEER" | *"SEER2") //SEER2 coming soon
+      "coolEfficiencyUnits": "SEER", //("percent" | "EER" | "CEER" | "SEER" | "SEER2")
       "coolLoadFraction": 0.8, // required. Sum of coolLoadFraction across all systems plus coolLoadGapFraction must equal 1.
       "lifetime": LIFETIME // optional, refer to Lifetime schema
     }
@@ -49,9 +49,9 @@
       "heatCapacityBtuPerHour": 1000.0, //optional. If missing, model will autosize. See Model Controls for autosizing settings.
       "coolCapacityBtuPerHour": 1000.0, //optional. If missing, model will autosize. See Model Controls for autosizing settings.
       "heatEfficiency": 10,
-      "heatEfficiencyUnits": "HSPF", //("HSPF" | *"HSPF2") //HSPF2 coming soon
+      "heatEfficiencyUnits": "HSPF", //("HSPF" | "HSPF2")
       "coolEfficiency": 19,
-      "coolEfficiencyUnits": "SEER",  //("SEER" | *"SEER2") //SEER2 coming soon
+      "coolEfficiencyUnits": "SEER",  //("SEER" | "SEER2")
       "heatLoadFraction": 0.8, // required. Sum of heatLoadFraction across all systems plus heatLoadGapFraction must equal 1.
       "coolLoadFraction": 0.8, // required. Sum of coolLoadFraction across all systems plus coolLoadGapFraction must equal 1.
       "lifetime": LIFETIME // optional, refer to Lifetime schema
@@ -73,7 +73,7 @@
             "insulationRValue": 0.0,
             "leakageValue": 0.2,
             "leakageUnits": "percent", // ("CFM25" | "CFM50" | "percent")
-            "location": "attic vented" // (“living space” | “basement conditioned” | “basement unconditioned” | “crawlspace unvented” | “crawlspace vented” | “attic unvented” | “attic vented” | “garage” | “outside” | “exterior wall” | “under slab” | “roof deck” | “other heated space” | “other non-freezing space”)
+            "location": "attic vented" // (“conditioned space” | “basement conditioned” | “basement unconditioned” | “crawlspace unvented” | “crawlspace vented” | “attic unvented” | “attic vented” | “garage” | “outside” | “exterior wall” | “under slab” | “roof deck” | “other heated space” | “other non-freezing space” | "manufactured home belly")
           },
           {
             "id": "HVACDistributionFurnaceAndCentral1Return",
@@ -81,7 +81,7 @@
             "insulationRValue": 0.0,
             "leakageValue": 0.2,
             "leakageUnits": "percent", // ("CFM25" | "CFM50" | "percent")
-            "location": "attic vented" // (“living space” | “basement conditioned” | “basement unconditioned” | “crawlspace unvented” | “crawlspace vented” | “attic unvented” | “attic vented” | “garage” | “outside” | “exterior wall” | “under slab” | “roof deck” | “other heated space” | “other non-freezing space”)
+            "location": "attic vented" // (“conditioned space” | “basement conditioned” | “basement unconditioned” | “crawlspace unvented” | “crawlspace vented” | “attic unvented” | “attic vented” | “garage” | “outside” | “exterior wall” | “under slab” | “roof deck” | “other heated space” | “other non-freezing space” | "manufactured home belly")
           },
         ]
       }
