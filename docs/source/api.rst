@@ -217,17 +217,18 @@ Property                  Type     Units             Constraints  Required  Defa
 Attics
 ~~~~~~
 
-The attic is entered in ``...building.enclosure.attics``. Currently, this array must contain exactly 1 attic object. If there is no attic present in house, set ``area`` to 0.
-See note about `objects and arrays`_ for more information.
+The attic is entered in ``...building.enclosure.attics``. Currently, this array must contain exactly 1 attic object. See note about `objects and arrays`_ for more information.
 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
 =================================  =======  ================  ==============  ========  ==================  ==============================================       
-``id``                             id                         Must be unique  yes       Attic1  
-``area``                           float    ft2               >0              no        PSC
-``isVented``                       boolean                                    no        yes
-``floorAssemblyEffectiveRValue``   float    F-ft2-hr/Btu      >0              no        BSA
+``id``                             id                         Must be unique  yes       Attic1
+``type``                           string                     see [#]_        no        BSA
+``area``                           float    ft2               >0              no        PSC                 Not applicable when ``type`` is "cathedral ceiling" or "flat roof"
+``floorAssemblyEffectiveRValue``   float    F-ft2-hr/Btu      >0              no        BSA                 Not applicable when ``type`` is "cathedral ceiling" or "flat roof"
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
+
+.. [#] ``type`` options are "attic vented", "attic unvented", "cathedral ceiling", or "flat roof".
 
 Roofs
 ~~~~~
@@ -259,7 +260,7 @@ Property                           Type     Units             Constraints     Re
 ``wallHeight``                     float    ft                >=0             no        PSC  
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
-.. [#] ``type`` choices are "basement conditioned", "basement unconditioned", "crawl vented", "crawl unvented", "slab", and "pier and beam".
+.. [#] ``type`` choices are "basement conditioned", "basement unconditioned", "crawl vented", "crawl unvented", "slab", and "belly and wing".
 
 Walls
 ~~~~~
@@ -365,7 +366,7 @@ Property                           Type     Units                        Constra
 .. [#] If ``systemType`` is "central air conditioner"
 .. [#] ``systemType`` choices are "central air conditioner", "room air conditioner", "evaporative cooler", "packaged terminal air conditioner", and "mini-split".
 .. [#] ``compressorType`` choices are "single stage", "two stage", and "variable speed".
-.. [#] ``coolEfficiencyUnits`` choices are "percent", "EER", "CEER", and "SEER". The option to use "SEER2" is planned for a future release.
+.. [#] ``coolEfficiencyUnits`` choices are "percent", "EER", "CEER", "SEER", and "SEER2".
 
 HVAC Heating Systems
 ~~~~~~~~~~~~~~~~~~~~
@@ -406,9 +407,9 @@ Property                           Type     Units                       Constrai
 ``heatCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
 ``coolCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
 ``heatEfficiency``                 float    Btu/Wh                      >0              no        PSC
-``heatEfficiencyUnits``            string                               HSPF [#]_       no        HSPF
+``heatEfficiencyUnits``            string                               see [#]_        no        HSPF
 ``coolEfficiency``                 float    Btu/Wh                      >0              no        PSC
-``coolEfficiencyUnits``            string                               SEER [#]_       no        SEER
+``coolEfficiencyUnits``            string                               see [#]_        no        SEER
 ``heatLoadFraction``               float    fraction                    0-1             yes       1
 ``coolLoadFraction``               float    fraction                    0-1             yes       1
 ``backupSystem``                   object                                               yes
@@ -418,8 +419,8 @@ Property                           Type     Units                       Constrai
 .. [#] Required when ``systemType`` is "air-to-air" or "ground-to-air".
 .. [#] ``systemType`` choices are "mini-split", "air-to-air", and "ground-to-air".
 .. [#] ``compressorType`` choices are "single stage", "two stage", and "variable speed".
-.. [#] The option to use "HSPF2" is planned for a future release.
-.. [#] The option to use "SEER2" is planned for a future release.
+.. [#] ``heatEfficiencyUnits`` choices are "HSPF" and "HSPF2".
+.. [#] ``coolEfficiencyUnits`` choices are "SEER" and "SEER2".
 
 ``backupSystem`` schema for HVAC Heat Pumps:
 
@@ -438,7 +439,7 @@ Property                           Type     Units                       Constrai
 .. [#] ``systemType`` choices are "integrated" and "separate".
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
 .. [#] ``heatEfficiencyUnits`` choices are "AFUE" and "percent".
-.. [#] Must reference an defined ``hvacHeatingSystem.id``
+.. [#] Must reference a defined ``hvacHeatingSystem.id``
 .. [#] Required when ``backupSystem.systemType`` is "separate".
 
 HVAC Air Distribution Systems
@@ -474,8 +475,8 @@ Property                           Type     Units                       Constrai
 
 .. [#] ``systemType`` choices are "supply" and "return".
 .. [#] ``leakageUnits`` choices are"CFM25", "CFM50", and "percent".
-.. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", and "other non-freezing space".
-.. [#] If ``location`` not provided, defaults to the first present space type: "basement conditioned", "basement unconditioned", "crawlspace conditioned", "crawlspace vented", "crawlspace unvented", "attic vented", "attic unvented", "garage", or "living space".
+.. [#] ``location`` choices are "conditioned space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", "other non-freezing space", and "manufactured home belly".
+.. [#] If ``location`` not provided, defaults to the first present space type: "basement conditioned", "basement unconditioned", "crawlspace conditioned", "crawlspace vented", "crawlspace unvented", "attic vented", "attic unvented", "garage", or "conditioned space".
 
 HVAC Hydronic Distribution Systems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -733,12 +734,12 @@ Property                                     Type     Units                     
 .. [#] Must reference a defined ``hvacHeatingSystem.id``. 
 .. [#] Only required when ``systemType`` is "space-heating boiler with ..."
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
-.. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", “other exterior”, “other heated space”, and “other non-freezing space”.
+.. [#] ``location`` choices are "conditioned space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", “other exterior”, “other heated space”, and “other non-freezing space”.
 .. [#] If ``location`` not provided, defaults to the first present space type:
   
-  IECC zones 1-3, excluding 3A: "garage", "living space"
+  IECC zones 1-3, excluding 3A: "garage", "conditioned space"
 
-  IECC zones 3A, 4-8, unknown: "basement conditioned", "basement unconditioned", "living space"
+  IECC zones 3A, 4-8, unknown: "basement conditioned", "basement unconditioned", "conditioned space"
 
 .. _weather:
 
