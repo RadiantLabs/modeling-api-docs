@@ -475,7 +475,7 @@ Property                           Type     Units                       Constrai
 .. [#] ``systemType`` choices are "supply" and "return".
 .. [#] ``leakageUnits`` choices are"CFM25", "CFM50", and "percent".
 .. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", and "other non-freezing space".
-.. [#] If ``location`` not provided, defaults to the first present space type: "basement conditioned", "basement unconditioned", "crawlspace conditioned", "crawlspace vented", "crawlspace unvented", "attic vented", "attic unvented", "garage", or "living space".
+.. [#] If ``location`` not provided, defaults to the first present space type: "basement conditioned", "basement unconditioned", "crawlspace vented", "crawlspace unvented", "attic vented", "attic unvented", "garage", or "living space".
 
 HVAC Hydronic Distribution Systems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
