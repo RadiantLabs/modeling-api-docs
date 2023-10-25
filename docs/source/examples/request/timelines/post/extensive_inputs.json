@@ -1,12 +1,6 @@
 {
-  "addressFull": "197 RANDALL RD, BALLSTON SPA, NY 12020",
-  "addressComponents": {
-    "addressLine1": "197 Randall Rd",
-    "city": "Ballston Spa",
-    "stateAbbreviation": "NY",
-    "zipCode": "12020"
-  },
-  "baseBuilding": {
+  "addressFull": "504 RANDALL RD, BALLSTON SPA, NY 12020",
+    "baseBuilding": {
     "buildingSummary": {
       "conditionedFloorArea": 2600,
       "averageCeilingHeight": 8,
@@ -88,10 +82,10 @@
           {
             "id": "HVACControl1",
             "heatingSeason": {
-              "setpoint": 68
+              "setpointTemp": 68
             },
             "coolingSeason": {
-              "setpoint": 78
+              "setpointTemp": 78
             }
           }
         ],
@@ -156,7 +150,7 @@
       "cookingRanges": [
         {
           "id": "CookingRange1",
-          "fuel": "nautral gas",
+          "fuel": "natural gas",
           "isInduction": false
         }
       ]
@@ -179,7 +173,7 @@
       }
     }
   },
-  "timelines": [
+    "timelines": [
     {
       "models": [
         {
@@ -195,125 +189,96 @@
               ]
             }
           ],
-          "improvedBuilding": {
-            "enclosure": {
-              "airInfiltration": {
-                "rate": 7.0,
-                "costs": [
-                  {
-                    "fixedCost": 2928
-                  }
-                ]
+          "automatedMeasures": {
+            "existingHvacHeatingSystem": {
+              "action": "adjust",
+              "adjust": {
+                "backup": true,
+                "heatLoadFraction": 0
+              }
+            },
+            "existingHvacCoolingSystem": {
+              "action": "remove"
+            },
+            "existingHvacDistributionSystem": {
+              "action": "adjust",
+              "adjust": {
+                "leakageValue": 0.1,
+                "leakageUnits": "Percent",
+                "insulationRValue": 5
               },
-              "attics": [
+              "costs": [ 
                 {
-                  "id": "Attic1",
-                  "floorAssemblyEffectiveRValue": 50.6,
-                  "costs": [
-                    {
-                      "fixedCost": 2450
-                    }
-                  ]
+                  "fixedCost": 2000
                 }
               ]
             },
-            "systems": {
-              "hvac": {
-                "hvacCoolingSystems": [
-                  {
-                    "id": "CentralAirConditioner1",
-                    "remove": true
-                  }
-                ],
-                "hvacHeatingSystems": [
-                  {
-                    "id": "Furnace1",
-                    "remove": true
-                  }
-                ],
-                "hvacHeatPumps": [
-                  {
-                    "id": "ASHP1",
-                    "systemType": "air-to-air",
-                    "compressorType": "variable speed",
-                    "backupSystem": {
-                      "systemType": "integrated",
-                      "fuel": "electricity",
-                      "heatEfficiency": 1,
-                      "heatEfficiencyUnits": "percent"
-                    },
-                    "heatEfficiency": 10,
-                    "heatEfficiencyUnits": "HSPF",
-                    "coolEfficiency": 19,
-                    "coolEfficiencyUnits": "SEER",
-                    "heatLoadFraction": 1.0,
-                    "coolLoadFraction": 1.0,
-                    "costs": [
-                      {
-                        "fixedCost": 20190
-                      }
-                    ]
-                  }
-                ],
-                "hvacControlSystems": [
-                  {
-                    "id": "HVACControl1",
-                    "remove": true
-                  },
-                  {
-                    "id": "HVACControl2",
-                    "heatingSeason": {
-                      "setback": 64,
-                      "setbackStartHour": 23,
-                      "totalWeeklySetbackHours": 49
-                    },
-                    "coolingSeason": {
-                      "setpoint": 82,
-                      "setbackStartHour": 9,
-                      "totalWeeklySetbackHours": 42
-                    },
-                    "costs": [
-                      {
-                        "fixedCost": 240
-                      }
-                    ]
-                  }
-                ],
-                "hvacDistributionSystems": {
-                  "airDistributionSystems": [
-                    {
-                      "id": "HVACDistributionFurnaceAndCentralAC1",
-                      "ducts": [
-                        {
-                          "id": "HVACDistributionFurnaceAndCentral1Supply",
-                          "leakageValue": 0.1
-                        },
-                        {
-                          "id": "HVACDistributionFurnaceAndCentral1Return",
-                          "leakageValue": 0.1
-                        }
-                      ]
-                    }
-                  ]
+            "newHeatPump": {
+              "systemType": "heat pump",
+              "performanceClass": "energy star compliant",
+              "heatLoadFraction": 1,
+              "coolLoadFraction": 1,
+              "costs": [ 
+                {
+                  "fixedCost": 20000
+                }
+              ]
+            },
+            "existingWaterHeatingSystem": {
+              "action": "remove"
+            },
+            "newWaterHeatingSystem": {
+              "systemType": "heat pump water heater",
+              "efficiencyClass": "premium",
+              "dhwLoadFraction": 1.0,
+              "costs": [
+                {
+                  "fixedCost": 5000
+                }
+              ]
+            },
+            "thermostat": {
+              "adjust": {
+                "heatingSeason": {
+                  "setpointTemp": 68,
+                  "setbackTemp": 64,
+                  "setbackStartHour": 23,
+                  "totalWeeklySetbackHours": 49
+                },
+                "coolingSeason": {
+                  "setpointTemp": 78,
+                  "setbackTemp": 82,
+                  "setbackStartHour": 9,
+                  "totalWeeklySetbackHours": 42
                 }
               },
-              "waterHeating": {
-                "waterHeatingSystems": [
-                  {
-                    "id": "WaterHeater1",
-                    "systemType": "heat pump water heater",
-                    "fuel": "electricity",
-                    "tankVolume": 80,
-                    "dhwLoadFraction": 1.0,
-                    "energyFactor": 3.5,
-                    "costs": [
-                      {
-                        "fixedCost": 5336
-                      }
-                    ]
-                  }
-                ]
-              }
+              "costs": [
+                {
+                  "fixedCost": 250
+                }
+              ]
+            },
+            "airSealing": {
+              "adjust": {
+                "rate": 7.0,
+                "rateUnit": "ACH",
+                "housePressurePa": 50
+              },
+              "costs": [
+                {
+                  "fixedCost": 3000
+                }
+              ]
+            },
+            "atticInsulation": {
+              "adjust": {
+                "floorAssemblyEffectiveRValue": 50.6
+              },
+              "costs": [
+                {
+                  "fixedCost": 2500
+                }
+              ]
             }
           }
         }
