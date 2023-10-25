@@ -1,12 +1,12 @@
 {
-  "addressFull": "197 RANDALL RD, BALLSTON SPA, NY 12020",
+  "addressFull": "504 RANDALL RD, BALLSTON SPA, NY 12020",
   "timelines": [
     {
       "models": [
         {
           "automatedMeasures": {
             "newHeatPump": {
-              "systemType": "heat-pump",
+              "systemType": "heat pump",
               "performanceClass": "federal minimally compliant"
             }
           }
