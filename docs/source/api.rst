@@ -741,7 +741,7 @@ Property                                     Type     Units                     
 
   IECC zones 3A, 4-8, unknown: "basement conditioned", "basement unconditioned", "living space"
 .. [#] Only applicable when ``systemType`` is "instantaneous water heater"
-.. [#] ``performanceAdjustment`` defaults t0 0.94 (UEF) or 0.92 (EF)
+.. [#] ``performanceAdjustment`` defaults to 0.94 (UEF) or 0.92 (EF)
 
 .. _weather:
 
