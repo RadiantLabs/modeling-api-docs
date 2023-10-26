@@ -7,7 +7,9 @@
           "automatedMeasures": {
             "newHeatPump": {
               "systemType": "heat pump",
-              "performanceClass": "federal minimally compliant"
+              "performanceClass": "federal minimally compliant",
+              "heatloadFraction": 1.0,
+              "coolLoadFraction": 1.0
             }
           }
         }
