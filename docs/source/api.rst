@@ -727,7 +727,7 @@ Property                                     Type     Units                     
 ``heatCapacityBtuPerHour``                   float    Btu/hr                      >0              no                              autosized by modeling engine if undefined
 ``energyFactor`` or ``uniformEnergyFactor``  float    fraction                    <1              no        BSA
 ``hotWaterTemperature``                      float    F                           >0              no        125 
-``performanceAdjustment``                    float    fraction                    see [#]_        no        see [#]_              Multiplier on efficiency, typically to account for cycling
+``performanceAdjustment``                    float    fraction                    0-1, see [#]_   no        see [#]_              Multiplier on efficiency, typically to account for cycling
 ===========================================  =======  ==========================  ==============  ========  ====================  ===========================================================
 
 .. [#] ``systemType`` choices are "storage water heater", "instantaneous water heater", "heat pump water heater", "space-heating boiler with storage tank", and "space-heating boiler with tankless coil".
