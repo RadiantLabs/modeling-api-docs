@@ -246,6 +246,16 @@ Assumptions for ``efficiencyClass``:
   instantaneous water heater  other        N/A       N/A
   ==========================  ===========  ========  =======
 
+Assumptions for ``tankVolume`` when ``systemType`` is "heat pump water heater":
+  ===============  =============
+  Resident Count   Volume (gal)
+  ===============  =============
+  2 or less        50
+  3                65
+  4 or more        80
+  ===============  =============
+
+
 Adjust global aspects of the building
 -------------------------------------
 
@@ -280,6 +290,8 @@ Adjustments to the building air leakage rates can be entered in ``automatedMeasu
   
   .. [#] rateUnit choices are ACH or CFM.
 
+The air sealing measure is only applicable when the improved air sealing rate is less than the base rate. 
+
 .. _adjust_attic_insulation:
 
 Attic Insulation
@@ -303,6 +315,19 @@ Adjustments to existing attic insulation can be entered in ``automatedMeasures.a
   ================================  ======  ============  ===========  =======  =======================================
   ``floorAssemblyEffectiveRValue``  Double  F-ft2-hr/Btu  > 0.0        50.6     Effective R-value of attic floor assembly
   ================================  ======  ============  ===========  =======  =======================================
+
+Attic insulation measure applicability is determined based on the difference between the base and improved assembly effective R-value using the following table.
+
+  =====================  =========================  ===========
+  Base Assembly R-Value  Improved Assembly R-Value  Applicable?
+  =====================  =========================  ===========
+  < 8.7                  < 8.7                      false
+  < 8.7                  >= 8.7                     true
+  8.7 - 20.6             < 26.6                     false
+  8.7 - 20.6             >= 26.6                    true
+  > 20.6                 < 31.6                     false
+  > 20.6                 >= 31.6                    true
+  =====================  =========================  ===========
 
 .. _adjust_thermostat:
 
