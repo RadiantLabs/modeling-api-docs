@@ -1,33 +1,39 @@
 {
-  "addressFull": "504 RANDALL RD, BALLSTON SPA, NY 12020",
-    "baseBuilding": {
+  "addressFull": "197 RANDALL RD, BALLSTON SPA, NY 12020",
+  "addressComponents": {
+    "addressLine1": "197 Randall Rd",
+    "city": "Ballston Spa",
+    "stateAbbreviation": "NY",
+    "zipCode": "12020"
+  },
+  "baseBuilding": {
     "buildingSummary": {
-      "conditionedFloorArea": 2600,
+      "conditionedFloorArea": 2413,
       "averageCeilingHeight": 8,
-      "bathCount": 3,
+      "bathCount": 2,
       "bedroomsCount": 4,
       "residentCount": 5,
-      "storiesCount": 2,
+      "storiesCount": 1,
       "windowToWallFraction": 0.14,
-      "yearBuilt": 2007
+      "yearBuilt": 1945
     },
     "enclosure": {
       "airInfiltration": {
-        "rate": 6.0,
+        "rate": 15,
         "rateUnit": "ACH",
-        "housePressurePa": 50.0
+        "housePressurePa": 50
       },
       "attics": [
         {
           "id": "Attic1",
-          "area": 1300,
-          "floorAssemblyEffectiveRValue": 31.6
+          "area": 1225,
+          "floorAssemblyEffectiveRValue": 20.6
         }
       ],
       "roofs": [
         {
           "id": "Roof1",
-          "area": 1453,
+          "area": 1370,
           "pitch": 6,
           "assemblyEffectiveRValue": 2.3,
           "lifetime": {
@@ -40,15 +46,15 @@
         {
           "id": "Wall1",
           "type": "wood stud",
-          "assemblyEffectiveRValue": 16.0,
-          "fractionAreaShared": 0.0
+          "assemblyEffectiveRValue": 4,
+          "fractionAreaShared": 0
         }
       ],
       "foundations": [
         {
-          "id": "BasementUnconditioned1",
-          "type": "basement unconditioned",
-          "area": 1300,
+          "id": "BasementConditioned1",
+          "type": "basement conditioned",
+          "area": 1188,
           "wallHeight": 8
         }
       ]
@@ -57,82 +63,54 @@
       "hvac": {
         "hvacCoolingSystems": [
           {
-            "id": "CentralAirConditioner1",
-            "systemType": "central air conditioner",
-            "coolEfficiency": 13.0,
-            "coolEfficiencyUnits": "SEER",
-            "coolLoadFraction": 1.0,
+            "id": "RoomAirConditioner1",
+            "systemType": "room air conditioner",
+            "coolEfficiency": 10.7,
+            "coolEfficiencyUnits": "EER",
+            "coolLoadFraction": 0.33,
             "lifetime": {
-              "replacementCost": 2000,
+              "replacementCost": 200,
               "endOfLifeDate": "2024-07-01"
             }
           }
         ],
         "hvacHeatingSystems": [
           {
-            "id": "Furnace1",
-            "systemType": "furnace",
-            "fuel": "natural gas",
-            "heatEfficiency": 0.8,
-            "heatEfficiencyUnits": "AFUE",
-            "heatLoadFraction": 1.0
+            "id": "ElectricResistance1",
+            "systemType": "electric resistance",
+            "fuel": "electricity",
+            "heatEfficiency": 1,
+            "heatEfficiencyUnits": "percent",
+            "heatLoadFraction": 1
           }
         ],
         "hvacControlSystems": [
           {
             "id": "HVACControl1",
             "heatingSeason": {
-              "setpointTemp": 68
+              "setpoint": 68
             },
             "coolingSeason": {
-              "setpointTemp": 78
+              "setpoint": 78
             }
           }
-        ],
-        "hvacDistributionSystems": {
-          "airDistributionSystems": [
-            {
-              "id": "HVACDistributionFurnaceAndCentralAC1",
-              "systemType": "regular velocity",
-              "numberOfReturnRegisters": 2,
-              "conditionedFloorAreaServed": 2600,
-              "ducts": [
-                {
-                  "id": "HVACDistributionFurnaceAndCentral1Supply",
-                  "systemType": "supply",
-                  "insulationRValue": 0.0,
-                  "leakageValue": 0.2,
-                  "leakageUnits": "percent",
-                  "location": "attic vented"
-                },
-                {
-                  "id": "HVACDistributionFurnaceAndCentral1Return",
-                  "systemType": "return",
-                  "insulationRValue": 0.0,
-                  "leakageValue": 0.2,
-                  "leakageUnits": "percent",
-                  "location": "attic vented"
-                }
-              ]
-            }
-          ]
-        }
+        ]
       },
       "waterHeating": {
         "waterHeatingSystems": [
           {
-            "id": "WaterHeater1",
+            "energyFactor": 0.92,
+            "dhwLoadFraction": 1,
             "systemType": "storage water heater",
-            "fuel": "natural gas",
+            "fuel": "electricity",
+            "id": "WaterHeater1",
+            "hotWaterTemperature": 125,
             "location": "living space",
-            "tankVolume": 40,
-            "dhwLoadFraction": 1.0,
-            "energyFactor": 0.59,
-            "hotWaterTemperature": 125.0,
             "lifetime": {
               "replacementCost": 1000,
               "installedDate": "2015-11-12"
-            }
+            },
+            "tankVolume": 40
           }
         ]
       }
@@ -150,20 +128,28 @@
       "cookingRanges": [
         {
           "id": "CookingRange1",
-          "fuel": "natural gas",
+          "fuel": "electricity",
           "isInduction": false
         }
       ]
     }
   },
   "globalControls": {
-    "includeBase": true,
-    "includeTypical": true,
-    "financialAnalysisOptions": ["difference", "installed costs", "energy costs"],
-    "resolution": ["annual", "monthly"],
-    "includeStatusQuoTimeline": true,
     "timelineStartDate": "2022-12-10",
-    "timelineDurationInYears": 3
+    "includeTypical": true,
+    "financialAnalysisOptions": [
+      "difference",
+      "installed costs",
+      "energy costs"
+    ],
+    "includeStatusQuoTimeline": true,
+    "timelineDurationInYears": 3,
+    "useFixture": true,
+    "fixtureName": "extensive-inputs",
+    "includeBase": true,
+    "resolution": [
+      "annual"
+    ]
   },
   "defaultModelControls": {
     "allowIncreasedFixedCapacities": false,
@@ -173,7 +159,7 @@
       }
     }
   },
-    "timelines": [
+  "timelines": [
     {
       "models": [
         {
@@ -189,96 +175,116 @@
               ]
             }
           ],
-          "automatedMeasures": {
-            "existingHvacHeatingSystem": {
-              "action": "adjust",
-              "adjust": {
-                "backup": true,
-                "heatLoadFraction": 0
+          "improvedBuilding": {
+            "enclosure": {
+              "airInfiltration": {
+                "rate": 7,
+                "costs": [
+                  {
+                    "fixedCost": 2928
+                  }
+                ]
+              },
+              "attics": [
+                {
+                  "id": "Attic1",
+                  "floorAssemblyEffectiveRValue": 50.6,
+                  "costs": [
+                    {
+                      "fixedCost": 2450
+                    }
+                  ]
+                }
+              ]
+            },
+            "systems": {
+              "hvac": {
+                "hvacCoolingSystems": [
+                  {
+                    "id": "RoomAirConditioner1",
+                    "systemType": "mini-split",
+                    "coolLoadFraction": 1,
+                    "remove": true
+                  }
+                ],
+                "hvacHeatingSystems": [
+                  {
+                    "id": "ElectricResistance1",
+                    "systemType": "furnace",
+                    "heatLoadFraction": 1,
+                    "remove": true
+                  }
+                ],
+                "hvacHeatPumps": [
+                  {
+                    "coolEfficiency": 20,
+                    "systemType": "mini-split",
+                    "coolLoadFraction": 1,
+                    "heatLoadFraction": 1,
+                    "id": "MiniSplit1",
+                    "backupSystem": {
+                      "systemType": "integrated",
+                      "fuel": "electricity",
+                      "heatEfficiency": 1,
+                      "heatEfficiencyUnits": "percent"
+                    },
+                    "coolEfficiencyUnits": "SEER",
+                    "heatEfficiencyUnits": "HSPF",
+                    "compressorType": "variable speed",
+                    "costs": [
+                      {
+                        "fixedCost": 20190
+                      }
+                    ],
+                    "heatEfficiency": 11
+                  }
+                ],
+                "hvacControlSystems": [
+                  {
+                    "id": "HVACControl1",
+                    "remove": true
+                  },
+                  {
+                    "id": "HVACControl2",
+                    "heatingSeason": {
+                      "setback": 64,
+                      "setbackStartHour": 23,
+                      "totalWeeklySetbackHours": 49
+                    },
+                    "coolingSeason": {
+                      "setpoint": 82,
+                      "setbackStartHour": 9,
+                      "totalWeeklySetbackHours": 42
+                    },
+                    "costs": [
+                      {
+                        "fixedCost": 240
+                      }
+                    ]
+                  }
+                ]
+              },
+              "waterHeating": {
+                "waterHeatingSystems": [
+                  {
+                    "id": "WaterHeater1",
+                    "remove": true
+                  },
+                  {
+                    "id": "WaterHeater2",
+                    "systemType": "heat pump water heater",
+                    "fuel": "electricity",
+                    "tankVolume": 80,
+                    "dhwLoadFraction": 1,
+                    "energyFactor": 3.5,
+                    "costs": [
+                      {
+                        "fixedCost": 5336
+                      }
+                    ]
+                  }
+                ]
               }
-            },
-            "existingHvacCoolingSystem": {
-              "action": "remove"
-            },
-            "existingHvacDistributionSystem": {
-              "action": "adjust",
-              "adjust": {
-                "leakageValue": 0.1,
-                "leakageUnits": "Percent",
-                "insulationRValue": 5
-              },
-              "costs": [ 
-                {
-                  "fixedCost": 2000
-                }
-              ]
-            },
-            "newHeatPump": {
-              "systemType": "heat pump",
-              "performanceClass": "energy star compliant",
-              "heatLoadFraction": 1,
-              "coolLoadFraction": 1,
-              "costs": [ 
-                {
-                  "fixedCost": 20000
-                }
-              ]
-            },
-            "existingWaterHeatingSystem": {
-              "action": "remove"
-            },
-            "newWaterHeatingSystem": {
-              "systemType": "heat pump water heater",
-              "efficiencyClass": "premium",
-              "dhwLoadFraction": 1.0,
-              "costs": [
-                {
-                  "fixedCost": 5000
-                }
-              ]
-            },
-            "thermostat": {
-              "adjust": {
-                "heatingSeason": {
-                  "setpointTemp": 68,
-                  "setbackTemp": 64,
-                  "setbackStartHour": 23,
-                  "totalWeeklySetbackHours": 49
-                },
-                "coolingSeason": {
-                  "setpointTemp": 78,
-                  "setbackTemp": 82,
-                  "setbackStartHour": 9,
-                  "totalWeeklySetbackHours": 42
-                }
-              },
-              "costs": [
-                {
-                  "fixedCost": 250
-                }
-              ]
-            },
-            "airSealing": {
-              "adjust": {
-                "rate": 7.0,
-                "rateUnit": "ACH",
-                "housePressurePa": 50
-              },
-              "costs": [
-                {
-                  "fixedCost": 3000
-                }
-              ]
-            },
-            "atticInsulation": {
-              "adjust": {
-                "floorAssemblyEffectiveRValue": 50.6
-              },
-              "costs": [
-                {
-                  "fixedCost": 2500
-                }
-              ]
             }
           }
         }
