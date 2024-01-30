@@ -1,2223 +1,300 @@
 {
-  "addressFoundFull": "197 RANDALL RD, BALLSTON SPA, NY 12020",
+  "addressFoundFull": "504 RANDALL RD, BALLSTON SPA, NY 12020",
   "addressFoundComponents": {
-    "addressLine1": "197 Randall Rd",
-    "city": "Ballston Spa",
+    "addressLine1": "504 RANDALL RD",
+    "city": "BALLSTON SPA",
     "stateAbbreviation": "NY",
     "zipCode": "12020"
   },
-  "globalControls": {
-    "includeBase": true,
-    "includeTypical": true,
-    "financialAnalysisOptions": [
-      "difference",
-      "installed costs",
-      "energy costs"
-    ],
-    "resolution": [
-      "annual",
-      "monthly"
-    ],
-    "includeStatusQuoTimeline": true,
-    "timelineStartDate": "2022-12-10",
-    "timelineDurationInYears": 3,
-    "units": {
-      "energyStandard": "MBtu"
-    }
-  },
-  "defaultModelControls": {
-    "allowIncreasedFixedCapacities": false,
-    "energyCostRates": {
-      "electricity": {
-        "kwh": 0.1264
-      }
-    }
-  },
   "timelines": [
     {
-      "id": "896fd222-003d-4c86-92ab-bed220d4bc8e",
-      "radiantId": "22145bf4-655c-41a2-879d-ee4b2cf7e1bd",
+      "id": "9fc7c4d3-a32e-47ec-9bbf-022d887aafa8",
+      "radiantId": "747c1265-0ff3-4310-b069-5a6b209bf5a7",
       "label": "STATUS_QUO",
       "models": [
         {
-          "id": "c1c6bc5c-0d4d-401e-96c6-aeb881eacb73",
-          "radiantId": "d32cf3d2-209d-40e3-8595-13bdd10d88ce",
+          "id": "f860e17c-5125-44dc-aa4c-ee028d503a96",
+          "radiantId": "a863b445-e8bb-404c-9cb7-f4a8a5907090",
           "label": "BASE",
-          "appliedOn": "2022-12-10",
-          "providedBaseBuilding": {
-            "buildingSummary": {
-              "conditionedFloorArea": 2413,
-              "averageCeilingHeight": 8,
-              "bathCount": 2,
-              "bedroomsCount": 4,
-              "residentCount": 5,
-              "storiesCount": 1,
-              "windowToWallFraction": 0.14,
-              "yearBuilt": 1945
-            },
-            "enclosure": {
-              "airInfiltration": {
-                "rate": 15.0,
-                "rateUnit": "ACH",
-                "housePressurePa": 50.0
-              },
-              "attics": [
-                {
-                  "id": "Attic1",
-                  "area": 1225,
-                  "floorAssemblyEffectiveRValue": 20.6
-                }
-              ],
-              "roofs": [
-                {
-                  "id": "Roof1",
-                  "area": 1370,
-                  "pitch": 6,
-                  "assemblyEffectiveRValue": 2.3,
-                  "lifetime": {
-                    "replacementCost": 7000,
-                    "endOfLifeDate": "2030-01-01"
-                  }
-                }
-              ],
-              "walls": [
-                {
-                  "id": "Wall1",
-                  "type": "wood stud",
-                  "assemblyEffectiveRValue": 4.0,
-                  "fractionAreaShared": 0.0
-                }
-              ],
-              "foundations": [
-                {
-                  "id": "BasementConditioned1",
-                  "type": "basement conditioned",
-                  "area": 1188,
-                  "wallHeight": 8
-                }
-              ]
-            },
-            "systems": {
-              "hvac": {
-                "hvacCoolingSystems": [
-                  {
-                    "id": "RoomAirConditioner1",
-                    "systemType": "room air conditioner",
-                    "coolEfficiency": 10.7,
-                    "coolEfficiencyUnits": "EER",
-                    "coolLoadFraction": 0.33,
-                    "lifetime": {
-                      "replacementCost": 200,
-                      "endOfLifeDate": "2024-07-01"
-                    }
-                  }
+          "providedBaseBuilding": {},
+          "energyTotals": {
+            "annual": {
+              "electricityTotal": {
+                "mbtu": [
+                  22.98
                 ],
-                "hvacHeatingSystems": [
-                  {
-                    "id": "ElectricResistance1",
-                    "systemType": "electric resistance",
-                    "fuel": "electricity",
-                    "heatEfficiency": 1.0,
-                    "heatEfficiencyUnits": "percent",
-                    "heatLoadFraction": 1.0
-                  }
-                ],
-                "hvacControlSystems": [
-                  {
-                    "id": "HVACControl1",
-                    "heatingSeason": {
-                      "setpoint": 68
-                    },
-                    "coolingSeason": {
-                      "setpoint": 78
-                    }
-                  }
+                "kwh": [
+                  6734.773878
                 ]
               },
-              "waterHeating": {
-                "waterHeatingSystems": [
-                  {
-                    "id": "WaterHeater1",
-                    "systemType": "storage water heater",
-                    "fuel": "electricity",
-                    "location": "living space",
-                    "tankVolume": 40,
-                    "dhwLoadFraction": 1.0,
-                    "energyFactor": 0.92,
-                    "hotWaterTemperature": 125.0,
-                    "lifetime": {
-                      "replacementCost": 1000,
-                      "installedDate": "2015-11-12"
-                    }
-                  }
+              "naturalGasTotal": {
+                "mbtu": [
+                  88.66
+                ]
+              },
+              "fuelOilTotal": {
+                "mbtu": [
+                  0
+                ]
+              },
+              "propaneTotal": {
+                "mbtu": [
+                  0
+                ]
+              },
+              "woodCordTotal": {
+                "mbtu": [
+                  0
+                ]
+              },
+              "woodPelletsTotal": {
+                "mbtu": [
+                  0
+                ]
+              },
+              "coalTotal": {
+                "mbtu": [
+                  0
+                ]
+              },
+              "total": {
+                "mbtu": [
+                  111.64
                 ]
               }
-            },
-            "appliances": {
-              "clothesDryers": [
-                {
-                  "id": "ClothesDryer1",
-                  "fuel": "electricity",
-                  "combinedEnergyFactor": 3.73,
-                  "isVented": true,
-                  "ventedFlowRate": 150
-                }
+            }
+          },
+          "energyCosts": {
+            "annual": {
+              "electricityTotal": [
+                851.2754181792001
               ],
-              "cookingRanges": [
-                {
-                  "id": "CookingRange1",
-                  "fuel": "electricity",
-                  "isInduction": false
-                }
+              "naturalGasTotal": [
+                1504.5602
+              ],
+              "fuelOilTotal": [
+                0
+              ],
+              "propaneTotal": [
+                0
+              ],
+              "woodCordTotal": [
+                0
+              ],
+              "woodPelletsTotal": [
+                0
+              ],
+              "coalTotal": [
+                0
+              ],
+              "total": [
+                2355.8356181792
               ]
+            }
+          },
+          "emissionTotals": {
+            "annual": {
+              "electricityTotal": {
+                "co2": [
+                  0.7149244900974349
+                ]
+              },
+              "naturalGasTotal": {
+                "co2": [
+                  4.7065426501236
+                ]
+              },
+              "fuelOilTotal": {
+                "co2": [
+                  0
+                ]
+              },
+              "propaneTotal": {
+                "co2": [
+                  0
+                ]
+              },
+              "coalTotal": {
+                "co2": [
+                  0
+                ]
+              },
+              "woodCordTotal": {
+                "co2": [
+                  0
+                ]
+              },
+              "woodPelletsTotal": {
+                "co2": [
+                  0
+                ]
+              },
+              "total": {
+                "co2": [
+                  5.421467140221035
+                ]
+              }
             }
           },
           "appliedBaseBuilding": {
-            "buildingSummary": {
-              "conditionedFloorArea": 2413,
-              "averageCeilingHeight": 8,
-              "bathCount": 2,
-              "bedroomsCount": 4,
-              "residentCount": 5,
-              "storiesCount": 1,
-              "windowToWallFraction": 0.14,
-              "yearBuilt": 1945
-            },
-            "enclosure": {
-              "airInfiltration": {
-                "rate": 15,
-                "rateUnit": "ACH",
-                "housePressurePa": 50
-              },
-              "attics": [
-                {
-                  "id": "Attic1",
-                  "area": 1225,
-                  "isVented": false,
-                  "floorAssemblyEffectiveRValue": 20.6
-                }
-              ],
-              "roofs": [
-                {
-                  "id": "Roof1",
-                  "area": 1370,
-                  "pitch": 6,
-                  "assemblyEffectiveRValue": 2.3,
-                  "lifetime": {
-                    "replacementCost": 7000,
-                    "endOfLifeDate": "2030-01-01"
-                  }
-                }
-              ],
-              "foundations": [
-                {
-                  "id": "BasementConditioned1",
-                  "type": "basement conditioned",
-                  "area": 1188,
-                  "wallHeight": 8
-                }
-              ],
-              "walls": [
-                {
-                  "id": "Wall1",
-                  "type": "wood stud",
-                  "area": 1234,
-                  "assemblyEffectiveRValue": 4,
-                  "fractionAreaShared": 0
-                }
-              ]
-            },
-            "systems": {
-              "hvac": {
-                "hvacCoolingSystems": [
-                  {
-                    "id": "RoomAirConditioner1",
-                    "systemType": "room air conditioner",
-                    "compressorType": "single stage",
-                    "coolEfficiency": 10.7,
-                    "coolEfficiencyUnits": "EER",
-                    "coolLoadFraction": 0.33,
-                    "lifetime": {
-                      "replacementCost": 200,
-                      "endOfLifeDate": "2024-07-01"
-                    }
-                  }
-                ],
-                "hvacHeatingSystems": [
-                  {
-                    "id": "ElectricResistance1",
-                    "systemType": "electric resistance",
-                    "fuel": "electricity",
-                    "heatEfficiency": 1,
-                    "heatEfficiencyUnits": "percent",
-                    "heatLoadFraction": 1
-                  }
-                ],
-                "hvacControlSystems": [
-                  {
-                    "id": "ManualThermostat1",
-                    "heatingSeason": {
-                      "setpoint": 68
-                    },
-                    "coolingSeason": {
-                      "setpoint": 78
-                    }
-                  }
-                ],
-                "coolLoadGapFraction": 0.67,
-                "heatLoadGapFraction": 0.0
-              },
-              "waterHeating": {
-                "waterHeatingSystems": [
-                  {
-                    "id": "WaterHeater1",
-                    "systemType": "storage water heater",
-                    "fuel": "electricity",
-                    "location": "living space",
-                    "tankVolume": 40,
-                    "dhwLoadFraction": 1,
-                    "energyFactor": 0.92,
-                    "hotWaterTemperature": 125,
-                    "lifetime": {
-                      "replacementCost": 1000,
-                      "installedDate": "2015-11-12"
-                    }
-                  }
-                ]
-              }
-            },
             "appliances": {
               "clothesDryers": [
                 {
-                  "id": "ClothesDryer1",
-                  "fuel": "electricity",
                   "combinedEnergyFactor": 3.73,
+                  "fuel": "electricity",
+                  "id": "ClothesDryer1",
                   "isVented": true,
                   "ventedFlowRate": 150
                 }
               ],
               "cookingRanges": [
                 {
+                  "fuel": "natural gas",
                   "id": "CookingRange1",
-                  "fuel": "electricity",
                   "isInduction": false
                 }
               ]
-            }
-          },
-          "energyTotals": {
-            "monthly": {
-              "coalTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
             },
-            "annual": {
-              "coalTotal": {
-                "mbtu": [0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0],
-                "mbtu": [0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0]
-              },
-              "total": {
-                "mbtu": [0.0]
-              }
-            }
-          },
-          "energyCosts": {
-            "monthly": {
-              "coalTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "electricityTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "fuelOilTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "naturalGasTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "propaneTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodCordTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodPelletsTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "total": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-            },
-            "annual": {
-              "coalTotal": [0.0],
-              "electricityTotal": [0.0],
-              "fuelOilTotal": [0.0],
-              "naturalGasTotal": [0.0],
-              "propaneTotal": [0.0],
-              "woodCordTotal": [0.0],
-              "woodPelletsTotal": [0.0],
-              "total": [0.0]
-            }
-          },
-          "emissionTotals": {
-            "monthly": {
-              "coalTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "co2": [0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0]
-              },
-              "total": {
-                "co2": [0.0]
-              }
-            }
-          }
-        },
-        {
-          "id": "42b9e6d5-b0ce-4917-8934-b03f7973b406",
-          "radiantId": "2ffd06fc-4c9e-49e1-821e-3d8cc1a74e19",
-          "label": "STATUS_QUO_REPLACE_FURNACE",
-          "appliedOn": "2022-06-10",
-          "requestedImprovedBuilding": {},
-          "appliedImprovedBuilding": {
-            "systems": {
-              "hvac": {
-                "hvacHeatingSystems": [
-                  {
-                    "id": "Furnace1",
-                    "systemType": "furnace",
-                    "fuel": "natural gas",
-                    "heatLoadFraction": 1,
-                    "costs": [
-                      {
-                        "fixedCost": 6000
-                      }
-                    ]
-                  }
-                ]
-              }
-            }
-          },
-          "modelCosts": {
-            "totalImplementationCost": 6000.0,
-            "totalIncentives": 0.0,
-            "netModelCost": 0.0
-          },
-          "energyTotals": {
-            "monthly": {
-              "coalTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "mbtu": [0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0],
-                "mbtu": [0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0]
-              },
-              "total": {
-                "mbtu": [0.0]
-              }
-            }
-          },
-          "energyCosts": {
-            "monthly": {
-              "coalTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "electricityTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "fuelOilTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "naturalGasTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "propaneTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodCordTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodPelletsTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "total": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-            },
-            "annual": {
-              "coalTotal": [0.0],
-              "electricityTotal": [0.0],
-              "fuelOilTotal": [0.0],
-              "naturalGasTotal": [0.0],
-              "propaneTotal": [0.0],
-              "woodCordTotal": [0.0],
-              "woodPelletsTotal": [0.0],
-              "total": [0.0]
-            }
-          },
-          "emissionTotals": {
-            "monthly": {
-              "coalTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "co2": [0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0]
-              },
-              "total": {
-                "co2": [0.0]
-              }
-            }
-          },
-          "energyTotalsDifferenceWithBase": {
-            "monthly": {
-              "coalTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "mbtu": [0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0],
-                "mbtu": [0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0]
-              },
-              "total": {
-                "mbtu": [0.0]
-              }
-            }
-          },
-          "energyCostsDifferenceWithBase": {
-            "monthly": {
-              "coalTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "electricityTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "fuelOilTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "naturalGasTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "propaneTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodCordTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodPelletsTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "total": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-            },
-            "annual": {
-              "coalTotal": [0.0],
-              "electricityTotal": [0.0],
-              "fuelOilTotal": [0.0],
-              "naturalGasTotal": [0.0],
-              "propaneTotal": [0.0],
-              "woodCordTotal": [0.0],
-              "woodPelletsTotal": [0.0],
-              "total": [0.0]
-            }
-          },
-          "emissionTotalsDifferenceWithBase": {
-            "monthly": {
-              "coalTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "co2": [0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0]
-              },
-              "total": {
-                "co2": [0.0]
-              }
-            }
-          },
-          "energyTotalsDifferenceWithPreviousModel": {
-            "monthly": {
-              "coalTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "mbtu": [0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0],
-                "mbtu": [0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0]
-              },
-              "total": {
-                "mbtu": [0.0]
-              }
-            }
-          },
-          "energyCostsDifferenceWithPreviousModel": {
-            "monthly": {
-              "coalTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "electricityTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "fuelOilTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "naturalGasTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "propaneTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodCordTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodPelletsTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "total": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-            },
-            "annual": {
-              "coalTotal": [0.0],
-              "electricityTotal": [0.0],
-              "fuelOilTotal": [0.0],
-              "naturalGasTotal": [0.0],
-              "propaneTotal": [0.0],
-              "woodCordTotal": [0.0],
-              "woodPelletsTotal": [0.0],
-              "total": [0.0]
-            }
-          },
-          "emissionTotalsDifferenceWithPreviousModel": {
-            "monthly": {
-              "coalTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "co2": [0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0]
-              },
-              "total": {
-                "co2": [0.0]
-              }
-            }
-          }
-        }
-      ],
-      "totalEnergyCosts": 0,
-      "totalEmissions": {
-        "co2": 0
-      }
-    },
-    {
-      "id": "896fd222-003d-4c86-92ab-bed220d4bc8e",
-      "radiantId": "39cc8695-0010-4334-8efc-6f23a17c7493",
-      "label": "MIGHTY_LYNX",
-      "comparedTo": "STATUS_QUO",
-      "models": [
-        {
-          "id": "c1c6bc5c-0d4d-401e-96c6-aeb881eacb73",
-          "radiantId": "d32cf3d2-209d-40e3-8595-13bdd10d88ce",
-          "label": "BASE",
-          "appliedOn": "2022-12-10",
-          "providedBaseBuilding": {
             "buildingSummary": {
-              "conditionedFloorArea": 2413,
               "averageCeilingHeight": 8,
-              "bathCount": 2,
+              "bathCount": 3,
               "bedroomsCount": 4,
-              "residentCount": 5,
-              "storiesCount": 1,
+              "conditionedFloorArea": 2580,
+              "residentCount": 3.2366863905325443,
+              "storiesCount": 2,
               "windowToWallFraction": 0.14,
-              "yearBuilt": 1945
+              "yearBuilt": 2007
             },
             "enclosure": {
               "airInfiltration": {
-                "rate": 15.0,
-                "rateUnit": "ACH",
-                "housePressurePa": 50.0
-              },
-              "attics": [
-                {
-                  "id": "Attic1",
-                  "area": 1225,
-                  "floorAssemblyEffectiveRValue": 20.6
-                }
-              ],
-              "roofs": [
-                {
-                  "id": "Roof1",
-                  "area": 1370,
-                  "pitch": 6,
-                  "assemblyEffectiveRValue": 2.3,
-                  "lifetime": {
-                    "replacementCost": 7000,
-                    "endOfLifeDate": "2030-01-01"
-                  }
-                }
-              ],
-              "walls": [
-                {
-                  "id": "Wall1",
-                  "type": "wood stud",
-                  "assemblyEffectiveRValue": 4.0,
-                  "fractionAreaShared": 0.0
-                }
-              ],
-              "foundations": [
-                {
-                  "id": "BasementConditioned1",
-                  "type": "basement conditioned",
-                  "area": 1188,
-                  "wallHeight": 8
-                }
-              ]
-            },
-            "systems": {
-              "hvac": {
-                "hvacCoolingSystems": [
-                  {
-                    "id": "RoomAirConditioner1",
-                    "systemType": "room air conditioner",
-                    "coolEfficiency": 10.7,
-                    "coolEfficiencyUnits": "EER",
-                    "coolLoadFraction": 0.33,
-                    "lifetime": {
-                      "replacementCost": 200,
-                      "endOfLifeDate": "2024-07-01"
-                    }
-                  }
-                ],
-                "hvacHeatingSystems": [
-                  {
-                    "id": "ElectricResistance1",
-                    "systemType": "electric resistance",
-                    "fuel": "electricity",
-                    "heatEfficiency": 1.0,
-                    "heatEfficiencyUnits": "percent",
-                    "heatLoadFraction": 1.0
-                  }
-                ],
-                "hvacControlSystems": [
-                  {
-                    "id": "HVACControl1",
-                    "heatingSeason": {
-                      "setpoint": 68
-                    },
-                    "coolingSeason": {
-                      "setpoint": 78
-                    }
-                  }
-                ]
-              },
-              "waterHeating": {
-                "waterHeatingSystems": [
-                  {
-                    "id": "WaterHeater1",
-                    "systemType": "storage water heater",
-                    "fuel": "electricity",
-                    "location": "living space",
-                    "tankVolume": 40,
-                    "dhwLoadFraction": 1.0,
-                    "energyFactor": 0.92,
-                    "hotWaterTemperature": 125.0,
-                    "lifetime": {
-                      "replacementCost": 1000,
-                      "installedDate": "2015-11-12"
-                    }
-                  }
-                ]
-              }
-            },
-            "appliances": {
-              "clothesDryers": [
-                {
-                  "id": "ClothesDryer1",
-                  "fuel": "electricity",
-                  "combinedEnergyFactor": 3.73,
-                  "isVented": true,
-                  "ventedFlowRate": 150
-                }
-              ],
-              "cookingRanges": [
-                {
-                  "id": "CookingRange1",
-                  "fuel": "electricity",
-                  "isInduction": false
-                }
-              ]
-            }
-          },
-          "appliedBaseBuilding": {
-            "buildingSummary": {
-              "conditionedFloorArea": 2413,
-              "averageCeilingHeight": 8,
-              "bathCount": 2,
-              "bedroomsCount": 4,
-              "residentCount": 5,
-              "storiesCount": 1,
-              "windowToWallFraction": 0.14,
-              "yearBuilt": 1945
-            },
-            "enclosure": {
-              "airInfiltration": {
-                "rate": 15,
-                "rateUnit": "ACH",
-                "housePressurePa": 50
-              },
-              "attics": [
-                {
-                  "id": "Attic1",
-                  "area": 1225,
-                  "isVented": false,
-                  "floorAssemblyEffectiveRValue": 20.6
-                }
-              ],
-              "roofs": [
-                {
-                  "id": "Roof1",
-                  "area": 1370,
-                  "pitch": 6,
-                  "assemblyEffectiveRValue": 2.3,
-                  "lifetime": {
-                    "replacementCost": 7000,
-                    "endOfLifeDate": "2030-01-01"
-                  }
-                }
-              ],
-              "foundations": [
-                {
-                  "id": "BasementConditioned1",
-                  "type": "basement conditioned",
-                  "area": 1188,
-                  "wallHeight": 8
-                }
-              ],
-              "walls": [
-                {
-                  "id": "Wall1",
-                  "type": "wood stud",
-                  "area": 1234,
-                  "assemblyEffectiveRValue": 4,
-                  "fractionAreaShared": 0
-                }
-              ]
-            },
-            "systems": {
-              "hvac": {
-                "hvacCoolingSystems": [
-                  {
-                    "id": "RoomAirConditioner1",
-                    "systemType": "room air conditioner",
-                    "compressorType": "single stage",
-                    "coolEfficiency": 10.7,
-                    "coolEfficiencyUnits": "EER",
-                    "coolLoadFraction": 0.33,
-                    "lifetime": {
-                      "replacementCost": 200,
-                      "endOfLifeDate": "2024-07-01"
-                    }
-                  }
-                ],
-                "hvacHeatingSystems": [
-                  {
-                    "id": "ElectricResistance1",
-                    "systemType": "electric resistance",
-                    "fuel": "electricity",
-                    "heatEfficiency": 1,
-                    "heatEfficiencyUnits": "percent",
-                    "heatLoadFraction": 1
-                  }
-                ],
-                "hvacControlSystems": [
-                  {
-                    "id": "ManualThermostat1",
-                    "heatingSeason": {
-                      "setpoint": 68
-                    },
-                    "coolingSeason": {
-                      "setpoint": 78
-                    }
-                  }
-                ],
-                "coolLoadGapFraction": 0.67,
-                "heatLoadGapFraction": 0.0
-              },
-              "waterHeating": {
-                "waterHeatingSystems": [
-                  {
-                    "id": "WaterHeater1",
-                    "systemType": "storage water heater",
-                    "fuel": "electricity",
-                    "location": "living space",
-                    "tankVolume": 40,
-                    "dhwLoadFraction": 1,
-                    "energyFactor": 0.92,
-                    "hotWaterTemperature": 125,
-                    "lifetime": {
-                      "replacementCost": 1000,
-                      "installedDate": "2015-11-12"
-                    }
-                  }
-                ]
-              }
-            },
-            "appliances": {
-              "clothesDryers": [
-                {
-                  "id": "ClothesDryer1",
-                  "fuel": "electricity",
-                  "combinedEnergyFactor": 3.73,
-                  "isVented": true,
-                  "ventedFlowRate": 150
-                }
-              ],
-              "cookingRanges": [
-                {
-                  "id": "CookingRange1",
-                  "fuel": "electricity",
-                  "isInduction": false
-                }
-              ]
-            }
-          },
-          "energyTotals": {
-            "monthly": {
-              "coalTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "mbtu": [0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0],
-                "mbtu": [0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0]
-              },
-              "total": {
-                "mbtu": [0.0]
-              }
-            }
-          },
-          "energyCosts": {
-            "monthly": {
-              "coalTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "electricityTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "fuelOilTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "naturalGasTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "propaneTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodCordTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodPelletsTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "total": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-            },
-            "annual": {
-              "coalTotal": [0.0],
-              "electricityTotal": [0.0],
-              "fuelOilTotal": [0.0],
-              "naturalGasTotal": [0.0],
-              "propaneTotal": [0.0],
-              "woodCordTotal": [0.0],
-              "woodPelletsTotal": [0.0],
-              "total": [0.0]
-            }
-          },
-          "emissionTotals": {
-            "monthly": {
-              "coalTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "co2": [0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0]
-              },
-              "total": {
-                "co2": [0.0]
-              }
-            }
-          }
-        },
-        {
-          "id": "32833cd4-5706-45f5-a3b9-2258b1fc9887",
-          "radiantId": "bb53d60c-2293-4e00-8fdf-1f9b1d68cc8f",
-          "label": "ELOQUENT_HYENA",
-          "appliedOn": "2023-12-10",
-          "requestedImprovedBuilding": {
-            "enclosure": {
-              "airInfiltration": {
-                "rate": 7,
-                "costs": [
-                  {
-                    "fixedCost": 2928
-                  }
-                ]
-              },
-              "attics": [
-                {
-                  "id": "Attic1",
-                  "area": 1225,
-                  "isVented": false,
-                  "floorAssemblyEffectiveRValue": 50.6,
-                  "costs": [
-                    {
-                      "fixedCost": 2450
-                    }
-                  ]
-                }
-              ]
-            },
-            "systems": {
-              "hvac": {
-                "hvacCoolingSystems": [
-                  {
-                    "id": "RoomAirConditioner1",
-                    "remove": true
-                  }
-                ],
-                "hvacHeatingSystems": [
-                  {
-                    "id": "ElectricResistance1",
-                    "remove": true
-                  }
-                ],
-                "hvacHeatPumps": [
-                  {
-                    "id": "MiniSplit1",
-                    "systemType": "mini-split",
-                    "compressorType": "variable speed",
-                    "backupSystem": {
-                      "systemType": "integrated",
-                      "fuel": "electricity",
-                      "heatEfficiency": 1,
-                      "heatEfficiencyUnits": "percent"
-                    },
-                    "heatEfficiency": 11,
-                    "heatEfficiencyUnits": "HSPF",
-                    "coolEfficiency": 20,
-                    "coolEfficiencyUnits": "SEER",
-                    "heatLoadFraction": 1,
-                    "coolLoadFraction": 1,
-                    "costs": [
-                      {
-                        "fixedCost": 20190
-                      }
-                    ]
-                  }
-                ],
-                "hvacControlSystems": [
-                  {
-                    "id": "HVACControl1",
-                    "remove": true
-                  },
-                  {
-                    "id": "HVACControl2",
-                    "heatingSeason": {
-                      "setback": 64,
-                      "setbackStartHour": 23,
-                      "totalWeeklySetbackHours": 49
-                    },
-                    "coolingSeason": {
-                      "setback": 82,
-                      "setbackStartHour": 9,
-                      "totalWeeklySetbackHours": 42
-                    },
-                    "costs": [
-                      {
-                        "fixedCost": 240
-                      }
-                    ]
-                  }
-                ]
-              },
-              "waterHeating": {
-                "waterHeatingSystems": [
-                  {
-                    "id": "WaterHeater1",
-                    "remove": true
-                  },
-                  {
-                    "id": "WaterHeater2",
-                    "systemType": "heat pump water heater",
-                    "fuel": "electricity",
-                    "tankVolume": 80,
-                    "dhwLoadFraction": 1,
-                    "energyFactor": 3.5,
-                    "costs": [
-                      {
-                        "fixedCost": 5336
-                      }
-                    ]
-                  }
-                ]
-              }
-            }
-          },
-          "appliedImprovedBuilding": {
-            "buildingSummary": {
-              "conditionedFloorArea": 2413,
-              "averageCeilingHeight": 8,
-              "bathCount": 2,
-              "bedroomsCount": 4,
-              "residentCount": 5,
-              "storiesCount": 1,
-              "windowToWallFraction": 0.14,
-              "yearBuilt": 1945
-            },
-            "enclosure": {
-              "airInfiltration": {
-                "rate": 7,
-                "rateUnit": "ACH",
                 "housePressurePa": 50,
-                "costs": [
-                  {
-                    "fixedCost": 2928
-                  }
-                ]
+                "rate": 6,
+                "rateUnit": "ACH"
               },
               "attics": [
                 {
-                  "id": "Attic1",
-                  "area": 1225,
-                  "isVented": true,
-                  "floorAssemblyEffectiveRValue": 50.6,
-                  "costs": [
-                    {
-                      "fixedCost": 2450
-                    }
-                  ]
-                }
-              ],
-              "roofs": [
-                {
-                  "id": "Roof1",
-                  "area": 1370,
-                  "pitch": 6,
-                  "assemblyEffectiveRValue": 2.3
-                }
-              ],
-              "walls": [
-                {
-                  "id": "Wall1",
-                  "type": "wood stud",
-                  "assemblyEffectiveRValue": 4,
-                  "fractionAreaShared": 0
+                  "area": 860,
+                  "floorAssemblyEffectiveRValue": 31.6,
+                  "id": "AtticVented1",
+                  "isVented": true
                 }
               ],
               "foundations": [
                 {
+                  "area": 860,
                   "id": "BasementConditioned1",
                   "type": "basement conditioned",
-                  "area": 1188,
                   "wallHeight": 8
+                }
+              ],
+              "roofs": [
+                {
+                  "area": 961,
+                  "assemblyEffectiveRValue": 2.3,
+                  "id": "Roof1",
+                  "pitch": 6
+                }
+              ],
+              "walls": [
+                {
+                  "assemblyEffectiveRValue": 16,
+                  "fractionAreaShared": 0,
+                  "id": "Wall1Exposed",
+                  "type": "wood stud"
                 }
               ]
             },
             "systems": {
+              "electricalPanels": [
+                {
+                  "id": "ElectricalPanel1"
+                }
+              ],
               "hvac": {
-                "hvacCoolingSystems": [],
-                "hvacHeatingSystems": [],
-                "hvacHeatPumps": [
-                  {
-                    "id": "MiniSplit1",
-                    "systemType": "mini-split",
-                    "compressorType": "variable speed",
-                    "backupSystem": {
-                      "systemType": "integrated",
-                      "fuel": "electricity",
-                      "heatEfficiency": 1,
-                      "heatEfficiencyUnits": "percent"
-                    },
-                    "heatEfficiency": 11,
-                    "heatEfficiencyUnits": "HSPF",
-                    "coolEfficiency": 20,
-                    "coolEfficiencyUnits": "SEER",
-                    "heatLoadFraction": 1,
-                    "coolLoadFraction": 1,
-                    "costs": [
-                      {
-                        "fixedCost": 20190
-                      }
-                    ]
-                  }
-                ],
                 "hvacControlSystems": [
                   {
-                    "id": "HVACControl2",
-                    "heatingSeason": {
-                      "setpoint": 68,
-                      "setback": 64,
-                      "setbackStartHour": 23,
-                      "totalWeeklySetbackHours": 49
-                    },
                     "coolingSeason": {
-                      "setpoint": 78,
-                      "setback": 82,
-                      "setbackStartHour": 9,
-                      "totalWeeklySetbackHours": 42
+                      "setbackStartHour": null,
+                      "setbackTemp": null,
+                      "setpointTemp": 78,
+                      "totalWeeklySetbackHours": null
                     },
-                    "costs": [
-                      {
-                        "fixedCost": 240
-                      }
-                    ]
+                    "heatingSeason": {
+                      "setbackStartHour": null,
+                      "setbackTemp": null,
+                      "setpointTemp": 68,
+                      "totalWeeklySetbackHours": null
+                    },
+                    "id": "HVACControl1"
+                  }
+                ],
+                "hvacCoolingSystems": [
+                  {
+                    "compressorType": null,
+                    "coolCapacityBtuPerHour": null,
+                    "coolEfficiency": 13,
+                    "coolEfficiencyUnits": "SEER",
+                    "coolLoadFraction": 1,
+                    "id": "central air conditioner1",
+                    "systemType": "central air conditioner"
+                  }
+                ],
+                "hvacDistributionSystems": {
+                  "airDistributionSystems": [
+                    {
+                      "conditionedFloorAreaServed": 2580,
+                      "numberOfReturnRegisters": 3,
+                      "systemType": "regular velocity",
+                      "id": "HVACAirDistributionFurnaceAndCentralAC1",
+                      "ducts": [
+                        {
+                          "systemType": "return",
+                          "id": "HVACAirDistributionFurnaceAndCentralAC1return"
+                        },
+                        {
+                          "systemType": "supply",
+                          "id": "HVACAirDistributionFurnaceAndCentralAC1supply"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "hvacHeatingSystems": [
+                  {
+                    "fuel": "natural gas",
+                    "heatEfficiency": 0.8,
+                    "heatEfficiencyUnits": "AFUE",
+                    "heatLoadFraction": 1,
+                    "id": "Furnace1",
+                    "systemType": "furnace"
                   }
                 ]
               },
               "waterHeating": {
                 "waterHeatingSystems": [
                   {
-                    "id": "WaterHeater2",
-                    "systemType": "heat pump water heater",
-                    "fuel": "electricity",
-                    "tankVolume": 80,
-                    "dhwLoadFraction": 1,
-                    "energyFactor": 3.5,
                     "hotWaterTemperature": 125,
-                    "costs": [
-                      {
-                        "fixedCost": 5336
-                      }
-                    ]
+                    "dhwLoadFraction": 1,
+                    "tankVolume": 40,
+                    "connectedHeatingId": null,
+                    "fuel": "natural gas",
+                    "heatCapacityBtuPerHour": null,
+                    "systemType": "storage water heater",
+                    "energyFactor": 0.59,
+                    "id": "WaterHeater1",
+                    "uniformEnergyFactor": null,
+                    "location": null
                   }
                 ]
-              }
-            },
-            "appliances": {
-              "clothesDryers": [
-                {
-                  "id": "ClothesDryer1",
-                  "fuel": "electricity",
-                  "combinedEnergyFactor": 3.73,
-                  "isVented": true,
-                  "ventedFlowRate": 150
-                }
-              ],
-              "cookingRanges": [
-                {
-                  "id": "CookingRange1",
-                  "fuel": "electricity",
-                  "isInduction": false
-                }
-              ]
-            }
-          },
-          "modelCosts":   {
-            "totalImplementationCost": 50000.0,
-            "totalIncentives": 0.0,
-            "netModelCost": 0.0
-          },
-          "energyTotals": {
-            "monthly": {
-              "coalTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "mbtu": [0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0],
-                "mbtu": [0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0]
-              },
-              "total": {
-                "mbtu": [0.0]
-              }
-            }
-          },
-          "energyCosts": {
-            "monthly": {
-              "coalTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "electricityTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "fuelOilTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "naturalGasTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "propaneTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodCordTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodPelletsTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "total": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-            },
-            "annual": {
-              "coalTotal": [0.0],
-              "electricityTotal": [0.0],
-              "fuelOilTotal": [0.0],
-              "naturalGasTotal": [0.0],
-              "propaneTotal": [0.0],
-              "woodCordTotal": [0.0],
-              "woodPelletsTotal": [0.0],
-              "total": [0.0]
-            }
-          },
-          "emissionTotals": {
-            "monthly": {
-              "coalTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
-                ]
-              },
-              "woodCordTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "co2": [0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0]
-              },
-              "total": {
-                "co2": [0.0]
-              }
-            }
-          },
-          "energyTotalsDifferenceWithBase": {
-            "monthly": {
-              "coalTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "mbtu": [0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0],
-                "mbtu": [0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0]
-              },
-              "total": {
-                "mbtu": [0.0]
-              }
-            }
-          },
-          "energyCostsDifferenceWithBase": {
-            "monthly": {
-              "coalTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "electricityTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "fuelOilTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "naturalGasTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "propaneTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodCordTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodPelletsTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "total": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-            },
-            "annual": {
-              "coalTotal": [0.0],
-              "electricityTotal": [0.0],
-              "fuelOilTotal": [0.0],
-              "naturalGasTotal": [0.0],
-              "propaneTotal": [0.0],
-              "woodCordTotal": [0.0],
-              "woodPelletsTotal": [0.0],
-              "total": [0.0]
-            }
-          },
-          "emissionTotalsDifferenceWithBase": {
-            "monthly": {
-              "coalTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "co2": [0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0]
-              },
-              "total": {
-                "co2": [0.0]
-              }
-            }
-          },
-          "energyTotalsDifferenceWithPreviousModel": {
-            "monthly": {
-              "coalTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "mbtu": [0.0]
-              },
-              "electricityTotal": {
-                "kwh": [0.0],
-                "mbtu": [0.0]
-              },
-              "fuelOilTotal": {
-                "mbtu": [0.0]
-              },
-              "naturalGasTotal": {
-                "mbtu": [0.0]
-              },
-              "propaneTotal": {
-                "mbtu": [0.0]
-              },
-              "woodCordTotal": {
-                "mbtu": [0.0]
-              },
-              "woodPelletsTotal": {
-                "mbtu": [0.0]
-              },
-              "total": {
-                "mbtu": [0.0]
-              }
-            }
-          },
-          "energyCostsDifferenceWithPreviousModel": {
-            "monthly": {
-              "coalTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "electricityTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "fuelOilTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "naturalGasTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "propaneTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodCordTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "woodPelletsTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-              "total": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-            },
-            "annual": {
-              "coalTotal": [0.0],
-              "electricityTotal": [0.0],
-              "fuelOilTotal": [0.0],
-              "naturalGasTotal": [0.0],
-              "propaneTotal": [0.0],
-              "woodCordTotal": [0.0],
-              "woodPelletsTotal": [0.0],
-              "total": [0.0]
-            }
-          },
-          "emissionTotalsDifferenceWithPreviousModel": {
-            "monthly": {
-              "coalTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              },
-              "total": {
-                "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-              }
-            },
-            "annual": {
-              "coalTotal": {
-                "co2": [0.0]
-              },
-              "electricityTotal": {
-                "co2": [0.0]
-              },
-              "fuelOilTotal": {
-                "co2": [0.0]
-              },
-              "naturalGasTotal": {
-                "co2": [0.0]
-              },
-              "propaneTotal": {
-                "co2": [0.0]
-              },
-              "woodCordTotal": {
-                "co2": [0.0]
-              },
-              "woodPelletsTotal": {
-                "co2": [0.0]
-              },
-              "total": {
-                "co2": [0.0]
               }
             }
           }
         }
       ],
-      "totalEnergyCosts": 0,
+      "totalEnergyCosts": 2355.8356181792,
       "totalEmissions": {
-        "co2": 0
-      },
-      "totalEnergyCostsDifference": 0,
-      "totalEmissionsDifference": {
-        "co2": 0
+        "co2": 5.421467140221035
       }
     }
-  ],
-  "typical": {
-    "id": "e977edd4-f813-4f92-b807-2a62a80a2605",
-    "radiantId": "7842c56f-53c4-428b-9471-4ee9ee775c88",
-    "label": "TYPICAL",
-    "typicalBuilding": {
-      "buildingSummary": {
-        "conditionedFloorArea": 2413,
-        "averageCeilingHeight": 8,
-        "bathCount": 2,
-        "bedroomsCount": 4,
-        "residentCount": 5,
-        "storiesCount": 1,
-        "windowToWallFraction": 0.14,
-        "yearBuilt": 1945
-      },
-      "enclosure": {
-        "airInfiltration": {
-          "rate": 15,
-          "rateUnit": "ACH",
-          "housePressurePa": 50
-        },
-        "attics": [
-          {
-            "id": "Attic1",
-            "area": 1225,
-            "floorAssemblyEffectiveRValue": 20.6
-          }
-        ],
-        "roofs": [
-          {
-            "id": "Roof1",
-            "area": 1370,
-            "pitch": 6,
-            "assemblyEffectiveRValue": 2.3,
-            "lifetime": {
-              "replacementCost": 7000,
-              "endOfLifeDate": "2030-01-01"
-            }
-          }
-        ],
-        "walls": [
-          {
-            "id": "Wall1",
-            "type": "wood stud",
-            "assemblyEffectiveRValue": 4,
-            "fractionAreaShared": 0
-          }
-        ],
-        "foundations": [
-          {
-            "id": "BasementConditioned1",
-            "type": "basement conditioned",
-            "area": 1188,
-            "wallHeight": 8
-          }
-        ]
-      },
-      "systems": {
-        "hvac": {
-          "hvacCoolingSystems": [
-            {
-              "id": "RoomAirConditioner1",
-              "systemType": "room air conditioner",
-              "coolEfficiency": 10.7,
-              "coolEfficiencyUnits": "EER",
-              "coolLoadFraction": 0.33,
-              "lifetime": {
-                "replacementCost": 200,
-                "endOfLifeDate": "2024-07-01"
-              }
-            }
-          ],
-          "hvacHeatingSystems": [
-            {
-              "id": "ElectricResistance1",
-              "systemType": "electric resistance",
-              "fuel": "electricity",
-              "heatEfficiency": 1,
-              "heatEfficiencyUnits": "percent",
-              "heatLoadFraction": 1
-            }
-          ],
-          "hvacControlSystems": [
-            {
-              "id": "ManualThermostat1",
-              "heatingSeason": {
-                "setpoint": 78
-              },
-              "coolingSeason": {
-                "setpoint": 68
-              }
-            }
-          ],
-          "coolLoadGapFraction": 0.67
-        },
-        "waterHeating": {
-          "waterHeatingSystems": [
-            {
-              "id": "WaterHeater1",
-              "systemType": "storage water heater",
-              "fuel": "electricity",
-              "location": "living space",
-              "tankVolume": 40,
-              "dhwLoadFraction": 1,
-              "energyFactor": 0.92,
-              "hotWaterTemperature": 125,
-              "lifetime": {
-                "replacementCost": 1000,
-                "installedDate": "2015-11-12"
-              }
-            }
-          ]
-        }
-      },
-      "appliances": {
-        "clothesDryers": [
-          {
-            "id": "ClothesDryer1",
-            "fuel": "electricity",
-            "combinedEnergyFactor": 3.73,
-            "isVented": true,
-            "ventedFlowRate": 150
-          }
-        ],
-        "cookingRanges": [
-          {
-            "id": "CookingRange1",
-            "fuel": "electricity",
-            "isInduction": false
-          }
-        ]
-      }
-    },
-    "energyTotals": {
-      "monthly": {
-        "coalTotal": {
-          "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        },
-        "electricityTotal": {
-          "kwh": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-          "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        },
-        "fuelOilTotal": {
-          "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        },
-        "naturalGasTotal": {
-          "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        },
-        "propaneTotal": {
-          "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        },
-        "woodCordTotal": {
-          "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        },
-        "woodPelletsTotal": {
-          "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        },
-        "total": {
-          "mbtu": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        }
-      },
-      "annual": {
-        "coalTotal": {
-          "mbtu": [0.0]
-        },
-        "electricityTotal": {
-          "kwh": [0.0],
-          "mbtu": [0.0]
-        },
-        "fuelOilTotal": {
-          "mbtu": [0.0]
-        },
-        "naturalGasTotal": {
-          "mbtu": [0.0]
-        },
-        "propaneTotal": {
-          "mbtu": [0.0]
-        },
-        "woodCordTotal": {
-          "mbtu": [0.0]
-        },
-        "woodPelletsTotal": {
-          "mbtu": [0.0]
-        },
-        "total": {
-          "mbtu": [0.0]
-        }
-      }
-    },
-    "energyCosts": {
-      "monthly": {
-        "coalTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-        "electricityTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-        "fuelOilTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-        "naturalGasTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-        "propaneTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-        "woodCordTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-        "woodPelletsTotal": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-        "total": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-      },
-      "annual": {
-        "coalTotal": [0.0],
-        "electricityTotal": [0.0],
-        "fuelOilTotal": [0.0],
-        "naturalGasTotal": [0.0],
-        "propaneTotal": [0.0],
-        "woodCordTotal": [0.0],
-        "woodPelletsTotal": [0.0],
-        "total": [0.0]
-      }
-    },
-    "emissionTotals": {
-      "monthly": {
-        "coalTotal": {
-          "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        },
-        "electricityTotal": {
-          "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        },
-        "fuelOilTotal": {
-          "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        },
-        "naturalGasTotal": {
-          "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        },
-        "propaneTotal": {
-          "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        },
-        "woodCordTotal": {
-          "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        },
-        "woodPelletsTotal": {
-          "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        },
-        "total": {
-          "co2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        }
-      },
-      "annual": {
-        "coalTotal": {
-          "co2": [0.0]
-        },
-        "electricityTotal": {
-          "co2": [0.0]
-        },
-        "fuelOilTotal": {
-          "co2": [0.0]
-        },
-        "naturalGasTotal": {
-          "co2": [0.0]
-        },
-        "propaneTotal": {
-          "co2": [0.0]
-        },
-        "woodCordTotal": {
-          "co2": [0.0]
-        },
-        "woodPelletsTotal": {
-          "co2": [0.0]
-        },
-        "total": {
-          "co2": [0.0]
-        }
-      }
-    }
-  }
+  ]
 }
