@@ -26,7 +26,8 @@
               "residentCount": 5,
               "storiesCount": 1,
               "windowToWallFraction": 0.14,
-              "yearBuilt": 1945
+              "yearBuilt": 1945,
+              "propertyUse": "single-family detached"
             },
             "enclosure": {
               "airInfiltration": {
@@ -235,7 +236,8 @@
               "residentCount": 5,
               "storiesCount": 1,
               "windowToWallFraction": 0.14,
-              "yearBuilt": 1945
+              "yearBuilt": 1945,
+              "propertyUse": "single-family detached"
             },
             "enclosure": {
               "airInfiltration": {
