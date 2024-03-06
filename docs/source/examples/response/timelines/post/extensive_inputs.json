@@ -163,7 +163,8 @@
               "residentCount": 3.2366863905325443,
               "storiesCount": 2,
               "windowToWallFraction": 0.14,
-              "yearBuilt": 2007
+              "yearBuilt": 2007,
+              "propertyUse": "single-family detached"
             },
             "enclosure": {
               "airInfiltration": {
