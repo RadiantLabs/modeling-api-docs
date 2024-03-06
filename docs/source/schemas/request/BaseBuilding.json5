@@ -8,7 +8,8 @@
     "residentCount": 2,
     "storiesCount": 2,
     "windowToWallFraction": 0.14,
-    "yearBuilt": 1999
+    "yearBuilt": 1999,
+    "propertyUse": “single-family detached”
   },
   "enclosure": ENCLOSURE, // refer to Enclosure schema
   "systems": {
