@@ -9,7 +9,7 @@
     "storiesCount": 2,
     "windowToWallFraction": 0.14,
     "yearBuilt": 1999,
-    "propertyUse": “single-family detached”
+    "propertyUse": "single-family detached"
   },
   "enclosure": ENCLOSURE, // refer to Enclosure schema
   "systems": {
