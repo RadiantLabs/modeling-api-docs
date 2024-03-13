@@ -1,0 +1,24 @@
+{
+  "id": "ASHP1",
+  "connectedDistributionId": "HVACDistributionASHP1",
+  "systemType": "air-to-air",
+  "compressorType": "variable speed",
+  "backupSystem": {
+    "systemType": "integrated",
+    "heatingSwitchoverTemp": 10,
+    "fuel": "natural gas",
+    "heatEfficiency": 0.8,
+    "heatEfficiencyUnits": "AFUE",
+    "heatCapacityBtuPerHour": 2000,
+    "backupHvacId": "Boiler1",
+  },
+  "heatCapacityBtuPerHour": 1000.0,
+  "coolCapacityBtuPerHour": 1000.0,
+  "heatEfficiency": 10,
+  "heatEfficiencyUnits": "HSPF",
+  "coolEfficiency": 19,
+  "coolEfficiencyUnits": "SEER",
+  "heatLoadFraction": 0.8,
+  "coolLoadFraction": 0.8,
+  "lifetime": LIFETIME
+}
