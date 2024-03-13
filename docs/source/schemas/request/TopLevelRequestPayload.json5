@@ -1,18 +1,8 @@
 {
-  // Provide full address line for searching.
   "addressFull": "197 RANDALL RD, BALLSTON SPA, NY 12020",
-
-  // Or use address components directly.
-  "addressComponents": ADDRESS_COMPONENTS, // refer to the Address Components schema
-
-  "baseBuilding": BASE_BUILDING, // optional, refer to the Base Building schema
-
-  "globalControls": GLOBAL_CONTROLS, // optional, refer to the Global Controls schema
-
-  // If the default model controls object is provided, and no model controls object is present
-  // in a given model, values in this object are taken by default, affecting such model.
-  //
-  "defaultModelControls": MODEL_CONTROLS, // optional, refer to the Model Controls schema
-
-  "timelines": [ TIMELINE ], // optional, refer to the Timeline schema
+  "addressComponents": ADDRESS_COMPONENTS,
+  "baseBuilding": BASE_BUILDING,
+  "globalControls": GLOBAL_CONTROLS, 
+  "defaultModelControls": MODEL_CONTROLS,
+  "timelines": [ TIMELINE ]
 }
