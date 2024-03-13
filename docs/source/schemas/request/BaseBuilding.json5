@@ -1,4 +1,3 @@
-// BASE_BUILDING
 {
   "buildingSummary": {
     "conditionedFloorArea": 2413,
@@ -10,16 +9,12 @@
     "windowToWallFraction": 0.14,
     "yearBuilt": 1999
   },
-  "enclosure": ENCLOSURE, // refer to Enclosure schema
+  "enclosure": ENCLOSURE,
   "systems": {
-    "hvac": HVAC, // refer to HVAC schema
-    "waterHeating": WATER_HEATING, // refer to Water Heating schema
-    "electricalPanels": [ // limited to 1
-      ELECTRICAL_PANEL // refer to Electrical Panel schema
-    ],
-    "photovoltaics": [ // limited to 1
-      PHOTOVOLTAIC // refer to Photovoltaic schema
-    ],
+    "hvac": HVAC,
+    "waterHeating": WATER_HEATING,
+    "electricalPanels": [ ELECTRICAL_PANEL ],
+    "photovoltaics": [ PHOTOVOLTAIC ],
   },
-  "appliances": APPLIANCES // refer to Appliances schema
+  "appliances": APPLIANCES
 }
