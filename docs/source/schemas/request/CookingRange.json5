@@ -1,0 +1,6 @@
+{
+  "id": "CookingRange1",
+  "fuel": "electricity",
+  "isInduction": false,
+  "lifetime": LIFETIME
+}
