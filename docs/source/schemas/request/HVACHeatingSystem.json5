@@ -1,0 +1,11 @@
+{
+  "id": "Boiler1",
+  "connectedDistributionId": "HVACHydronicDistribtuionSystem1",
+  "systemType": "boiler",
+  "fuel": "natural gas",
+  "heatCapacityBtuPerHour": 1000.0,
+  "heatEfficiency": 0.8,
+  "heatEfficiencyUnits": "AFUE",
+  "heatLoadFraction": 0.8,
+  "lifetime": LIFETIME
+}
