@@ -3,67 +3,82 @@ Usage
 
 .. _introduction:
 
-Introduction
-------------
+Simple Request
+--------------
 
-This API is built with flexibility in mind to provide each user with as much or as little data they have available and develop the best representation of that house possible.
+Radiant Labs understands that API users may not always know all of the details about the building being modeled. We have built a logical, statistics-based
+system to define default building characteristics. This defaulting engine uses tax assessor data, building permits, regional building stock characteristics, and detailed hourly building simulations.
 
-Use cases
----------
-
-Address only request
-********************
-
-.. sidebar:: Address only request
-
-   .. literalinclude:: examples/request/timelines/post/simple_bare_bones.json
-      :language: json
-
-The simplest request available is a simple address. Our system will pull all available data for the address and build an energy model for the condition of the current house, which is called the ``baseBuilding``.
-
-Different modeling results resolution
-*************************************
-
-Energy consumption datapoints and derived calculations from any model can be requested in different resolutions: annual,
-monthly and hourly.
-
-.. See :ref:`modeling_results_resolution` for further details.
-
-See :doc:`modeling_results_resolution` for further details.
-
-Use automated measures
-**********************
-
-High-level operations applied to the base building, without requiring a full improved building definition.
-
-.. See :ref:`automated_measures` for further details.
-
-See :doc:`automated_measures` for further details.
-
-Request Example
-***************
-
-Send a POST request to `/v1/timelines` with the following payload.
+This endpoint is built with flexibility and ease of use in mind. It requires as little information as an address to build an energy model, such as the following
+payload. In this case, all characteristics of the ``baseBuilding`` would be populated using the Defaulting Engine. The response will include the ``appliedBaseBuilding``, which details what characteristics the defaulting engine used.
 
 .. literalinclude:: examples/request/timelines/post/simple_bare_bones.json
    :language: json
 
-Response Example
-****************
+See :ref:`address-only-response` for the response for this example.
 
-And the response will have the following structure.
+Defining known base building characteristics
+--------------------------------------------
 
-.. literalinclude:: examples/response/timelines/post/simple_bare_bones.json
-   :language: json
+To specify certain known building characteristics and leave other characteristics up to the Defaulting Engine, there are two methods:
 
+1. Define known properties and skip unknown properties. Any missing keys will be defaulted.
+  a. For example, in this payload for ``appliances``, ``clothesDryers`` is missing and would be defined using the Defaulting Engine.
 
+    .. code-block:: json
+    
+      "baseBuilding": {
+        "appliances": {
+          "cookingRanges": [
+            {
+              "id": "CookingRange1",
+              "fuel": "natural gas",
+              "isInduction": false
+            }
+          ]
+        }
+      }
 
-Extensive inputs and outputs
-****************************
+2. Define known properties and indicate unknown properties as ``null``.
+  a. For example, in this ``appliances`` payload, ``clothesDryer`` is ``null`` and would be defined using the Defaulting Engine.
 
-..
-   Lastly, see :ref:`extensive_inputs_and_outputs` for extensive request and response examples that showcase many
-   properties available in the API.
+    .. code-block:: json
+      :emphasize-lines: 3
+    
+      "baseBuilding": {
+        "appliances": {
+          "clothesDryers": null,
+          "cookingRanges": [
+            {
+              "id": "CookingRange1",
+              "fuel": "natural gas",
+              "isInduction": false
+            }
+          ]
+        }
+      }
 
-Lastly, see :doc:`extensive_inputs_and_outputs` for extensive request and response examples that showcase many properties
-available in the API.
+To specify that a certain property does not exist in the house and thus, the Defaulting Engine should :strong:`not` be used, an array should be left blank.
+
+   a. For example, in this payload for ``appliances``, ``clothesDryers`` is a blank array, which indicates that no clothes dryers exist in this building.
+
+  .. code-block:: json
+      :emphasize-lines: 3
+  
+    "baseBuilding": {
+      "appliances": {
+        "clothesDryers": [],
+        "cookingRanges": [
+          {
+            "id": "CookingRange1",
+            "fuel": "natural gas",
+            "isInduction": false
+          }
+        ]
+      }
+    }
+
+Extensive input options
+----------------
+
+See :ref:`extensive_inputs_and_outputs` for an example of the extensive properties available in the API to fully define a building.
