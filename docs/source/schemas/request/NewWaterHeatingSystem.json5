@@ -1,0 +1,6 @@
+{
+  "systemType": "storage water heater",
+  "efficiencyClass": "premium",
+  "dhwLoadFraction": 1.0,
+  "costs": [ COST ]
+}
