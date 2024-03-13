@@ -58,25 +58,25 @@ To specify certain known building characteristics and leave other characteristic
         }
       }
 
-To specify that a certain property does not exist in the house and thus, the Defaulting Engine should :strong:`not` be used, an array should be left blank.
+To specify that certain property does not exist in the house and thus, the Defaulting Engine should :strong:`not` be used, an array should be left blank.
 
-   a. For example, in this ``appliances`` payload, ``clothesDryers`` is a blank array, which indicates that no clothes dryers exist in this building.
+a. For example, in this ``appliances`` payload, ``clothesDryers`` is a blank array, which indicates that no clothes dryers exist in this building.
 
-      .. code-block:: json
-         :emphasize-lines: 3
-      
-       "baseBuilding": {
-         "appliances": {
-           "clothesDryers": [],
-           "cookingRanges": [
-             {
-               "id": "CookingRange1",
-               "fuel": "natural gas",
-               "isInduction": false
-             }
-           ]
-         }
-       }
+  .. code-block:: json
+   :emphasize-lines: 3
+  
+    "baseBuilding": {
+      "appliances": {
+        "clothesDryers": [],
+        "cookingRanges": [
+          {
+            "id": "CookingRange1",
+            "fuel": "natural gas",
+            "isInduction": false
+          }
+        ]
+      }
+    }
 
 Extensive input options
 ----------------
