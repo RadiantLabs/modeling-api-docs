@@ -1,0 +1,8 @@
+{
+  "id": "ClothesDryer1",
+  "fuel": "electricity",
+  "combinedEnergyFactor": 3.73,
+  "isVented": true,
+  "ventedFlowRate": 150,
+  "lifetime": LIFETIME
+}
