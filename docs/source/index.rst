@@ -6,11 +6,9 @@ Contents
    
    introduction
    usage
-   modeling_results_resolution
-   automated_measures
-   extensive_inputs_and_outputs
-   defaulting_engine
-   api
+   request_structure
+   response_structure
+   examples
 
 .. toctree::
    :caption: Interactive Documentation
