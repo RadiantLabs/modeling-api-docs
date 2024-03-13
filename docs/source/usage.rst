@@ -23,7 +23,7 @@ Defining known base building characteristics
 To specify certain known building characteristics and leave other characteristics up to the Defaulting Engine, there are two methods:
 
 1. Define known properties and skip unknown properties. Any missing keys will be defaulted.
-  a. For example, in this payload for ``appliances``, ``clothesDryers`` is missing and would be defined using the Defaulting Engine.
+  a. For example, in this ``appliances`` payload, ``clothesDryers`` is missing and would be defined using the Defaulting Engine.
 
     .. code-block:: json
     
@@ -60,23 +60,23 @@ To specify certain known building characteristics and leave other characteristic
 
 To specify that a certain property does not exist in the house and thus, the Defaulting Engine should :strong:`not` be used, an array should be left blank.
 
-   a. For example, in this payload for ``appliances``, ``clothesDryers`` is a blank array, which indicates that no clothes dryers exist in this building.
+   a. For example, in this ``appliances`` payload, ``clothesDryers`` is a blank array, which indicates that no clothes dryers exist in this building.
 
-  .. code-block:: json
-      :emphasize-lines: 3
-  
-    "baseBuilding": {
-      "appliances": {
-        "clothesDryers": [],
-        "cookingRanges": [
-          {
-            "id": "CookingRange1",
-            "fuel": "natural gas",
-            "isInduction": false
-          }
-        ]
-      }
-    }
+      .. code-block:: json
+         :emphasize-lines: 3
+      
+       "baseBuilding": {
+         "appliances": {
+           "clothesDryers": [],
+           "cookingRanges": [
+             {
+               "id": "CookingRange1",
+               "fuel": "natural gas",
+               "isInduction": false
+             }
+           ]
+         }
+       }
 
 Extensive input options
 ----------------
