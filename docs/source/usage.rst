@@ -1,7 +1,32 @@
-Usage
-=====
+Usage Instructions
+==================
 
-.. _introduction:
+Setup & Authentication
+----------------------
+
+To test the API ad-hoc, visit our `Interactive Modeling Documentation <https://radiantlabs-core-modeling-api.redoc.ly/>`__.
+
+All other requests to the Modeling API must include authentication credentials.
+
+API access tokens are applied to your requests to protect sensitive, personally-identifiable information and are compliant with common privacy and security standards.
+
+A valid token must be included as part of the HTTP ``Authorization`` header, using the `bearer` HTTP authorization scheme. The value of the header will be ``Bearer <token>``, where you replace <token> with a valid token. Valid tokens will be provided to established customers of the API. It is planned to add the ability to rotate tokens and set expiration dates in future releases.
+
+.. code-block::
+
+  Authorization: Bearer <token>
+
+
+Here is an example using cURL:
+
+.. code-block:: shell
+
+  curl -v 'https://api.radiantlabs.co/v1/timelines' \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer <token>' \
+    --data-raw '{"addressFull":"501 RANDALL RD, BALLSTON SPA, NY 12020"}' \
+    --compressed
+
 
 Simple Request
 --------------
@@ -17,8 +42,8 @@ payload. In this case, all characteristics of the ``baseBuilding`` would be popu
 
 See :ref:`address-only-response` for the response for this example.
 
-Defining known base building characteristics
---------------------------------------------
+Advanced Request
+----------------
 
 To specify certain known building characteristics and leave other characteristics up to the Defaulting Engine, there are two methods:
 
@@ -63,7 +88,7 @@ To specify that certain property does not exist in the house and thus, the Defau
 a. For example, in this ``appliances`` payload, ``clothesDryers`` is a blank array, which indicates that no clothes dryers exist in this building.
 
   .. code-block:: json
-   :emphasize-lines: 3
+    :emphasize-lines: 3
   
     "baseBuilding": {
       "appliances": {
@@ -77,8 +102,5 @@ a. For example, in this ``appliances`` payload, ``clothesDryers`` is a blank arr
         ]
       }
     }
-
-Extensive input options
-----------------
 
 See :ref:`extensive_inputs_and_outputs` for an example of the extensive properties available in the API to fully define a building.
