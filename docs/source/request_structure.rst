@@ -1,5 +1,5 @@
-Request Inputs
-==============
+Request Structure
+=================
 
 The following sections provide the specifications and syntax for each API request schema.
 
