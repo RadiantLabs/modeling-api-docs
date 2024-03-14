@@ -13,6 +13,8 @@ The following sections provide the specifications and syntax for each API reques
       - Object: This represents a single item that is not inherently a collection. An example of this is `Air Infiltration`_, which is characteristic of the entire building and thus can only be defined once.
       - Array: This represents an item that is inherently a collection, even if we don’t yet support more than one item. Often it will be an array of objects, where each object defines an item in the collection. `HVAC`_ and `Walls`_ are examples of this.
 
+.. _address:
+
 Address
 -------
 
@@ -34,12 +36,15 @@ Address Components
 .. literalinclude:: schemas/request/AddressComponents.json5
    :language: json
 
+.. _base_building:
 
 Base Building
 -------------
 
 .. literalinclude:: schemas/request/BaseBuilding.json5
    :language: javascript
+
+.. _building_summary:
 
 Building Summary
 ****************
@@ -59,12 +64,16 @@ Property                  Type     Units     Constraints  Required  Default     
 
 .. [#] ``bedroomsCount``/2 + 0.5
 
+.. _enclosure:
+
 Enclosure
 *********
 
 .. literalinclude:: schemas/request/Enclosure.json5
    :language: javascript
-   
+
+.. _air_infiltration:
+
 Air Infiltration
 ^^^^^^^^^^^^^^^^
 
@@ -77,6 +86,8 @@ Property                  Type     Units             Constraints  Required  Defa
 ========================  =======  ================  ===========  ========  ==================  ============================================== 
 
 .. [#] ``rateUnit`` options are "ACH" or "CFM"
+
+.. _attics:
 
 Attics
 ^^^^^^
@@ -93,6 +104,8 @@ Property                           Type     Units             Constraints     Re
 ``floorAssemblyEffectiveRValue``   float    F-ft2-hr/Btu      >0              no        BSA
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
+.. _roofs:
+
 Roofs
 ^^^^^
 
@@ -107,6 +120,8 @@ Property                           Type     Units             Constraints     Re
 ``pitch``                          float    ?:12              >=0             no        6   
 ``assemblyEffectiveRValue``        float    F-ft2-hr/Btu      >0              no        2.3 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
+
+.. _foundations:
 
 Foundations
 ^^^^^^^^^^^
@@ -124,6 +139,8 @@ Property                           Type     Units             Constraints     Re
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
 .. [#] ``type`` choices are "basement conditioned", "basement unconditioned", "crawl vented", "crawl unvented", "slab", and "pier and beam".
+
+.. _walls:
 
 Walls
 ^^^^^
@@ -143,6 +160,8 @@ Property                           Type     Units             Constraints     Re
 
 .. [#] ``type`` choices are "wood stud", "concrete masonry unit", "structural brick", "steel frame", "stone", "adobe", "log wall", and "solid concrete".
 
+.. _hvac:
+
 HVAC
 ****
 
@@ -151,6 +170,8 @@ Each HVAC system can be entered in ``...building.systems.hvac``.
 .. literalinclude:: schemas/request/HVAC.json5
    :language: javascript
    
+.. _hvac_cooling_systems:
+
 HVAC Cooling Systems
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -178,6 +199,8 @@ Property                           Type     Units                        Constra
 .. [#] ``compressorType`` choices are "single stage", "two stage", and "variable speed".
 .. [#] ``coolEfficiencyUnits`` choices are "percent", "EER", "CEER", and "SEER". The option to use "SEER2" is planned for a future release.
 
+.. _hvac_heating_systems:
+
 HVAC Heating Systems
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -203,6 +226,8 @@ Property                           Type     Units                        Constra
 .. [#] Required when ``systemType`` is "furnace" or "boiler".
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
 .. [#] ``heatEfficiencyUnits`` choices are "AFUE" and "percent".
+
+.. _hvac_heat_pumps:
 
 HVAC Heat Pumps
 ^^^^^^^^^^^^^^^
@@ -258,6 +283,8 @@ Property                           Type     Units                       Constrai
 .. [#] Must reference an defined ``hvacHeatingSystem.id``
 .. [#] Required when ``backupSystem.systemType`` is "separate".
 
+.. _air_distribution_systems:
+
 Air Distribution Systems
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -297,6 +324,8 @@ Property                           Type     Units                       Constrai
 .. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", and "other non-freezing space".
 .. [#] If ``location`` not provided, defaults to the first present space type: "basement conditioned", "basement unconditioned", "crawlspace vented", "crawlspace unvented", "attic vented", "attic unvented", "garage", or "living space".
 
+.. _hydronic_distribution_systems:
+
 Hydronic Distribution Systems
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -314,6 +343,7 @@ Property                           Type     Units                       Constrai
 ``conditionedFloorAreaServed``     float    ft2                         >0              no        PSC
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 
+.. _hvac_control_systems:
 
 HVAC Control Systems
 ^^^^^^^^^^^^^^^^^^^^
@@ -341,6 +371,8 @@ Property                           Type     Units                       Constrai
 ``setbackStartHour``               integer  time                        0-23            no        null    
 ``totalWeeklySetbackHours``        integer  hrs/week                    0-168           no        null    
 =================================  =======  ==========================  ==============  ========  ========================  ============================================== 
+
+.. _water_heating_systems:
 
 Water Heating Systems
 *********************
@@ -377,6 +409,8 @@ Property                                     Type     Units                     
 
   IECC zones 3A, 4-8, unknown: "basement conditioned", "basement unconditioned", "living space"
 
+.. _electrical_panels:
+
 Electrical Panels
 *****************
 
@@ -386,6 +420,7 @@ See note about `objects and arrays`_ for more information.
 .. literalinclude:: schemas/request/ElectricalPanel.json5
    :language: javascript
 
+.. _photovoltaics:
 
 Photovoltaics
 *************
@@ -415,6 +450,8 @@ Property                           Type     Units               Constraints     
 .. [#] ``tracking`` choices are "fixed", "1-axis", "1-axis backtracked", and "2-axis".
 .. [#] ``arrayOrientation`` choices are "northeast", "east", "southeast", "south", "southwest", "west", "northwest", and "north".
 
+.. _appliances:
+
 Appliances
 **********
 
@@ -422,7 +459,9 @@ Appliances can be entered in ``...building.appliances``.
 
 .. literalinclude:: schemas/request/Appliances.json5
    :language: javascript
-   
+
+.. _clothes_dryers:
+
 Clothes Dryers
 ^^^^^^^^^^^^^^
 
@@ -443,6 +482,8 @@ Property                           Type     Units             Constraints     Re
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
+
+.. _cooking_ranges:
 
 Cooking Ranges
 ^^^^^^^^^^^^^^
@@ -482,7 +523,8 @@ Property                           Type     Units               Constraints     
 
 .. [#] Required to run status quo timeline.
 .. [#LT] Two of these three properties (``endOfLifeDate``, ``effectiveUsefulLifeDays``, ``installedDate``) are required to be included in the status quo timeline.
-  
+
+
 Timelines
 ---------
 
@@ -494,6 +536,8 @@ Models
 
 .. literalinclude:: schemas/request/Model.json5
    :language: javascript
+
+.. _model_controls:
 
 Model Controls
 ^^^^^^^^^^^^^^
@@ -520,11 +564,15 @@ Weather
 .. literalinclude:: schemas/request/Weather.json5
    :language: javascript
 
+.. _loans:
+
 Loans
 ^^^^^
 
 .. literalinclude:: schemas/request/Loan.json5
    :language: javascript
+
+.. _incentives:
 
 Incentives
 ^^^^^^^^^^
@@ -914,11 +962,15 @@ Cost
 .. literalinclude:: schemas/request/Cost.json5
    :language: javascript
 
+.. _custom_measures:
+
 Custom Measures
 ^^^^^^^^^^^^^^^
 
 .. literalinclude:: schemas/request/CustomMeasure.json5
    :language: javascript
+
+.. _improved_building:
 
 Improved Building
 ^^^^^^^^^^^^^^^^^
