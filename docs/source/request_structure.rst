@@ -532,6 +532,8 @@ Incentives
 .. literalinclude:: schemas/request/Incentive.json5
    :language: javascript
 
+.. _automated_measures:
+
 Automated Measures
 ^^^^^^^^^^^^^^^^^^
 
