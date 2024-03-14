@@ -6,7 +6,9 @@ for building energy upgrades, fuel switching, renewable energy installations, an
 assessor, building permit, rooftop solar potential, utility bill, manufacturing, and energy program data to generate an hourly energy model 
 and anticipated replacement timelines for mechanical
   
-This site provides the documentation for our Modeling API, which is Radiant Labs' primary tool to generate energy models for homes.
+This site provides the documentation for our Modeling API, which is Radiant Labs’ primary tool to generate energy models for homes. The Modeling API can take as little information as a building address and generate an hourly energy model as the response. We use a vast array of data sources and databases to determine and infer all of the building characteristics necessary to generate an energy model. If you have additional observed information about the home such as the primary heating fuel, the type of windows, or the amount of attic insulation, you can send that data along in your API request and the model will replace our default and inferred data with that information, increasing the accuracy of the model. Eventually, we will add support for receiving utility bill data to assist in calibrating the model to actual consumption for the highest level of accuracy.
+
+The Modeling API also supports :ref:`automated_measures`, a streamlined approach to specifying improvements to be modeled. Answer simple questions about what upgrades will be performed and we will create an improved model and compare it to the base model to calculate energy savings.
 
 .. note::
 
