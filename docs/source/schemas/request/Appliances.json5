@@ -1,22 +1,4 @@
-// APPLIANCES
 {
-  "clothesDryers": [ // limited to 1
-    {
-      "id": "ClothesDryer1",
-      "fuel": "electricity",
-      "combinedEnergyFactor": 3.73,
-      "isVented": true,
-      "ventedFlowRate": 150,
-      "lifetime": LIFETIME // optional, refer to Lifetime schema
-    }
-  ],
-
-  "cookingRanges": [ // limited to 1
-    {
-      "id": "CookingRange1",
-      "fuel": "electricity",
-      "isInduction": false,
-      "lifetime": LIFETIME // optional, refer to Lifetime schema
-    }
-  ]
+  "clothesDryers": [ CLOTHES_DRYER ],
+  "cookingRanges": [ COOKING_RANGE ]
 }

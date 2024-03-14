@@ -1,0 +1,16 @@
+{
+  "id": "HVACControl1",
+  "heatingSeason": {
+    "setpointTemp": 68,
+    "setbackTemp": null,
+    "setbackStartHour": null,
+    "totalWeeklySetbackHours": null,
+  },
+  "coolingSeason": {
+    "setpointTemp": 78,
+    "setbackTemp": null,
+    "setbackStartHour": null,
+    "totalWeeklySetbackHours": null,
+  },
+  "lifetime": LIFETIME
+}

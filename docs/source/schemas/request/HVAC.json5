@@ -1,119 +1,12 @@
-// HVAC
 {
-  "hvacCoolingSystems": [ // limited to 1
-    {
-      "id": "CentralAirConditioner1", // required
-      "connectedDistributionId": "HVACDistributionFurnaceAndCentralAC1", // required if systemType = "central air conditioner"
-      "systemType": "central air conditioner", // required ("central air conditioner" | "room air conditioner" | "evaporative cooler" | "packaged terminal air conditioner" | "mini-split")
-      // note that "mini-split" is for a cooling only system. If system provides heating, it must be specified under hvacHeatPumps.
-      "coolCapacityBtuPerHour": 1000.0, //optional. If missing, model will autosize. See Model Controls for autosizing settings.
-      "compressorType": "single stage",
-      "coolEfficiency": 12,
-      "coolEfficiencyUnits": "SEER", //("percent" | "EER" | "CEER" | "SEER" | *"SEER2") //SEER2 coming soon
-      "coolLoadFraction": 0.8, // required. Sum of coolLoadFraction across all systems plus coolLoadGapFraction must equal 1.
-      "lifetime": LIFETIME // optional, refer to Lifetime schema
-    }
-  ],
-
-  "hvacHeatingSystems": [ // limited to 1
-    {
-      "id": "Boiler1", // required
-      "connectedDistributionId": null, // required for type "furnace" and "boiler"
-      "systemType": "boiler", // required ("electric resistance" | "furnace" | "wall furnace" | "boiler" | "stove" | "portable heater" | "fixed heater" | "fireplace")
-      "fuel": "natural gas", // ("electricity" | "natural gas" | "fuel oil" | "propane" | "coal" | "wood" | "wood pellets")
-      "heatCapacityBtuPerHour": 1000.0, //optional. If missing, model will autosize. See Model Controls for autosizing settings.
-      "heatEfficiency": 0.8,
-      "heatEfficiencyUnits": "AFUE", //("AFUE" | "percent")
-      "heatLoadFraction": 0.8, // required. Sum of heatLoadFraction across all systems plus heatLoadGapFraction must equal 1.
-      "lifetime": LIFETIME // optional, refer to Lifetime schema
-    }
-  ],
-
-  "hvacHeatPumps": [ // limited to 1
-    {
-      "id": "ASHP1", // required
-      "connectedDistributionId": "HVACDistributionASHP1", // required for "air-to-air" and "ground-to-air"
-      "systemType": "air-to-air", // required ("mini-split" | "air-to-air" | "ground-to-air")
-      "compressorType": "variable speed",
-      "backupSystem": {
-        "systemType": "integrated", // ("integrated" | "separate")
-        "heatingSwitchoverTemp": 10,
-        //required properties if systemType = "integrated"
-        "fuel": "natural gas", // ("electricity" | "natural gas" | "fuel oil" | "propane" | "coal" | "wood" | "wood pellets")
-        "heatEfficiency": 0.8,
-        "heatEfficiencyUnits": "AFUE", //("AFUE" | "percent")
-        "heatCapacityBtuPerHour": 2000,
-        //required properties if systemType = "separate"
-        "backupHvacId": "Boiler1",
-      },
-      "heatCapacityBtuPerHour": 1000.0, //optional. If missing, model will autosize. See Model Controls for autosizing settings.
-      "coolCapacityBtuPerHour": 1000.0, //optional. If missing, model will autosize. See Model Controls for autosizing settings.
-      "heatEfficiency": 10,
-      "heatEfficiencyUnits": "HSPF", //("HSPF" | *"HSPF2") //HSPF2 coming soon
-      "coolEfficiency": 19,
-      "coolEfficiencyUnits": "SEER",  //("SEER" | *"SEER2") //SEER2 coming soon
-      "heatLoadFraction": 0.8, // required. Sum of heatLoadFraction across all systems plus heatLoadGapFraction must equal 1.
-      "coolLoadFraction": 0.8, // required. Sum of coolLoadFraction across all systems plus coolLoadGapFraction must equal 1.
-      "lifetime": LIFETIME // optional, refer to Lifetime schema
-    }
-  ],
-
+  "hvacCoolingSystems": [ HVAC_COOLING_SYSTEM ],
+  "hvacHeatingSystems": [ HVAC_HEATING_SYSTEM ],
+  "hvacHeatPumps": [ HVAC_HEAT_PUMP ],
   "hvacDistributionSystems": {
-
-    "airDistributionSystems": [ // limited to 1
-      {
-        "id": "HVACDistributionFurnaceAndCentralAC1",
-        "systemType": "regular velocity", // ("regular velocity" | "gravity")
-        "numberOfReturnRegisters": 2,
-        "conditionedFloorAreaServed": 3456,
-        "ducts": [
-          {
-            "id": "HVACDistributionFurnaceAndCentral1Supply",
-            "systemType": "supply", // ("supply" | "return")
-            "insulationRValue": 0.0,
-            "leakageValue": 0.2,
-            "leakageUnits": "percent", // ("CFM25" | "CFM50" | "percent")
-            "location": "attic vented" // (“living space” | “basement conditioned” | “basement unconditioned” | “crawlspace unvented” | “crawlspace vented” | “attic unvented” | “attic vented” | “garage” | “outside” | “exterior wall” | “under slab” | “roof deck” | “other heated space” | “other non-freezing space”)
-          },
-          {
-            "id": "HVACDistributionFurnaceAndCentral1Return",
-            "systemType": "return",
-            "insulationRValue": 0.0,
-            "leakageValue": 0.2,
-            "leakageUnits": "percent", // ("CFM25" | "CFM50" | "percent")
-            "location": "attic vented" // (“living space” | “basement conditioned” | “basement unconditioned” | “crawlspace unvented” | “crawlspace vented” | “attic unvented” | “attic vented” | “garage” | “outside” | “exterior wall” | “under slab” | “roof deck” | “other heated space” | “other non-freezing space”)
-          },
-        ]
-      }
-    ],
-
-    "hydronicDistributionSystems": [ // limited to 1
-      {
-        "id": "HVACDistributionBoiler1",
-        "systemType": "baseboard", // ("baseboard" | "radiator" | "radiant floor" | "radiant ceiling" | "water loop"),
-        "conditionedFloorAreaServed": 3456
-      }
-    ]
+    "airDistributionSystems": [ AIR_DISTRIBUTION_SYSTEM ],
+    "hydronicDistributionSystems": [ HYDRONIC_DISTRIBUTION_SYSTEM ]
   },
-
-  "hvacControlSystems": [ // limited to 1
-    {
-      "id": "HVACControl1",
-      "heatingSeason": {
-        "setpointTemp": 68,
-        "setbackTemp": null,
-        "setbackStartHour": null,
-        "totalWeeklySetbackHours": null,
-      },
-      "coolingSeason": {
-        "setpointTemp": 78,
-        "setbackTemp": null,
-        "setbackStartHour": null,
-        "totalWeeklySetbackHours": null,
-      },
-      "lifetime": LIFETIME // optional, refer to Lifetime schema
-    }
-  ],
-  "coolLoadGapFraction": 0.2, // required if the sum of all systems' coolLoadFraction is less than 1.0.
-  "heatLoadGapFraction": 0.0, // required if the sum of all systems' heatLoadFraction is less than 1.0.
+  "hvacControlSystems": [ HVAC_CONTROL_SYSTEM ],
+  "coolLoadGapFraction": 0.2,
+  "heatLoadGapFraction": 0.0
 }
