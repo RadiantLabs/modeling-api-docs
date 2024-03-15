@@ -19,7 +19,7 @@ Address Found Full
 Address Found Components
 ************************
 
-Refer to the :ref:`address_found` schema.
+Refer to the :ref:`address_components` schema.
 
 Timelines
 ---------
