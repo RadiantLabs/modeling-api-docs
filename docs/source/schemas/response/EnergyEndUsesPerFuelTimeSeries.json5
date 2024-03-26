@@ -1,282 +1,282 @@
 {
-	"electricity": {
-		"heating": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"heatingFansPumps": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"heatingHeatPumpBackup": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"heatingHeatPumpBackupFansPumps": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"cooling": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"coolingFansPumps": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"hotWater": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"lightingInterior": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"lightingGarage": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"lightingExterior": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"mechVent": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"refrigerator": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"freezer": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"dehumidifier": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"dishwasher": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"clothesWasher": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"clothesDryer": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"rangeOven": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"ceilingFan": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"television": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"plugLoads": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"poolHeater": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"poolPump": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"permanentSpaHeater": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"permanentSpaPump": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		},
-		"pv": {
-			"mbtu": [0.0, ..., 0.0],
-			"kwh": [0.0, ..., 0.0]
-		}
-	},
-	"naturalGas": {	
-		"heating": {
-			"mbtu": [0.0, ..., 0.0],
-			"ccf": [0.0, ..., 0.0]
-		},
-		"heatingHeatPumpBackup": {
-			"mbtu": [0.0, ..., 0.0],
-			"ccf": [0.0, ..., 0.0]
-		},
-		"hotWater": {
-			"mbtu": [0.0, ..., 0.0],
-			"ccf": [0.0, ..., 0.0]
-		},
-		"clothesDryer": {
-			"mbtu": [0.0, ..., 0.0],
-			"ccf": [0.0, ..., 0.0]
-		},
-		"rangeOven": {
-			"mbtu": [0.0, ..., 0.0],
-			"ccf": [0.0, ..., 0.0]
-		},
-		"poolHeater": {
-			"mbtu": [0.0, ..., 0.0],
-			"ccf": [0.0, ..., 0.0]
-		},
-		"permanentSpaHeater": {
-			"mbtu": [0.0, ..., 0.0],
-			"ccf": [0.0, ..., 0.0]
-		},
-		"lighting": {
-			"mbtu": [0.0, ..., 0.0],
-			"ccf": [0.0, ..., 0.0]
-		},
-		"fireplace": {
-			"mbtu": [0.0, ..., 0.0],
-			"ccf": [0.0, ..., 0.0]
-		}
-	},
-	"fuelOil": {	
-		"heating": {
-			"mbtu": [0.0, ..., 0.0],
-			"gallons": [0.0, ..., 0.0]
-		},
-		"heatingHeatPumpBackup": {
-			"mbtu": [0.0, ..., 0.0],
-			"gallons": [0.0, ..., 0.0]
-		},
-		"hotWater": {
-			"mbtu": [0.0, ..., 0.0],
-			"gallons": [0.0, ..., 0.0]
-		},
-		"clothesDryer": {
-			"mbtu": [0.0, ..., 0.0],
-			"gallons": [0.0, ..., 0.0]
-		},
-		"rangeOven": {
-			"mbtu": [0.0, ..., 0.0],
-			"gallons": [0.0, ..., 0.0]
-		},
-		"lighting": {
-			"mbtu": [0.0, ..., 0.0],
-			"gallons": [0.0, ..., 0.0]
-		},
-		"fireplace": {
-			"mbtu": [0.0, ..., 0.0],
-			"gallons": [0.0, ..., 0.0]
-		}
-	},
-	"propane": {	
-		"heating": {
-			"mbtu": [0.0, ..., 0.0],
-			"gallons": [0.0, ..., 0.0]
-		},
-		"heatingHeatPumpBackup": {
-			"mbtu": [0.0, ..., 0.0],
-			"gallons": [0.0, ..., 0.0]
-		},
-		"hotWater": {
-			"mbtu": [0.0, ..., 0.0],
-			"gallons": [0.0, ..., 0.0]
-		},
-		"clothesDryer": {
-			"mbtu": [0.0, ..., 0.0],
-			"gallons": [0.0, ..., 0.0]
-		},
-		"rangeOven": {
-			"mbtu": [0.0, ..., 0.0],
-			"gallons": [0.0, ..., 0.0]
-		},
-		"lighting": {
-			"mbtu": [0.0, ..., 0.0],
-			"gallons": [0.0, ..., 0.0]
-		},
-		"fireplace": {
-			"mbtu": [0.0, ..., 0.0],
-			"gallons": [0.0, ..., 0.0]
-		}
-	},
-	"woodCord": {	
-		"heating": {
-			"mbtu": [0.0, ..., 0.0],
-		},
-		"heatingHeatPumpBackup": {
-			"mbtu": [0.0, ..., 0.0],
-		},
-		"hotWater": {
-			"mbtu": [0.0, ..., 0.0],
-		},
-		"clothesDryer": {
-			"mbtu": [0.0, ..., 0.0],
-		},
-		"rangeOven": {
-			"mbtu": [0.0, ..., 0.0],
-		},
-		"lighting": {
-			"mbtu": [0.0, ..., 0.0],
-		},
-		"fireplace": {
-			"mbtu": [0.0, ..., 0.0],
-		}
-	},
-	"woodPellets": {	
-		"heating": {
-			"mbtu": [0.0, ..., 0.0],
-		},
-		"heatingHeatPumpBackup": {
-			"mbtu": [0.0, ..., 0.0],
-		},
-		"hotWater": {
-			"mbtu": [0.0, ..., 0.0],
-		},
-		"clothesDryer": {
-			"mbtu": [0.0, ..., 0.0],
-		},
-		"rangeOven": {
-			"mbtu": [0.0, ..., 0.0],
-		},
-		"lighting": {
-			"mbtu": [0.0, ..., 0.0],
-		},
-		"fireplace": {
-			"mbtu": [0.0, ..., 0.0],
-		}
-	},
-	"coal": {	
-		"heating": {
-			"mbtu": [0.0, ..., 0.0],
-			"metricTons": [0.0, ..., 0.0]
-		},
-		"heatingHeatPumpBackup": {
-			"mbtu": [0.0, ..., 0.0],
-			"metricTons": [0.0, ..., 0.0]
-		},
-		"hotWater": {
-			"mbtu": [0.0, ..., 0.0],
-			"metricTons": [0.0, ..., 0.0]
-		},
-		"clothesDryer": {
-			"mbtu": [0.0, ..., 0.0],
-			"metricTons": [0.0, ..., 0.0]
-		},
-		"rangeOven": {
-			"mbtu": [0.0, ..., 0.0],
-			"metricTons": [0.0, ..., 0.0]
-		},
-		"lighting": {
-			"mbtu": [0.0, ..., 0.0],
-			"metricTons": [0.0, ..., 0.0]
-		},
-		"fireplace": {
-			"mbtu": [0.0, ..., 0.0],
-			"metricTons": [0.0, ..., 0.0]
-		}
-	}
+  "electricity": {
+    "heating": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "heatingFansPumps": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "heatingHeatPumpBackup": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "heatingHeatPumpBackupFansPumps": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "cooling": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "coolingFansPumps": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "hotWater": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "lightingInterior": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "lightingGarage": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "lightingExterior": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "mechVent": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "refrigerator": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "freezer": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "dehumidifier": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "dishwasher": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "clothesWasher": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "clothesDryer": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "rangeOven": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "ceilingFan": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "television": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "plugLoads": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "poolHeater": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "poolPump": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "permanentSpaHeater": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "permanentSpaPump": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    },
+    "pv": {
+      "mbtu": [0.0, ..., 0.0],
+      "kwh": [0.0, ..., 0.0]
+    }
+  },
+  "naturalGas": {
+    "heating": {
+      "mbtu": [0.0, ..., 0.0],
+      "ccf": [0.0, ..., 0.0]
+    },
+    "heatingHeatPumpBackup": {
+      "mbtu": [0.0, ..., 0.0],
+      "ccf": [0.0, ..., 0.0]
+    },
+    "hotWater": {
+      "mbtu": [0.0, ..., 0.0],
+      "ccf": [0.0, ..., 0.0]
+    },
+    "clothesDryer": {
+      "mbtu": [0.0, ..., 0.0],
+      "ccf": [0.0, ..., 0.0]
+    },
+    "rangeOven": {
+      "mbtu": [0.0, ..., 0.0],
+      "ccf": [0.0, ..., 0.0]
+    },
+    "poolHeater": {
+      "mbtu": [0.0, ..., 0.0],
+      "ccf": [0.0, ..., 0.0]
+    },
+    "permanentSpaHeater": {
+      "mbtu": [0.0, ..., 0.0],
+      "ccf": [0.0, ..., 0.0]
+    },
+    "lighting": {
+      "mbtu": [0.0, ..., 0.0],
+      "ccf": [0.0, ..., 0.0]
+    },
+    "fireplace": {
+      "mbtu": [0.0, ..., 0.0],
+      "ccf": [0.0, ..., 0.0]
+    }
+  },
+  "fuelOil": {
+    "heating": {
+      "mbtu": [0.0, ..., 0.0],
+      "gallons": [0.0, ..., 0.0]
+    },
+    "heatingHeatPumpBackup": {
+      "mbtu": [0.0, ..., 0.0],
+      "gallons": [0.0, ..., 0.0]
+    },
+    "hotWater": {
+      "mbtu": [0.0, ..., 0.0],
+      "gallons": [0.0, ..., 0.0]
+    },
+    "clothesDryer": {
+      "mbtu": [0.0, ..., 0.0],
+      "gallons": [0.0, ..., 0.0]
+    },
+    "rangeOven": {
+      "mbtu": [0.0, ..., 0.0],
+      "gallons": [0.0, ..., 0.0]
+    },
+    "lighting": {
+      "mbtu": [0.0, ..., 0.0],
+      "gallons": [0.0, ..., 0.0]
+    },
+    "fireplace": {
+      "mbtu": [0.0, ..., 0.0],
+      "gallons": [0.0, ..., 0.0]
+    }
+  },
+  "propane": {
+    "heating": {
+      "mbtu": [0.0, ..., 0.0],
+      "gallons": [0.0, ..., 0.0]
+    },
+    "heatingHeatPumpBackup": {
+      "mbtu": [0.0, ..., 0.0],
+      "gallons": [0.0, ..., 0.0]
+    },
+    "hotWater": {
+      "mbtu": [0.0, ..., 0.0],
+      "gallons": [0.0, ..., 0.0]
+    },
+    "clothesDryer": {
+      "mbtu": [0.0, ..., 0.0],
+      "gallons": [0.0, ..., 0.0]
+    },
+    "rangeOven": {
+      "mbtu": [0.0, ..., 0.0],
+      "gallons": [0.0, ..., 0.0]
+    },
+    "lighting": {
+      "mbtu": [0.0, ..., 0.0],
+      "gallons": [0.0, ..., 0.0]
+    },
+    "fireplace": {
+      "mbtu": [0.0, ..., 0.0],
+      "gallons": [0.0, ..., 0.0]
+    }
+  },
+  "woodCord": {
+    "heating": {
+      "mbtu": [0.0, ..., 0.0],
+    },
+    "heatingHeatPumpBackup": {
+      "mbtu": [0.0, ..., 0.0],
+    },
+    "hotWater": {
+      "mbtu": [0.0, ..., 0.0],
+    },
+    "clothesDryer": {
+      "mbtu": [0.0, ..., 0.0],
+    },
+    "rangeOven": {
+      "mbtu": [0.0, ..., 0.0],
+    },
+    "lighting": {
+      "mbtu": [0.0, ..., 0.0],
+    },
+    "fireplace": {
+      "mbtu": [0.0, ..., 0.0],
+    }
+  },
+  "woodPellets": {
+    "heating": {
+      "mbtu": [0.0, ..., 0.0],
+    },
+    "heatingHeatPumpBackup": {
+      "mbtu": [0.0, ..., 0.0],
+    },
+    "hotWater": {
+      "mbtu": [0.0, ..., 0.0],
+    },
+    "clothesDryer": {
+      "mbtu": [0.0, ..., 0.0],
+    },
+    "rangeOven": {
+      "mbtu": [0.0, ..., 0.0],
+    },
+    "lighting": {
+      "mbtu": [0.0, ..., 0.0],
+    },
+    "fireplace": {
+      "mbtu": [0.0, ..., 0.0],
+    }
+  },
+  "coal": {
+    "heating": {
+      "mbtu": [0.0, ..., 0.0],
+      "metricTons": [0.0, ..., 0.0]
+    },
+    "heatingHeatPumpBackup": {
+      "mbtu": [0.0, ..., 0.0],
+      "metricTons": [0.0, ..., 0.0]
+    },
+    "hotWater": {
+      "mbtu": [0.0, ..., 0.0],
+      "metricTons": [0.0, ..., 0.0]
+    },
+    "clothesDryer": {
+      "mbtu": [0.0, ..., 0.0],
+      "metricTons": [0.0, ..., 0.0]
+    },
+    "rangeOven": {
+      "mbtu": [0.0, ..., 0.0],
+      "metricTons": [0.0, ..., 0.0]
+    },
+    "lighting": {
+      "mbtu": [0.0, ..., 0.0],
+      "metricTons": [0.0, ..., 0.0]
+    },
+    "fireplace": {
+      "mbtu": [0.0, ..., 0.0],
+      "metricTons": [0.0, ..., 0.0]
+    }
+  }
 }
