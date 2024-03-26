@@ -1,100 +1,14 @@
+// ENERGY_END_USES
 {
-	"electricity": {
-		"mbtu": {	
-			"heating": [0.0, ..., 0.0],
-			"heatingFansPumps": [0.0, ..., 0.0],
-			"heatingHeatPumpBackup": [0.0, ..., 0.0],
-			"heatingHeatPumpBackupFansPumps": [0.0, ..., 0.0],
-			"cooling": [0.0, ..., 0.0],
-			"coolingFansPumps": [0.0, ..., 0.0],
-			"hotWater": [0.0, ..., 0.0],
-			"lightingInterior": [0.0, ..., 0.0],
-			"lightingGarage": [0.0, ..., 0.0],
-			"lightingExterior": [0.0, ..., 0.0],
-			"mechVent": [0.0, ..., 0.0],
-			"refrigerator": [0.0, ..., 0.0],
-			"freezer": [0.0, ..., 0.0],
-			"dehumidifier": [0.0, ..., 0.0],
-			"dishwasher": [0.0, ..., 0.0],
-			"clothesWasher": [0.0, ..., 0.0],
-			"clothesDryer": [0.0, ..., 0.0],
-			"rangeOven": [0.0, ..., 0.0],
-			"ceilingFan": [0.0, ..., 0.0],
-			"television": [0.0, ..., 0.0],
-			"plugLoads": [0.0, ..., 0.0],
-			"poolHeater": [0.0, ..., 0.0],
-			"poolPump": [0.0, ..., 0.0],
-			"permanentSpaHeater": [0.0, ..., 0.0],
-			"permanentSpaPump": [0.0, ..., 0.0],
-			"pv": 0.0
-		}
-	},
-	"naturalGas": {	
-		"mbtu": {	
-			"heating": [0.0, ..., 0.0],
-			"heatingHeatPumpBackup": [0.0, ..., 0.0],
-			"hotWater": [0.0, ..., 0.0],
-			"clothesDryer": [0.0, ..., 0.0],
-			"rangeOven": [0.0, ..., 0.0],
-			"poolHeater": [0.0, ..., 0.0],
-			"permanentSpaHeater": [0.0, ..., 0.0],
-			"lighting": [0.0, ..., 0.0],
-			"fireplace": 0.0
-		}
-	},
-	"fuelOil": {	
-		"mbtu": {	
-			"heating": [0.0, ..., 0.0],
-			"heatingHeatPumpBackup": [0.0, ..., 0.0],
-			"hotWater": [0.0, ..., 0.0],
-			"clothesDryer": [0.0, ..., 0.0],
-			"rangeOven": [0.0, ..., 0.0],
-			"lighting": [0.0, ..., 0.0],
-			"fireplace": 0.0
-		}
-	},
-	"propane": {	
-		"mbtu": {	
-			"heating": [0.0, ..., 0.0],
-			"heatingHeatPumpBackup": [0.0, ..., 0.0],
-			"hotWater": [0.0, ..., 0.0],
-			"clothesDryer": [0.0, ..., 0.0],
-			"rangeOven": [0.0, ..., 0.0],
-			"lighting": [0.0, ..., 0.0],
-			"fireplace": 0.0
-		}
-	},
-	"woodCord": {	
-		"mbtu": {	
-			"heating": [0.0, ..., 0.0],
-			"heatingHeatPumpBackup": [0.0, ..., 0.0],
-			"hotWater": [0.0, ..., 0.0],
-			"clothesDryer": [0.0, ..., 0.0],
-			"rangeOven": [0.0, ..., 0.0],
-			"lighting": [0.0, ..., 0.0],
-			"fireplace": 0.0
-		}
-	},
-	"woodPellets": {	
-		"mbtu": {	
-			"heating": [0.0, ..., 0.0],
-			"heatingHeatPumpBackup": [0.0, ..., 0.0],
-			"hotWater": [0.0, ..., 0.0],
-			"clothesDryer": [0.0, ..., 0.0],
-			"rangeOven": [0.0, ..., 0.0],
-			"lighting": [0.0, ..., 0.0],
-			"fireplace": 0.0
-		}
-	},
-	"coal": {	
-		"mbtu": {	
-			"heating": [0.0, ..., 0.0],
-			"heatingHeatPumpBackup": [0.0, ..., 0.0],
-			"hotWater": [0.0, ..., 0.0],
-			"clothesDryer": [0.0, ..., 0.0],
-			"rangeOven": [0.0, ..., 0.0],
-			"lighting": [0.0, ..., 0.0],
-			"fireplace": 0.0
-		}
-	}
+  // given if resolution included "hourly"
+  // it is guaranteed the timeseries will contain 8,760 datapoints
+  "hourly": ENERGY_END_USES_PER_FUEL_TIME_SERIES,
+
+  // given if resolution included "monthly"
+  // it is guaranteed the timeseries will contain 12 datapoints
+  "monthly": ENERGY_END_USES_PER_FUEL_TIME_SERIES,
+
+  // given if resolution included "annual"
+  // it is guaranteed the timeseries will only contain 1 datapoint
+  "annual": ENERGY_END_USES_PER_FUEL_TIME_SERIES,
 }
