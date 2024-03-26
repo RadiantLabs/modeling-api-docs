@@ -74,6 +74,7 @@
             }
           }
         ],
+        "coolLoadGapFraction": 0.67,
         "hvacHeatingSystems": [
           {
             "id": "ElectricResistance1",
@@ -84,6 +85,7 @@
             "heatLoadFraction": 1
           }
         ],
+        "heatLoadGapFraction": 0,
         "hvacControlSystems": [
           {
             "id": "HVACControl1",
