@@ -35,6 +35,7 @@
   },
 
   "energyTotals": ENERGY_TOTALS,
+  "energyEndUses": ENERGY_END_USES,
   "energyCosts": ENERGY_COSTS,
   "emissionTotals": EMISSION_TOTALS,
 

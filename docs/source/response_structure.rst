@@ -70,6 +70,30 @@ Energy Totals per Fuel Time Series
 .. literalinclude:: schemas/response/EnergyTotalsPerFuelTimeSeries.json5
    :language: javascript
 
+Energy End Uses
+~~~~~~~~~~~~~~~
+
+.. literalinclude:: schemas/response/EnergyEndUses.json5
+   :language: javascript
+
+Energy End Uses per Fuel Time Series
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. literalinclude:: schemas/response/EnergyEndUsesPerFuelTimeSeries.json5
+   :language: javascript
+
+================================== ==========================================================================================================
+Property                           Notes
+================================== ==========================================================================================================
+``heating``                        Excludes heat pump backup and fans/pumps
+``heatingFansPumps``               Includes supply fan (air distribution) or circulating pump (hydronic distribution or geothermal loop)
+``heatingHeatPumpBackup``          Excludes heat pump backup fans/pumps
+``heatingHeatPumpBackupFansPumps`` Includes supply fan (air distribution) or circulating pump (hydronic distribution) during heat pump backup
+``cooling``                        Excludes fans/pumps
+``coolingFansPumps``               Includes supply fan (air distribution) and circulating pump (geothermal loop)
+``pv``                             Negative value for any power produced
+================================== ==========================================================================================================
+
 Energy Costs
 ~~~~~~~~~~~~
 
