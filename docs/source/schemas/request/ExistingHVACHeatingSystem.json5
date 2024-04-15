@@ -1,0 +1,8 @@
+{
+  "action": "adjust",
+  "adjust": {
+    "heatLoadFraction": 0.2,
+    "backup": true
+  },
+  "costs": [ COST ]
+}
