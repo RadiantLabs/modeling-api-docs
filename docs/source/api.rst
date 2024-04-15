@@ -366,7 +366,7 @@ Property                           Type     Units                        Constra
 .. [#] If ``systemType`` is "central air conditioner"
 .. [#] ``systemType`` choices are "central air conditioner", "room air conditioner", "evaporative cooler", "packaged terminal air conditioner", and "mini-split".
 .. [#] ``compressorType`` choices are "single stage", "two stage", and "variable speed".
-.. [#] ``coolEfficiencyUnits`` choices are "percent", "EER", "CEER", "SEER", and "SEER2".
+.. [#] ``coolEfficiencyUnits`` choices are "fraction", "EER", "CEER", "SEER", and "SEER2".
 
 HVAC Heating Systems
 ~~~~~~~~~~~~~~~~~~~~
@@ -389,7 +389,7 @@ Property                           Type     Units                        Constra
 
 .. [#] Required when ``systemType`` is "furnace" or "boiler".
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
-.. [#] ``heatEfficiencyUnits`` choices are "AFUE" and "percent".
+.. [#] ``heatEfficiencyUnits`` choices are "AFUE" and "fraction".
 
 HVAC Heat Pumps
 ~~~~~~~~~~~~~~~
@@ -431,14 +431,14 @@ Property                           Type     Units                       Constrai
 ``heatingSwitchoverTemp``          float    F                                           no                            determined by modeling engine if undefined
 ``fuel``                           string                               see [#]_        no        electricity         only applicable if backupSystem.systemType = "integrated"
 ``heatEfficiency``                 float    see ``heatEfficiencyUnit``  0-1             no        1                   only applicable if backupSystem.systemType = "integrated"
-``heatEfficiencyUnits``            string                               see [#]_        no        percent             only applicable if backupSystem.systemType = "integrated"
+``heatEfficiencyUnits``            string                               see [#]_        no        fraction             only applicable if backupSystem.systemType = "integrated"
 ``heatCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined, only applicable if backupSystem.systemType = "integrated"
 ``backupHvacId``                   idref                                see [#]_        see [#]_  PSC
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 
 .. [#] ``systemType`` choices are "integrated" and "separate".
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
-.. [#] ``heatEfficiencyUnits`` choices are "AFUE" and "percent".
+.. [#] ``heatEfficiencyUnits`` choices are "AFUE" and "fraction".
 .. [#] Must reference a defined ``hvacHeatingSystem.id``
 .. [#] Required when ``backupSystem.systemType`` is "separate".
 
@@ -469,12 +469,12 @@ Property                           Type     Units                       Constrai
 ``systemType``                     string                               see [#]_        yes       "supply" and "return"   both supply and return must be defined
 ``insulationRValue``               float    F-ft2-hr/Btu                >=0             no        0   
 ``leakageValue``                   float    see ``leakageUnits``        >=0             no        BSA    
-``leakageUnits``                   string                               see [#]_        no        Percent 
+``leakageUnits``                   string                               see [#]_        no        fraction 
 ``location``                       string                               see [#]_        no        see notes [#]_
 =================================  =======  ==========================  ==============  ========  ======================  ============================================== 
 
 .. [#] ``systemType`` choices are "supply" and "return".
-.. [#] ``leakageUnits`` choices are"CFM25", "CFM50", and "percent".
+.. [#] ``leakageUnits`` choices are "CFM25", "CFM50", and "fraction".
 .. [#] ``location`` choices are "conditioned space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", "other non-freezing space", and "manufactured home belly".
 .. [#] If ``location`` not provided, defaults to the first present space type: "basement conditioned", "basement unconditioned", "crawlspace conditioned", "crawlspace vented", "crawlspace unvented", "attic vented", "attic unvented", "garage", or "conditioned space".
 
@@ -726,7 +726,8 @@ Property                                     Type     Units                     
 ``tankVolume``                               float    gal                                         no
 ``dhwLoadFraction``                          float    fraction                    0-1             yes                             sum of dhwLoadFraction must equal 1
 ``heatCapacityBtuPerHour``                   float    Btu/hr                      >0              no                              autosized by modeling engine if undefined
-``energyFactor`` or ``uniformEnergyFactor``  float    fraction                    <1              no        BSA
+``efficiency``                               float    fraction                    >0              no        BSA
+``efficiencyUnits``                          string                               see [#]_        no        fraction
 ``hotWaterTemperature``                      float    F                           >0              no        125 
 ===========================================  =======  ==========================  ==============  ========  ====================  ============================================== 
 
@@ -740,6 +741,7 @@ Property                                     Type     Units                     
   IECC zones 1-3, excluding 3A: "garage", "conditioned space"
 
   IECC zones 3A, 4-8, unknown: "basement conditioned", "basement unconditioned", "conditioned space"
+.. [#] ``efficiencyUnits`` choices are "EF" and "UEF".
 
 .. _weather:
 
