@@ -123,17 +123,17 @@ connected to the base building's heating and cooling systems.
 
 ``adjust`` schema for existing HVAC distribution system:
 
-  ====================  =======  ===========  ==============================================
+  ====================  =======  ===========  ========================================================
   Property              Type     Constraints  Description
-  ====================  =======  ===========  ==============================================
-  ``leakageUnits``      String   See [#]_     Duct leakage units
+  ====================  =======  ===========  ========================================================
+  ``leakageUnits``      String   See [#]_     Duct leakage units must be the same as ``baseBuilding``
   ``leakageValue``      Double   >= 0.0       Duct leakage value
   ``insulationRValue``  Double   >= 0.0
-  ====================  =======  ===========  ==============================================
+  ====================  =======  ===========  ========================================================
 
   Values can be defined and will only be applied if applicable. For example, if there isn't ``airDistribution``, then ``leakageValue`` won't be applied.
   
-  .. [#] Units choices are CFM25, CFM50, or Percent.
+  .. [#] Units choices are "CFM25", "CFM50", or "fraction".
 
 .. _existing_water_heating_system:
 
@@ -218,7 +218,7 @@ Characteristics of a new water heating system can be entered in ``automatedMeasu
   =====================  ====================  ===========  ========  =======  ===================================
   Property               Type                  Constraints  Required  Default  Description
   =====================  ====================  ===========  ========  =======  ===================================
-  ``systemType``         String                See [#]_     Yes                Type of water heating system. fuelType assumed as base heating fuel for "storage water heater" and "instantaneous water heater".
+  ``systemType``         String                See [#]_     Yes                Type of water heating system. ``fuelType`` assumed as base heating fuel for "storage water heater" and "instantaneous water heater".
   ``efficiencyClass``    String                See [#]_     Yes
   ``dhwLoadFraction``    Double                0 - 1 [#]_   No        1.0      DHW load for the new water heating system
   ``costs``              Array of :ref:`cost`               No        ``[]``   Implied costs of measure
