@@ -119,7 +119,7 @@
                           "systemType": "supply",
                           "insulationRValue": 0.0,
                           "leakageValue": 0.2,
-                          "leakageUnits": "percent",
+                          "leakageUnits": "fraction",
                           "location": "attic vented"
                         },
                         {
@@ -127,7 +127,7 @@
                           "systemType": "return",
                           "insulationRValue": 0.0,
                           "leakageValue": 0.2,
-                          "leakageUnits": "percent",
+                          "leakageUnits": "fraction",
                           "location": "attic vented"
                         }
                       ]
@@ -144,7 +144,8 @@
                     "location": "conditioned space",
                     "tankVolume": 40,
                     "dhwLoadFraction": 1.0,
-                    "energyFactor": 0.59,
+                    "efficiency": 0.59,
+                    "efficiencyUnits": "EF",
                     "hotWaterTemperature": 125.0,
                     "lifetime": {
                       "replacementCost": 1000,
