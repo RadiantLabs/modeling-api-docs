@@ -81,7 +81,7 @@
             "systemType": "electric resistance",
             "fuel": "electricity",
             "heatEfficiency": 1,
-            "heatEfficiencyUnits": "percent",
+            "heatEfficiencyUnits": "fraction",
             "heatLoadFraction": 1
           }
         ],
@@ -101,7 +101,8 @@
       "waterHeating": {
         "waterHeatingSystems": [
           {
-            "energyFactor": 0.92,
+            "efficiency": 0.92,
+            "efficiencyUnits": "EF",
             "dhwLoadFraction": 1,
             "systemType": "storage water heater",
             "fuel": "electricity",
@@ -228,7 +229,7 @@
                       "systemType": "integrated",
                       "fuel": "electricity",
                       "heatEfficiency": 1,
-                      "heatEfficiencyUnits": "percent"
+                      "heatEfficiencyUnits": "fraction"
                     },
                     "coolEfficiencyUnits": "SEER",
                     "heatEfficiencyUnits": "HSPF",
@@ -278,7 +279,8 @@
                     "fuel": "electricity",
                     "tankVolume": 80,
                     "dhwLoadFraction": 1,
-                    "energyFactor": 3.5,
+                    "efficiency": 3.5,
+                    "efficiencyUnits": "EF",
                     "costs": [
                       {
                         "fixedCost": 5336
