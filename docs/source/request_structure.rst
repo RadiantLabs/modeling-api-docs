@@ -197,7 +197,7 @@ Property                           Type     Units                        Constra
 .. [#] If ``systemType`` is "central air conditioner"
 .. [#] ``systemType`` choices are "central air conditioner", "room air conditioner", "evaporative cooler", "packaged terminal air conditioner", and "mini-split".
 .. [#] ``compressorType`` choices are "single stage", "two stage", and "variable speed".
-.. [#] ``coolEfficiencyUnits`` choices are "fraction", "EER", "CEER", "SEER", and "SEER2".
+.. [#] ``coolEfficiencyUnits`` choices "EER" and "CEER" for room air conditioners and packaged terminal air conditioners. "SEER" and "SEER2" are the choices for central air conditioners and mini-splits. Evaporative coolers do not require `coolEfficiency`. 
 
 .. _hvac_heating_systems:
 
