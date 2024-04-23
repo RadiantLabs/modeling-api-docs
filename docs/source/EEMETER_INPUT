@@ -1,0 +1,9 @@
+{
+  "ADDRESS": "501 RANDALL RD, BALLSTON SPA, NY 12020", 
+  "METER_TYPE": "ELECTRIC", // ("GAS" | "ELECTRIC")
+  "REPORTING_FREQUENCY": "HOURLY", //*("HOURLY", "DAILY")
+   "TIME": ["2019-09-09T18:00:00Z", ..., "2019-09-09T19:00:00Z"], // 8760 rows of timestamps corresponidng to the meter reading, 8760 rows if hourly, 365 if daily 
+   "OBSERVED": [0.1,  ..., 0.2], //8760 rows of meter readings
+   "UNIT": "KWH", // ("KWH"| "THERMS"| "BTU")
+   "NORMAL_WEATHER_SOURCE": "TMY3", //("TMY3"| "GSOD" | "CZ2010")
+ }
