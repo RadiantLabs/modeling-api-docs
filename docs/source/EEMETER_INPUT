@@ -1,10 +1,10 @@
 {
-  "ADDRESS": "501 RANDALL RD, BALLSTON SPA, NY 12020", 
-  "ZIP_CODE"L "95407",
-  "METER_TYPE": "ELECTRIC", // ("GAS" | "ELECTRIC")
+  "aDDRESS": "501 RANDALL RD, BALLSTON SPA, NY 12020", // not required
+  "zipCode": "95407",
+  "METER_TYPE": "ELECTRIC", // ("GAS" | "electricity")
   "REPORTING_FREQUENCY": "HOURLY", //("HOURLY", "DAILY")
   "TIME": ["2019-09-09T18:00:00Z", ..., "2019-09-09T19:00:00Z"], // 8760 rows if frequency is hourly, 365 if daily 
   "OBSERVED": [0.1,  ..., 0.2], //8760 rows of meter readings
-  "UNIT": "KWH", // ("KWH"| "THERMS"| "BTU")
+  "UNITS": "KWH", // ("KWH"| "THERMS"| "BTU")
   "NORMAL_WEATHER_SOURCE": "TMY3", //("TMY3"| "GSOD" | "CZ2010")
  }
