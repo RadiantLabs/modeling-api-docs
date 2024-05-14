@@ -154,7 +154,7 @@ Property                  Type     Units     Constraints  Required  Default     
 
 .. [#] ``bedroomsCount``/2 + 0.5
 .. [#] ``propertyUse`` options are “single-family detached”, “single-family attached”, or “manufactured home”
-.. [#] ``propertyUse`` is an advanced field. Overriding the existing property use may produce in abnormal model results. 
+.. [#] ``propertyUse`` is an advanced field. Overriding the existing property use may produce in abnormal model results. If you set this, we recommend setting square footage as well.
 
 .. _cost:
 
