@@ -93,7 +93,7 @@ Request
 
 Send a POST request to `/v1/timelines` with the following payload.
 
-.. literalinclude:: examples/request/timelines/post/automated_measures_with_new_heat_pump.json
+.. literalinclude:: examples/request/timelines/post/automated_measures_new_heat_pump.json
    :language: json
 
 Response
@@ -101,5 +101,5 @@ Response
 
 And the response will have the following structure.
 
-.. literalinclude:: examples/response/timelines/post/automated_measures_with_new_heat_pump.json
+.. literalinclude:: examples/response/timelines/post/automated_measures_new_heat_pump.json
    :language: json
