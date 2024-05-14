@@ -1,7 +1,7 @@
 {
-  "addressFull": "197 RANDALL RD, BALLSTON SPA, NY 12020",
+  "addressFull": "504 RANDALL RD, BALLSTON SPA, NY 12020",
   "addressComponents": {
-    "addressLine1": "197 Randall Rd",
+    "addressLine1": "504 Randall Rd",
     "city": "Ballston Spa",
     "stateAbbreviation": "NY",
     "zipCode": "12020"
