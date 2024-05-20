@@ -727,7 +727,7 @@ Property                                     Type     Units                     
 ``dhwLoadFraction``                          float    fraction                    0-1             yes                             sum of dhwLoadFraction must equal 1
 ``heatCapacityBtuPerHour``                   float    Btu/hr                      >0              no                              autosized by modeling engine if undefined
 ``efficiency``                               float    fraction                    >0              no        BSA
-``efficiencyUnits``                          string                               see [#]_        no        fraction
+``efficiencyUnits``                          string                               see [#]_        no        BSA
 ``hotWaterTemperature``                      float    F                           >0              no        125 
 ===========================================  =======  ==========================  ==============  ========  ====================  ============================================== 
 
