@@ -66,8 +66,8 @@ Download the response example with hourly datapoints here: :download:`simple_wit
    In a future release, we'll automatically compress the response payload including hourly data and inform the client
    through the `Content-Encoding` HTTP response header.
 
-Extensive
----------
+Using baseBuilding
+------------------
 
 Request
 *******
@@ -83,4 +83,23 @@ Response
 And the response will have the following structure.
 
 .. literalinclude:: examples/response/timelines/post/extensive_inputs.json
+   :language: json
+
+Using automatedMeasures
+-----------------------
+
+Request
+*******
+
+Send a POST request to `/v1/timelines` with the following payload.
+
+.. literalinclude:: examples/request/timelines/post/automated_measures_new_heat_pump.json
+   :language: json
+
+Response
+********
+
+And the response will have the following structure.
+
+.. literalinclude:: examples/response/timelines/post/automated_measures_new_heat_pump.json
    :language: json
