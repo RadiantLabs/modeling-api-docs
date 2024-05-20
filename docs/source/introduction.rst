@@ -14,14 +14,14 @@ The Modeling API also supports :ref:`automated_measures`, a streamlined approach
 
    This API and documentation site is under active development.
 
-.. data_sources::
+.. data_sources:
 
 Data Sources
 ------------
 
 Radiant Labs collects data from a wide range of public and private data sources to develop our “Common Schema”, which is a cleaned, merged data structure providing a host of property characteristics, including building features, owner details, demographics, and regional factors. The following tables provide details on each data source included in our pipeline and information on the recency of the data.
 
-.. public_sources::
+.. public_sources:
 
 Public Sources
 **************
@@ -37,7 +37,7 @@ EIA           Electric prices          Identifies average residential electric r
 EIA           Fuel rates               Identifies average residential fuel costs by state        2022
 ============= ======================== ========================================================= ===================
 
-.. private_sources::
+.. private_sources:
 
 Private Sources
 ***************
@@ -49,7 +49,7 @@ Proprietary   Tax assessor             Building characteristics documented by re
 Proprietary   Building permits         Building permit data categorized by work type. Fill rate and data quality varies by region Live data stream
 ============= ======================== ========================================================================================== ===================
 
-.. modeling_methodology::
+.. modeling_methodology:
 
 Modeling Methodology
 --------------------
