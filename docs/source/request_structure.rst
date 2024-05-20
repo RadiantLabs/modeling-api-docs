@@ -248,9 +248,9 @@ Property                           Type     Units                       Constrai
 ``heatCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
 ``coolCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
 ``heatEfficiency``                 float    Btu/Wh                      >0              no        PSC
-``heatEfficiencyUnits``            string                               see [#]_       no        HSPF
+``heatEfficiencyUnits``            string                               see [#]_        no        HSPF
 ``coolEfficiency``                 float    Btu/Wh                      >0              no        PSC
-``coolEfficiencyUnits``            string                               see [#]_       no        SEER
+``coolEfficiencyUnits``            string                               see [#]_        no        SEER
 ``heatLoadFraction``               float    fraction                    0-1             yes       1
 ``coolLoadFraction``               float    fraction                    0-1             yes       1
 ``backupSystem``                   object                                               yes
