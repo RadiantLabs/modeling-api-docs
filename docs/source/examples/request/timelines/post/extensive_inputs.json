@@ -1,7 +1,7 @@
 {
-  "addressFull": "197 RANDALL RD, BALLSTON SPA, NY 12020",
+  "addressFull": "504 RANDALL RD, BALLSTON SPA, NY 12020",
   "addressComponents": {
-    "addressLine1": "197 Randall Rd",
+    "addressLine1": "504 Randall Rd",
     "city": "Ballston Spa",
     "stateAbbreviation": "NY",
     "zipCode": "12020"
@@ -15,7 +15,8 @@
       "residentCount": 5,
       "storiesCount": 1,
       "windowToWallFraction": 0.14,
-      "yearBuilt": 1945
+      "yearBuilt": 1945,
+      "propertyUse": "single-family detached"
     },
     "enclosure": {
       "airInfiltration": {
@@ -74,16 +75,18 @@
             }
           }
         ],
+        "coolLoadGapFraction": 0.67,
         "hvacHeatingSystems": [
           {
             "id": "ElectricResistance1",
             "systemType": "electric resistance",
             "fuel": "electricity",
             "heatEfficiency": 1,
-            "heatEfficiencyUnits": "percent",
+            "heatEfficiencyUnits": "fraction",
             "heatLoadFraction": 1
           }
         ],
+        "heatLoadGapFraction": 0,
         "hvacControlSystems": [
           {
             "id": "HVACControl1",
@@ -99,13 +102,14 @@
       "waterHeating": {
         "waterHeatingSystems": [
           {
-            "energyFactor": 0.92,
+            "efficiency": 0.92,
+            "efficiencyUnits": "EF",
             "dhwLoadFraction": 1,
             "systemType": "storage water heater",
             "fuel": "electricity",
             "id": "WaterHeater1",
             "hotWaterTemperature": 125,
-            "location": "living space",
+            "location": "conditioned space",
             "lifetime": {
               "replacementCost": 1000,
               "installedDate": "2015-11-12"
@@ -158,137 +162,5 @@
         "kwh": 0.1264
       }
     }
-  },
-  "timelines": [
-    {
-      "models": [
-        {
-          "appliedOn": "2023-12-10",
-          "customMeasures": [
-            {
-              "label": "radon testing",
-              "description": "radon inspection required for building permit",
-              "costs": [
-                {
-                  "fixedCost": 1000
-                }
-              ]
-            }
-          ],
-          "improvedBuilding": {
-            "enclosure": {
-              "airInfiltration": {
-                "rate": 7,
-                "costs": [
-                  {
-                    "fixedCost": 2928
-                  }
-                ]
-              },
-              "attics": [
-                {
-                  "id": "Attic1",
-                  "floorAssemblyEffectiveRValue": 50.6,
-                  "costs": [
-                    {
-                      "fixedCost": 2450
-                    }
-                  ]
-                }
-              ]
-            },
-            "systems": {
-              "hvac": {
-                "hvacCoolingSystems": [
-                  {
-                    "id": "RoomAirConditioner1",
-                    "systemType": "mini-split",
-                    "coolLoadFraction": 1,
-                    "remove": true
-                  }
-                ],
-                "hvacHeatingSystems": [
-                  {
-                    "id": "ElectricResistance1",
-                    "systemType": "furnace",
-                    "heatLoadFraction": 1,
-                    "remove": true
-                  }
-                ],
-                "hvacHeatPumps": [
-                  {
-                    "coolEfficiency": 20,
-                    "systemType": "mini-split",
-                    "coolLoadFraction": 1,
-                    "heatLoadFraction": 1,
-                    "id": "MiniSplit1",
-                    "backupSystem": {
-                      "systemType": "integrated",
-                      "fuel": "electricity",
-                      "heatEfficiency": 1,
-                      "heatEfficiencyUnits": "percent"
-                    },
-                    "coolEfficiencyUnits": "SEER",
-                    "heatEfficiencyUnits": "HSPF",
-                    "compressorType": "variable speed",
-                    "costs": [
-                      {
-                        "fixedCost": 20190
-                      }
-                    ],
-                    "heatEfficiency": 11
-                  }
-                ],
-                "hvacControlSystems": [
-                  {
-                    "id": "HVACControl1",
-                    "remove": true
-                  },
-                  {
-                    "id": "HVACControl2",
-                    "heatingSeason": {
-                      "setback": 64,
-                      "setbackStartHour": 23,
-                      "totalWeeklySetbackHours": 49
-                    },
-                    "coolingSeason": {
-                      "setpoint": 82,
-                      "setbackStartHour": 9,
-                      "totalWeeklySetbackHours": 42
-                    },
-                    "costs": [
-                      {
-                        "fixedCost": 240
-                      }
-                    ]
-                  }
-                ]
-              },
-              "waterHeating": {
-                "waterHeatingSystems": [
-                  {
-                    "id": "WaterHeater1",
-                    "remove": true
-                  },
-                  {
-                    "id": "WaterHeater2",
-                    "systemType": "heat pump water heater",
-                    "fuel": "electricity",
-                    "tankVolume": 80,
-                    "dhwLoadFraction": 1,
-                    "energyFactor": 3.5,
-                    "costs": [
-                      {
-                        "fixedCost": 5336
-                      }
-                    ]
-                  }
-                ]
-              }
-            }
-          }
-        }
-      ]
-    }
-  ]
+  }
 }

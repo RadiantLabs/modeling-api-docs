@@ -10,7 +10,8 @@ Contents
    response_structure
    examples
 
-.. toctree::
-   :caption: Interactive Documentation
-
-   Redoc.ly Docs <https://radiantlabs-core-modeling-api.redoc.ly>
+.. Hiding access to interactive docs
+   .. toctree::
+      :caption: Interactive Documentation
+   
+      Redoc.ly Docs <https://radiantlabs-core-modeling-api.redoc.ly>

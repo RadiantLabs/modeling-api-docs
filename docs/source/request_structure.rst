@@ -7,6 +7,10 @@ The following sections provide the specifications and syntax for each API reques
    :language: javascript
    :caption: Top-level request payload schema
 
+As discussed in `Usage Instructions`_, the Defaulting Engine will populate any missing or null building characteristics. In each schema definition table below, information about each key's default is provided. 
+  - **_`PSC`**: Property-specific characteristic. This type of default indicates that specific information about the address is collected and applied to that attribute. Thus, each address may have a different default value. For example, ``buildingSummary.conditionedFloorArea`` is collected from various `Data Sources`_ to be populated when missing or null.
+  - **_`BSA`**: Building stock assumption. This type of default indicates that location- and vintage-based building stock assumptions are used by the defaulting engine to populate missing and null keys.
+
 .. note::
 
    _`Objects and arrays` are used as values throughout the API. The difference is:
@@ -52,17 +56,20 @@ Building Summary
 ========================  =======  ========  ===========  ========  ==================  ============================================== 
 Property                  Type     Units     Constraints  Required  Default             Notes                                                                                           
 ========================  =======  ========  ===========  ========  ==================  ============================================== 
-``conditionedFloorArea``  integer  ft2       >0           no        PSC                 If missing from PSC, model will fail           
+``conditionedFloorArea``  integer  ft2       >0           no        `PSC`_              If missing from `PSC`_, model will fail           
 ``averageCeilingHeight``  integer  ft        >0           no        8                                                        
 ``bathCount``             integer  count     >0           no        see [#]_
-``bedroomsCount``         integer  count     >0           no        PSC, BSA
-``residentCount``         integer  count     >=0          no        BSA                                                       	
-``storiesCount``          integer  count     >0           no        PSC, BSA
+``bedroomsCount``         integer  count     >0           no        `PSC`_, `BSA`_
+``residentCount``         integer  count     >=0          no        `BSA`_                                                       	
+``storiesCount``          integer  count     >0           no        `PSC`_, `BSA`_
 ``windowToWallFraction``  float    fraction  >0           no        0.14
-``yearBuilt``             integer  year      >1600        no        PSC                 If missing from PSC, model will fail           
-========================  =======  ========  ===========  ========  ==================  ============================================== 
+``yearBuilt``             integer  year      >1600        no        `PSC`_              If missing from `PSC`_, model will fail           
+``propertyUse``           string             see [#]_     no        PSC                 Advanced option. See [#]_
+========================  =======  ========  ===========  ========  ==================  ==============================================
 
 .. [#] ``bedroomsCount``/2 + 0.5
+.. [#] ``propertyUse`` options are "single-family detached", "single-family attached", or "manufactured home".
+.. [#] ``propertyUse`` is an advanced field. Overriding the existing property use may produce in abnormal model results. If you set this, we recommend setting square footage as well.
 
 .. _enclosure:
 
@@ -80,7 +87,7 @@ Air Infiltration
 ========================  =======  ================  ===========  ========  ==================  ============================================== 
 Property                  Type     Units             Constraints  Required  Default             Notes                                                                                           
 ========================  =======  ================  ===========  ========  ==================  ==============================================       
-``rate``                  float    see ``rateUnit``  >0           no        BSA
+``rate``                  float    see ``rateUnit``  >0           no        `BSA`_
 ``rateUnit``              string                     see [#]_     no        ACH
 ``housePressurePa``       float    Pascals           >0           no        50
 ========================  =======  ================  ===========  ========  ==================  ============================================== 
@@ -99,9 +106,9 @@ See note about `objects and arrays`_ for more information.
 Property                           Type     Units             Constraints     Required  Default             Notes
 =================================  =======  ================  ==============  ========  ==================  ==============================================       
 ``id``                             id                         Must be unique  yes       Attic1  
-``area``                           float    ft2               >0              no        PSC
+``area``                           float    ft2               >0              no        `PSC`_
 ``isVented``                       boolean                                    no        yes
-``floorAssemblyEffectiveRValue``   float    F-ft2-hr/Btu      >0              no        BSA
+``floorAssemblyEffectiveRValue``   float    F-ft2-hr/Btu      >0              no        `BSA`_
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
 .. _roofs:
@@ -116,7 +123,7 @@ for more information.
 Property                           Type     Units             Constraints     Required  Default             Notes
 =================================  =======  ================  ==============  ========  ==================  ==============================================       
 ``id``                             id                         Must be unique  yes       Roof1   
-``area``                           float    ft2               >0              no        PSC   
+``area``                           float    ft2               >0              no        `PSC`_   
 ``pitch``                          float    ?:12              >=0             no        6   
 ``assemblyEffectiveRValue``        float    F-ft2-hr/Btu      >0              no        2.3 
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
@@ -132,10 +139,10 @@ for more information.
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units             Constraints     Required  Default             Notes
 =================================  =======  ================  ==============  ========  ==================  ==============================================       
-``id``                             id                         must be unique  yes       PSC     
-``type``                           string                     see [#]_        no        BSA
-``area``                           float    ft2               >0              no        PSC   
-``wallHeight``                     float    ft                >=0             no        PSC  
+``id``                             id                         must be unique  yes       `PSC`_     
+``type``                           string                     see [#]_        no        `BSA`_
+``area``                           float    ft2               >0              no        `PSC`_   
+``wallHeight``                     float    ft                >=0             no        `PSC`_  
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
 .. [#] ``type`` choices are "basement conditioned", "basement unconditioned", "crawl vented", "crawl unvented", "slab", and "pier and beam".
@@ -152,10 +159,10 @@ See note about `objects and arrays`_ for more information.
 Property                           Type     Units             Constraints     Required  Default             Notes
 =================================  =======  ================  ==============  ========  ==================  ==============================================       
 ``id``                             id                         Must be unique  yes       Wall1                                                                               
-``type``                           string                     see [#]_        no        BSA
-``assemblyEffectiveRValue``        float    F-ft2-hr/Btu      >0              no        BSA
-``fractionAreaShared``             float    fraction          0-1             no        PSC                                                                                
-``area``                           float    ft2               >0              no        PSC
+``type``                           string                     see [#]_        no        `BSA`_
+``assemblyEffectiveRValue``        float    F-ft2-hr/Btu      >0              no        `BSA`_
+``fractionAreaShared``             float    fraction          0-1             no        `PSC`_                                                                                
+``area``                           float    ft2               >0              no        `PSC`_
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
 .. [#] ``type`` choices are "wood stud", "concrete masonry unit", "structural brick", "steel frame", "stone", "adobe", "log wall", and "solid concrete".
@@ -184,20 +191,20 @@ See note about `objects and arrays`_ for more information.
 =================================  =======  ===========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                        Constraints     Required  Default             Notes
 =================================  =======  ===========================  ==============  ========  ==================  ==============================================       
-``id``                             id                                    Must be unique  yes       PSC  
-``connectedDistributionId``        idref                                                 yes [#]_  PSC  
-``systemType``                     string                                see [#]_        yes       PSC, BSA
+``id``                             id                                    Must be unique  yes       `PSC`_  
+``connectedDistributionId``        idref                                                 yes [#]_  `PSC`_  
+``systemType``                     string                                see [#]_        yes       `PSC`_, `BSA`_
 ``coolCapacityBtuPerHour``         float    Btu/hr                       >=0             no                            autosized by modeling engine if undefined
 ``compressorType``                 string                                see [#]_        no        single stage        only applicable if systemType = "central air conditioner"
-``coolEfficiency``                 float    see ``coolEfficiencyUnits``  >0              no        PSC 
-``coolEfficiencyUnits``            string                                see [#]_        no        PSC 
+``coolEfficiency``                 float    see ``coolEfficiencyUnits``  >0              no        `PSC`_ 
+``coolEfficiencyUnits``            string                                see [#]_        no        `PSC`_ 
 ``coolLoadFraction``               float    fraction                     <=1             yes       1
 =================================  =======  ===========================  ==============  ========  ==================  ============================================== 
 
 .. [#] If ``systemType`` is "central air conditioner"
 .. [#] ``systemType`` choices are "central air conditioner", "room air conditioner", "evaporative cooler", "packaged terminal air conditioner", and "mini-split".
 .. [#] ``compressorType`` choices are "single stage", "two stage", and "variable speed".
-.. [#] ``coolEfficiencyUnits`` choices are "percent", "EER", "CEER", and "SEER". The option to use "SEER2" is planned for a future release.
+.. [#] ``coolEfficiencyUnits`` choices "EER" and "CEER" for room air conditioners and packaged terminal air conditioners. "SEER" and "SEER2" are the choices for central air conditioners and mini-splits. Evaporative coolers do not require `coolEfficiency`. 
 
 .. _hvac_heating_systems:
 
@@ -213,19 +220,19 @@ See note about `objects and arrays`_ for more information.
 =================================  =======  ===========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                        Constraints     Required  Default             Notes
 =================================  =======  ===========================  ==============  ========  ==================  ==============================================       
-``id``                             id                                    Must be unique  yes       PSC
-``connectedDistributionId``        idref                                                 see [#]_  PSC
-``systemType``                     string                                                yes       PSC, BSA
-``fuel``                           string                                see [#]_        no        PSC
+``id``                             id                                    Must be unique  yes       `PSC`_
+``connectedDistributionId``        idref                                                 see [#]_  `PSC`_
+``systemType``                     string                                                yes       `PSC`_, `BSA`_
+``fuel``                           string                                see [#]_        no        `PSC`_
 ``heatCapacityBtuPerHour``         float    Btu/hr                       >=0             no                            autosized by modeling engine if undefined
-``heatEfficiency``                 float    see ``heatEfficiencyUnits``  0-1             no        PSC 
-``heatEfficiencyUnits``            string                                see [#]_        no        PSC 
+``heatEfficiency``                 float    see ``heatEfficiencyUnits``  0-1             no        `PSC`_ 
+``heatEfficiencyUnits``            string                                see [#]_        no        `PSC`_ 
 ``heatLoadFraction``               float    fraction                     0-1             yes       1   
 =================================  =======  ===========================  ==============  ========  ==================  ============================================== 
 
 .. [#] Required when ``systemType`` is "furnace" or "boiler".
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
-.. [#] ``heatEfficiencyUnits`` choices are "AFUE" and "percent".
+.. [#] ``heatEfficiencyUnits`` choices are "AFUE" and "fraction".
 
 .. _hvac_heat_pumps:
 
@@ -241,16 +248,16 @@ See note about `objects and arrays`_ for more information.
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                       Constraints     Required  Default             Notes
 =================================  =======  ==========================  ==============  ========  ==================  ==============================================       
-``id``                             id                                   Must be unique  yes       PSC 
-``connectedDistributionId``        idref                                see [#]_        see [#]_  PSC
-``systemType``                     string                               see [#]_        yes       PSC
+``id``                             id                                   Must be unique  yes       `PSC`_ 
+``connectedDistributionId``        idref                                see [#]_        see [#]_  `PSC`_
+``systemType``                     string                               see [#]_        yes       `PSC`_
 ``compressorType``                 string                               see [#]_        no        single stage    
 ``heatCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
 ``coolCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined
-``heatEfficiency``                 float    Btu/Wh                      >0              no        PSC
-``heatEfficiencyUnits``            string                               HSPF [#]_       no        HSPF
-``coolEfficiency``                 float    Btu/Wh                      >0              no        PSC
-``coolEfficiencyUnits``            string                               SEER [#]_       no        SEER
+``heatEfficiency``                 float    Btu/Wh                      >0              no        `PSC`_
+``heatEfficiencyUnits``            string                               see [#]_        no        HSPF
+``coolEfficiency``                 float    Btu/Wh                      >0              no        `PSC`_
+``coolEfficiencyUnits``            string                               see [#]_        no        SEER
 ``heatLoadFraction``               float    fraction                    0-1             yes       1
 ``coolLoadFraction``               float    fraction                    0-1             yes       1
 ``backupSystem``                   object                                               yes
@@ -260,8 +267,8 @@ Property                           Type     Units                       Constrai
 .. [#] Required when ``systemType`` is "air-to-air" or "ground-to-air".
 .. [#] ``systemType`` choices are "mini-split", "air-to-air", and "ground-to-air".
 .. [#] ``compressorType`` choices are "single stage", "two stage", and "variable speed".
-.. [#] The option to use "HSPF2" is planned for a future release.
-.. [#] The option to use "SEER2" is planned for a future release.
+.. [#] ``heatEfficiencyUnits`` choices are "HSPF" or "HSPF2".
+.. [#] ``coolEfficiencyUnits`` choices are "SEER" or "SEER2".
 
 ``backupSystem`` schema for HVAC Heat Pumps:
 
@@ -272,14 +279,14 @@ Property                           Type     Units                       Constrai
 ``heatingSwitchoverTemp``          float    F                                           no                            determined by modeling engine if undefined
 ``fuel``                           string                               see [#]_        no        electricity         only applicable if backupSystem.systemType = "integrated"
 ``heatEfficiency``                 float    see ``heatEfficiencyUnit``  0-1             no        1                   only applicable if backupSystem.systemType = "integrated"
-``heatEfficiencyUnits``            string                               see [#]_        no        percent             only applicable if backupSystem.systemType = "integrated"
+``heatEfficiencyUnits``            string                               see [#]_        no        fraction            only applicable if backupSystem.systemType = "integrated"
 ``heatCapacityBtuPerHour``         float    Btu/hr                      >=0             no                            autosized by modeling engine if undefined, only applicable if backupSystem.systemType = "integrated"
-``backupHvacId``                   idref                                see [#]_        see [#]_  PSC
+``backupHvacId``                   idref                                see [#]_        see [#]_  `PSC`_
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 
 .. [#] ``systemType`` choices are "integrated" and "separate".
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
-.. [#] ``heatEfficiencyUnits`` choices are "AFUE" and "percent".
+.. [#] ``heatEfficiencyUnits`` choices are "AFUE" and "fraction".
 .. [#] Must reference an defined ``hvacHeatingSystem.id``
 .. [#] Required when ``backupSystem.systemType`` is "separate".
 
@@ -297,10 +304,10 @@ See note about `objects and arrays`_ for more information.
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                       Constraints     Required  Default             Notes
 =================================  =======  ==========================  ==============  ========  ==================  ==============================================       
-``id``                             id                                   Must be unique  yes       PSC    
-``systemType``                     string                               see [#]_        yes       PSC  
-``numberOfReturnRegisters``        integer  count                       >=0             no        PSC
-``conditionedFloorAreaServed``     float    ft2                         >0              no        PSC
+``id``                             id                                   Must be unique  yes       `PSC`_    
+``systemType``                     string                               see [#]_        yes       `PSC`_  
+``numberOfReturnRegisters``        integer  count                       >=0             no        `PSC`_
+``conditionedFloorAreaServed``     float    ft2                         >0              no        `PSC`_
 ``ducts``                          object                                               yes
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 
@@ -311,16 +318,16 @@ Property                           Type     Units                       Constrai
 =================================  =======  ==========================  ==============  ========  ======================  ============================================== 
 Property                           Type     Units                       Constraints     Required  Default                 Notes
 =================================  =======  ==========================  ==============  ========  ======================  ==============================================       
-``id``                             id                                   Must be unique  yes       PSC
+``id``                             id                                   Must be unique  yes       `PSC`_
 ``systemType``                     string                               see [#]_        yes       "supply" and "return"   both supply and return must be defined
 ``insulationRValue``               float    F-ft2-hr/Btu                >=0             no        0   
-``leakageValue``                   float    see ``leakageUnits``        >=0             no        BSA    
-``leakageUnits``                   string                               see [#]_        no        Percent 
+``leakageValue``                   float    see ``leakageUnits``        >=0             no        `BSA`_    
+``leakageUnits``                   string                               see [#]_        no        fraction 
 ``location``                       string                               see [#]_        no        see notes [#]_
 =================================  =======  ==========================  ==============  ========  ======================  ============================================== 
 
 .. [#] ``systemType`` choices are "supply" and "return".
-.. [#] ``leakageUnits`` choices are"CFM25", "CFM50", and "percent".
+.. [#] ``leakageUnits`` choices are "CFM25", "CFM50", and "fraction".
 .. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", and "other non-freezing space".
 .. [#] If ``location`` not provided, defaults to the first present space type: "basement conditioned", "basement unconditioned", "crawlspace vented", "crawlspace unvented", "attic vented", "attic unvented", "garage", or "living space".
 
@@ -338,9 +345,9 @@ See note about `objects and arrays`_ for more information.
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 Property                           Type     Units                       Constraints     Required  Default             Notes
 =================================  =======  ==========================  ==============  ========  ==================  ==============================================       
-``id``                             id                                   Must be unique  yes       PSC    
+``id``                             id                                   Must be unique  yes       `PSC`_    
 ``systemType``                     string                                               yes       
-``conditionedFloorAreaServed``     float    ft2                         >0              no        PSC
+``conditionedFloorAreaServed``     float    ft2                         >0              no        `PSC`_
 =================================  =======  ==========================  ==============  ========  ==================  ============================================== 
 
 .. _hvac_control_systems:
@@ -394,7 +401,8 @@ Property                                     Type     Units                     
 ``tankVolume``                               float    gal                                         no
 ``dhwLoadFraction``                          float    fraction                    0-1             yes                             sum of dhwLoadFraction must equal 1
 ``heatCapacityBtuPerHour``                   float    Btu/hr                      >0              no                              autosized by modeling engine if undefined
-``energyFactor`` or ``uniformEnergyFactor``  float    fraction                    <1              no        BSA
+``efficency``                                float    fraction                    >0              no        `BSA`_
+``efficiencyUnits``                          string                               see [#]_        no        `BSA`_
 ``hotWaterTemperature``                      float    F                           >0              no        125 
 ===========================================  =======  ==========================  ==============  ========  ====================  ============================================== 
 
@@ -408,6 +416,7 @@ Property                                     Type     Units                     
   IECC zones 1-3, excluding 3A: "garage", "living space"
 
   IECC zones 3A, 4-8, unknown: "basement conditioned", "basement unconditioned", "living space"
+.. [#] ``efficiencyUnits`` choices are "EF" and "UEF".
 
 .. _electrical_panels:
 
@@ -475,7 +484,7 @@ for more information.
 Property                           Type     Units             Constraints     Required  Default             Notes
 =================================  =======  ================  ==============  ========  ==================  ==============================================       
 ``id``                             id                         Must be unique  yes       ClothesDryer1   
-``fuel``                           string                     see [#]_        no        BSA  
+``fuel``                           string                     see [#]_        no        `BSA`_  
 ``combinedEnergyFactor``           float    lb/kWh            >0              no        3.73    
 ``isVented``                       boolean                                    no        true    
 ``ventedFlowRate``                 float    ft3/min                           no        150 
@@ -498,7 +507,7 @@ for more information.
 Property                           Type     Units             Constraints     Required  Default             Notes
 =================================  =======  ================  ==============  ========  ==================  ==============================================       
 ``id``                             id                         Must be unique  yes       CookingRange1
-``fuel``                           string                     see [#]_        no        PSC, BSA   
+``fuel``                           string                     see [#]_        no        `PSC`_, `BSA`_   
 ``isInduction``                    boolean                                    no        false   
 =================================  =======  ================  ==============  ========  ==================  ============================================== 
 
@@ -517,8 +526,8 @@ Property                           Type     Units               Constraints     
 =================================  =======  ==================  ==============  ==========  ==================  ==============================================       
 ``replacementCost``                float    ``units.monetary``  >=0             see [#]_                        Default values not supported currently
 ``endOfLifeDate``                  date                         in the future   see [#LT]_
-``effectiveUsefulLifeDays``        integer  days                >0              see [#LT]_   BSA
-``installedDate``                  date                         in the past     see [#LT]_   PSC, BSA
+``effectiveUsefulLifeDays``        integer  days                >0              see [#LT]_   `BSA`_
+``installedDate``                  date                         in the past     see [#LT]_   `PSC`_, `BSA`_
 =================================  =======  ==================  ==============  ==========  ==================  ============================================== 
 
 .. [#] Required to run status quo timeline.
@@ -717,17 +726,17 @@ connected to the base building's heating and cooling systems.
 
 ``adjust`` schema for existing HVAC distribution system:
 
-  ====================  =======  ===========  ==============================================
+  ====================  =======  ===========  ========================================================
   Property              Type     Constraints  Description
-  ====================  =======  ===========  ==============================================
-  ``leakageUnits``      String   See [#]_     Duct leakage units
+  ====================  =======  ===========  ========================================================
+  ``leakageUnits``      String   See [#]_     Duct leakage units must be the same as ``baseBuilding``.
   ``leakageValue``      Double   >= 0.0       Duct leakage value
   ``insulationRValue``  Double   >= 0.0
-  ====================  =======  ===========  ==============================================
+  ====================  =======  ===========  ========================================================
 
   Values can be defined and will only be applied if applicable. For example, if there isn't ``airDistribution``, then ``leakageValue`` won't be applied.
   
-  .. [#] Units choices are CFM25, CFM50, or Percent.
+  .. [#] Units choices are "CFM25", "CFM50", or "fraction".
 
 .. _existing_water_heating_system:
 
@@ -991,8 +1000,23 @@ Global controls is an optional schema and contains a variety of customization se
 Units
 *****
 
+Units is an optional schema that allows the user to specify what unit(s) are included in the response.
+
 .. literalinclude:: schemas/request/Units.json5
    :language: javascript
+
+The following list contains the conversion factors used within the modeling engine.
+- 1 MBTU= 1,000,000 BTU
+- 1 BTU = 0.000293071 kWh
+- 1 BTU = 1.055056 × 10^-5 therms
+- 1 kWh = 3412.142 BTU
+- 1 kWh = 0.003412142 MBTU
+- 1 metric ton of coal =  20.9 MBTU
+- 1 short ton of coal = 19.6 MBTU
+- 1 gallon fueloil = 0.139 MBTU
+- 1 gallon propane = 0.09154 MBTU
+- 1 ccf natural gas = 1.034129 MBTU
+- 1 therm natural gas = 0.000010015 MBTU
 
 .. _escalation_rates:
 

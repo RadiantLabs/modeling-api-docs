@@ -1,6 +1,8 @@
 Usage Instructions
 ==================
 
+.. setup_and_authentication:
+
 Setup & Authentication
 ----------------------
 
@@ -27,6 +29,7 @@ Here is an example using cURL:
     --data-raw '{"addressFull":"501 RANDALL RD, BALLSTON SPA, NY 12020"}' \
     --compressed
 
+.. simple_request:
 
 Simple Request
 --------------
@@ -41,6 +44,8 @@ payload. In this case, all characteristics of the ``baseBuilding`` would be popu
    :language: json
 
 See :ref:`address-only-response` for the response for this example.
+
+.. advanced_request:
 
 Advanced Request
 ----------------

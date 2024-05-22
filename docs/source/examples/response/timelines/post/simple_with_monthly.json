@@ -26,7 +26,8 @@
               "residentCount": 5,
               "storiesCount": 2,
               "windowToWallFraction": 0.14,
-              "yearBuilt": 2007
+              "yearBuilt": 2007,
+              "propertyUse": "single-family detached"
             },
             "enclosure": {
               "airInfiltration": {
@@ -119,7 +120,7 @@
                           "systemType": "supply",
                           "insulationRValue": 0.0,
                           "leakageValue": 0.2,
-                          "leakageUnits": "percent",
+                          "leakageUnits": "fraction",
                           "location": "attic vented"
                         },
                         {
@@ -127,7 +128,7 @@
                           "systemType": "return",
                           "insulationRValue": 0.0,
                           "leakageValue": 0.2,
-                          "leakageUnits": "percent",
+                          "leakageUnits": "fraction",
                           "location": "attic vented"
                         }
                       ]
@@ -141,10 +142,11 @@
                     "id": "WaterHeater1",
                     "systemType": "storage water heater",
                     "fuel": "natural gas",
-                    "location": "living space",
+                    "location": "conditioned space",
                     "tankVolume": 40,
                     "dhwLoadFraction": 1.0,
-                    "energyFactor": 0.59,
+                    "efficiency": 0.59,
+                    "efficiencyUnits": "EF",
                     "hotWaterTemperature": 125.0,
                     "lifetime": {
                       "replacementCost": 1000,
