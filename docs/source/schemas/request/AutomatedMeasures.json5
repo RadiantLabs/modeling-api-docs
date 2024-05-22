@@ -1,74 +1,11 @@
 {
-  "existingHvacHeatingSystem": {
-    "action": "adjust", // ("keep" | "remove" | "adjust")
-    "adjust": {
-      "heatLoadFraction": 0.2,
-      "backup": true
-    },
-    "costs": [ COST ]
-  },
-  "existingHvacCoolingSystem": {
-    "action": "adjust", // ("keep" | "remove" | "adjust")
-    "adjust": {
-      "coolLoadFraction": 0.2
-    },
-    "costs": [ COST ]
-  },
-  "existingHvacDistributionSystem": {
-    "action": "adjust", // ("keep" | "remove" | "adjust")
-    "adjust": {
-      "leakageValue": 0.1,
-      "insulationRValue": 5
-    },
-    "costs": [ COST ]
-  },
-  "newHeatPump": {
-    "systemType": "heat-pump", // ("heat-pump" | "mini-split" | "air-to-air")
-    "performanceClass": "", // ("federal-minimally-compliant" | "energy-star-compliant")
-    "heatLoadFraction": 0.8,
-    "coolLoadFraction": 0.8,
-    "costs": [ COST ]
-  },
-  "existingWaterHeatingSystem": {
-    "action": "adjust", // ("keep" | "remove" | "adjust")
-    "adjust": {
-      "dhwLoadFraction": 0.8
-    },
-    "costs": [ COST ]
-  },
-  "newWaterHeatingSystem": {
-    "systemType": "storage-water-heater", // ( “storage-water-heater” | “instantaneous-water-heater” | “heat-pump-water-heater”)
-    "efficiencyClass": "", //("standard" | "high")
-    "dhwLoadFraction": 1.0,
-    "costs": [ COST ]
-  },
-  "thermostat": {
-    "adjust": {
-      "heatingSeason": {
-        "setpoint": 68,
-        "setback": 64,
-        "setbackStartHour": 23,
-        "totalWeeklySetbackHours": 49,
-      },
-      "coolingSeason": {
-        "setpoint": 78,
-        "setback": 82,
-        "setbackStartHour": 9,
-        "totalWeeklySetbackHours": 42,
-      },
-    },
-    "costs": [ COST ]
-  },
-  "airSealing": {
-    "adjust": {
-      "rate": 1.0
-    },
-    "costs": [ COST ]
-  },
-  "atticInsulation": {
-    "adjust": {
-      "floorAssemblyEffectiveRValue": 50.6
-    },
-    "costs": [ COST ]
-  }
+  "existingHvacHeatingSystem": { EXISTING_HVAC_HEATING_SYSTEM },
+  "existingHvacCoolingSystem": { EXISTING_HVAC_COOLING_SYSTEM },
+  "existingHvacDistributionSystem": { EXISTING_HVAC_DISTRIBUTION_SYSTEM },
+  "existingWaterHeatingSystem": { EXISTING_WATER_HEATING_SYSTEM },
+  "newHeatPump": { NEW_HEAT_PUMP },
+  "newWaterHeatingSystem": { NEW_WATER_HEATING_SYSTEM },
+  "thermostat": { THERMOSTAT },
+  "airSealing": { AIR_SEALING },
+  "atticInsulation": { ATTIC_INSULATION }
 }

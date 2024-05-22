@@ -92,7 +92,7 @@
                     "systemType": "electric resistance",
                     "fuel": "electricity",
                     "heatEfficiency": 1.0,
-                    "heatEfficiencyUnits": "percent",
+                    "heatEfficiencyUnits": "fraction",
                     "heatLoadFraction": 1.0
                   }
                 ],
@@ -114,10 +114,11 @@
                     "id": "WaterHeater1",
                     "systemType": "storage water heater",
                     "fuel": "electricity",
-                    "location": "living space",
+                    "location": "conditioned space",
                     "tankVolume": 40,
                     "dhwLoadFraction": 1.0,
-                    "energyFactor": 0.92,
+                    "efficiency": 0.92,
+                    "efficiencyUnits": "EF",
                     "hotWaterTemperature": 125.0,
                     "lifetime": {
                       "replacementCost": 1000,
@@ -335,12 +336,12 @@
                     "systemType": "storage water heater",
                     "connectedHeatingId": "Boiler1",
                     "fuel": "natural gas",
-                    "location": "living space",
+                    "location": "conditioned space",
                     "tankVolume": 40,
                     "dhwLoadFraction": 1.0,
                     "heatCapacityBtuPerHour": null,
-                    "energyFactor": 0.92,
-                    "uniformEnergyFactor": null,
+                    "efficiency": 0.92,
+                    "efficiencyUnits": "EF",
                     "hotWaterTemperature": 125.0
                   }
                 ]
