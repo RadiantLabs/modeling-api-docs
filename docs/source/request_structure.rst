@@ -8,8 +8,9 @@ The following sections provide the specifications and syntax for each API reques
    :caption: Top-level request payload schema
 
 As discussed in `Usage Instructions`_, the Defaulting Engine will populate any missing or null building characteristics. In each schema definition table below, information about each key's default is provided. 
-  - **_`PSC`**: Property-specific characteristic. This type of default indicates that specific information about the address is collected and applied to that attribute. Thus, each address may have a different default value. For example, ``buildingSummary.conditionedFloorArea`` is collected from various `Data Sources`_ to be populated when missing or null.
-  - **_`BSA`**: Building stock assumption. This type of default indicates that location- and vintage-based building stock assumptions are used by the defaulting engine to populate missing and null keys.
+  .. _PSC-BSA:
+  - **PSC**: Property-specific characteristic. This type of default indicates that specific information about the address is collected and applied to that attribute. Thus, each address may have a different default value. For example, ``buildingSummary.conditionedFloorArea`` is collected from various `Data Sources`_ to be populated when missing or null.
+  - _`BSA` : Building stock assumption. This type of default indicates that location- and vintage-based building stock assumptions are used by the defaulting engine to populate missing and null keys.
 
 .. note::
 
@@ -56,7 +57,7 @@ Building Summary
 ========================  =======  ========  ===========  ========  ======================  ============================================== 
 Property                  Type     Units     Constraints  Required  Default                 Notes                                                                                           
 ========================  =======  ========  ===========  ========  ======================  ============================================== 
-``conditionedFloorArea``  integer  ft2       >0           no        :ref:`PSC`              If missing from :ref:`PSC`, model will fail           
+``conditionedFloorArea``  integer  ft2       >0           no        :ref:`PSC <PSC-BSA>`    If missing from :ref:`PSC`, model will fail           
 ``averageCeilingHeight``  integer  ft        >0           no        8                                                        
 ``bathCount``             integer  count     >0           no        see [#]_
 ``bedroomsCount``         integer  count     >0           no        :ref:`PSC`, :ref:`BSA`
