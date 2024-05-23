@@ -7,16 +7,17 @@ The following sections provide the specifications and syntax for each API reques
    :language: javascript
    :caption: Top-level request payload schema
 
-As discussed in `Usage Instructions`_, the Defaulting Engine will populate any missing or null building characteristics. In each schema definition table below, information about each key's default is provided. 
-  .. _PSC-BSA:
-  - **PSC**: Property-specific characteristic. This type of default indicates that specific information about the address is collected and applied to that attribute. Thus, each address may have a different default value. For example, ``buildingSummary.conditionedFloorArea`` is collected from various `Data Sources`_ to be populated when missing or null.
-  - _`BSA` : Building stock assumption. This type of default indicates that location- and vintage-based building stock assumptions are used by the defaulting engine to populate missing and null keys.
+As discussed in :ref:`Usage Instructions`, the Defaulting Engine will populate any missing or null building characteristics. In each schema definition table below, information about each key's default is provided. 
+  .. _PSC:
+  - **PSC**: Property-specific characteristic. This type of default indicates that specific information about the address is collected and applied to that attribute. Thus, each address may have a different default value. For example, ``buildingSummary.conditionedFloorArea`` is collected from various :ref:`Data Sources` to be populated when missing or null.
+  .. _BSA:
+  - **BSA** : Building stock assumption. This type of default indicates that location- and vintage-based building stock assumptions are used by the defaulting engine to populate missing and null keys.
 
 .. note::
 
    _`Objects and arrays` are used as values throughout the API. The difference is:
-      - Object: This represents a single item that is not inherently a collection. An example of this is `Air Infiltration`_, which is characteristic of the entire building and thus can only be defined once.
-      - Array: This represents an item that is inherently a collection, even if we don’t yet support more than one item. Often it will be an array of objects, where each object defines an item in the collection. `HVAC`_ and `Walls`_ are examples of this.
+      - Object: This represents a single item that is not inherently a collection. An example of this is :ref:`Air Infiltration`, which is characteristic of the entire building and thus can only be defined once.
+      - Array: This represents an item that is inherently a collection, even if we don’t yet support more than one item. Often it will be an array of objects, where each object defines an item in the collection. :ref:`HVAC` and :ref:`Walls` are examples of this.
 
 .. _address:
 
@@ -57,7 +58,7 @@ Building Summary
 ========================  =======  ========  ===========  ========  ======================  ============================================== 
 Property                  Type     Units     Constraints  Required  Default                 Notes                                                                                           
 ========================  =======  ========  ===========  ========  ======================  ============================================== 
-``conditionedFloorArea``  integer  ft2       >0           no        :ref:`PSC <PSC-BSA>`    If missing from :ref:`PSC`, model will fail           
+``conditionedFloorArea``  integer  ft2       >0           no        :ref:`PSC`              If missing from :ref:`PSC`, model will fail           
 ``averageCeilingHeight``  integer  ft        >0           no        8                                                        
 ``bathCount``             integer  count     >0           no        see [#]_
 ``bedroomsCount``         integer  count     >0           no        :ref:`PSC`, :ref:`BSA`
@@ -65,7 +66,7 @@ Property                  Type     Units     Constraints  Required  Default     
 ``storiesCount``          integer  count     >0           no        :ref:`PSC`, :ref:`BSA`
 ``windowToWallFraction``  float    fraction  >0           no        0.14
 ``yearBuilt``             integer  year      >1600        no        :ref:`PSC`              If missing from :ref:`PSC`, model will fail           
-``propertyUse``           string             see [#]_     no        PSC                     Advanced option. See [#]_
+``propertyUse``           string             see [#]_     no        :ref:`PSC`              Advanced option. See [#]_
 ========================  =======  ========  ===========  ========  ======================  ==============================================
 
 .. [#] ``bedroomsCount``/2 + 0.5
