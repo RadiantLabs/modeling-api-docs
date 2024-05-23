@@ -149,9 +149,12 @@ Property                  Type     Units     Constraints  Required  Default     
 ``storiesCount``          integer  count     >0           no        PSC, BSA
 ``windowToWallFraction``  float    fraction  >0           no        0.14
 ``yearBuilt``             integer  year      >1600        no        PSC                 If missing from PSC, model will fail           
+``propertyUse``           string             see [#]_     no        PSC                 Advanced option. See [#]_
 ========================  =======  ========  ===========  ========  ==================  ============================================== 
 
 .. [#] ``bedroomsCount``/2 + 0.5
+.. [#] ``propertyUse`` options are “single-family detached”, “single-family attached”, or “manufactured home”
+.. [#] ``propertyUse`` is an advanced field. Overriding the existing property use may produce in abnormal model results. If you set this, we recommend setting square footage as well.
 
 .. _cost:
 
