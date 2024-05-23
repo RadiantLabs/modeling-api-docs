@@ -72,7 +72,7 @@ Property                  Type     Units     Constraints  Required  Default     
 
 .. [#] ``bedroomsCount``/2 + 0.5
 .. [#] ``propertyUse`` options are "single-family detached", "single-family attached", or "manufactured home".
-.. [#] ``propertyUse`` is an advanced field. Overriding the existing property use may produce in abnormal model results. If you set this, we recommend setting square footage as well.
+.. [#] ``propertyUse`` is an advanced field. Overriding the existing property use may produce in abnormal model results. If you set this, we recommend setting ``conditionedFloorArea`` as well.
 
 .. _enclosure:
 
@@ -316,20 +316,18 @@ Property                           Type     Units                       Constrai
 
 .. [#] ``systemType`` choices are "regular velocity" and "gravity".
 
-``ducts`` object uses the following schema:
+``ducts`` contains two keys, ``supply`` and ``return``. Each of these keys are object arrays using the following schema:
 
 =================================  =======  ==========================  ==============  ========  ======================  ============================================== 
 Property                           Type     Units                       Constraints     Required  Default                 Notes
 =================================  =======  ==========================  ==============  ========  ======================  ==============================================       
 ``id``                             id                                   Must be unique  yes       :ref:`PSC <PSC->`
-``systemType``                     string                               see [#]_        yes       "supply" and "return"   both supply and return must be defined
 ``insulationRValue``               float    F-ft2-hr/Btu                >=0             no        0   
 ``leakageValue``                   float    see ``leakageUnits``        >=0             no        :ref:`BSA <BSA->`    
 ``leakageUnits``                   string                               see [#]_        no        fraction 
 ``location``                       string                               see [#]_        no        see notes [#]_
 =================================  =======  ==========================  ==============  ========  ======================  ============================================== 
 
-.. [#] ``systemType`` choices are "supply" and "return".
 .. [#] ``leakageUnits`` choices are "CFM25", "CFM50", and "fraction".
 .. [#] ``location`` choices are "living space", "basement conditioned", "basement unconditioned", "crawlspace unvented", "crawlspace vented", "attic unvented", "attic vented", "garage", "outside", "exterior wall", "under slab", "roof deck", "other heated space", and "other non-freezing space".
 .. [#] If ``location`` not provided, defaults to the first present space type: "basement conditioned", "basement unconditioned", "crawlspace vented", "crawlspace unvented", "attic vented", "attic unvented", "garage", or "living space".
