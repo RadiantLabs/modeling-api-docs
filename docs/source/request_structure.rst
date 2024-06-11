@@ -1010,7 +1010,7 @@ The following list contains the conversion factors used within the modeling engi
 
 * 1 MBTU= 1,000,000 BTU
 * 1 BTU = 0.000293071 kWh
-* 1 BTU = 1.055056 × 10^-5 therms
+* :math:`1 BTU = 1.055056 × 10^-5 therms`
 * 1 kWh = 3412.142 BTU
 * 1 kWh = 0.003412142 MBTU
 * 1 metric ton of coal =  20.9 MBTU
