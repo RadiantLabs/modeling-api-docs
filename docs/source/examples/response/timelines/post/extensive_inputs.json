@@ -163,7 +163,8 @@
               "residentCount": 3.2366863905325443,
               "storiesCount": 2,
               "windowToWallFraction": 0.14,
-              "yearBuilt": 2007
+              "yearBuilt": 2007,
+              "propertyUse": "single-family detached"
             },
             "enclosure": {
               "airInfiltration": {
@@ -282,9 +283,9 @@
                     "fuel": "natural gas",
                     "heatCapacityBtuPerHour": null,
                     "systemType": "storage water heater",
-                    "energyFactor": 0.59,
+                    "efficiency": 0.59,
+                    "efficiencyUnits": "EF",
                     "id": "WaterHeater1",
-                    "uniformEnergyFactor": null,
                     "location": null
                   }
                 ]

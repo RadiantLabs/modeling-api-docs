@@ -15,7 +15,8 @@
       "residentCount": 5,
       "storiesCount": 1,
       "windowToWallFraction": 0.14,
-      "yearBuilt": 1945
+      "yearBuilt": 1945,
+      "propertyUse": "single-family detached"
     },
     "enclosure": {
       "airInfiltration": {
@@ -81,7 +82,7 @@
             "systemType": "electric resistance",
             "fuel": "electricity",
             "heatEfficiency": 1,
-            "heatEfficiencyUnits": "percent",
+            "heatEfficiencyUnits": "fraction",
             "heatLoadFraction": 1
           }
         ],
@@ -101,13 +102,14 @@
       "waterHeating": {
         "waterHeatingSystems": [
           {
-            "energyFactor": 0.92,
+            "efficiency": 0.92,
+            "efficiencyUnits": "EF",
             "dhwLoadFraction": 1,
             "systemType": "storage water heater",
             "fuel": "electricity",
             "id": "WaterHeater1",
             "hotWaterTemperature": 125,
-            "location": "living space",
+            "location": "conditioned space",
             "lifetime": {
               "replacementCost": 1000,
               "installedDate": "2015-11-12"
