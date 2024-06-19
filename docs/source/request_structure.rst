@@ -619,6 +619,8 @@ Operations to the existing HVAC heating system are entered in ``automatedMeasure
 .. literalinclude:: schemas/request/ExistingHVACHeatingSystem.json5
    :language: javascript
 
+The following table specifies the schema for the ``existingHvacHeatingSystem`` object.
+
   ==========  ====================  ===========  ========  ============================
   Property    Type                  Constraints  Required  Description
   ==========  ====================  ===========  ========  ============================
@@ -667,6 +669,8 @@ Operations on the existing cooling systems are entered in ``automatedMeasures.ex
 .. literalinclude:: schemas/request/ExistingHVACCoolingSystem.json5
    :language: javascript
 
+The following table specifies the schema for the ``existingHvacCoolingSystem`` object.
+
   ==========  ====================  ===========  ========  ============================
   Property    Type                  Constraints  Required  Description
   ==========  ====================  ===========  ========  ============================
@@ -708,6 +712,8 @@ connected to the base building's heating and cooling systems.
 .. literalinclude:: schemas/request/ExistingHVACDistributionSystem.json5
    :language: javascript
 
+The following table specifies the schema for the ``existingHvacDistributionSystem`` object.
+
   ==========  ====================  ===========  ========  ============================
   Property    Type                  Constraints  Required  Description
   ==========  ====================  ===========  ========  ============================
@@ -748,6 +754,8 @@ Operations on the existing water heating system can be entered in ``automatedMea
 
 .. literalinclude:: schemas/request/ExistingWaterHeatingSystem.json5
    :language: javascript
+
+The following table specifies the schema for the ``existingWaterHeatingSystem`` object.
 
   ==========  ====================  ===========  ========  ============================
   Property    Type                  Constraints  Required  Description
@@ -791,6 +799,7 @@ Characteristics of a new heat pump system can be entered in ``automatedMeasures.
 .. literalinclude:: schemas/request/NewHeatPump.json5
    :language: javascript
 
+The following table specifies the schema for the ``newHeatPump`` object.
   =========================  ====================  ===========  ========  =======  ===================================
   Property                   Type                  Constraints  Required  Default  Description
   =========================  ====================  ===========  ========  =======  ===================================
@@ -827,6 +836,8 @@ Characteristics of a new water heating system can be entered in ``automatedMeasu
 
 .. literalinclude:: schemas/request/NewWaterHeatingSystem.json5
    :language: javascript
+
+The following table specifies the schema for the ``newWaterHeatingSystem`` object.
 
   =====================  ====================  ===========  ========  =======  ===================================
   Property               Type                  Constraints  Required  Default  Description
@@ -875,6 +886,8 @@ Adjustments to the building air leakage rates can be entered in ``automatedMeasu
 .. literalinclude:: schemas/request/AirSealing.json5
    :language: javascript
 
+The following table specifies the schema for the ``airSealing`` object.
+
   ==========  ===================================================  ========  ===========================
   Property    Type                                                 Required  Description
   ==========  ===================================================  ========  ===========================
@@ -906,6 +919,8 @@ Adjustments to existing attic insulation can be entered in ``automatedMeasures.a
 .. literalinclude:: schemas/request/AtticInsulation.json5
    :language: javascript
 
+The following table specifies the schema for the ``atticInsulation`` object.
+
   ==========  ===================================================  ========  ===========================
   Property    Type                                                 Required  Description
   ==========  ===================================================  ========  ===========================
@@ -932,6 +947,8 @@ Adjustments to thermostat settings can be entered in ``automatedMeasures.thermos
 
 .. literalinclude:: schemas/request/Thermostat.json5
    :language: javascript
+
+The following table specifies the schema for the ``thermostat`` object.
 
   ==========  ===================================================  ========  ===========================
   Property    Type                                                 Required  Description
