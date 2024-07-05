@@ -5,6 +5,7 @@ Contents
    :caption: Methodology Documentation
    
    introduction
+   features & limitations
    usage
    request_structure
    response_structure
