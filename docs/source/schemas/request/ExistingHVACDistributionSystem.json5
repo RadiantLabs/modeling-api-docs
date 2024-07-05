@@ -1,0 +1,8 @@
+{
+  "action": "adjust",
+  "adjust": {
+    "leakageValue": 0.1,
+    "insulationRValue": 5
+  },
+  "costs": [ COST ]
+}

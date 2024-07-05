@@ -1,0 +1,7 @@
+{
+  "systemType": "heat pump",
+  "performanceClass": "energy star compliant",
+  "heatLoadFraction": 0.8,
+  "coolLoadFraction": 0.8,
+  "costs": [ COST ]
+}

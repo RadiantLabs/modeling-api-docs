@@ -1,0 +1,11 @@
+{
+  "id": "CentralAirConditioner1",
+  "connectedDistributionId": "HVACDistributionFurnaceAndCentralAC1",
+  "systemType": "central air conditioner",
+  "coolCapacityBtuPerHour": 1000.0,
+  "compressorType": "single stage",
+  "coolEfficiency": 12,
+  "coolEfficiencyUnits": "SEER",
+  "coolLoadFraction": 0.8,
+  "lifetime": LIFETIME
+}

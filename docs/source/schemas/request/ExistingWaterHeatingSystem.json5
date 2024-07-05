@@ -1,0 +1,7 @@
+{
+  "action": "adjust",
+  "adjust": {
+    "dhwLoadFraction": 0.8
+  },
+  "costs": [ COST ]
+}

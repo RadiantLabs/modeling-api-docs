@@ -4,6 +4,8 @@
 
   "includeInputs": true, // defaults to true, mirror user inputs in the response
 
+  "includeEnergyEndUses": false, // defaults to false
+
   "includeDefaultAssumptions": false, // defaults to false
 
   "includeBaseResults": true, // defaults to true

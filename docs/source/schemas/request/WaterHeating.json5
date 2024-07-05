@@ -1,21 +1,19 @@
-// WATER_HEATING
 {
-  "waterHeatingSystems": [ // limited to 1
+  "waterHeatingSystems": [
     {
       "id": "WaterHeater1",
-      "systemType": "storage water heater", // ( “storage water heater” | “instantaneous water heater” | “heat pump water heater”
-      // | “space-heating boiler with storage tank” | “space-heating boiler with tankless coil”)
-      "connectedHeatingId": "Boiler1", // only applicable to "space-heating boiler with ..." options
-      "fuel": "natural gas",  // ("electricity" | "natural gas" | "fuel oil" | "propane" | "coal" | "wood" | "wood pellets")
+      "systemType": "storage water heater",
+      "connectedHeatingId": "Boiler1",
+      "fuel": "natural gas",
       "location": "living space",
       "tankVolume": 40,
-      "dhwLoadFraction": 1.0, // required, sum across all systems must equal 1
+      "dhwLoadFraction": 1.0,
       "heatCapacityBtuPerHour": null,
-      "energyFactor": 0.92,
-      "uniformEnergyFactor": null,
+      "efficiency": 0.92,
+      "efficiencyUnits": "EF",
       "hotWaterTemperature": 125.0,
-      "performanceAdjustment": null, // only applicable to instantaneous water heaters
-      "lifetime": LIFETIME // optional, refer to lifetime schema
+      "performanceAdjustment": null,
+      "lifetime": LIFETIME
     }
   ]
 }

@@ -123,17 +123,17 @@ connected to the base building's heating and cooling systems.
 
 ``adjust`` schema for existing HVAC distribution system:
 
-  ====================  =======  ===========  ==============================================
+  ====================  =======  ===========  ========================================================
   Property              Type     Constraints  Description
-  ====================  =======  ===========  ==============================================
-  ``leakageUnits``      String   See [#]_     Duct leakage units
+  ====================  =======  ===========  ========================================================
+  ``leakageUnits``      String   See [#]_     Duct leakage units must be the same as ``baseBuilding``
   ``leakageValue``      Double   >= 0.0       Duct leakage value
   ``insulationRValue``  Double   >= 0.0
-  ====================  =======  ===========  ==============================================
+  ====================  =======  ===========  ========================================================
 
   Values can be defined and will only be applied if applicable. For example, if there isn't ``airDistribution``, then ``leakageValue`` won't be applied.
   
-  .. [#] Units choices are CFM25, CFM50, or Percent.
+  .. [#] Units choices are "CFM25", "CFM50", or "fraction".
 
 .. _existing_water_heating_system:
 
@@ -218,7 +218,7 @@ Characteristics of a new water heating system can be entered in ``automatedMeasu
   =====================  ====================  ===========  ========  =======  ===================================
   Property               Type                  Constraints  Required  Default  Description
   =====================  ====================  ===========  ========  =======  ===================================
-  ``systemType``         String                See [#]_     Yes                Type of water heating system. fuelType assumed as base heating fuel for "storage water heater" and "instantaneous water heater".
+  ``systemType``         String                See [#]_     Yes                Type of water heating system. ``fuelType`` assumed as base heating fuel for "storage water heater" and "instantaneous water heater".
   ``efficiencyClass``    String                See [#]_     Yes
   ``dhwLoadFraction``    Double                0 - 1 [#]_   No        1.0      DHW load for the new water heating system
   ``costs``              Array of :ref:`cost`               No        ``[]``   Implied costs of measure
@@ -246,6 +246,16 @@ Assumptions for ``efficiencyClass``:
   instantaneous water heater [20]_   other        N/A       N/A
   =================================  ===========  ========  =======
 .. [20] ``performanceAdjustment`` of 0.92 will be applied to instantaneous water heaters to account for cycling.
+
+Assumptions for ``tankVolume`` when ``systemType`` is "heat pump water heater":
+  ===============  =============
+  Resident Count   Volume (gal)
+  ===============  =============
+  2 or less        50
+  3                65
+  4 or more        80
+  ===============  =============
+
 
 Adjust global aspects of the building
 -------------------------------------
@@ -281,6 +291,8 @@ Adjustments to the building air leakage rates can be entered in ``automatedMeasu
   
   .. [#] rateUnit choices are ACH or CFM.
 
+The air sealing measure is only applicable when the improved air sealing rate is less than the base rate. 
+
 .. _adjust_attic_insulation:
 
 Attic Insulation
@@ -304,6 +316,19 @@ Adjustments to existing attic insulation can be entered in ``automatedMeasures.a
   ================================  ======  ============  ===========  =======  =======================================
   ``floorAssemblyEffectiveRValue``  Double  F-ft2-hr/Btu  > 0.0        50.6     Effective R-value of attic floor assembly
   ================================  ======  ============  ===========  =======  =======================================
+
+Attic insulation measure applicability is determined based on the difference between the base and improved assembly effective R-value using the following table.
+
+  =====================  =========================  ===========
+  Base Assembly R-Value  Improved Assembly R-Value  Applicable?
+  =====================  =========================  ===========
+  < 8.7                  < 8.7                      false
+  < 8.7                  >= 8.7                     true
+  8.7 - 20.6             < 26.6                     false
+  8.7 - 20.6             >= 26.6                    true
+  > 20.6                 < 31.6                     false
+  > 20.6                 >= 31.6                    true
+  =====================  =========================  ===========
 
 .. _adjust_thermostat:
 

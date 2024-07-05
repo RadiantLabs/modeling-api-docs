@@ -1,0 +1,7 @@
+{
+  "action": "adjust",
+  "adjust": {
+    "coolLoadFraction": 0.2
+  },
+  "costs": [ COST ]
+}

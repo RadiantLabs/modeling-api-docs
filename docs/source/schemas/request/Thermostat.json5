@@ -1,0 +1,17 @@
+{
+  "adjust": {
+    "heatingSeason": {
+      "setpoint": 68,
+      "setback": 64,
+      "setbackStartHour": 23,
+      "totalWeeklySetbackHours": 49,
+    },
+    "coolingSeason": {
+      "setpoint": 78,
+      "setback": 82,
+      "setbackStartHour": 9,
+      "totalWeeklySetbackHours": 42,
+    },
+  },
+  "costs": [ COST ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "HVACDistributionFurnaceAndCentralAC1",
+  "systemType": "regular velocity",
+  "numberOfReturnRegisters": 2,
+  "conditionedFloorAreaServed": 3456,
+  "ducts": {
+    "supply": [
+      {
+        "id": "HVACDistributionFurnaceAndCentral1Supply",
+        "insulationRValue": 0.0,
+        "leakageValue": 0.2,
+        "leakageUnits": "fraction",
+        "location": "attic vented"
+      }
+    ],
+    "return": [
+      {
+        "id": "HVACDistributionFurnaceAndCentral1Return",
+        "insulationRValue": 0.0,
+        "leakageValue": 0.2,
+        "leakageUnits": "fraction",
+        "location": "attic vented"
+      }
+    ]
+  }
+}
