@@ -391,9 +391,9 @@ See note about `objects and arrays`_ for more information.
 .. literalinclude:: schemas/request/WaterHeating.json5
    :language: javascript
 
-===========================================  =======  ==========================  ==============  ========  ====================  ============================================== 
+===========================================  =======  ==========================  ==============  ========  ====================  ==========================================================
 Property                                     Type     Units                       Constraints     Required  Default               Notes
-===========================================  =======  ==========================  ==============  ========  ====================  ==============================================       
+===========================================  =======  ==========================  ==============  ========  ====================  ==========================================================
 ``id``                                       id                                   Must be unique  yes       WaterHeater1    
 ``systemType``                               string                               see [#]_        yes       storage water heater    
 ``connectedHeatingId``                       idref                                see [#]_        see [#]_  null
@@ -405,7 +405,8 @@ Property                                     Type     Units                     
 ``efficency``                                float    fraction                    >0              no        :ref:`BSA <BSA->`
 ``efficiencyUnits``                          string                               see [#]_        no        :ref:`BSA <BSA->`
 ``hotWaterTemperature``                      float    F                           >0              no        125 
-===========================================  =======  ==========================  ==============  ========  ====================  ============================================== 
+``performanceAdjustment``                    float    fraction                    0-1, see [#]_   no        see [#]_              Multiplier on efficiency, typically to account for cycling
+===========================================  =======  ==========================  ==============  ========  ====================  ==========================================================
 
 .. [#] ``systemType`` choices are "storage water heater", "instantaneous water heater", "heat pump water heater", "space-heating boiler with storage tank", and "space-heating boiler with tankless coil".
 .. [#] Must reference a defined ``hvacHeatingSystem.id``. 
@@ -418,6 +419,8 @@ Property                                     Type     Units                     
 
   IECC zones 3A, 4-8, unknown: "basement conditioned", "basement unconditioned", "living space"
 .. [#] ``efficiencyUnits`` choices are "EF" and "UEF".
+.. [#] Only applicable when ``systemType`` is "instantaneous water heater"
+.. [#] ``performanceAdjustment`` defaults to 0.94 (UEF) or 0.92 (EF)
 
 .. _electrical_panels:
 
