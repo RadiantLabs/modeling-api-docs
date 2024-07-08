@@ -230,21 +230,22 @@ Characteristics of a new water heating system can be entered in ``automatedMeasu
 
 
 Assumptions for ``efficiencyClass``:
-  ==========================  ===========  ========  =======
-  Type                        Fuel         Standard  Premium
-  ==========================  ===========  ========  =======
-  heat pump water heater      electricity  N/A       3.5
-  storage water heater        electricity  0.92      0.95
-  storage water heater        natural gas  0.59      0.67
-  storage water heater        fuel oil     0.62      0.68
-  storage water heater        propane      0.59      0.67
-  storage water heater        other        0.59      N/A
-  instantaneous water heater  electricity  0.99      N/A
-  instantaneous water heater  natural gas  0.82      N/A
-  instantaneous water heater  fuel oil     N/A       N/A
-  instantaneous water heater  propane      0.82      N/A
-  instantaneous water heater  other        N/A       N/A
-  ==========================  ===========  ========  =======
+  =================================  ===========  ========  =======
+  Type                               Fuel         Standard  Premium
+  =================================  ===========  ========  =======
+  heat pump water heater             electricity  N/A       3.5
+  storage water heater               electricity  0.92      0.95
+  storage water heater               natural gas  0.59      0.67
+  storage water heater               fuel oil     0.62      0.68
+  storage water heater               propane      0.59      0.67
+  storage water heater               other        0.59      N/A
+  instantaneous water heater [20]_   electricity  0.99      N/A
+  instantaneous water heater [20]_   natural gas  0.82      N/A
+  instantaneous water heater [20]_   fuel oil     N/A       N/A
+  instantaneous water heater [20]_   propane      0.82      N/A
+  instantaneous water heater [20]_   other        N/A       N/A
+  =================================  ===========  ========  =======
+.. [20] ``performanceAdjustment`` of 0.92 will be applied to instantaneous water heaters to account for cycling.
 
 Assumptions for ``tankVolume`` when ``systemType`` is "heat pump water heater":
   ===============  =============

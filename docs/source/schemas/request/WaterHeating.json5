@@ -12,6 +12,7 @@
       "efficiency": 0.92,
       "efficiencyUnits": "EF",
       "hotWaterTemperature": 125.0,
+      "performanceAdjustment": null,
       "lifetime": LIFETIME
     }
   ]
