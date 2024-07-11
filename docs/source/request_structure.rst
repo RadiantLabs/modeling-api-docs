@@ -225,7 +225,7 @@ Property                           Type     Units                        Constra
 =================================  =======  ===========================  ==============  ========  ====================================  ==============================================       
 ``id``                             id                                    Must be unique  yes       :ref:`PSC <PSC->`
 ``connectedDistributionId``        idref                                                 see [#]_  :ref:`PSC <PSC->`
-``systemType``                     string                                                yes       :ref:`PSC <PSC->`, :ref:`BSA <BSA->`
+``systemType``                     string                                see [#]_        yes       :ref:`PSC <PSC->`, :ref:`BSA <BSA->`
 ``fuel``                           string                                see [#]_        no        :ref:`PSC <PSC->`
 ``heatCapacityBtuPerHour``         float    Btu/hr                       >=0             no                                              autosized by modeling engine if undefined
 ``heatEfficiency``                 float    see ``heatEfficiencyUnits``  0-1             no        :ref:`PSC <PSC->` 
@@ -234,6 +234,7 @@ Property                           Type     Units                        Constra
 =================================  =======  ===========================  ==============  ========  ====================================  ============================================== 
 
 .. [#] Required when ``systemType`` is "furnace" or "boiler".
+.. [#] ``systemType`` choices are "electric resistance", "furnace", "wall furnace", "boiler", "stove", "portable heater", "fixed heater", and "fireplace".
 .. [#] ``fuel`` choices are "electricity", "natural gas", "fuel oil", "propane", "coal", "wood", and "wood pellets".
 .. [#] ``heatEfficiencyUnits`` choices are "AFUE" and "fraction".
 
