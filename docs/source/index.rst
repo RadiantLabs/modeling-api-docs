@@ -14,4 +14,4 @@ Contents
 .. toctree::
    :caption: Interactive Documentation
    
-   Redoc.ly Docs <https://radiantlabs-core-modeling-api.redoc.ly>
+   Interactive API Documentation <https://radiantlabs-core-modeling-api.redoc.ly>
